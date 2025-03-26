@@ -8,6 +8,9 @@ const withNextra = require('nextra')({
 })
 
 module.exports = withNextra({
+  images: {
+    unoptimized: true,
+  },
   async redirects() {
     return [
       // Original top-level
