@@ -3,10 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger deployment when changes are pushed to the `main` branch
-  pull_request:
-    branches:
-      - main  # Trigger deployment when a pull request is merged into the `main` branch
+      - pages  # Trigger deployment when changes are pushed to the `main` branch
+  
 
 permissions:
     contents: write # allow token to write to the repository contents
