@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - pages  # Trigger deployment when changes are pushed to the `main` branch
+      - pages-back  # Trigger deployment when changes are pushed to the `main` branch
   
 
 permissions:
