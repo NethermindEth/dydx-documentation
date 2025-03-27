@@ -8,11 +8,11 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json: HTTP
 
 includes:
-  - _clients-v4.md
-  - _api:functional-v4.md
-  - _architecture-v4.md
-  - _api:doc-all-methods-v4.md
-  - _policies-v4.md
+  - _clients-v4
+  - _api:functional-v4
+  - _architecture-v4
+  - _api:doc-all-methods-v4
+  - _policies-v4
 
 search: true
 
