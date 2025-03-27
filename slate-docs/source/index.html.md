@@ -1,5 +1,5 @@
 ---
-title: v3 dYdX Documentation
+title: v4 dYdX Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - python: Python
@@ -8,11 +8,11 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json: HTTP
 
 includes:
-  - _clients-v4
-  - _api:functional-v4
-  - _architecture-v4
-  - _api:doc-all-methods-v4
-  - _policies-v4
+  - clients-v4
+  - api:functional-v4
+  - architecture-v4
+  - api:doc-all-methods-v4
+  - policies-v4
 
 search: true
 
