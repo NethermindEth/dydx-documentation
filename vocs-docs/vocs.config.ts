@@ -41,8 +41,12 @@ export default defineConfig({
       ]
     },
     {
-        text: 'Api Map',
-        link: '/api_map',
+        text: 'API Map',
+        link: '/api-map',
+    },
+    {
+        text: 'All Methods',
+        link: '/all-methods',
     },
     {
       text: 'Trading',
