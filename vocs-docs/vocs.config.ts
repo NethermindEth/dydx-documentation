@@ -41,6 +41,10 @@ export default defineConfig({
       ]
     },
     {
+        text: 'Api Map',
+        link: '/api_map',
+    },
+    {
       text: 'Trading',
       link: '/api',
       items: [
