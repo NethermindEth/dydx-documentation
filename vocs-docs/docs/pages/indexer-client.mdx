@@ -768,4 +768,85 @@ let response = utility.get_screen(&address).await?;
 :::
 
 
+## Vaults
+
+TODO: How to access to the `vaults` space.
+
+:::code-group
+
+```rust [Rust]
+let vaults = indexer_client.vaults();
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get MegaVault Historical Pnl
+
+:::code-group
+
+```rust [Rust]
+let response = vaults.get_megavault_historical_pnl(PnlTickInterval::Hour).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Vaults Historical Pnl
+
+:::code-group
+
+```rust [Rust]
+let response = vaults.get_vaults_historical_pnl(PnlTickInterval::Hour).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get MegaVaults Positions
+
+:::code-group
+
+```rust [Rust]
+let response = vaults.get_megavault_positions().await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
 
