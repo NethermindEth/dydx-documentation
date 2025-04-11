@@ -622,7 +622,139 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 :::code-group
 
 ```rust [Rust]
-let response = markets.get_candles(&ticker).await?;
+let opts = GetCandlesOpts {
+    limit: Some(5),
+    from_iso: None,
+    to_iso: None,
+};
+let response = markets.get_candles(&ticker, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Historical Finding
+
+:::code-group
+
+```rust [Rust]
+let opts = GetHistoricalFundingOpts {
+    limit: Some(5),
+    effective_before_or_at_height: None,
+    effective_before_or_at: None,
+};
+let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Sparklines
+
+:::code-group
+
+```rust [Rust]
+let response = markets.get_sparklines(SparklineTimePeriod::OneDay).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+## Utility
+
+TODO: How to access to the `utility` space.
+
+:::code-group
+
+```rust [Rust]
+let utility = indexer_client.utility();
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Time
+
+:::code-group
+
+```rust [Rust]
+let time = utility.get_time().await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Height
+
+:::code-group
+
+```rust [Rust]
+let height = utility.get_height().await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Screen
+
+:::code-group
+
+```rust [Rust]
+let response = utility.get_screen(&address).await?;
 ```
 
 ```python [Python]
