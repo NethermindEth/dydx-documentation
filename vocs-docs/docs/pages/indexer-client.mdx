@@ -1,69 +1,10 @@
-# Indexer Client
+import IndexerClient from './indexer_client/index.mdx' 
+import Accounts from './indexer_client/accounts/index.mdx' 
+import GetSubaccounts from './indexer_client/accounts/get_subaccounts.mdx' 
 
-TODO: How to create a client instance
-
-:::code-group
-
-```rust [Rust]
-let indexer_client = IndexerClient::new(config);
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
-
-
-
-## Accounts
-
-TODO: How to access to the `accounts` space.
-
-:::code-group
-
-```rust [Rust]
-let accounts = indexer_client.accounts();
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
-
-
-
-### Get Subaccounts
-
-:::info
-REST: `/v4/addresses`
-:::
-
-:::code-group
-
-```rust [Rust]
-let response = accounts.get_subaccounts(&address).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
-
+<IndexerClient />
+<Accounts />
+<GetSubaccounts />
 
 
 ### Get Subaccount
