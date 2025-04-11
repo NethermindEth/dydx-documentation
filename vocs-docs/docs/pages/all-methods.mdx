@@ -18,11 +18,14 @@ let indexer_client = IndexerClient::new(config);
 
 :::
 
+
+
 ## Accounts
 
 TODO: How to access to the `accounts` space.
 
 :::code-group
+
 ```rust [Rust]
 let accounts = indexer_client.accounts();
 ```
@@ -36,6 +39,8 @@ let accounts = indexer_client.accounts();
 ```
 
 :::
+
+
 
 ### Get Subaccounts
 
@@ -59,6 +64,8 @@ let response = accounts.get_subaccounts(&address).await?;
 
 :::
 
+
+
 ### Get Subaccount
 
 :::code-group
@@ -76,6 +83,8 @@ let response = accounts.get_subaccount(&subaccount).await?;
 ```
 
 :::
+
+
 
 ### Get Parent Subaccount
 
@@ -95,6 +104,8 @@ let response = accounts.get_parent_subaccount(&parent_subaccount).await?;
 
 :::
 
+
+
 ### List Positions
 
 :::code-group
@@ -106,7 +117,7 @@ let opts = ListPositionOpts {
     created_before_or_at_height: None,
     created_before_or_at: None,
 };
-let response = accounts.list_positions(&subaccount, Some(opts)).await?;
+let response_list = accounts.list_positions(&subaccount, Some(opts)).await?;
 ```
 
 ```python [Python]
@@ -118,3 +129,511 @@ let response = accounts.list_positions(&subaccount, Some(opts)).await?;
 ```
 
 :::
+
+
+
+### List Parent Positions
+
+:::code-group
+
+```rust [Rust]
+let opts = ListPositionOpts {
+    status: Some(PerpetualPositionStatus::Open),
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+};
+let response_list = accounts.list_parent_positions(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Asset Positions
+
+:::code-group
+
+```rust [Rust]
+let response_list = accounts.get_asset_positions(&subaccount).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Parent Asset Positions
+
+:::code-group
+
+```rust [Rust]
+let response_list = accounts.get_parent_asset_positions(&parent_subaccount).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Transfers
+
+:::code-group
+
+```rust [Rust]
+let opts = GetTransfersOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+};
+let response = accounts.get_transfers(&subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Parent Transfers
+
+:::code-group
+
+```rust [Rust]
+let opts = GetTransfersOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+};
+let response = accounts.get_parent_transfers(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### List Orders
+
+:::code-group
+
+```rust [Rust]
+let opts = ListOrdersOpts {
+    limit: Some(5),
+    ticker: Some(ticker),
+    side: Some(OrderSide::Buy),
+    status: Some(OrderStatus::Open),
+    order_type: Some(OrderType::Limit),
+    good_til_block_before_or_at: None,
+    good_til_block_time_before_or_at: None,
+    return_latest_orders: None,
+};
+let response = accounts.list_orders(&subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### List Parent Orders
+
+:::code-group
+
+```rust [Rust]
+let opts = ListOrdersOpts {
+    limit: Some(5),
+    ticker: Some(ticker),
+    side: Some(OrderSide::Buy),
+    status: Some(OrderStatus::Open),
+    order_type: Some(OrderType::Limit),
+    good_til_block_before_or_at: None,
+    good_til_block_time_before_or_at: None,
+    return_latest_orders: None,
+};
+let response = accounts.list_parent_orders(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Order
+
+:::code-group
+
+```rust [Rust]
+let response = accounts.get_order(&order_id).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Order
+
+:::code-group
+
+```rust [Rust]
+let response = accounts.get_order(&order_id).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Fills
+
+:::code-group
+
+```rust [Rust]
+let opts = GetFillsOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+    market: Some(ticker),
+    market_type: Some(MarketType::Perpetual),
+};
+let response = accounts.get_fills(&subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Parent Fills
+
+:::code-group
+
+```rust [Rust]
+let opts = GetFillsOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+    market: Some(ticker),
+    market_type: Some(MarketType::Perpetual),
+};
+let response = accounts.get_fills(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Historical Pnl
+
+:::code-group
+
+```rust [Rust]
+let opts = GetHistoricalPnlOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+    created_on_or_after_height: None,
+    created_on_or_after: None,
+};
+let response = accounts.get_historical_pnl(&subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Parent Historical Pnl
+
+:::code-group
+
+```rust [Rust]
+let opts = GetHistoricalPnlOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+    created_on_or_after_height: None,
+    created_on_or_after: None,
+};
+let response = accounts.get_parent_historical_pnl(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Rewards
+
+:::code-group
+
+```rust [Rust]
+let opts = GetTradingRewardsOpts {
+    limit: Some(5),
+    starting_before_or_at_height: None,
+    starting_before_or_at: None,
+};
+let response = accounts.get_rewards(&address, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Rewards Aggregated
+
+:::code-group
+
+```rust [Rust]
+let opts = GetAggregationsOpts {
+    limit: Some(5),
+    starting_before_or_at_height: None,
+    starting_before_or_at: None,
+};
+let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+## Markets
+
+TODO: How to access to the `accounts` space.
+
+:::code-group
+
+```rust [Rust]
+let markets = indexer_client.markets();
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### List Perpetual Markets
+
+:::code-group
+
+```rust [Rust]
+let opts = ListPerpetualMarketsOpts {
+    limit: Some(5),
+    ticker: Some(ticker),
+};
+let response = markets.list_perpetual_markets(Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Perpetual Market
+
+:::code-group
+
+```rust [Rust]
+let response = markets.get_perpetual_market(&ticker).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Perpetual Market OrderBook
+
+:::code-group
+
+```rust [Rust]
+let response = markets.get_perpetual_market_orderbook(&ticker).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Trades
+
+:::code-group
+
+```rust [Rust]
+let opts = GetTradesOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+};
+let response = markets.get_trades(&ticker, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
+### Get Candles
+
+:::code-group
+
+```rust [Rust]
+let response = markets.get_candles(&ticker).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
