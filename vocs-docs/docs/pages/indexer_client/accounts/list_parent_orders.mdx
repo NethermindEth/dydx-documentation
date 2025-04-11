@@ -1,0 +1,30 @@
+### List Parent Orders
+
+:::code-group
+
+```rust [Rust]
+let opts = ListOrdersOpts {
+    limit: Some(5),
+    ticker: Some(ticker),
+    side: Some(OrderSide::Buy),
+    status: Some(OrderStatus::Open),
+    order_type: Some(OrderType::Limit),
+    good_til_block_before_or_at: None,
+    good_til_block_time_before_or_at: None,
+    return_latest_orders: None,
+};
+let response = accounts.list_parent_orders(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+

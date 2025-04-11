@@ -1,0 +1,25 @@
+### Get Parent Transfers
+
+:::code-group
+
+```rust [Rust]
+let opts = GetTransfersOpts {
+    limit: Some(5),
+    created_before_or_at_height: None,
+    created_before_or_at: None,
+};
+let response = accounts.get_parent_transfers(&parent_subaccount, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
