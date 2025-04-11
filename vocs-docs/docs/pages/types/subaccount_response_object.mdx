@@ -1,0 +1,17 @@
+# SubaccountResponseObject
+
+| Name                     | Type                         | Required | Restrictions | Description |
+| ------------------------ | ---------------------------- | -------- | ------------ | ----------- |
+| address                  | [Address]                    | true     |              |             |
+| subaccount_number        | [SubaccountNumber]           | true     |              |             |
+| equity                   | [BigDecimal]                 | true     |              |             |
+| free_collateral          | [BigDecimal]                 | true     |              |             |
+| margin_enabled           | bool                         | false    |              |             |
+| asset_positions          | [AssetPositionsMap]          | true     |              |             |
+| open_perpetual_positions | [PerpetualPositionsMap]      | true     |              |             |
+
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[BigDecimal]: /types/big_decimal
+[AssetPositionsMap]: /types/asset_positions_map
+[PerpetualPositionsMap]: /types/perpetual_positions_map
