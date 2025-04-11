@@ -45,8 +45,8 @@ export default defineConfig({
         link: '/api-map',
     },
     {
-        text: 'All Methods',
-        link: '/all-methods',
+        text: 'Indexer Client',
+        link: '/indexer-client',
     },
     {
       text: 'Trading',
@@ -63,16 +63,6 @@ export default defineConfig({
           {
               text: 'Cancelling An Order 🚧',
               link: '/api/cancel_order',
-          },
-      ]
-    },
-    {
-      text: 'Trading Data',
-      link: '/indexer',
-      items: [
-          {
-              text: 'Indexer',
-              link: '/api/indexer_client',
           },
       ]
     },
