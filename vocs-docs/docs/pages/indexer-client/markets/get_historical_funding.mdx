@@ -1,0 +1,25 @@
+### Get Historical Funding
+
+:::code-group
+
+```rust [Rust]
+let opts = GetHistoricalFundingOpts {
+    limit: Some(5),
+    effective_before_or_at_height: None,
+    effective_before_or_at: None,
+};
+let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
+```
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
+:::
+
+
+
