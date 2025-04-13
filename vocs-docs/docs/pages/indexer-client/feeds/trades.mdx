@@ -1,4 +1,4 @@
-### <Method Name>
+### Feed: Trades
 
 // TODO: Add description
 
@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn trades(
+    &mut self,
+    ticker: &Ticker,
+    batched: bool,
+) -> Result<Feed<TradesMessage>, FeedError>
 ```
 
 ```python [Python]

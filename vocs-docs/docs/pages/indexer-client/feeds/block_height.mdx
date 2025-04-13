@@ -1,4 +1,4 @@
-### <Method Name>
+### Feed: Block Height
 
 // TODO: Add description
 
@@ -7,6 +7,10 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn block_height(
+    &mut self,
+    batched: bool,
+) -> Result<Feed<BlockHeightMessage>, FeedError>
 ```
 
 ```python [Python]

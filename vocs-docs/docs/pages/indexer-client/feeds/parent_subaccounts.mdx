@@ -1,4 +1,4 @@
-### <Method Name>
+### Feed: Parent Subaccoutns
 
 // TODO: Add description
 
@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn parent_subaccounts(
+    &mut self,
+    subaccount: ParentSubaccount,
+    batched: bool,
+) -> Result<Feed<ParentSubaccountsMessage>, FeedError>
 ```
 
 ```python [Python]
