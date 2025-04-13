@@ -45,6 +45,10 @@ export default defineConfig({
         link: '/api-map',
     },
     {
+        text: 'Node Client',
+        link: '/node-client',
+    },
+    {
         text: 'Indexer Client',
         link: '/indexer-client',
     },
