@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_parent_historical_pnl(
+    &self,
+    subaccount: &ParentSubaccount,
+    opts: Option<GetHistoricalPnlOpts>,
+) -> Result<Vec<PnlTicksResponseObject>, Error>
 ```
 
 ```python [Python]

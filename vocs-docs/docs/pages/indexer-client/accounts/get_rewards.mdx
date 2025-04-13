@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_rewards(
+    &self,
+    address: &Address,
+    opts: Option<GetTradingRewardsOpts>,
+) -> Result<Vec<HistoricalBlockTradingReward>, Error>
 ```
 
 ```python [Python]

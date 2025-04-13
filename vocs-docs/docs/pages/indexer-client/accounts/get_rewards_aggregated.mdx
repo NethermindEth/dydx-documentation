@@ -7,6 +7,12 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_rewards_aggregated(
+    &self,
+    address: &Address,
+    period: TradingRewardAggregationPeriod,
+    opts: Option<GetAggregationsOpts>,
+) -> Result<Vec<HistoricalTradingRewardAggregation>, Error>
 ```
 
 ```python [Python]

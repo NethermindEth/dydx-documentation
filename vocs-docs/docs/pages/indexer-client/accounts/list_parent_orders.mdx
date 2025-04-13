@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn list_parent_orders(
+    &self,
+    subaccount: &ParentSubaccount,
+    opts: Option<ListOrdersOpts>,
+) -> Result<ListOrdersResponse, Error>
 ```
 
 ```python [Python]

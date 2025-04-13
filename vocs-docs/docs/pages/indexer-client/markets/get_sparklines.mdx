@@ -7,6 +7,10 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_sparklines(
+    &self,
+    period: SparklineTimePeriod,
+) -> Result<SparklineResponseObject, Error>
 ```
 
 ```python [Python]

@@ -7,6 +7,12 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_candles(
+    &self,
+    ticker: &Ticker,
+    res: CandleResolution,
+    opts: Option<GetCandlesOpts>,
+) -> Result<Vec<CandleResponseObject>, Error>
 ```
 
 ```python [Python]

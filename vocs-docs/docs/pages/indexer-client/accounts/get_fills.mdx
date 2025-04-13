@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_fills(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetFillsOpts>,
+) -> Result<Vec<FillResponseObject>, Error>
 ```
 
 ```python [Python]

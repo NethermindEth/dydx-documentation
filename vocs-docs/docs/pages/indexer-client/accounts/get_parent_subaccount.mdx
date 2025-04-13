@@ -7,6 +7,10 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_parent_subaccount(
+    &self,
+    subaccount: &ParentSubaccount,
+) -> Result<ParentSubaccountResponseObject, Error>
 ```
 
 ```python [Python]

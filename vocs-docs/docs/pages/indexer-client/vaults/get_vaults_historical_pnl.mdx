@@ -7,6 +7,10 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_vaults_historical_pnl(
+    &self,
+    resolution: PnlTickInterval,
+) -> Result<Vec<VaultHistoricalPnl>, Error>
 ```
 
 ```python [Python]

@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_transfers(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetTransfersOpts>,
+) -> Result<Vec<TransferResponseObject>, Error>
 ```
 
 ```python [Python]

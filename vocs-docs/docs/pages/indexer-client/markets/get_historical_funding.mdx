@@ -7,6 +7,11 @@
 :::code-group
 
 ```rust [Rust]
+pub async fn get_historical_funding(
+    &self,
+    ticker: &Ticker,
+    opts: Option<GetHistoricalFundingOpts>,
+) -> Result<Vec<HistoricalFundingResponseObject>, Error>
 ```
 
 ```python [Python]
