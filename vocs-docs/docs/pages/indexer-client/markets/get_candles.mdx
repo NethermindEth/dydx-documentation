@@ -27,7 +27,13 @@ def get_perpetual_market_candles(
 ```
 
 ```typescript [TypeScript]
-
+async getPerpetualMarketCandles(
+    market: string,
+    resolution: string,
+    fromISO?: string | null,
+    toISO?: string | null,
+    limit?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

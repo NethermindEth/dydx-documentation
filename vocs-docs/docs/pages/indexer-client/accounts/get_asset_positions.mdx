@@ -26,7 +26,14 @@ def get_subaccount_asset_positions(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountAssetPositions(
+    address: string,
+    subaccountNumber: number,
+    status?: PositionStatus | null,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+): Promise<Data>
 ```
 
 ```url [API]

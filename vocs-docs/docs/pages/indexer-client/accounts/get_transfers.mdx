@@ -26,7 +26,14 @@ def get_subaccount_transfers(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountTransfers(
+    address: string,
+    subaccountNumber: number,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

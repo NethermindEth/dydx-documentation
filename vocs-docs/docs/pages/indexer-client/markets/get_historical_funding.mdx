@@ -25,7 +25,12 @@ def get_perpetual_market_funding(
 ```
 
 ```typescript [TypeScript]
-
+async getPerpetualMarketHistoricalFunding(
+    market: string,
+    effectiveBeforeOrAt?: string | null,
+    effectiveBeforeOrAtHeight?: number | null,
+    limit?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

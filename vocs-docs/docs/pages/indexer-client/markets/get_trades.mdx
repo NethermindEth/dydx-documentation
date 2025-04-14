@@ -19,7 +19,13 @@ def get_perpetual_market_trades(
 ```
 
 ```typescript [TypeScript]
-
+async getPerpetualMarketTrades(
+    market: string,
+    startingBeforeOrAtHeight?: number | null,
+    startingBeforeOrAt?: string | null,
+    limit?: number | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

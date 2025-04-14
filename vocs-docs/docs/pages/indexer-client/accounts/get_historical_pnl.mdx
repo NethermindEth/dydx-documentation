@@ -25,7 +25,16 @@ def get_subaccount_historical_pnls(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountHistoricalPNLs(
+    address: string,
+    subaccountNumber: number,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    createdOnOrAfterHeight?: number | null,
+    createdOnOrAfter?: string | null,
+    limit?: number | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

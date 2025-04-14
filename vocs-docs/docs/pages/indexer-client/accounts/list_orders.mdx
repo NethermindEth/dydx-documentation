@@ -19,7 +19,19 @@ pub async fn list_orders(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountOrders(
+    address: string,
+    subaccountNumber: number,
+    ticker?: string | null,
+    tickerType: TickerType = TickerType.PERPETUAL,
+    side?: OrderSide | null,
+    status?: OrderStatus | null,
+    type?: OrderType | null,
+    limit?: number | null,
+    goodTilBlockBeforeOrAt?: number | null,
+    goodTilBlockTimeBeforeOrAt?: string | null,
+    returnLatestOrders?: boolean | null,
+): Promise<Data>
 ```
 
 ```url [API]

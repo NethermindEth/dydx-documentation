@@ -20,7 +20,13 @@ pub async fn get_rewards_aggregated(
 ```
 
 ```typescript [TypeScript]
-
+async getHistoricalTradingRewardsAggregations(
+    address: string,
+    period: TradingRewardAggregationPeriod,
+    limit?: number,
+    startingBeforeOrAt?: string,
+    startingBeforeOrAtHeight?: string,
+): Promise<Data>
 ```
 
 ```url [API]

@@ -28,7 +28,16 @@ def get_subaccount_fills(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountFills(
+    address: string,
+    subaccountNumber: number,
+    ticker?: string | null,
+    tickerType: TickerType = TickerType.PERPETUAL,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]
