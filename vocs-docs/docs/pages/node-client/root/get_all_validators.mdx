@@ -14,11 +14,13 @@ pub async fn get_all_validators(
 ```
 
 ```python [Python]
-
+async def get_all_validators(
+    self, status: str = ""
+) -> staking_query.QueryValidatorsResponse
 ```
 
 ```typescript [TypeScript]
-
+get validatorClient(): ValidatorClient
 ```
 
 ```url [API]

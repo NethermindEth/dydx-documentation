@@ -17,11 +17,30 @@ pub async fn batch_cancel_orders(
 ```
 
 ```python [Python]
-
+async def batch_cancel_orders(
+    self,
+    wallet: Wallet,
+    subaccount_id: SubaccountId,
+    short_term_cancels: List[OrderBatch],
+    good_til_block: int,
+    tx_options: Optional[TxOptions] = None,
+)
 ```
 
 ```typescript [TypeScript]
+async batchCancelShortTermOrdersWithMarketId(
+    subaccount: SubaccountInfo,
+    shortTermOrders: OrderBatchWithMarketId[],
+    goodTilBlock: number,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 
+async batchCancelShortTermOrdersWithClobPairId(
+    subaccount: SubaccountInfo,
+    shortTermOrders: OrderBatch[],
+    goodTilBlock: number,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```url [API]

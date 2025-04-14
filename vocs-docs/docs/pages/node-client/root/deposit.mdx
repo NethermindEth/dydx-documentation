@@ -17,11 +17,33 @@ pub async fn deposit(
 ```
 
 ```python [Python]
-
+async def deposit(
+    self,
+    wallet: Wallet,
+    sender: str,
+    recipient_subaccount: SubaccountId,
+    asset_id: int,
+    quantums: int,
+)
 ```
 
 ```typescript [TypeScript]
-
+async depositToSubaccount(
+    subaccount: SubaccountInfo,
+    amount: string,
+    memo?: string,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx> 
+ 
+ 
+depositToSubaccountMessage(subaccount: SubaccountInfo, amount: string): EncodeObject
+ 
+async depositToMegavault(
+    subaccount: SubaccountInfo,
+    amountUsdc: number,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+depositToMegavaultMessage(subaccount: SubaccountInfo, amountUsdc: number): EncodeObject
 ```
 
 ```url [API]

@@ -17,7 +17,14 @@ pub async fn withdraw(
 ```
 
 ```python [Python]
-
+async def withdraw(
+    self,
+    wallet: Wallet,
+    sender_subaccount: SubaccountId,
+    recipient: str,
+    asset_id: int,
+    quantums: int,
+)
 ```
 
 ```typescript [TypeScript]

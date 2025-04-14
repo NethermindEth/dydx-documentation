@@ -17,7 +17,14 @@ pub async fn transfer(
 ```
 
 ```python [Python]
-
+async def transfer(
+    self,
+    wallet: Wallet,
+    sender_subaccount: SubaccountId,
+    recipient_subaccount: SubaccountId,
+    asset_id: int,
+    amount: int,
+)
 ```
 
 ```typescript [TypeScript]

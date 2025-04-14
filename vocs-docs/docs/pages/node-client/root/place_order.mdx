@@ -15,7 +15,12 @@ pub async fn place_order(
 ```
 
 ```python [Python]
-
+async def place_order(
+    self,
+    wallet: Wallet,
+    order: Order,
+    tx_options: Optional[TxOptions] = None,
+)
 ```
 
 ```typescript [TypeScript]

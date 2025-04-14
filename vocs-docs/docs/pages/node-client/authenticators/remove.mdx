@@ -16,11 +16,14 @@ pub async fn remove(
 ```
 
 ```python [Python]
-
+async def remove_authenticator(self, wallet: Wallet, authenticator_id: int)
 ```
 
 ```typescript [TypeScript]
-
+async removeAuthenticator(
+    subaccount: SubaccountInfo,
+    id: Long,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```url [API]
