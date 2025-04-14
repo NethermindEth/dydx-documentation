@@ -15,7 +15,13 @@ pub async fn get_historical_funding(
 ```
 
 ```python [Python]
-
+def get_perpetual_market_funding(
+    self,
+    market: str,
+    effective_before_or_at: str = None,
+    effective_before_or_at_height: int = None,
+    limit: int = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]

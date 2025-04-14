@@ -16,7 +16,14 @@ pub async fn get_candles(
 ```
 
 ```python [Python]
-
+def get_perpetual_market_candles(
+    self,
+    market: str,
+    resolution: str,
+    from_iso: str = None,
+    to_iso: str = None,
+    limit: int = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]

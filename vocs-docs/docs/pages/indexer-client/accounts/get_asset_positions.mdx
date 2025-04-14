@@ -14,7 +14,15 @@ pub async fn get_asset_positions(
 ```
 
 ```python [Python]
-
+def get_subaccount_asset_positions(
+    self,
+    address: str,
+    subaccount_number: int,
+    status: str = None,
+    limit: int = None,
+    created_before_or_at_height: int = None,
+    created_before_or_at_time: str = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]
