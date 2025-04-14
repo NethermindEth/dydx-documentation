@@ -19,7 +19,16 @@ pub async fn get_parent_historical_pnl(
 ```
 
 ```typescript [TypeScript]
-
+async getParentSubaccountNumberHistoricalPNLs(
+    address: string,
+    parentSubaccountNumber: number,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    createdOnOrAfterHeight?: number | null,
+    createdOnOrAfter?: string | null,
+    limit?: number | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

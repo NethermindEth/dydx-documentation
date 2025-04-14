@@ -15,11 +15,25 @@ pub async fn get_transfers(
 ```
 
 ```python [Python]
-
+def get_subaccount_transfers(
+    self,
+    address: str,
+    subaccount_number: int,
+    limit: int = None,
+    created_before_or_at_height: int = None,
+    created_before_or_at_time: str = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountTransfers(
+    address: string,
+    subaccountNumber: number,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

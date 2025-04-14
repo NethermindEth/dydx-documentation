@@ -19,7 +19,18 @@ pub async fn list_parent_orders(
 ```
 
 ```typescript [TypeScript]
-
+async getParentSubaccountNumberOrders(
+    address: string,
+    parentSubaccountNumber: number,
+    ticker?: string | null,
+    side?: OrderSide | null,
+    status?: OrderStatus | null,
+    type?: OrderType | null,
+    limit?: number | null,
+    goodTilBlockBeforeOrAt?: number | null,
+    goodTilBlockTimeBeforeOrAt?: string | null,
+    returnLatestOrders?: boolean | null,
+): Promise<Data> 
 ```
 
 ```url [API]

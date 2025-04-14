@@ -19,7 +19,12 @@ pub async fn get_rewards(
 ```
 
 ```typescript [TypeScript]
-
+async getHistoricalBlockTradingRewards(
+    address: string,
+    limit?: number,
+    startingBeforeOrAt?: string,
+    startingBeforeOrAtHeight?: string,
+): Promise<Data>
 ```
 
 ```url [API]

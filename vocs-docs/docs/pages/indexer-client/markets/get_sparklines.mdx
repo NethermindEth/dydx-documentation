@@ -14,11 +14,14 @@ pub async fn get_sparklines(
 ```
 
 ```python [Python]
-
+def get_perpetual_markets_sparklines(
+    self,
+    period: str = 'ONE_DAY'
+) -> Response
 ```
 
 ```typescript [TypeScript]
-
+async getPerpetualMarketSparklines(period: string = TimePeriod.ONE_DAY): Promise<Data>
 ```
 
 ```url [API]

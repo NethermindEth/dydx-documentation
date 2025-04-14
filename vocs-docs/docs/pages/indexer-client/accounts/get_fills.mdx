@@ -15,11 +15,29 @@ pub async fn get_fills(
 ```
 
 ```python [Python]
-
+def get_subaccount_fills(
+    self,
+    address: str,
+    subaccount_number: int,
+    ticker: str = None,
+    ticker_type: str = None,
+    limit: int = None,
+    created_before_or_at_height: int = None,
+    created_before_or_at_time: str = None,
+)
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountFills(
+    address: string,
+    subaccountNumber: number,
+    ticker?: string | null,
+    tickerType: TickerType = TickerType.PERPETUAL,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]

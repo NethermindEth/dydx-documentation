@@ -19,7 +19,14 @@ pub async fn get_parent_transfers(
 ```
 
 ```typescript [TypeScript]
-
+async getParentSubaccountNumberTransfers(
+    address: string,
+    parentSubaccountNumber: number,
+    limit?: number | null,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    page?: number | null,
+): Promise<Data> 
 ```
 
 ```url [API]

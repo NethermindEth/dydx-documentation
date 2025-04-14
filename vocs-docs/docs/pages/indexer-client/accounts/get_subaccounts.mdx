@@ -14,11 +14,15 @@ pub async fn get_subaccounts(
 ```
 
 ```python [Python]
-
+def get_subaccounts(
+    self,
+    address: str,
+    limit: int = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccounts(address: string, limit?: number): Promise<Data>
 ```
 
 ```url [API]

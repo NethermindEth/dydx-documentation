@@ -15,11 +15,26 @@ pub async fn get_historical_pnl(
 ```
 
 ```python [Python]
-
+def get_subaccount_historical_pnls(
+    self,
+    address: str,
+    subaccount_number: int,
+    effective_before_or_at: str = None,
+    effective_at_or_after: str = None,
+) -> Response
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccountHistoricalPNLs(
+    address: string,
+    subaccountNumber: number,
+    createdBeforeOrAtHeight?: number | null,
+    createdBeforeOrAt?: string | null,
+    createdOnOrAfterHeight?: number | null,
+    createdOnOrAfter?: string | null,
+    limit?: number | null,
+    page?: number | null,
+): Promise<Data>
 ```
 
 ```url [API]
