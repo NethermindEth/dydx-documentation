@@ -62,108 +62,89 @@ export default defineConfig({
                     items: [
                         {
                             text: 'Account balance',
-                            link: '/todo',
+                            link: '/interaction/account-balance',
                         },
                         {
                             text: 'List orders',
-                            link: '/todo',
+                            link: '/interaction/list-orders',
                         },
                         {
                             text: 'List positions',
-                            link: '/todo',
+                            link: '/interaction/list-positions',
                         },
                         {
                             text: 'List fills',
-                            link: '/todo',
+                            link: '/interaction/list-fills',
                         },
                         {
                             text: 'List markets',
-                            link: '/todo',
+                            link: '/interaction/list-markets',
                         },
                         {
                             text: 'Block height',
-                            link: '/todo',
+                            link: '/interaction/block-height',
                         },
                         {
                             text: 'Trading rewards',
-                            link: '/todo',
+                            link: '/interaction/trading-rewards',
                         },
                         {
                             text: 'Fee tiers',
-                            link: '/todo',
+                            link: '/interaction/fee-tiers',
                         },
                         {
                             text: 'Reward parameters',
-                            link: '/todo',
+                            link: '/interaction/reward-parameters',
                         },
                         {
-                            text: 'Watch an Orderbook',
-                            link: '/todo',
+                            text: 'Watch orderbook',
+                            link: '/interaction/watch-orderbook',
                         },
                     ],
                 },
                 {
                     text: 'MegaVault',
-                    link: '/todo',
+                    link: '/megavault',
                     items: [
                         {
                             text: 'Deposit',
-                            link: '/todo',
+                            link: '/interaction/depoist',
                         },
                         {
                             text: 'Withdraw',
-                            link: '/todo',
+                            link: '/interaction/withdraw',
                         },
                     ],
                 },
                 {
                     text: 'Permissioned Keys',
-                    link: '/todo',
+                    link: '/permissioned-keys',
                     items: [
                         {
                             text: 'Creating an authenticator',
-                            link: '/todo',
+                            link: '/interaction/create',
                         },
                         {
                             text: 'Add authenticator',
-                            link: '/todo',
+                            link: '/interaction/add',
                         },
                         {
                             text: 'Remove authenticator',
-                            link: '/todo',
+                            link: '/interaction/remove',
                         },
                         {
                             text: 'Permissioned trading',
-                            link: '/todo',
+                            link: '/interaction/trading',
                         },
                     ],
                 },
                 {
                     text: 'Noble client',
-                    link: '/todo',
+                    link: '/interaction/noble',
                 },
                 {
                     text: 'Faucet client',
-                    link: '/todo',
-                },
-                {
-                    text: '',
-                    link: '/todo',
-                    items: [
-                        {
-                            text: '',
-                            link: '/todo',
-                        },
-                    ],
-                },
-
-
-
-
-
-                {
-                    text: '',
-                    link: '/todo',
+                    link: '/interaction/faucet',
                 },
             ],
         },
