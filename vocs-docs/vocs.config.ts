@@ -233,8 +233,9 @@ export default defineConfig({
                 },
             ],
         },
+        /*
         {
-            text: 'API: doc all methods',
+            text: 'Full API',
             link: '/todo',
             items: [
                 {
@@ -248,6 +249,21 @@ export default defineConfig({
                 {
                     text: 'gRPC',
                     link: '/todo',
+                },
+            ],
+        },
+        */
+        {
+            text: 'Full API',
+            link: '/api',
+            items: [
+                {
+                    text: 'Node API',
+                    link: '/node-client',
+                },
+                {
+                    text: 'Indexer API',
+                    link: '/indexer-client',
                 },
             ],
         },
@@ -288,28 +304,12 @@ export default defineConfig({
             text: 'API Map',
             link: '/api-map',
         },
-        */
         {
             text: 'Node Client',
             link: '/node-client/intro',
             items: [
             ],
         },
-        {
-            text: 'Full API',
-            link: '/api',
-            items: [
-                {
-                    text: 'Node API',
-                    link: '/node-client',
-                },
-                {
-                    text: 'Indexer API',
-                    link: '/indexer-client',
-                },
-            ],
-        },
-        /*
         {
             text: 'Trading',
             link: '/api',
