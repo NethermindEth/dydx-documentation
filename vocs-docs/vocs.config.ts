@@ -159,6 +159,7 @@ export default defineConfig({
                 {
                     text: 'Structure',
                     link: '/todo',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Validators (aka Nodes)',
@@ -177,6 +178,7 @@ export default defineConfig({
                 {
                     text: 'Trading / Perpetual Contracts',
                     link: '/todo',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Accounts and Subaccounts',
