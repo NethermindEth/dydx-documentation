@@ -138,7 +138,14 @@ async def send_token(
 ```
 
 ```typescript [typescript]
-sendTokenMessage(wallet: LocalWallet, amount: string, recipient: string): EncodeObject
+sync sendToken(
+    subaccount: SubaccountInfo,
+    recipient: string,
+    coinDenom: string,
+    quantums: string,
+    zeroFee: boolean = true,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```rust [rust]
