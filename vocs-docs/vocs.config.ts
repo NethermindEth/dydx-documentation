@@ -41,6 +41,7 @@ export default defineConfig({
                 {
                     text: 'Trading',
                     link: '/interaction/trading',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Placing an order',
@@ -59,6 +60,7 @@ export default defineConfig({
                 {
                     text: 'Data',
                     link: '/interaction/data',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Account balance',
@@ -105,6 +107,7 @@ export default defineConfig({
                 {
                     text: 'MegaVault',
                     link: '/megavault',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Deposit',
@@ -119,6 +122,7 @@ export default defineConfig({
                 {
                     text: 'Permissioned Keys',
                     link: '/permissioned-keys',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Creating an authenticator',
