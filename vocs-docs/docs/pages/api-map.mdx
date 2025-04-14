@@ -3,7 +3,7 @@
 
 ## connect
 
-:::codeblock
+:::code-group
 
 ```python [python]
 @staticmethod
@@ -20,10 +20,9 @@ pub async fn connect(config: NodeConfig) -> Result<Self, Error>
 
 This method connect a node with a chain.
 
-
 ## deposit
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def deposit(
@@ -65,9 +64,11 @@ pub async fn deposit(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## withdraw
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def withdraw(
@@ -119,9 +120,11 @@ pub async fn withdraw(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## send_token
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def send_token(
@@ -135,7 +138,14 @@ async def send_token(
 ```
 
 ```typescript [typescript]
-sendTokenMessage(wallet: LocalWallet, amount: string, recipient: string): EncodeObject
+sync sendToken(
+    subaccount: SubaccountInfo,
+    recipient: string,
+    coinDenom: string,
+    quantums: string,
+    zeroFee: boolean = true,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```rust [rust]
@@ -157,9 +167,11 @@ pub async fn send_token_ibc(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## transfer
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def transfer(
@@ -200,10 +212,11 @@ pub async fn transfer(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
 
 ## place order
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def place_order(
@@ -260,9 +273,11 @@ pub async fn place_order(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## Cancel order
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def cancel_order(
@@ -321,9 +336,11 @@ pub async fn batch_cancel_orders(
     ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## Add authenticator
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def add_authenticator(
@@ -350,6 +367,8 @@ pub async fn add(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## Remove authenticator
 
 ```python [python]
@@ -372,9 +391,11 @@ pub async fn remove(
 ) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## Broadcast a transaction
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def broadcast(self, transaction: Tx, mode=BroadcastMode.BROADCAST_MODE_SYNC)
@@ -387,9 +408,11 @@ async def broadcast(self, transaction: Tx, mode=BroadcastMode.BROADCAST_MODE_SYN
 pub async fn broadcast_transaction(&mut self, tx_raw: tx::Raw) -> Result<TxHash, NodeError>
 ```
 
+:::
+
 ## Simulate a transaction
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def simulate(self, transaction: Tx)
@@ -409,9 +432,11 @@ async simulate(
 pub async fn simulate(&mut self, tx_raw: &tx::Raw) -> Result<GasInfo, NodeError>diploma
 ```
 
+:::
+
 ## Send a transaction
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def send(self, wallet: Wallet, transaction: Tx, mode=BroadcastMode.BROADCAST_MODE_SYNC)
@@ -433,9 +458,11 @@ async send(
 ```rust [rust]
 ```
 
+:::
+
 ## Send a message
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def send_message(self, wallet: Wallet, message: Message, mode=BroadcastMode.BROADCAST_MODE_SYNC)
@@ -447,9 +474,11 @@ async def send_message(self, wallet: Wallet, message: Message, mode=BroadcastMod
 ```rust [rust]
 ```
 
+:::
+
 ## Broadcast a message
 
-:::codeblock
+:::code-group
 
 ```python [python]
 async def broadcast_message(
@@ -466,3 +495,5 @@ async def broadcast_message(
 
 ```rust [rust]
 ```
+
+:::
