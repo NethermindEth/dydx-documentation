@@ -167,6 +167,104 @@ export default defineConfig({
                 },
             ],
         },
+        {
+            text: 'Architecture',
+            link: '/todo',
+            items: [
+                {
+                    text: 'Structure',
+                    link: '/todo',
+                    items: [
+                        {
+                            text: 'Validators (aka Nodes)',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Indexer',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Networks',
+                            link: '/todo',
+                        },
+                    ],
+                },
+                {
+                    text: 'Trading / Perpetual Contracts',
+                    link: '/todo',
+                    items: [
+                        {
+                            text: 'Accounts and Subaccounts',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Assets and Perpetuals',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Orders',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Margin',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Funding',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Price data',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Permissioned keys / Authenticators',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'MegaVault',
+                            link: '/todo',
+                        },
+                        {
+                            text: 'Markets',
+                            link: '/todo',
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            text: 'API: doc all methods',
+            link: '/todo',
+            items: [
+                {
+                    text: 'HTTP API',
+                    link: '/todo',
+                },
+                {
+                    text: 'WebSockets',
+                    link: '/todo',
+                },
+                {
+                    text: 'gRPC',
+                    link: '/todo',
+                },
+            ],
+        },
+        {
+            text: 'Policies',
+            link: '/todo',
+            items: [
+                {
+                    text: 'Security',
+                    link: '/todo',
+                },
+                {
+                    text: 'Terms of Service and Privacy',
+                    link: '/todo',
+                },
+            ],
+        },
         /*
         {
             text: 'Setup',
