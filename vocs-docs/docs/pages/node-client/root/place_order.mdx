@@ -15,11 +15,50 @@ pub async fn place_order(
 ```
 
 ```python [Python]
-
+async def place_order(
+    self,
+    wallet: Wallet,
+    order: Order,
+    tx_options: Optional[TxOptions] = None,
+)
 ```
 
 ```typescript [TypeScript]
-
+async placeOrder(
+    subaccount: SubaccountInfo,
+    marketId: string,
+    type: OrderType,
+    side: OrderSide,
+    price: number,
+    size: number,
+    clientId: number,
+    timeInForce?: OrderTimeInForce,
+    goodTilTimeInSeconds?: number,
+    execution?: OrderExecution,
+    postOnly?: boolean,
+    reduceOnly?: boolean,
+    triggerPrice?: number,
+    marketInfo?: MarketInfo,
+    currentHeight?: number,
+    goodTilBlock?: number,
+    memo?: string,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+async signPlaceOrder(
+    subaccount: SubaccountInfo,
+    marketId: string,
+    type: OrderType,
+    side: OrderSide,
+    price: number,
+    // trigger_price: number,   // not used for MARKET and LIMIT
+    size: number,
+    clientId: number,
+    timeInForce: OrderTimeInForce,
+    goodTilTimeInSeconds: number,
+    execution: OrderExecution,
+    postOnly: boolean,
+    reduceOnly: boolean,
+): Promise<string>
 ```
 
 ```url [API]

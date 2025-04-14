@@ -16,14 +16,38 @@ pub async fn cancel_order(
 ```
 
 ```python [Python]
-
+async def cancel_order(
+    self,
+    wallet: Wallet,
+    order_id: OrderId,
+    good_til_block: int = None,
+    good_til_block_time: int = None,
+    tx_options: Optional[TxOptions] = None,
+)
 ```
 
 ```typescript [TypeScript]
-
+async cancelOrder(
+    subaccount: SubaccountInfo,
+    clientId: number,
+    orderFlags: OrderFlags,
+    marketId: string,
+    goodTilBlock?: number,
+    goodTilTimeInSeconds?: number,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+async signCancelOrder(
+    subaccount: SubaccountInfo,
+    clientId: number,
+    orderFlags: OrderFlags,
+    clobPairId: number,
+    goodTilBlock: number,
+    goodTilBlockTime: number,
+): Promise<string>
 ```
 
 ```url [API]
+
 ```
 
 :::

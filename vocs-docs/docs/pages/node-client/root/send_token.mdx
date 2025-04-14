@@ -17,11 +17,25 @@ pub async fn send_token(
 ```
 
 ```python [Python]
-
+async def send_token(
+    self,
+    wallet: Wallet,
+    sender: str,
+    recipient: str,
+    quantums: int,
+    denomination: str,
+)
 ```
 
 ```typescript [TypeScript]
-
+async sendToken(
+    subaccount: SubaccountInfo,
+    recipient: string,
+    coinDenom: string,
+    quantums: string,
+    zeroFee: boolean = true,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```url [API]

@@ -14,11 +14,13 @@ pub async fn get_user_fee_tier(
 ```
 
 ```python [Python]
-
+async def get_user_fee_tier(
+    self, address: str
+) -> fee_tier_query.QueryUserFeeTierResponse
 ```
 
 ```typescript [TypeScript]
-
+async getUserFeeTier(address: string): Promise<FeeTierModule.QueryUserFeeTierResponse>
 ```
 
 ```url [API]

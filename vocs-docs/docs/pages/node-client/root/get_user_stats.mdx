@@ -14,11 +14,13 @@ pub async fn get_user_stats(
 ```
 
 ```python [Python]
-
+async def get_user_stats(self, address: str) -> stats_query.QueryUserStatsResponse
 ```
 
 ```typescript [TypeScript]
-
+async getUserStats(
+    address: string,
+): Promise<{ takerNotional: Long; makerNotional: Long } | undefined>
 ```
 
 ```url [API]

@@ -17,11 +17,32 @@ pub async fn transfer(
 ```
 
 ```python [Python]
-
+async def transfer(
+    self,
+    wallet: Wallet,
+    sender_subaccount: SubaccountId,
+    recipient_subaccount: SubaccountId,
+    asset_id: int,
+    amount: int,
+)
 ```
 
 ```typescript [TypeScript]
-
+async transferToSubaccount(
+    subaccount: SubaccountInfo,
+    recipientAddress: string,
+    recipientSubaccountNumber: number,
+    amount: string,
+    memo?: string,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+transferToSubaccountMessage(
+    subaccount: SubaccountInfo,
+    recipientAddress: string,
+    recipientSubaccountNumber: number,
+    amount: string,
+): EncodeObject
 ```
 
 ```url [API]

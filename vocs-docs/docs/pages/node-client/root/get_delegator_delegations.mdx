@@ -15,11 +15,15 @@ pub async fn get_delegator_delegations(
 ```
 
 ```python [Python]
-
+async def get_delegator_delegations(
+    self, delegator_addr: str
+) -> staking_query.QueryDelegatorDelegationsResponse    
 ```
 
 ```typescript [TypeScript]
-
+async getDelegatorDelegations(
+    delegatorAddr: string,
+): Promise<StakingModule.QueryDelegatorDelegationsResponse>
 ```
 
 ```url [API]

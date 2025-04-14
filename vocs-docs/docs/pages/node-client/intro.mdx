@@ -9,11 +9,12 @@ let node_client = NodeClient::connect(config);
 ```
 
 ```python [Python]
-
+@staticmethod
+async def connect(config: NodeConfig) -> Self
 ```
 
 ```typescript [TypeScript]
-
+static async connect(network: Network): Promise<CompositeClient>
 ```
 
 :::

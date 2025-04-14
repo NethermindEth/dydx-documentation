@@ -20,7 +20,13 @@ pub async fn create_market_permissionless(
 ```
 
 ```typescript [TypeScript]
-
+async createMarketPermissionless(
+    subaccount: SubaccountInfo,
+    ticker: string,
+    broadcastMode?: BroadcastMode,
+    gasAdjustment?: number,
+    memo?: string,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```url [API]
