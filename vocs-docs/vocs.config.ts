@@ -28,37 +28,37 @@ export default defineConfig({
         },
         {
             text: 'Interaction',
-            link: '/todo',
+            link: '/interaction',
             items: [
                 {
                     text: 'Wallet Setup',
-                    link: '/todo',
+                    link: '/interaction/wallet-setup',
                 },
                 {
                     text: 'Available clients',
-                    link: '/todo',
+                    link: '/interaction/clients',
                 },
                 {
                     text: 'Trading',
-                    link: '/todo',
+                    link: '/interaction/trading',
                     items: [
                         {
                             text: 'Placing an order',
-                            link: '/todo',
+                            link: '/interaction/trading/place-order',
                         },
                         {
                             text: 'Cancelling an order',
-                            link: '/todo',
+                            link: '/interaction/trading/cancel-order',
                         },
                     ],
                 },
                 {
                     text: 'Asset management',
-                    link: '/todo',
+                    link: '/interaction/asset-managenent',
                 },
                 {
                     text: 'Data',
-                    link: '/todo',
+                    link: '/interaction/data',
                     items: [
                         {
                             text: 'Account balance',
