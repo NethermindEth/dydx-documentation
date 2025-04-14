@@ -20,7 +20,9 @@ async def get_delayed_complete_bridge_messages(
 ```
 
 ```typescript [TypeScript]
-
+async getDelayedCompleteBridgeMessages(
+    address: string = '',
+): Promise<BridgeModule.QueryDelayedCompleteBridgeMessagesResponse>
 ```
 
 ```url [API]

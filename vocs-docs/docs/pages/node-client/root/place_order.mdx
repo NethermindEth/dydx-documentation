@@ -24,7 +24,41 @@ async def place_order(
 ```
 
 ```typescript [TypeScript]
-
+async placeOrder(
+    subaccount: SubaccountInfo,
+    marketId: string,
+    type: OrderType,
+    side: OrderSide,
+    price: number,
+    size: number,
+    clientId: number,
+    timeInForce?: OrderTimeInForce,
+    goodTilTimeInSeconds?: number,
+    execution?: OrderExecution,
+    postOnly?: boolean,
+    reduceOnly?: boolean,
+    triggerPrice?: number,
+    marketInfo?: MarketInfo,
+    currentHeight?: number,
+    goodTilBlock?: number,
+    memo?: string,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+async signPlaceOrder(
+    subaccount: SubaccountInfo,
+    marketId: string,
+    type: OrderType,
+    side: OrderSide,
+    price: number,
+    // trigger_price: number,   // not used for MARKET and LIMIT
+    size: number,
+    clientId: number,
+    timeInForce: OrderTimeInForce,
+    goodTilTimeInSeconds: number,
+    execution: OrderExecution,
+    postOnly: boolean,
+    reduceOnly: boolean,
+): Promise<string>
 ```
 
 ```url [API]

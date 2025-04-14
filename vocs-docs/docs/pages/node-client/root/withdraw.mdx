@@ -28,7 +28,32 @@ async def withdraw(
 ```
 
 ```typescript [TypeScript]
-
+async withdrawFromSubaccount(
+    subaccount: SubaccountInfo,
+    amount: string,
+    recipient?: string,
+    memo?: string,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+withdrawFromSubaccountMessage(
+    subaccount: SubaccountInfo,
+    amount: string,
+    recipient?: string,
+  ): EncodeObject
+ 
+async withdrawFromMegavault(
+    subaccount: SubaccountInfo,
+    shares: number,
+    minAmount: number,
+    broadcastMode?: BroadcastMode,
+  ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+ 
+withdrawFromMegavaultMessage(
+    subaccount: SubaccountInfo,
+    shares: number,
+    minAmount: number,
+): EncodeObject
 ```
 
 ```url [API]

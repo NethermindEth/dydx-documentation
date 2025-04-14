@@ -28,7 +28,21 @@ async def transfer(
 ```
 
 ```typescript [TypeScript]
-
+async transferToSubaccount(
+    subaccount: SubaccountInfo,
+    recipientAddress: string,
+    recipientSubaccountNumber: number,
+    amount: string,
+    memo?: string,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+transferToSubaccountMessage(
+    subaccount: SubaccountInfo,
+    recipientAddress: string,
+    recipientSubaccountNumber: number,
+    amount: string,
+): EncodeObject
 ```
 
 ```url [API]

@@ -20,7 +20,10 @@ async def get_subaccount(
 ```
 
 ```typescript [TypeScript]
-
+async getSubaccount(
+    address: string,
+    accountNumber: number,
+): Promise<SubaccountsModule.QuerySubaccountResponse>
 ```
 
 ```url [API]

@@ -28,7 +28,14 @@ async def send_token(
 ```
 
 ```typescript [TypeScript]
-
+async sendToken(
+    subaccount: SubaccountInfo,
+    recipient: string,
+    coinDenom: string,
+    quantums: string,
+    zeroFee: boolean = true,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
 ```url [API]

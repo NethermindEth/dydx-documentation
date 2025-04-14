@@ -20,7 +20,7 @@ async def get_all_validators(
 ```
 
 ```typescript [TypeScript]
-get validatorClient(): ValidatorClient
+async getAllValidators(status: string = ''): Promise<StakingModule.QueryValidatorsResponse>
 ```
 
 ```url [API]

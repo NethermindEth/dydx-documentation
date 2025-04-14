@@ -18,7 +18,16 @@ async def broadcast(self, transaction: Tx, mode=BroadcastMode.BROADCAST_MODE_SYN
 ```
 
 ```typescript [TypeScript]
+async broadcastTransaction(
+    tx: Uint8Array,
+    mode: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 
+broadcastTransactionAsync(tx: Uint8Array): Promise<BroadcastTxAsyncResponse>
+
+async broadcastTransactionSync(tx: Uint8Array): Promise<BroadcastTxSyncResponse>
+
+async broadcastTransactionCommit(tx: Uint8Array): Promise<IndexedTx>
 ```
 
 ```url [API]

@@ -21,7 +21,9 @@ async def get_delegator_delegations(
 ```
 
 ```typescript [TypeScript]
-
+async getDelegatorDelegations(
+    delegatorAddr: string,
+): Promise<StakingModule.QueryDelegatorDelegationsResponse>
 ```
 
 ```url [API]

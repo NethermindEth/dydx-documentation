@@ -18,7 +18,9 @@ async def get_user_stats(self, address: str) -> stats_query.QueryUserStatsRespon
 ```
 
 ```typescript [TypeScript]
-
+async getUserStats(
+    address: string,
+): Promise<{ takerNotional: Long; makerNotional: Long } | undefined>
 ```
 
 ```url [API]

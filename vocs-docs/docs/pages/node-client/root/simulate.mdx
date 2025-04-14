@@ -15,7 +15,13 @@ async def simulate(self, transaction: Tx)
 ```
 
 ```typescript [TypeScript]
-
+async simulate(
+    wallet: LocalWallet,
+    messaging: () => Promise<EncodeObject[]>,
+    gasPrice: GasPrice = this.getGasPrice(),
+    memo?: string,
+    account?: () => Promise<Account>,
+): Promise<StdFee>
 ```
 
 ```url [API]
