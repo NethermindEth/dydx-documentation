@@ -26,6 +26,7 @@ async getSubaccount(address: string, subaccountNumber: number): Promise<Data>
 ```
 
 ```url [API]
+/v4/addresses/{address}/subaccountNumber/{subaccount_number}
 ```
 
 :::
@@ -34,13 +35,14 @@ async getSubaccount(address: string, subaccountNumber: number): Promise<Data>
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address   | path     | [Address] |   true       |             |
+| subaccount_number | path | [SubaccountNumber]    | true  |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200    | [OK]    | Ok          | [SubaccountResponseObject] |
 
 #### Method Usage
 
@@ -60,5 +62,7 @@ let response = accounts.get_subaccount(&subaccount).await?;
 
 :::
 
-
-
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[SubaccountResponseObject]: /types/subaccount_response_object
