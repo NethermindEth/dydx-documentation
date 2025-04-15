@@ -22,6 +22,7 @@ pub async fn get_parent_asset_positions(
 ```
 
 ```url [API]
+/v4/assetPositions/parentSubaccountNumber
 ```
 
 :::
@@ -30,13 +31,14 @@ pub async fn get_parent_asset_positions(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | [Address] | true | |
+| parent_subaccount_number | param | uint32 | true | |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200 | [OK] | OK | List of [AssetPositionResponseObject] |
 
 #### Method Usage
 
@@ -56,5 +58,7 @@ let response_list = accounts.get_parent_asset_positions(&parent_subaccount).awai
 
 :::
 
-
+[Address]: /types/address
+[AssetPositionResponseObject]: /types/asset_position_response_object
+[OK]: /types/OK
 
