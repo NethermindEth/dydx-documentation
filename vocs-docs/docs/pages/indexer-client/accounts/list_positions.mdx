@@ -38,6 +38,7 @@ async getSubaccountPerpetualPositions(
 ```
 
 ```url [API]
+/v4/perpetualPositions
 ```
 
 :::
@@ -46,13 +47,18 @@ async getSubaccountPerpetualPositions(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | [Address] | true | |
+| subaccountNumber | param | [SubaccountNumber] | true | |
+| status | param | [PositionStatus] | false | |
+| limit | param | int | false | |
+| createdBeforeOrAtHeight | param | int | false | |
+| createdBeforeOrAt | param | int | false | |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200    | [OK]    | Ok          | [PerpetualPositionResponseObject] |
 
 #### Method Usage
 
@@ -78,5 +84,9 @@ let response_list = accounts.list_positions(&subaccount, Some(opts)).await?;
 
 :::
 
-
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[PositionStatus]: /types/position_status
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[PerpetualPositionResponseObject]: /types/perpetual_position_response_object
 

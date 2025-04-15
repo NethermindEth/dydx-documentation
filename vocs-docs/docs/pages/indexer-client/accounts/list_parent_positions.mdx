@@ -23,6 +23,7 @@ pub async fn list_parent_positions(
 ```
 
 ```url [API]
+/v4/perpetualPositions/parentSubaccountNumber
 ```
 
 :::
@@ -31,13 +32,14 @@ pub async fn list_parent_positions(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | [Address] | true | |
+| parent_subaccount_number | param | [ParentSubaccountNumber] | true | |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200 | [OK] | Ok | [PerpetualPositionResponseObject] |
 
 #### Method Usage
 
@@ -63,5 +65,7 @@ let response_list = accounts.list_parent_positions(&parent_subaccount, Some(opts
 
 :::
 
-
-
+[Address]: /types/address
+[ParentSubaccountNumber]: /types/parent_subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[PerpetualPositionResponseObject]: /types/perpetual_position_response_object

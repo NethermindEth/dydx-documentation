@@ -35,6 +35,7 @@ async getSubaccountOrders(
 ```
 
 ```url [API]
+/v4/orders
 ```
 
 :::
@@ -43,13 +44,21 @@ async getSubaccountOrders(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | string | true | |
+| subaccount_number | param | uint32 | true | |
+| limit | param | uint32 | false | |
+| ticker | param | [Ticker] | false | |
+| side | param | [OrderStatus] | false | |
+| order_type | param | [OrderType] | false | |
+| good_til_block_before_or_at | param | uint32 | false | |
+| return_latest_orders | param | bool | false | |
+
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200 | [OK] | OK | List of [OrderResponseObject] |
 
 #### Method Usage
 
@@ -79,5 +88,8 @@ let response = accounts.list_orders(&subaccount, Some(opts)).await?;
 
 :::
 
-
-
+[Ticker]: /types/ticker
+[OrderStatus]: /types/order_status
+[OrderType]: /types/order_type
+[OK]: /types/OK
+[OrderResponseObject]: /types/order_response_object

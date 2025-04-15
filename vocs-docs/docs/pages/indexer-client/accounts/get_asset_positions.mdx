@@ -37,6 +37,7 @@ async getSubaccountAssetPositions(
 ```
 
 ```url [API]
+/v4/assetPositions
 ```
 
 :::
@@ -45,13 +46,14 @@ async getSubaccountAssetPositions(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | [Address] | true | |
+| subaccount_number | param | [SubaccountNumber] | true | |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200   | [OK]  | OK    | List of [AssetPositionResponseObject] |
 
 #### Method Usage
 
@@ -70,3 +72,8 @@ let response_list = accounts.get_asset_positions(&subaccount).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[AssetPositionResponseObject]: /types/asset_position_response_object
