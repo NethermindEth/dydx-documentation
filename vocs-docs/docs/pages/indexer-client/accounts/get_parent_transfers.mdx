@@ -30,6 +30,7 @@ async getParentSubaccountNumberTransfers(
 ```
 
 ```url [API]
+/v4/transfers/parentSubaccountNumber
 ```
 
 :::
@@ -38,13 +39,17 @@ async getParentSubaccountNumberTransfers(
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| address | param | string | true | |
+| parent_subaccount_number | param | uint32 | |
+| limit | param | uint32 | |
+| created_before_or_at_height | param | uint32 | |
+| created_before_or_at | param | uint32 | |
 
 #### Response
 
 | Status | Meaning | Description | Schema |
 | ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| 200 | [OK] | OK | List of [TransferResponseObject] |
 
 #### Method Usage
 
@@ -69,5 +74,7 @@ let response = accounts.get_parent_transfers(&parent_subaccount, Some(opts)).awa
 
 :::
 
+[OK]: /types/OK
+[TransferResponseObject]: /types/transfer_response_object
 
 
