@@ -1,6 +1,8 @@
 ### Close Position
 
-// TODO: Add description
+Close position for a given market.
+
+Opposite short-term market orders are used. If provided, the position is only reduced by a size of reduce_by. Note that at the moment dYdX doesn’t support spot trading.
 
 #### Method Declaration
 
@@ -27,10 +29,6 @@ pub async fn close_position(
 
 ```url [API]
 ```
-
-Close position for a given market.
-
-Opposite short-term market orders are used. If provided, the position is only reduced by a size of reduce_by. Note that at the moment dYdX doesn’t support spot trading.
 
 :::
 
