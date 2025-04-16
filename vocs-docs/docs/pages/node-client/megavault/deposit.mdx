@@ -20,7 +20,13 @@ pub async fn deposit(
 ```
 
 ```typescript [TypeScript]
-
+async depositToMegavault(
+    subaccount: SubaccountInfo,
+    amountUsdc: number,
+    broadcastMode?: BroadcastMode,
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+ 
+depositToMegavaultMessage(subaccount: SubaccountInfo, amountUsdc: number): EncodeObject
 ```
 
 ```url [API]
