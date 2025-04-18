@@ -47,7 +47,9 @@ async getEquityTierLimitConfiguration(): Promise<ClobModule.QueryEquityTierLimit
 ```
 
 ```python [Python]
-
+network = Network.config_network()
+client = ValidatorClient(network.validator_config)
+config = client.get.equity_tier_limit_config()
 ```
 
 ```typescript [TypeScript]

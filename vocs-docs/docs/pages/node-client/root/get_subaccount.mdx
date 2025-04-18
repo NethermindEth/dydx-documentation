@@ -51,7 +51,12 @@ async getSubaccount(
 ```
 
 ```python [Python]
-
+client = IndexerClient(
+    config=Network.testnet().indexer_config,
+)
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
+address = subaccount.address
+subaccount_response = client.account.get_subaccount(address, 0)
 ```
 
 ```typescript [TypeScript]

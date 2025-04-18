@@ -63,7 +63,13 @@ async sendToken(
 ```
 
 ```python [Python]
-
+ response = await node_client.send_token(
+    wallet,
+    test_address,
+    recipient,
+    10000000,
+    "adv4tnt",
+)
 ```
 
 ```typescript [TypeScript]

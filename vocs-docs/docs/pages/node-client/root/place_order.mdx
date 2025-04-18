@@ -88,7 +88,25 @@ async signPlaceOrder(
 ```
 
 ```python [Python]
-
+network = Network.config_network()
+client = CompositeClient(
+    network,
+)
+tx = client.place_order(
+    subaccount,
+    market="ETH-USD",
+    type=type,
+    side=side,
+    price=price,
+    size=0.01,
+    client_id=randrange(0, 100000000),
+    time_in_force=time_in_force,
+    good_til_block=good_til_block,
+    good_til_time_in_seconds=time_in_force_seconds,
+    execution=OrderExecution.DEFAULT,
+    post_only=post_only,
+    reduce_only=False,
+)
 ```
 
 ```typescript [TypeScript]

@@ -71,7 +71,17 @@ async batchCancelShortTermOrdersWithClobPairId(
 ```
 
 ```python [Python]
+node = await NodeClient.connect(TESTNET.node)
+wallet = await Wallet.from_mnemonic(node, DYDX_TEST_MNEMONIC, TEST_ADDRESS)
+subaccount_id = SubaccountId(owner=TEST_ADDRESS, number=0)
+client_ids = []
+order_batch = OrderBatch(clob_pair_id=PERPETUAL_PAIR_BTC_USD, client_ids=client_ids)
+cancellation_current_block = await node.latest_block_height()
 
+# Execute batch cancel
+batch_cancel_response = await node.batch_cancel_orders(
+    wallet, subaccount_id, [order_batch], cancellation_current_block + 10
+)
 ```
 
 ```typescript [TypeScript]

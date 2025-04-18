@@ -43,7 +43,11 @@ async latestBlock(): Promise<Block>
 ```
 
 ```python [Python]
-
+ network = Network.config_network()
+client = CompositeClient(
+    network,
+)
+latest_block = client.validator_client.get.latest_block()
 ```
 
 ```typescript [TypeScript]

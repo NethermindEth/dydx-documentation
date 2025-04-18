@@ -51,7 +51,9 @@ async removeAuthenticator(
 ```
 
 ```python [Python]
-
+authenticators = await node.get_authenticators(wallet.address)
+auth_id = authenticators.account_authenticators[0].id
+response = await node.remove_authenticator(wallet, last_auth_id)
 ```
 
 ```typescript [TypeScript]

@@ -43,7 +43,9 @@ async getClobPair(pairId: number): Promise<ClobModule.QueryClobPairResponse>
 ```
 
 ```python [Python]
-
+network = Network.testnet()
+client = ValidatorClient(network.validator_config)
+clob_pair = client.get.clob_pair(1)
 ```
 
 ```typescript [TypeScript]
