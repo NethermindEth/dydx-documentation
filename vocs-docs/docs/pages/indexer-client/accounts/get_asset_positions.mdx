@@ -57,19 +57,19 @@ pub async fn get_asset_positions(
 
 #### Parameters
 
-| Parameter         | Location | Type               | Description                                                           |
-| ----------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| address           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| subaccount_number | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
 
 :::details[Optional]
 
-| Parameter                   | Location | Type                      | Description |
-| --------------------------- | -------- | ------------------------- | ----------- |
-| status                      | query    | [PerpetualPositionStatus] | Filter to retrieve positions with a specific status. If not provided, all positions will be returned regardless of status. |
-| limit                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| created_before_or_at_height | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
-| created_before_or_at        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+| Parameter                     | Location | Type                      | Description |
+| ----------------------------- | -------- | ------------------------- | ----------- |
+| `status`                      | query    | [PerpetualPositionStatus] | Filter to retrieve positions with a specific status. If not provided, all positions will be returned regardless of status. |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
 
 :::
 
@@ -79,7 +79,7 @@ A data structure containing the requested asset positions. Typically includes de
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| 200    | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
