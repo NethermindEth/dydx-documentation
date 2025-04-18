@@ -1,6 +1,6 @@
 ### Get Fills
 
-Retrieves fill records for a specific subaccount on the dYdX exchange.
+Retrieves fill records for a specific subaccount on the exchange.
 
 This function queries the dYdX indexer API to fetch fill data (executed orders)
 associated with a particular subaccount. The endpoint being called is `/v4/fills`.
@@ -9,14 +9,6 @@ A fill represents a trade that has been executed on the exchange.
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_fills(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<GetFillsOpts>,
-) -> Result<Vec<FillResponseObject>, Error>
-```
 
 ```python [Python]
 def get_subaccount_fills(
@@ -42,6 +34,14 @@ async getSubaccountFills(
     createdBeforeOrAt?: string | null,
     page?: number | null,
 ): Promise<Data>
+```
+
+```rust [Rust]
+pub async fn get_fills(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetFillsOpts>,
+) -> Result<Vec<FillResponseObject>, Error>
 ```
 
 ```url [API]
@@ -89,6 +89,14 @@ page
 
 :::code-group
 
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
+
 ```rust [Rust]
 let opts = GetFillsOpts {
     limit: Some(5),
@@ -98,14 +106,6 @@ let opts = GetFillsOpts {
     market_type: Some(MarketType::Perpetual),
 };
 let response = accounts.get_fills(&subaccount, Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
 ```
 
 :::
