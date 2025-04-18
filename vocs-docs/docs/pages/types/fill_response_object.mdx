@@ -1,0 +1,38 @@
+# FillResponseObject
+
+Represents the details of a trade fill, including size, price, market information, and metadata related to the order and subaccount.
+
+| Field                | Type                       | Description                               |
+|---------------------|----------------------------|--------------------------------------------|
+| `id`                | [FillId]                   | Unique identifier of the fill.             |
+| `side`              | [OrderSide]                | Side of the order: buy or sell.            |
+| `size`              | [BigDecimal]               | Quantity filled.                           |
+| `fee`               | [BigDecimal]               | Fee charged for the fill.                  |
+| `fill_type`         | [FillType]                 | Type of fill (e.g., maker or taker).       |
+| `liquidity`         | [Liquidity]                | Indicates whether the fill added or removed liquidity. |
+| `market`            | [Ticker]                   | Market ticker (e.g., `BTC-USD`).           |
+| `market_type`       | [MarketType]               | Type of market: `"SPOT"` or `"PERPETUAL"`. |
+| `price`             | [Price]                    | Price at which the order was filled.       |
+| `subaccount_number` | [SubaccountNumber]         | Subaccount that executed the trade.        |
+| `created_at_height` | [Height]                   | Block height at which the fill occurred.   |
+| `created_at`        | [DateTime]                 | Timestamp (UTC) when the fill occurred.    |
+| `client_metadata`   | [ClientMetadata]           | Optional metadata provided by the client.  |
+| `order_id`          | [OrderId]                  | Optional ID of the related order.          |
+
+:::details[Unification Plan]
+- Check the fields are really `market` and `market_type` (I guess yes since deserializer is strict)
+:::
+
+[FillId]: /types/fill_id
+[OrderSide]: /types/order_side
+[BigDecimal]: /types/big_decimal
+[FillType]: /types/fill_type
+[Liquidity]: /types/liquidity
+[Ticker]: /types/ticker
+[MarketType]: /types/market_type
+[Price]: /types/price
+[SubaccountNumber]: /types/subaccount_number
+[Height]: /types/height
+[DateTime]: /types/date_time
+[ClientMetadata]: /types/client_metadata
+[OrderId]: /types/order_id

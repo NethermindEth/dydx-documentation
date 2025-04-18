@@ -1,18 +1,14 @@
 ### Get Fills
 
-// TODO: Add description
+Retrieves fill records for a specific subaccount on the exchange.
+
+This function queries the dYdX indexer API to fetch fill data (executed orders)
+associated with a particular subaccount. The endpoint being called is `/v4/fills`.
+A fill represents a trade that has been executed on the exchange.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_fills(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<GetFillsOpts>,
-) -> Result<Vec<FillResponseObject>, Error>
-```
 
 ```python [Python]
 def get_subaccount_fills(
@@ -40,27 +36,67 @@ async getSubaccountFills(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_fills(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetFillsOpts>,
+) -> Result<Vec<FillResponseObject>, Error>
+```
+
 ```url [API]
 /v4/fills
 ```
 
 :::
 
+:::details[Unification Plan]
+- Rename all methods to `get_fills` - shorter is better.
+- Add a `Subaccount` pair to Python and JavaScript, since it's always a pair
+- Rename `created_before_or_at_time` parameter to `created_before_or_at`
+- `page` optional parameter is missing in Python
+- `page` optional parameter is missing in Rust
+- In Rust `market` field of the options struct must be `ticker`
+- In Rust `market_type` field of the options struct must be `ticker_type`
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
+
+:::details[Optional]
+| Parameter                     | Location | Type                      | Description |
+| ----------------------------- | -------- | ------------------------- | ----------- |
+| `ticker`                      | query    | [Ticker]                  | The market symbol to filter fills by (e.g., "BTC-USD"). If not provided, fills for all markets will be returned. |
+| `ticker_type`                 | query    | [MarketType]              | The type of market to filter by. |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+| `page`                        | query    | [u32]                     | The page number for paginated results. |
+:::
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+A promise that resolves to fill data containing details such as order ID, market, side (buy/sell), size, price, execution time, and other fill-specific information.
+
+| Status   | Meaning     | Schema                 |
+| -------- | ----------- | ---------------------- |
+| `200`    | [OK]        | [FillResponseObject] ⛁ |
 
 #### Method Usage
 
 :::code-group
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
 
 ```rust [Rust]
 let opts = GetFillsOpts {
@@ -73,15 +109,15 @@ let opts = GetFillsOpts {
 let response = accounts.get_fills(&subaccount, Some(opts)).await?;
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 :::
 
 
-
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[Ticker]: /types/ticker
+[MarketType]: /types/market_type
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime]: /types/date_time
+[FillResponseObject]: /types/fill_response_object
