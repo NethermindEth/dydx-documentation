@@ -1,17 +1,19 @@
 # AssetPositionResponseObject
 
-symbol: [Symbol]
 
-side: [PositionSide]
+A list of asset position objects represented with a struct.
 
-size: [Quantity]
+| Field             | Type               | Description                                         |
+| ----------------- | ------------------ | --------------------------------------------------- |
+| symbol            | [Symbol]           | The market symbol for the asset (e.g., "BTC-USD").  |
+| side              | [PositionSide]     | The position direction, either long or short.       |
+| size              | [Quantity]         | The size of the position in the asset's base units. |
+| subaccount_number | [SubaccountNumber] | The identifier for the subaccount that holds this position. |
+| asset_id          | [AssetId]          | The unique identifier for the asset. |
 
-subaccount_number: [SubaccountNumber]
-
-asset_id: [AssetId]
 
 [Symbol]: /types/symbol
 [PositionSide]: /types/position_side
 [Quantity]: /types/quantity
-[subaccountNumber]: /types/subaccount_number
+[SubaccountNumber]: /types/subaccount_number
 [AssetId]: /types/asset_id

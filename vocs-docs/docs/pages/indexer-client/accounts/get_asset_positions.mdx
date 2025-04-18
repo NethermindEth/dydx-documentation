@@ -1,17 +1,15 @@
 ### Get Asset Positions
 
-// TODO: Add description
+Retrieves asset positions for a specific subaccount on the dYdX exchange.
+
+This function queries the dYdX indexer API to fetch asset positions (including
+size, side, and other details) associated with a particular subaccount.
+
+The endpoint being called is `/v4/assetPositions`.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_asset_positions(
-    &self,
-    subaccount: &Subaccount,
-) -> Result<Vec<AssetPositionResponseObject>, Error>
-```
 
 ```python [Python]
 def get_subaccount_asset_positions(
@@ -36,32 +34,54 @@ async getSubaccountAssetPositions(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_asset_positions(
+    &self,
+    subaccount: &Subaccount,
+) -> Result<Vec<AssetPositionResponseObject>, Error>
+```
+
 ```url [API]
 /v4/assetPositions
 ```
 
 :::
 
+:::details[Unification Plan]
+- Rename all methods to `get_asset_positions`
+- Add a `Subaccount` pair to Python and JavaScript, since it's always a pair
+- Add options to the Rust version
+- Rename `created_before_or_at_time` parameter to `created_before_or_at`
+- Rename `PerpetualPositionStatus` to `PositionStatus`
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | [Address] | true | |
-| subaccount_number | param | [SubaccountNumber] | true | |
+| Parameter         | Location | Type               | Description                                                           |
+| ----------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| address           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| subaccount_number | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
+
+:::details[Optional]
+
+| Parameter                   | Location | Type                      | Description |
+| --------------------------- | -------- | ------------------------- | ----------- |
+| status                      | query    | [PerpetualPositionStatus] | Filter to retrieve positions with a specific status. If not provided, all positions will be returned regardless of status. |
+| limit                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| created_before_or_at_height | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| created_before_or_at        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+
+:::
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200   | [OK]  | OK    | List of [AssetPositionResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| 200    | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-let response_list = accounts.get_asset_positions(&subaccount).await?;
-```
 
 ```python [Python]
 
@@ -71,9 +91,17 @@ let response_list = accounts.get_asset_positions(&subaccount).await?;
 
 ```
 
+```rust [Rust]
+let response_list = accounts.get_asset_positions(&subaccount).await?;
+```
+
 :::
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [AssetPositionResponseObject]: /types/asset_position_response_object
+[PerpetualPositionStatus]: /types/perpetual_position_status
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime]: /types/date_time
