@@ -51,6 +51,8 @@ pub async fn get_asset_positions(
 - Rename all methods to `get_asset_positions`
 - Add a `Subaccount` pair to Python and JavaScript, since it's always a pair
 - Add options to the Rust version
+- Rename `created_before_or_at_time` parameter to `created_before_or_at`
+- Rename `PerpetualPositionStatus` to `PositionStatus`
 :::
 
 #### Parameters
@@ -62,10 +64,12 @@ pub async fn get_asset_positions(
 
 :::details[Optional]
 
-| Parameter         | Location | Type               | Description |
-| ----------------- | -------- | ------------------ | ----------- |
-| address           | query    | [Address]          |             |
-| subaccount_number | query    | [SubaccountNumber] |             |
+| Parameter                   | Location | Type                      | Description |
+| --------------------------- | -------- | ------------------------- | ----------- |
+| status                      | query    | [PerpetualPositionStatus] |             |
+| limit                       | query    | [u32]                     |             |
+| created_before_or_at_height | query    | [Height]                  |             |
+| created_before_or_at        | query    | [DateTime]                |             |
 
 :::
 
