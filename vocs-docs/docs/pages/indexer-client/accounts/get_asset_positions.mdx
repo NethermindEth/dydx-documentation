@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_asset_positions(
-    &self,
-    subaccount: &Subaccount,
-) -> Result<Vec<AssetPositionResponseObject>, Error>
-```
-
 ```python [Python]
 def get_subaccount_asset_positions(
     self,
@@ -36,18 +29,31 @@ async getSubaccountAssetPositions(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_asset_positions(
+    &self,
+    subaccount: &Subaccount,
+) -> Result<Vec<AssetPositionResponseObject>, Error>
+```
+
 ```url [API]
 /v4/assetPositions
 ```
 
 :::
 
+:::details[Unification Plan]
+- Rename all methods to `get_asset_positions`
+- Add a `Subaccount` pair to Python and JavaScript, since it's always a pair
+- Add options to the Rust version
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | [Address] | true | |
-| subaccount_number | param | [SubaccountNumber] | true | |
+| Parameter         | Location | Type               | Required  | Description |
+| ----------------- | -------- | ------------------ | --------- | ----------- |
+| address           | param    | [Address]          | true      |             |
+| subaccount_number | param    | [SubaccountNumber] | true      |             |
 
 #### Response
 
