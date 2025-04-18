@@ -1,18 +1,14 @@
 ### Get Historical Pnl
 
-// TODO: Add description
+Retrieves historical profit and loss (PNL) data for a specific subaccount on the exchange.
+
+This function queries the dYdX indexer API to fetch historical PNL records
+associated with a particular subaccount. The endpoint being called is '/v4/historical-pnl'.
+These records provide insights into the trading performance over time.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_historical_pnl(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<GetHistoricalPnlOpts>,
-) -> Result<Vec<PnlTicksResponseObject>, Error>
-```
 
 ```python [Python]
 def get_subaccount_historical_pnls(
@@ -37,6 +33,14 @@ async getSubaccountHistoricalPNLs(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_historical_pnl(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetHistoricalPnlOpts>,
+) -> Result<Vec<PnlTicksResponseObject>, Error>
+```
+
 ```url [API]
 /v4/historical-pnl
 ```
@@ -45,9 +49,15 @@ async getSubaccountHistoricalPNLs(
 
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
+
+:::details[Optional]
+| Parameter                     | Location | Type                      | Description |
+| ----------------------------- | -------- | ------------------------- | ----------- |
+:::
 
 #### Response
 
@@ -58,6 +68,14 @@ async getSubaccountHistoricalPNLs(
 #### Method Usage
 
 :::code-group
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
 
 ```rust [Rust]
 let opts = GetHistoricalPnlOpts {
@@ -70,15 +88,9 @@ let opts = GetHistoricalPnlOpts {
 let response = accounts.get_historical_pnl(&subaccount, Some(opts)).await?;
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 :::
 
 
-
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
