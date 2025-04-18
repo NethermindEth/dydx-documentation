@@ -56,7 +56,25 @@ async addAuthenticator(
 ```
 
 ```python [Python]
+node = await NodeClient.connect(TESTNET.node)
 
+wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC,
+    address=TEST_ADDRESS,
+)
+
+trader_wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC_2,
+    address=TEST_ADDRESS_2,
+)
+
+place_order_auth = Authenticator.signature_verification(
+    trader_wallet.public_key.key
+)
+
+response = await node.add_authenticator(wallet, place_order_auth)
 ```
 
 ```typescript [TypeScript]
