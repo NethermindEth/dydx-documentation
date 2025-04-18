@@ -66,18 +66,18 @@ pub async fn get_asset_positions(
 
 | Parameter                   | Location | Type                      | Description |
 | --------------------------- | -------- | ------------------------- | ----------- |
-| status                      | query    | [PerpetualPositionStatus] |             |
-| limit                       | query    | [u32]                     |             |
-| created_before_or_at_height | query    | [Height]                  |             |
-| created_before_or_at        | query    | [DateTime]                |             |
+| status                      | query    | [PerpetualPositionStatus] | Filter to retrieve positions with a specific status. If not provided, all positions will be returned regardless of status. |
+| limit                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| created_before_or_at_height | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| created_before_or_at        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
 
 :::
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200   | [OK]  | OK    | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning | Description | Schema                          |
+| ------ | ------- | ----------- | ------------------------------- |
+| 200    | [OK]    | OK          | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -104,3 +104,4 @@ let response_list = accounts.get_asset_positions(&subaccount).await?;
 [PerpetualPositionStatus]: /types/perpetual_position_status
 [u32]: /types/u32
 [Height]: /types/height
+[DateTime]: /types/date_time
