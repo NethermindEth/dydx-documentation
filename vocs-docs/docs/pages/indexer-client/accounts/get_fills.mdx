@@ -1,6 +1,10 @@
 ### Get Fills
 
-// TODO: Add description
+Retrieves fill records for a specific subaccount on the dYdX exchange.
+
+This function queries the dYdX indexer API to fetch fill data (executed orders)
+associated with a particular subaccount. The endpoint being called is `/v4/fills`.
+A fill represents a trade that has been executed on the exchange.
 
 #### Method Declaration
 
@@ -46,17 +50,30 @@ async getSubaccountFills(
 
 :::
 
+:::details[Unification Plan]
+- Rename all methods to `get_fills` - shorter is better.
+- Add a `Subaccount` pair to Python and JavaScript, since it's always a pair
+- Rename `created_before_or_at_time` parameter to `created_before_or_at`
+- `page` optional parameter is missing in Python
+- `page` optional parameter is missing in Rust
+- In Rust `market` field of the options struct must be `ticker`
+- In Rust `market_type` field of the options struct must be `ticker_type`
+:::
+
 #### Parameters
 
 | Parameter | Location | Type  | Required | Description |
 | --------- | -------- | ----- | -------- | ----------- |
 |           |          |       |          |             |
 
+:::details[Optional]
+:::
+
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                 |
+| ------ | ----------- | ---------------------- |
+| 200    | [OK]        | [FillResponseObject] ⛁ |
 
 #### Method Usage
 
