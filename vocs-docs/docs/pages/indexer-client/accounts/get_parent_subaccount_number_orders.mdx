@@ -1,4 +1,4 @@
-### Get Parent Subaccount Number Transfers
+### Get Parent Subaccount Number Orders
 
 TODO
 
@@ -11,13 +11,17 @@ TODO: Not available
 ```
 
 ```typescript [TypeScript]
-async getParentSubaccountNumberTransfers(
+async getParentSubaccountNumberOrders(
   address: string,
   parentSubaccountNumber: number,
+  ticker?: string | null,
+  side?: OrderSide | null,
+  status?: OrderStatus | null,
+  type?: OrderType | null,
   limit?: number | null,
-  createdBeforeOrAtHeight?: number | null,
-  createdBeforeOrAt?: string | null,
-  page?: number | null,
+  goodTilBlockBeforeOrAt?: number | null,
+  goodTilBlockTimeBeforeOrAt?: string | null,
+  returnLatestOrders?: boolean | null,
 ): Promise<Data>
 ```
 
@@ -26,7 +30,7 @@ TODO: Not available
 ```
 
 ```url [API]
-/v4/transfers/parentSubaccountNumber
+/v4/orders/parentSubaccountNumber
 ```
 
 :::

@@ -1,4 +1,4 @@
-### Get Parent Subaccount Number Transfers
+### Get Parent Subaccount Number Fills
 
 TODO
 
@@ -11,9 +11,11 @@ TODO: Not available
 ```
 
 ```typescript [TypeScript]
-async getParentSubaccountNumberTransfers(
+async getParentSubaccountNumberFills(
   address: string,
   parentSubaccountNumber: number,
+  ticker?: string | null,
+  tickerType: TickerType = TickerType.PERPETUAL,
   limit?: number | null,
   createdBeforeOrAtHeight?: number | null,
   createdBeforeOrAt?: string | null,
@@ -26,7 +28,7 @@ TODO: Not available
 ```
 
 ```url [API]
-/v4/transfers/parentSubaccountNumber
+/v4/fills/parentSubaccountNumber
 ```
 
 :::
