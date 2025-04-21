@@ -1,21 +1,30 @@
 ### Get Trades
 
+        """
+        Retrieves trades for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            starting_before_or_at_height (Optional[int]): The block height to start retrieving trades from.
+            limit (Optional[int]): The maximum number of trades to retrieve.
+
+        Returns:
+            dict: The trades data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-```
-
 ```python [Python]
-def get_perpetual_market_trades(
+async def get_perpetual_market_trades(
     self,
     market: str,
-    starting_before_or_at_height: int = None,
-    limit: int = None
-) -> Response
+    starting_before_or_at_height: Optional[int] = None,
+    limit: Optional[int] = None,
+) -> dict
 ```
 
 ```typescript [TypeScript]
@@ -26,6 +35,14 @@ async getPerpetualMarketTrades(
     limit?: number | null,
     page?: number | null,
 ): Promise<Data>
+```
+
+```rust [Rust]
+pub async fn get_trades(
+    &self,
+    ticker: &Ticker,
+    opts: Option<GetTradesOpts>,
+) -> Result<Vec<TradeResponseObject>, Error>
 ```
 
 ```url [API]

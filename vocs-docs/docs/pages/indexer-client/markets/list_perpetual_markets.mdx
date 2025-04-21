@@ -1,5 +1,15 @@
 ### List Perpetual Markets
 
+        """
+        Retrieves perpetual markets.
+
+        Args:
+            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
+
+        Returns:
+            dict: The perpetual markets data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,6 +17,10 @@
 :::code-group
 
 ```python [Python]
+async def get_perpetual_markets(
+    self,
+    market: Optional[str] = None,
+) -> dict
 
 ```
 

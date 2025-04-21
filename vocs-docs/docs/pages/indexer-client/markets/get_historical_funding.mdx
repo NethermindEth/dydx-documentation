@@ -1,5 +1,18 @@
 ### Get Historical Funding
 
+        """
+        Retrieves historical funding rates for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            effective_before_or_at (Optional[str]): The timestamp to retrieve funding rates effective before or at.
+            effective_before_or_at_height (Optional[int]): The block height to retrieve funding rates effective before or at.
+            limit (Optional[int]): The maximum number of funding rates to retrieve.
+
+        Returns:
+            dict: The historical funding rates data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,13 +20,13 @@
 :::code-group
 
 ```python [Python]
-def get_perpetual_market_funding(
+async def get_perpetual_market_historical_funding(
     self,
     market: str,
-    effective_before_or_at: str = None,
-    effective_before_or_at_height: int = None,
-    limit: int = None,
-) -> Response
+    effective_before_or_at: Optional[str] = None,
+    effective_before_or_at_height: Optional[int] = None,
+    limit: Optional[int] = None,
+) -> dict
 ```
 
 ```typescript [TypeScript]

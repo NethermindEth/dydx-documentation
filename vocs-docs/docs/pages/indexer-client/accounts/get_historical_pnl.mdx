@@ -1,5 +1,18 @@
 ### Get Historical Pnl
 
+        """
+        Retrieves historical PnLs for a specific subaccount.
+
+        Args:
+            address (str): The address.
+            subaccount_number (int): The subaccount number.
+            effective_before_or_at (Optional[str]): The timestamp filter for PnLs effective before or at.
+            effective_at_or_after (Optional[str]): The timestamp filter for PnLs effective at or after.
+
+        Returns:
+            Any: The historical PnLs data.
+        """
+
 Retrieves historical profit and loss (PNL) data for a specific subaccount on the exchange.
 
 This function queries the dYdX indexer API to fetch historical PNL records
@@ -11,13 +24,13 @@ These records provide insights into the trading performance over time.
 :::code-group
 
 ```python [Python]
-def get_subaccount_historical_pnls(
+async def get_subaccount_historical_pnls(
     self,
     address: str,
     subaccount_number: int,
-    effective_before_or_at: str = None,
-    effective_at_or_after: str = None,
-) -> Response
+    effective_before_or_at: Optional[str] = None,
+    effective_at_or_after: Optional[str] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]

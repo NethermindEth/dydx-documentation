@@ -1,5 +1,15 @@
 ### Get Screen
 
+        """
+        Screen an address to see if it is restricted.
+
+        Args:
+            address (str): The EVM or dYdX address to screen.
+
+        Returns:
+            Dict[str, bool]: A dictionary indicating whether the specified address is restricted.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,7 +17,7 @@
 :::code-group
 
 ```python [Python]
-def screen(self, address) -> Response
+async def screen(self, address: str) -> Dict[str, bool]:
 ```
 
 ```typescript [TypeScript]

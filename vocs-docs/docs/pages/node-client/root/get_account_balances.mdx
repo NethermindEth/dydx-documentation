@@ -1,5 +1,15 @@
 ### Get Account Balances
 
+        """
+        Retrieves all account balances for a given address.
+
+        Args:
+            address (str): The account address.
+
+        Returns:
+            bank_query.QueryAllBalancesResponse: The response containing all account balances.
+        """
+
 Query for [account balances] by address for all denominations.
 
 [account balances]: https://github.com/cosmos/cosmos-sdk/tree/main/x/bank#allbalances
@@ -10,7 +20,8 @@ Query for [account balances] by address for all denominations.
 
 ```python [Python]
 async def get_account_balances(
-        self, address: str
+        self,
+        address: str,
 ) -> bank_query.QueryAllBalancesResponse
 ```
 

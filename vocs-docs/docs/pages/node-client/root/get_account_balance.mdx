@@ -1,5 +1,16 @@
 ### Get Account Balance
 
+        """
+        Retrieves the account balance for a specific denomination.
+
+        Args:
+            address (str): The account address.
+            denom (str): The denomination of the balance.
+
+        Returns:
+            bank_query.QueryBalanceResponse: The response containing the account balance.
+        """
+
 Query for account [balance] by address for a given denomination.
 
 [balance]: https://github.com/cosmos/cosmos-sdk/tree/main/x/bank#balance
@@ -10,12 +21,17 @@ Query for account [balance] by address for a given denomination.
 
 ```python [Python]
 async def get_account_balance(
-    self, address: str, denom: str
+    self,
+    address: str,
+    denom: str,
 ) -> bank_query.QueryBalanceResponse
 ```
 
 ```typescript [TypeScript]
-async getAccountBalance(address: string, denom: string): Promise<Coin | undefined>
+async getAccountBalance(
+    address: string,
+    denom: string,
+): Promise<Coin | undefined>
 ```
 
 ```rust [Rust]

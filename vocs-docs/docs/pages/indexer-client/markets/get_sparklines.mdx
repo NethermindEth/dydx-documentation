@@ -1,5 +1,15 @@
 ### Get Sparklines
 
+        """
+        Retrieves sparkline data for perpetual markets.
+
+        Args:
+            period (str): The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS").
+
+        Returns:
+            dict: The sparkline data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,10 +17,9 @@
 :::code-group
 
 ```python [Python]
-def get_perpetual_markets_sparklines(
-    self,
-    period: str = 'ONE_DAY'
-) -> Response
+async def get_perpetual_market_sparklines(
+    self, period: str = TimePeriod.ONE_DAY
+) -> dict
 ```
 
 ```typescript [TypeScript]

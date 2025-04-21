@@ -1,5 +1,15 @@
 ### Get Order
 
+        """
+        Retrieves a specific order by its ID.
+
+        Args:
+            order_id (str): The order ID.
+
+        Returns:
+            Any: The order data.
+        """
+
 Retrieves detailed information about a specific order based on its unique identifier.
 
 This method allows clients to fetch the details of a particular order from the dYdX exchange by providing its order ID. The method sends a GET request to the `/v4/orders/{orderId}` endpoint and returns the order data.
@@ -9,14 +19,16 @@ This method allows clients to fetch the details of a particular order from the d
 :::code-group
 
 ```python [Python]
-def get_order(
+async def get_order(
     self,
-    order_id: str
-) -> Response
+    order_id: str,
+) -> Any
 ```
 
 ```typescript [TypeScript]
-async getOrder(orderId: string): Promise<Data>
+async getOrder(
+    orderId: string,
+): Promise<Data>
 ```
 
 ```rust [Rust]

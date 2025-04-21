@@ -1,5 +1,19 @@
 ### Get Rewards Aggregated
 
+        """
+        Retrieves aggregated historical trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            period (TradingRewardAggregationPeriod): The aggregation period.
+            limit (Optional[int]): The maximum number of aggregated rewards to retrieve.
+            starting_before_or_at (Optional[str]): The timestamp filter for rewards starting before or at.
+            starting_before_or_at_height (Optional[int]): The block height filter for rewards starting before or at.
+
+        Returns:
+            Any: The aggregated historical trading rewards data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,7 +21,14 @@
 :::code-group
 
 ```python [Python]
-
+async def get_historical_trading_rewards_aggregated(
+    self,
+    address: str,
+    period: TradingRewardAggregationPeriod = TradingRewardAggregationPeriod.DAILY,
+    limit: Optional[int] = None,
+    starting_before_or_at: Optional[str] = None,
+    starting_before_or_at_height: Optional[int] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]

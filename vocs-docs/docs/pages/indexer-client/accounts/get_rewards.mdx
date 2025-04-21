@@ -1,5 +1,16 @@
 ### Get Rewards
 
+        """
+        Retrieves historical block trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            limit (Optional[int]): The maximum number of rewards to retrieve.
+
+        Returns:
+            Any: The historical block trading rewards data.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,7 +18,11 @@
 :::code-group
 
 ```python [Python]
-
+async def get_historical_block_trading_rewards(
+    self,
+    address: str,
+    limit: Optional[int] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]

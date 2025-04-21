@@ -1,5 +1,20 @@
 ### Get Asset Positions
 
+        """
+        Retrieves asset positions for a specific subaccount.
+
+        Args:
+            address (str): The address.
+            subaccount_number (int): The subaccount number.
+            status (Optional[PositionStatus]): The position status filter.
+            limit (Optional[int]): The maximum number of positions to retrieve.
+            created_before_or_at_height (Optional[int]): The block height filter for positions created before or at.
+            created_before_or_at (Optional[str]): The timestamp filter for positions created before or at.
+
+        Returns:
+            Any: The asset positions data.
+        """
+
 Retrieves asset positions for a specific subaccount on the dYdX exchange.
 
 This function queries the dYdX indexer API to fetch asset positions (including

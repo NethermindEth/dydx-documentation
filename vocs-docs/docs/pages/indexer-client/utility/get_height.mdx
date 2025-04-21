@@ -1,5 +1,12 @@
 ### Get Height
 
+        """
+        Get the block height of the most recent block processed by the Indexer.
+
+        Returns:
+            Dict[str, str]: A dictionary containing the block height and time.
+        """
+
 // TODO: Add description
 
 #### Method Declaration
@@ -7,7 +14,7 @@
 :::code-group
 
 ```python [Python]
-def get_height(self) -> Response
+async def get_height(self) -> Dict[str, str]
 ```
 
 ```typescript [TypeScript]
