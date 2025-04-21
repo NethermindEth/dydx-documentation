@@ -1,21 +1,24 @@
 ### Get Subaccount
 
-// TODO: Add description
+Retrieves a specific subaccount associated with a given address and subaccount number. This method allows you to access detailed information about a single subaccount rather than retrieving all subaccounts for an address.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-def get_subaccount(
+async def get_subaccount(
     self,
     address: str,
     subaccount_number: int,
-) -> Response
+) -> Any
 ```
 
 ```typescript [TypeScript]
-async getSubaccount(address: string, subaccountNumber: number): Promise<Data>
+async getSubaccount(
+    address: string,
+    subaccountNumber: number,
+): Promise<Data>
 ```
 
 ```rust [Rust]
@@ -38,19 +41,14 @@ pub async fn get_subaccount(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `address`           | query    | [Address]          | The primary address to which the subaccount belongs. |
+| `subaccount_number` | query    | [SubaccountNumber] | The specific subaccount number to retrieve. |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [SubaccountResponseObject]      |
 
 #### Method Usage
 
