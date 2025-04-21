@@ -6,14 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn list_positions(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<ListPositionsOpts>,
-) -> Result<Vec<PerpetualPositionResponseObject>, Error>
-```
-
 ```python [Python]
 def get_subaccount_perpetual_positions(
     self,
@@ -37,28 +29,40 @@ async getSubaccountPerpetualPositions(
 ): Promise<Data> 
 ```
 
+```rust [Rust]
+pub async fn list_positions(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<ListPositionsOpts>,
+) -> Result<Vec<PerpetualPositionResponseObject>, Error>
+```
+
 ```url [API]
 /v4/perpetualPositions
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | [Address] | true | |
-| subaccountNumber | param | [SubaccountNumber] | true | |
-| status | param | [PositionStatus] | false | |
-| limit | param | int | false | |
-| createdBeforeOrAtHeight | param | int | false | |
-| createdBeforeOrAt | param | int | false | |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200    | [OK]    | Ok          | [PerpetualPositionResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

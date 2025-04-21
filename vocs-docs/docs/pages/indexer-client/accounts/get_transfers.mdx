@@ -6,14 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_transfers(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<GetTransfersOpts>,
-) -> Result<Vec<TransferResponseObject>, Error>
-```
-
 ```python [Python]
 def get_subaccount_transfers(
     self,
@@ -36,27 +28,40 @@ async getSubaccountTransfers(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_transfers(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetTransfersOpts>,
+) -> Result<Vec<TransferResponseObject>, Error>
+```
+
 ```url [API]
 /v4/transfers
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | string | true | |
-| subaccount_number | param | uint32 | true | |
-| limit | param | uint32 | false | |
-| created_before_or_at_height | param | uint32 | false | |
-| created_before_or_at | param | uint32 | false | |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200 | [OK] | OK | List of [TransferResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

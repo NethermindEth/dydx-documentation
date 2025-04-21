@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_subaccount(
-    &self,
-    subaccount: &Subaccount,
-) -> Result<SubaccountResponseObject, Error>
-```
-
 ```python [Python]
 def get_subaccount(
     self,
@@ -25,24 +18,39 @@ def get_subaccount(
 async getSubaccount(address: string, subaccountNumber: number): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_subaccount(
+    &self,
+    subaccount: &Subaccount,
+) -> Result<SubaccountResponseObject, Error>
+```
+
 ```url [API]
 /v4/addresses/{address}/subaccountNumber/{subaccount_number}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address   | path     | [Address] |   true       |             |
-| subaccount_number | path | [SubaccountNumber]    | true  |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200    | [OK]    | Ok          | [SubaccountResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

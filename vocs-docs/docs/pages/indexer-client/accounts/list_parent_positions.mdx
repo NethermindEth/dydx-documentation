@@ -6,14 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn list_parent_positions(
-    &self,
-    subaccount: &ParentSubaccount,
-    opts: Option<ListPositionsOpts>,
-) -> Result<Vec<PerpetualPositionResponseObject>, Error>
-```
-
 ```python [Python]
 
 ```
@@ -22,24 +14,40 @@ pub async fn list_parent_positions(
 
 ```
 
+```rust [Rust]
+pub async fn list_parent_positions(
+    &self,
+    subaccount: &ParentSubaccount,
+    opts: Option<ListPositionsOpts>,
+) -> Result<Vec<PerpetualPositionResponseObject>, Error>
+```
+
 ```url [API]
 /v4/perpetualPositions/parentSubaccountNumber
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | [Address] | true | |
-| parent_subaccount_number | param | [ParentSubaccountNumber] | true | |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200 | [OK] | Ok | [PerpetualPositionResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

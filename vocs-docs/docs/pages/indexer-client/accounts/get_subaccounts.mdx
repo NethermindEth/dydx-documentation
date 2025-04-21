@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_subaccounts(
-    &self,
-    address: &Address,
-) -> Result<AddressResponse, Error>
-```
-
 ```python [Python]
 def get_subaccounts(
     self,
@@ -25,23 +18,39 @@ def get_subaccounts(
 async getSubaccounts(address: string, limit?: number): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_subaccounts(
+    &self,
+    address: &Address,
+) -> Result<AddressResponse, Error>
+```
+
 ```url [API]
 /v4/addresses/{address}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type      | Required | Description |
-| --------- | -------- | --------- | -------- | ----------- |
-| address   | path     | [Address] | true     |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema            |
-| ------ | ------- | ----------- | ----------------- |
-| 200    | [OK]    | Ok          | [AddressResponse] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
