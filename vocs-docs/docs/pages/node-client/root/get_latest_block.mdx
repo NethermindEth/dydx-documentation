@@ -23,6 +23,27 @@ pub async fn get_latest_block(&mut self) -> Result<Block, Error>
 
 :::
 
+:::details[Unification Plan]
+:::
+
+#### Parameters
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+
 #### Method Usage
 
 :::code-group
@@ -48,4 +69,4 @@ const latestBlock = await client.get.latestBlock();
 Examples: [Python] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L36
-[Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L53 
+[Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L53

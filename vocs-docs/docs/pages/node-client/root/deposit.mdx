@@ -22,9 +22,9 @@ async depositToSubaccount(
     subaccount: SubaccountInfo,
     amount: string,
     memo?: string,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx> 
- 
- 
+): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+
+
 depositToSubaccountMessage(subaccount: SubaccountInfo, amount: string): EncodeObject
 ```
 
@@ -42,6 +42,27 @@ pub async fn deposit(
 ```
 
 :::
+
+:::details[Unification Plan]
+:::
+
+#### Parameters
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

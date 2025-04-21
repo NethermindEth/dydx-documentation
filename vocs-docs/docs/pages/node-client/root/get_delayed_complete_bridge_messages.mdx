@@ -9,7 +9,7 @@ Query for delayed bridge messages for the address.
 ```python [Python]
 async def get_delayed_complete_bridge_messages(
     self, address: str = ""
-) -> bridge_query.QueryDelayedCompleteBridgeMessagesResponse   
+) -> bridge_query.QueryDelayedCompleteBridgeMessagesResponse
 ```
 
 ```typescript [TypeScript]
@@ -29,6 +29,27 @@ pub async fn get_delayed_complete_bridge_messages(
 ```
 
 :::
+
+:::details[Unification Plan]
+:::
+
+#### Parameters
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

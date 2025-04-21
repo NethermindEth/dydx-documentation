@@ -11,7 +11,7 @@ Query for [all delegations] of a given delegator address.
 ```python [Python]
 async def get_delegator_delegations(
     self, delegator_addr: str
-) -> staking_query.QueryDelegatorDelegationsResponse    
+) -> staking_query.QueryDelegatorDelegationsResponse
 ```
 
 ```typescript [TypeScript]
@@ -32,6 +32,27 @@ pub async fn get_delegator_delegations(
 ```
 
 :::
+
+:::details[Unification Plan]
+:::
+
+#### Parameters
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
