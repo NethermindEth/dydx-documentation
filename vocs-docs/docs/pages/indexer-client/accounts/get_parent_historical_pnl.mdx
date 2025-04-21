@@ -6,14 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_parent_historical_pnl(
-    &self,
-    subaccount: &ParentSubaccount,
-    opts: Option<GetHistoricalPnlOpts>,
-) -> Result<Vec<PnlTicksResponseObject>, Error>
-```
-
 ```python [Python]
 
 ```
@@ -29,6 +21,14 @@ async getParentSubaccountNumberHistoricalPNLs(
     limit?: number | null,
     page?: number | null,
 ): Promise<Data>
+```
+
+```rust [Rust]
+pub async fn get_parent_historical_pnl(
+    &self,
+    subaccount: &ParentSubaccount,
+    opts: Option<GetHistoricalPnlOpts>,
+) -> Result<Vec<PnlTicksResponseObject>, Error>
 ```
 
 ```url [API]
