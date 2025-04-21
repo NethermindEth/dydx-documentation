@@ -1,5 +1,15 @@
 ### Get Delayed Complete Bridge Messages
 
+        """
+        Retrieves the delayed complete bridge messages for a given address.
+
+        Args:
+            address (str, optional): The address. Defaults to an empty string.
+
+        Returns:
+            bridge_query.QueryDelayedCompleteBridgeMessagesResponse: The response containing the delayed complete bridge messages.
+        """
+
 Query for delayed bridge messages for the address.
 
 #### Method Declaration
@@ -8,7 +18,8 @@ Query for delayed bridge messages for the address.
 
 ```python [Python]
 async def get_delayed_complete_bridge_messages(
-    self, address: str = ""
+    self,
+    address: str = "",
 ) -> bridge_query.QueryDelayedCompleteBridgeMessagesResponse
 ```
 

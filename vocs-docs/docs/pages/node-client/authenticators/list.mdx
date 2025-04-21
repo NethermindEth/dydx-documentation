@@ -8,12 +8,15 @@ List down added authenticators.
 
 ```python [Python]
 async def get_authenticators(
-    self, address: str
+    self,
+    address: str,
 ) -> accountplus_query.GetAuthenticatorsResponse
 ```
 
 ```typescript [TypeScript]
-async getAuthenticators(address: string): Promise<GetAuthenticatorsResponse>
+async getAuthenticators(
+    address: string,
+): Promise<GetAuthenticatorsResponse>
 ```
 
 ```rust [Rust]

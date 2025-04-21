@@ -1,5 +1,19 @@
 ### Batch Cancel Orders
 
+        """
+        Batch cancels orders for a subaccount.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            subaccount_id (SubaccountId): The subaccount ID for which to cancel orders.
+            short_term_cancels (List[OrderBatch]): List of OrderBatch objects containing the orders to cancel.
+            good_til_block (int): The last block the short term order cancellations can be executed at.
+            tx_options (TxOptions, optional): Options for transaction to support authenticators.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+
 Cancel a batch of short-terms [Orders].
 
 [Orders]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
@@ -20,19 +34,7 @@ async def batch_cancel_orders(
 ```
 
 ```typescript [TypeScript]
-async batchCancelShortTermOrdersWithMarketId(
-    subaccount: SubaccountInfo,
-    shortTermOrders: OrderBatchWithMarketId[],
-    goodTilBlock: number,
-    broadcastMode?: BroadcastMode,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-async batchCancelShortTermOrdersWithClobPairId(
-    subaccount: SubaccountInfo,
-    shortTermOrders: OrderBatch[],
-    goodTilBlock: number,
-    broadcastMode?: BroadcastMode,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+TODO: batchCancelShortTermOrders
 ```
 
 ```rust [Rust]

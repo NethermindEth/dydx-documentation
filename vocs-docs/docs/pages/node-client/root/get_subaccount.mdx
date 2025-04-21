@@ -1,5 +1,12 @@
 ### Get Subaccount
 
+        """
+        Retrieves all subaccounts.
+
+        Returns:
+            QuerySubaccountAllResponse: The response containing all subaccounts.
+        """
+
 Query for the subacccount.
 
 #### Method Declaration
@@ -8,7 +15,9 @@ Query for the subacccount.
 
 ```python [Python]
 async def get_subaccount(
-    self, address: str, account_number: int
+    self,
+    address: str,
+    account_number: int,
 ) -> Optional[subaccount_type.Subaccount]
 ```
 
@@ -27,8 +36,6 @@ pub async fn get_subaccount(
 ```
 
 ```url [API]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 1);
 ```
 
 :::
@@ -58,9 +65,6 @@ const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 1);
 
 :::code-group
 
-```rust [Rust]
-```
-
 ```python [Python]
 client = IndexerClient(
     config=Network.testnet().indexer_config,
@@ -71,7 +75,11 @@ subaccount_response = client.account.get_subaccount(address, 0)
 ```
 
 ```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 1);
+```
 
+```rust [Rust]
 ```
 
 :::

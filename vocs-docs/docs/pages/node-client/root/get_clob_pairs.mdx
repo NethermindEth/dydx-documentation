@@ -1,5 +1,12 @@
 ### Get Clob Pairs
 
+        """
+        Retrieves all CLOB pairs.
+
+        Returns:
+            QueryClobPairAllResponse: The response containing all CLOB pairs.
+        """
+
 Query for all orderbook pairs.
 
 #### Method Declaration
@@ -51,9 +58,6 @@ pub async fn get_clob_pairs(
 
 :::code-group
 
-```rust [Rust]
-```
-
 ```python [Python]
 network = Network.testnet()
 client = ValidatorClient(network.validator_config)
@@ -63,6 +67,9 @@ clob_pairs = client.get.clob_pairs()
 ```typescript [TypeScript]
 const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const clobpairs = await client.get.getAllClobPairs();
+```
+
+```rust [Rust]
 ```
 
 :::

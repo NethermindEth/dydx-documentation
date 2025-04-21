@@ -1,5 +1,19 @@
 ### Withdraw
 
+        """
+        Withdraws funds from a subaccount.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            sender_subaccount (SubaccountId): The sender subaccount ID.
+            recipient (str): The recipient address.
+            asset_id (int): The asset ID.
+            quantums (int): The amount of quantums to withdraw.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+
 Withdraw funds (USDC) from the subaccount to the address.
 
 #### Method Declaration
@@ -18,32 +32,7 @@ async def withdraw(
 ```
 
 ```typescript [TypeScript]
-async withdrawFromSubaccount(
-    subaccount: SubaccountInfo,
-    amount: string,
-    recipient?: string,
-    memo?: string,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-withdrawFromSubaccountMessage(
-    subaccount: SubaccountInfo,
-    amount: string,
-    recipient?: string,
-  ): EncodeObject
-
-async withdrawFromMegavault(
-    subaccount: SubaccountInfo,
-    shares: number,
-    minAmount: number,
-    broadcastMode?: BroadcastMode,
-  ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-
-withdrawFromMegavaultMessage(
-    subaccount: SubaccountInfo,
-    shares: number,
-    minAmount: number,
-): EncodeObject
+TODO: withdraw
 ```
 
 ```rust [Rust]

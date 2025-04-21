@@ -1,5 +1,12 @@
 ### Get Equity Tier Limit Config
 
+        """
+        Retrieves the equity tier limit configuration.
+
+        Returns:
+            equity_tier_limit_config_type.EquityTierLimitConfiguration: The equity tier limit configuration.
+        """
+
 Query for [EquityTierLimitConfiguration].
 
 [EquityTierLimitConfiguration]: /https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.EquityTierLimitConfiguration.html
@@ -9,7 +16,9 @@ Query for [EquityTierLimitConfiguration].
 :::code-group
 
 ```python [Python]
-def equity_tier_limit_config(self) -> equity_tier_limit_config_type.EquityTierLimitConfiguration
+async def get_equity_tier_limit_config(
+    self,
+) -> equity_tier_limit_config_type.EquityTierLimitConfiguration:
 ```
 
 ```typescript [TypeScript]

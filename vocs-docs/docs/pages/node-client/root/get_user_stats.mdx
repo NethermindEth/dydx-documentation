@@ -1,5 +1,15 @@
 ### Get User Stats
 
+        """
+        Retrieves the user stats for a given address.
+
+        Args:
+            address (str): The user address.
+
+        Returns:
+            stats_query.QueryUserStatsResponse: The response containing the user stats.
+        """
+
 Query for user stats (Maker and Taker positions).
 
 #### Method Declaration
@@ -7,7 +17,10 @@ Query for user stats (Maker and Taker positions).
 :::code-group
 
 ```python [Python]
-async def get_user_stats(self, address: str) -> stats_query.QueryUserStatsResponse
+async def get_user_stats(
+    self,
+    address: str,
+) -> stats_query.QueryUserStatsResponse
 ```
 
 ```typescript [TypeScript]

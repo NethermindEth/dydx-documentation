@@ -1,5 +1,17 @@
 ### Place Order
 
+        """
+        Places an order.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            order (Order): The order to place.
+            tx_options (TxOptions, optional): Options for transaction to support authenticators.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+
 Place [Order].
 
 [Order]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
@@ -37,22 +49,6 @@ async placeOrder(
     goodTilBlock?: number,
     memo?: string,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-async signPlaceOrder(
-    subaccount: SubaccountInfo,
-    marketId: string,
-    type: OrderType,
-    side: OrderSide,
-    price: number,
-    // trigger_price: number,   // not used for MARKET and LIMIT
-    size: number,
-    clientId: number,
-    timeInForce: OrderTimeInForce,
-    goodTilTimeInSeconds: number,
-    execution: OrderExecution,
-    postOnly: boolean,
-    reduceOnly: boolean,
-): Promise<string>
 ```
 
 ```rust [Rust]

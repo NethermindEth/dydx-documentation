@@ -1,5 +1,15 @@
 ### Get All Validators
 
+        """
+        Retrieves all validators with an optional status filter.
+
+        Args:
+            status (str, optional): The validator status filter. Defaults to an empty string.
+
+        Returns:
+            staking_query.QueryValidatorsResponse: The response containing all validators.
+        """
+
 Query for [all validators] that match the given status.
 
 [all validators]: https://github.com/cosmos/cosmos-sdk/tree/main/x/staking#validators-2
@@ -10,7 +20,8 @@ Query for [all validators] that match the given status.
 
 ```python [Python]
 async def get_all_validators(
-    self, status: str = ""
+    self,
+    status: str = "",
 ) -> staking_query.QueryValidatorsResponse
 ```
 

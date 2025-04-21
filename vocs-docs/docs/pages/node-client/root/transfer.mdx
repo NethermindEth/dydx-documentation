@@ -1,5 +1,19 @@
 ### Transfer
 
+        """
+        Transfers funds between subaccounts.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            sender_subaccount (SubaccountId): The sender subaccount ID.
+            recipient_subaccount (SubaccountId): The recipient subaccount ID.
+            asset_id (int): The asset ID.
+            amount (int): The amount to transfer.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+
 Transfer funds (USDC) between subaccounts.
 
 #### Method Declaration
@@ -18,21 +32,7 @@ async def transfer(
 ```
 
 ```typescript [TypeScript]
-async transferToSubaccount(
-    subaccount: SubaccountInfo,
-    recipientAddress: string,
-    recipientSubaccountNumber: number,
-    amount: string,
-    memo?: string,
-    broadcastMode?: BroadcastMode,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-transferToSubaccountMessage(
-    subaccount: SubaccountInfo,
-    recipientAddress: string,
-    recipientSubaccountNumber: number,
-    amount: string,
-): EncodeObject
+TODO: transfer
 ```
 
 ```rust [Rust]
