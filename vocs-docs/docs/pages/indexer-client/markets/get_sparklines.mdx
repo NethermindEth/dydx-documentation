@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_sparklines(
-    &self,
-    period: SparklineTimePeriod,
-) -> Result<SparklineResponseObject, Error>
-```
-
 ```python [Python]
 def get_perpetual_markets_sparklines(
     self,
@@ -24,23 +17,18 @@ def get_perpetual_markets_sparklines(
 async getPerpetualMarketSparklines(period: string = TimePeriod.ONE_DAY): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_sparklines(
+    &self,
+    period: SparklineTimePeriod,
+) -> Result<SparklineResponseObject, Error>
+```
+
 ```url [API]
 /v4/sparklines
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

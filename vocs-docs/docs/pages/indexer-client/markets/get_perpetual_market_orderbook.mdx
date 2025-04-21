@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_perpetual_market_orderbook(
-    &self,
-    ticker: &Ticker,
-) -> Result<OrderBookResponseObject, Error>
-```
-
 ```python [Python]
 def get_perpetual_market_orderbook(self, market: str) -> Response
 ```
@@ -21,23 +14,18 @@ def get_perpetual_market_orderbook(self, market: str) -> Response
 async getPerpetualMarketOrderbook(market: string): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_perpetual_market_orderbook(
+    &self,
+    ticker: &Ticker,
+) -> Result<OrderBookResponseObject, Error>
+```
+
 ```url [API]
 /v4/orderbooks/perpetualMarket/{ticker}
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

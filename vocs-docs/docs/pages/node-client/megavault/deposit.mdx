@@ -6,15 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn deposit(
-    &mut self,
-    account: &mut Account,
-    subaccount: Subaccount,
-    amount: impl Into<Usdc>,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 
 ```
@@ -29,22 +20,19 @@ async depositToMegavault(
 depositToMegavaultMessage(subaccount: SubaccountInfo, amountUsdc: number): EncodeObject
 ```
 
+```rust [Rust]
+pub async fn deposit(
+    &mut self,
+    account: &mut Account,
+    subaccount: Subaccount,
+    amount: impl Into<Usdc>,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

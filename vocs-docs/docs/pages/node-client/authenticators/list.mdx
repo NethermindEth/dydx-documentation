@@ -6,13 +6,6 @@ List down added authenticators.
 
 :::code-group
 
-```rust [Rust]
-pub async fn list(
-    &mut self,
-    address: Address,
-) -> Result<Vec<AccountAuthenticator>, Error>
-```
-
 ```python [Python]
 async def get_authenticators(
     self, address: str
@@ -23,23 +16,18 @@ async def get_authenticators(
 async getAuthenticators(address: string): Promise<GetAuthenticatorsResponse>
 ```
 
+```rust [Rust]
+pub async fn list(
+    &mut self,
+    address: Address,
+) -> Result<Vec<AccountAuthenticator>, Error>
+```
+
 ```url [API]
 
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

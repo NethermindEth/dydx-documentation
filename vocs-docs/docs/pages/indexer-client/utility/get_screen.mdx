@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_screen(
-    &self,
-    query: &Address,
-) -> Result<ComplianceResponse, Error>
-```
-
 ```python [Python]
 def screen(self, address) -> Response
 ```
@@ -21,23 +14,18 @@ def screen(self, address) -> Response
 async screen(address: string): Promise<ComplianceResponse>
 ```
 
+```rust [Rust]
+pub async fn get_screen(
+    &self,
+    query: &Address,
+) -> Result<ComplianceResponse, Error>
+```
+
 ```url [API]
 /v4/screen
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

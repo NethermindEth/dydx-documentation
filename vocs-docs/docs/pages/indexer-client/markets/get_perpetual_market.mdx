@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_perpetual_market(
-    &self,
-    ticker: &Ticker,
-) -> Result<PerpetualMarket, Error>
-```
-
 ```python [Python]
 def get_perpetual_markets(self, market: str = None) -> Response
 ```
@@ -21,23 +14,18 @@ def get_perpetual_markets(self, market: str = None) -> Response
 async getPerpetualMarkets(market?: string): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_perpetual_market(
+    &self,
+    ticker: &Ticker,
+) -> Result<PerpetualMarket, Error>
+```
+
 ```url [API]
 /v4/perpetualMarkets
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

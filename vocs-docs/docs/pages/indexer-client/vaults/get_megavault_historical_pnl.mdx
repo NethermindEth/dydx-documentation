@@ -6,13 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_megavault_historical_pnl(
-    &self,
-    resolution: PnlTickInterval,
-) -> Result<Vec<PnlTicksResponseObject>, Error>
-```
-
 ```python [Python]
 
 ```
@@ -21,23 +14,18 @@ pub async fn get_megavault_historical_pnl(
 async getMegavaultHistoricalPnl(resolution?: PnlTickInterval | null): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_megavault_historical_pnl(
+    &self,
+    resolution: PnlTickInterval,
+) -> Result<Vec<PnlTicksResponseObject>, Error>
+```
+
 ```url [API]
 /v4/vault/v1/megavault/historicalPnl
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

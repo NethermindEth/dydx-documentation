@@ -6,15 +6,6 @@ Add an authenticator.
 
 :::code-group
 
-```rust [Rust]
-pub async fn add(
-    &mut self,
-    account: &mut Account,
-    address: Address,
-    authenticator: Authenticator,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def add_authenticator(
     self,
@@ -31,22 +22,19 @@ async addAuthenticator(
 )
 ```
 
+```rust [Rust]
+pub async fn add(
+    &mut self,
+    account: &mut Account,
+    address: Address,
+    authenticator: Authenticator,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

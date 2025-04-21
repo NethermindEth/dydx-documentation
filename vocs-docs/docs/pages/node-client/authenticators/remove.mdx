@@ -6,15 +6,6 @@ Remove an added authenticator.
 
 :::code-group
 
-```rust [Rust]
-pub async fn remove(
-    &mut self,
-    account: &mut Account,
-    address: Address,
-    id: u64,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def remove_authenticator(self, wallet: Wallet, authenticator_id: int)
 ```
@@ -26,22 +17,19 @@ async removeAuthenticator(
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
+```rust [Rust]
+pub async fn remove(
+    &mut self,
+    account: &mut Account,
+    address: Address,
+    id: u64,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

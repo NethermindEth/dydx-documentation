@@ -6,14 +6,6 @@
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_historical_funding(
-    &self,
-    ticker: &Ticker,
-    opts: Option<GetHistoricalFundingOpts>,
-) -> Result<Vec<HistoricalFundingResponseObject>, Error>
-```
-
 ```python [Python]
 def get_perpetual_market_funding(
     self,
@@ -33,23 +25,19 @@ async getPerpetualMarketHistoricalFunding(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_historical_funding(
+    &self,
+    ticker: &Ticker,
+    opts: Option<GetHistoricalFundingOpts>,
+) -> Result<Vec<HistoricalFundingResponseObject>, Error>
+```
+
 ```url [API]
 /v4/historicalFunding/{ticker}
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 
