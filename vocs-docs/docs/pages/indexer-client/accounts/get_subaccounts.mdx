@@ -1,16 +1,5 @@
 ### Get Subaccounts
 
-        """
-        Retrieves subaccounts for the specified address.
-
-        Args:
-            address (str): The address.
-            limit (Optional[int]): The maximum number of subaccounts to retrieve.
-
-        Returns:
-            Any: The subaccounts data.
-        """
-
 Retrieves a list of subaccounts associated with a given address. Subaccounts are related addresses that fall under the authority or ownership of the primary address.
 
 #### Method Declaration
@@ -51,29 +40,25 @@ pub async fn get_subaccounts(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The primary address for which to retrieve associated subaccounts.     |
+| Parameter           | Location | Type               | Description                                                       |
+| ------------------- | -------- | ------------------ | ------------------------------------------------------------------|
+| `address`           | query    | [Address]          | The primary address for which to retrieve associated subaccounts. |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | The maximum number of subaccounts to return in the response. |
+| Parameter                     | Location | Type                      | Description                                    |
+| ----------------------------- | -------- | ------------------------- | ---------------------------------------------- |
+| `limit`                       | query    | [u32]                     | The maximum number of subaccounts to retrieve. |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AddressResponse] |
+| Status | Meaning     | Schema                          | Description           |
+| ------ | ----------- | ------------------------------- | --------------------- |
+| `200`  | [OK]        | [AddressResponse]               | The subaccounts data. |
 
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-let response = accounts.get_subaccounts(&address).await?;
-```
 
 ```python [Python]
 
@@ -83,7 +68,11 @@ let response = accounts.get_subaccounts(&address).await?;
 
 ```
 
-```bash [API]
+```rust [Rust]
+let response = accounts.get_subaccounts(&address).await?;
+```
+
+```curl [API]
 
 ```
 
