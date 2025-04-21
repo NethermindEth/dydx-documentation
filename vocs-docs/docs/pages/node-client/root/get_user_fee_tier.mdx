@@ -52,7 +52,8 @@ user_fee_tier = await node_client.get_user_fee_tier(test_address)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
 ```
 
 :::

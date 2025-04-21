@@ -52,7 +52,8 @@ stats = await node_client.get_user_stats(test_address)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const userStats = await client.get.getUserStats(DYDX_TEST_ADDRESS);
 ```
 
 :::

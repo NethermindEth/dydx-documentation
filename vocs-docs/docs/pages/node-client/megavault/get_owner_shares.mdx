@@ -18,7 +18,7 @@ pub async fn get_owner_shares(
 ```
 
 ```typescript [TypeScript]
-
+export async function getMegavaultOwnerShares(payload: string): Promise<string>
 ```
 
 ```url [API]
@@ -50,7 +50,8 @@ pub async fn get_owner_shares(
 ```
 
 ```typescript [TypeScript]
-
+const payload = `{ "address": "${DYDX_TEST_ADDRESS}" }`;
+const vaultOwnerShares = await getMegavaultOwnerShares(payload);
 ```
 
 :::

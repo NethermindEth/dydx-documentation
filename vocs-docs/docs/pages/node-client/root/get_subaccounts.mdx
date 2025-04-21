@@ -52,7 +52,8 @@ subaccount_response = client.account.get_subaccounts(address)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const subaccounts = await client.get.getSubaccounts();
 ```
 
 :::

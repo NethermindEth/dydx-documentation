@@ -49,7 +49,8 @@ clob_pair = client.get.clob_pair(1)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const clobpair = await client.get.getClobPair(1);
 ```
 
 :::

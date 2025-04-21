@@ -50,7 +50,8 @@ price = await node_client.get_prices()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const prices = await client.get.getAllPrices();
 ```
 
 :::

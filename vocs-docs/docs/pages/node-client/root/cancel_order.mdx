@@ -95,7 +95,14 @@ tx = client.cancel_order(
 ```
 
 ```typescript [TypeScript]
-
+await client.cancelOrder(
+    subaccount,
+    shortTermOrderClientId,
+    OrderFlags.SHORT_TERM,
+    'ETH-USD',
+    goodTilBlock + 10,
+    0,
+);
 ```
 
 :::

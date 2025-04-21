@@ -51,7 +51,8 @@ latest_block = client.validator_client.get.latest_block()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const latestBlock = await client.get.latestBlock();
 ```
 
 :::

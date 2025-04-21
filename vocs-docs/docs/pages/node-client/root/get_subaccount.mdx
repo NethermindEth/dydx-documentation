@@ -27,6 +27,8 @@ async getSubaccount(
 ```
 
 ```url [API]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 1);
 ```
 
 :::

@@ -73,7 +73,15 @@ async sendToken(
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const tx = await client.post.sendToken(
+    subaccount,
+    TEST_RECIPIENT_ADDRESS,
+    client.config.denoms.CHAINTOKEN_DENOM,
+    amountAfterFee.toString(),
+    false,
+    Method.BroadcastTxCommit,
+);
 ```
 
 :::

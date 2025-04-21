@@ -18,7 +18,9 @@ pub async fn get_withdrawal_info(
 ```
 
 ```typescript [TypeScript]
-
+async getMegavaultWithdrawalInfo(
+    sharesToWithdraw: bigint,
+): Promise<VaultModule.QueryMegavaultWithdrawalInfoResponse>
 ```
 
 ```url [API]

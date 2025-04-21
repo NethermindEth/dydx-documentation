@@ -53,7 +53,10 @@ authenticators = await node.get_authenticators(wallet.address)
 ```
 
 ```typescript [TypeScript]
-
+const network = Network.staging();
+const client = await CompositeClient.connect(network);
+const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const authenticators = await client.getAuthenticators(wallet.address!);
 ```
 
 :::

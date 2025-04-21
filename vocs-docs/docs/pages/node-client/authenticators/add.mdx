@@ -78,7 +78,11 @@ response = await node.add_authenticator(wallet, place_order_auth)
 ```
 
 ```typescript [TypeScript]
-
+const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const network = Network.staging();
+const client = await CompositeClient.connect(network);
+const subaccount = new SubaccountInfo(wallet, 0);
+await addAuthenticator(client, subaccount, wallet.pubKey!.value);
 ```
 
 :::

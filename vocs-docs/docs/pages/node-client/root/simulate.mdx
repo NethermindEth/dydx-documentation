@@ -61,7 +61,8 @@ simulation = await node.simulate(simulated_txs)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const totalFee = await client.post.simulate(subaccount.wallet, () => msgs, undefined, undefined);
 ```
 
 

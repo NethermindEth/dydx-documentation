@@ -53,7 +53,8 @@ config = client.get.equity_tier_limit_config()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const equityTierLimitConfiguration = await client.get.getEquityTierLimitConfiguration();
 ```
 
 :::

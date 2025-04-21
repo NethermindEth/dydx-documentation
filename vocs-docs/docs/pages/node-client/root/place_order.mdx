@@ -110,7 +110,28 @@ tx = client.place_order(
 ```
 
 ```typescript [TypeScript]
-
+const client = await CompositeClient.connect(network);
+const type = OrderType[orderParams.type as keyof typeof OrderType];
+const side = OrderSide[orderParams.side as keyof typeof OrderSide];
+const timeInForceString = orderParams.timeInForce ?? 'GTT';
+const timeInForce = OrderTimeInForce[timeInForceString as keyof typeof OrderTimeInForce];
+const price = orderParams.price ?? 1350;
+const timeInForceSeconds = timeInForce === OrderTimeInForce.GTT ? 60 : 0;
+const postOnly = orderParams.postOnly ?? false;
+const tx = await client.placeOrder(
+subaccount,
+'ETH-USD',
+type,
+side,
+price,
+0.01,
+randomInt(MAX_CLIENT_ID),
+timeInForce,
+timeInForceSeconds,
+OrderExecution.DEFAULT,
+postOnly,
+false,
+);
 ```
 
 :::

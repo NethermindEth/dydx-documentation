@@ -55,8 +55,12 @@ response = await node_client.get_account_balances(TEST_ADDRESS)
 ```
 
 ```typescript [TypeScript]
-
-```
+const client = new CompositeClient(network);
+wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const tx = await client.validatorClient.get.getAccountBalance(
+    wallet.address,
+    client.validatorClient.config.denoms.USDC_DENOM,
+);```
 
 :::
 

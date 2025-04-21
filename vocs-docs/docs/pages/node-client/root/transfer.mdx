@@ -82,7 +82,14 @@ tx = client.post.transfer(
 ```
 
 ```typescript [TypeScript]
-
+const client = new CompositeClient(network);
+const tx = await client.transferToSubaccount(
+    subaccount,
+    destinationAddress,
+    destinationSubaccountNumber,
+    parseFloat(amount).toFixed(6),
+    Method.BroadcastTxCommit,
+);
 ```
 
 :::

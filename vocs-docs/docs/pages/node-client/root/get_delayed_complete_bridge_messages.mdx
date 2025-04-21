@@ -54,7 +54,8 @@ bridge_messages = await node_client.get_delayed_complete_bridge_messages()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+await client.get.getDelayedCompleteBridgeMessages(DYDX_TEST_ADDRESS);
 ```
 
 :::

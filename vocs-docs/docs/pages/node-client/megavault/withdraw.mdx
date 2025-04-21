@@ -21,7 +21,11 @@ pub async fn withdraw(
 ```
 
 ```typescript [TypeScript]
-
+export async function withdrawFromMegavault(
+  subaccountNumber: number,
+  shares: number,
+  minAmount: number,
+): Promise<string>
 ```
 
 ```url [API]
@@ -53,7 +57,7 @@ pub async fn withdraw(
 ```
 
 ```typescript [TypeScript]
-
+const withdrawResult = await withdrawFromMegavault(0, 1, 0);
 ```
 
 :::

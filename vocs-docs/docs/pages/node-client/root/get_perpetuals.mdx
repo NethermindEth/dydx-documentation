@@ -50,7 +50,8 @@ perpetuals = await node_client.get_perpetuals()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const perpetuals = await client.get.getAllPerpetuals();
 ```
 
 :::
