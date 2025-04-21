@@ -53,11 +53,12 @@ async getDelegatorDelegations(
 ```
 
 ```python [Python]
-
+delegations = await node_client.get_delegator_delegations(TEST_ADDRESS)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const delegations = await client.get.getDelegatorDelegations(DYDX_TEST_ADDRESS);
 ```
 
 :::

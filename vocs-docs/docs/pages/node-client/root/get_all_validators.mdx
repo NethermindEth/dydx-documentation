@@ -50,11 +50,12 @@ async getAllValidators(status: string = ''): Promise<StakingModule.QueryValidato
 ```
 
 ```python [Python]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+validators = await node_client.get_all_validators()
 ```
 
 ```typescript [TypeScript]
-
+const getAllBondedValidators = await client.get.getAllValidators('BOND_STATUS_BONDED');
 ```
 
 :::

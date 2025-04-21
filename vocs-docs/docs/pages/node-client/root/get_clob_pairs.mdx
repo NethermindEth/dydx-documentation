@@ -46,11 +46,14 @@ async getAllClobPairs(): Promise<ClobModule.QueryClobPairAllResponse>
 ```
 
 ```python [Python]
-
+network = Network.testnet()
+client = ValidatorClient(network.validator_config)
+clob_pairs = client.get.clob_pairs()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const clobpairs = await client.get.getAllClobPairs();
 ```
 
 :::

@@ -48,11 +48,12 @@ async getAccount(address: string): Promise<Account>
 ```
 
 ```python [Python]
-
+account = await node_client.get_account(TEST_ADDRESS)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const account = await client.get.getAccount(DYDX_TEST_ADDRESS);
 ```
 
 :::

@@ -50,11 +50,12 @@ async getAccountBalances(address: string): Promise<Coin[]>
 ```
 
 ```python [Python]
-
+result = await node_client.get_account_balances(test_address)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const coins = await client.get.getAccountBalances(DYDX_TEST_ADDRESS);
 ```
 
 :::

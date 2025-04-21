@@ -46,11 +46,12 @@ async getPerpetual(perpetualId: number): Promise<PerpetualsModule.QueryPerpetual
 ```
 
 ```python [Python]
-
+perpetual = await node_client.get_perpetual(1)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const perpetual = await client.get.getPerpetual(1);
 ```
 
 :::

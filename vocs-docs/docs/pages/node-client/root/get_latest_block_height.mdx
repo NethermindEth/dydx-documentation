@@ -43,11 +43,12 @@ async latestBlockHeight(): Promise<number>
 ```
 
 ```python [Python]
-
+height = await node_client.latest_block_height()
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const height = await client.get.latestBlockHeight();
 ```
 
 :::

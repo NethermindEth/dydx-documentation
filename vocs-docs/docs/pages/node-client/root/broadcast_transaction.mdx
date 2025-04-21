@@ -55,7 +55,11 @@ async broadcastTransactionCommit(tx: Uint8Array): Promise<IndexedTx>
 ```
 
 ```python [Python]
-
+fee = node.calculate_fee(simulation.gas_info.gas_used)
+withdraw_tx = partial(withdraw, subaccount(TEST_ADDRESS, 0), TEST_ADDRESS, 0)
+final_withdraw_tx = withdraw_tx(amount - fee.amount[0].amount)
+final_txs = node.build(wallet, final_withdraw_tx, fee)
+response = await node.broadcast(final_txs)
 ```
 
 ```typescript [TypeScript]

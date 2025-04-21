@@ -49,11 +49,20 @@ async simulate(
 ```
 
 ```python [Python]
+node = await NodeClient.connect(TESTNET.node)
 
+wallet = await Wallet.from_mnemonic(node, DYDX_TEST_MNEMONIC, TEST_ADDRESS)
+
+withdraw_tx = partial(withdraw, subaccount(TEST_ADDRESS, 0), TEST_ADDRESS, 0)
+amount = 100_000_000
+
+simulated_txs = node.builder.build(wallet, withdraw_tx(amount))
+simulation = await node.simulate(simulated_txs)
 ```
 
 ```typescript [TypeScript]
-
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const totalFee = await client.post.simulate(subaccount.wallet, () => msgs, undefined, undefined);
 ```
 
 
