@@ -1,18 +1,10 @@
 ### Get Order
 
-        """
-        Retrieves a specific order by its ID.
-
-        Args:
-            order_id (str): The order ID.
-
-        Returns:
-            Any: The order data.
-        """
-
 Retrieves detailed information about a specific order based on its unique identifier.
 
-This method allows clients to fetch the details of a particular order from the dYdX exchange by providing its order ID. The method sends a GET request to the `/v4/orders/{orderId}` endpoint and returns the order data.
+This method allows clients to fetch the details of a particular order from the exchange by providing its order ID.
+
+The method sends a GET request to the `/v4/orders/{orderId}` endpoint and returns the order data.
 
 #### Method Declaration
 
@@ -49,32 +41,26 @@ pub async fn get_order(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter     | Location | Type                      | Description   |
+| ------------- | -------- | ------------------------- | ------------- |
+| `order_id`    | query    | [OrderId]                 | The order ID. |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                  | Description     |
+| ------ | ----------- | ----------------------- | --------------- |
+| `200`  | [OK]        | [OrderResponseObject] ⛁ | The order data. |
 
 #### Method Usage
 
 :::code-group
 
 ```python [Python]
-
+TODO
 ```
 
 ```typescript [TypeScript]
-
+TODO
 ```
 
 ```rust [Rust]
@@ -83,5 +69,5 @@ let response = accounts.get_order(&order_id).await?;
 
 :::
 
-
-
+[OrderId]: /types/order_id
+[OrderResponseObject]: /types/order_response_object
