@@ -1,25 +1,10 @@
 ### Get Fills
 
-        """
-        Retrieves fills for a specific subaccount.
-
-        Args:
-            address (str): The address.
-            subaccount_number (int): The subaccount number.
-            ticker (Optional[str]): The ticker filter.
-            ticker_type (TickerType): The ticker type filter.
-            limit (Optional[int]): The maximum number of fills to retrieve.
-            created_before_or_at_height (Optional[int]): The block height filter for fills created before or at.
-            created_before_or_at (Optional[str]): The timestamp filter for fills created before or at.
-
-        Returns:
-            Any: The fills data.
-        """
-
 Retrieves fill records for a specific subaccount on the exchange.
 
 This function queries the dYdX indexer API to fetch fill data (executed orders)
 associated with a particular subaccount. The endpoint being called is `/v4/fills`.
+
 A fill represents a trade that has been executed on the exchange.
 
 #### Method Declaration
@@ -98,20 +83,20 @@ pub async fn get_fills(
 
 A promise that resolves to fill data containing details such as order ID, market, side (buy/sell), size, price, execution time, and other fill-specific information.
 
-| Status   | Meaning     | Schema                 |
-| -------- | ----------- | ---------------------- |
-| `200`    | [OK]        | [FillResponseObject] ⛁ |
+| Status   | Meaning     | Schema                 | Description     |
+| -------- | ----------- | ---------------------- | --------------- |
+| `200`    | [OK]        | [FillResponseObject] ⛁ | The fills data. |
 
 #### Method Usage
 
 :::code-group
 
 ```python [Python]
-
+TODO
 ```
 
 ```typescript [TypeScript]
-
+TODO
 ```
 
 ```rust [Rust]
