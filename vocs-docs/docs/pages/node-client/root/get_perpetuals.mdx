@@ -1,17 +1,19 @@
 ### Get Perpetuals
 
+:::details[TODO: Check]
+        """
+        Retrieves all perpetuals.
+
+        Returns:
+            QueryAllPerpetualsResponse: The response containing all perpetuals.
+        """
+:::
+
 Query for all perpetuals.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_perpetuals(
-    &mut self,
-    pagination: Option<V4PageRequest>,
-) -> Result<Vec<Perpetual>, Error>
-```
 
 ```python [Python]
 async def get_perpetuals(self) -> QueryAllPerpetualsResponse
@@ -21,22 +23,38 @@ async def get_perpetuals(self) -> QueryAllPerpetualsResponse
 async getAllPerpetuals(): Promise<PerpetualsModule.QueryAllPerpetualsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_perpetuals(
+    &mut self,
+    pagination: Option<V4PageRequest>,
+) -> Result<Vec<Perpetual>, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

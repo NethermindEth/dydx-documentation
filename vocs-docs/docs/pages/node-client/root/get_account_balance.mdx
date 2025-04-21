@@ -1,5 +1,18 @@
 ### Get Account Balance
 
+:::details[TODO: Check]
+        """
+        Retrieves the account balance for a specific denomination.
+
+        Args:
+            address (str): The account address.
+            denom (str): The denomination of the balance.
+
+        Returns:
+            bank_query.QueryBalanceResponse: The response containing the account balance.
+        """
+:::
+
 Query for account [balance] by address for a given denomination.
 
 [balance]: https://github.com/cosmos/cosmos-sdk/tree/main/x/bank#balance
@@ -7,6 +20,21 @@ Query for account [balance] by address for a given denomination.
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_account_balance(
+    self,
+    address: str,
+    denom: str,
+) -> bank_query.QueryBalanceResponse
+```
+
+```typescript [TypeScript]
+async getAccountBalance(
+    address: string,
+    denom: string,
+): Promise<Coin | undefined>
+```
 
 ```rust [Rust]
 pub async fn get_account_balance(
@@ -16,32 +44,31 @@ pub async fn get_account_balance(
 ) -> Result<Coin, Error>
 ```
 
-```python [Python]
-async def get_account_balance(
-    self, address: str, denom: str
-) -> bank_query.QueryBalanceResponse
-```
-
-```typescript [TypeScript]
-async getAccountBalance(address: string, denom: string): Promise<Coin | undefined>
-```
-
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

@@ -1,5 +1,21 @@
 ### Batch Cancel Orders
 
+:::details[TODO: Check]
+        """
+        Batch cancels orders for a subaccount.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            subaccount_id (SubaccountId): The subaccount ID for which to cancel orders.
+            short_term_cancels (List[OrderBatch]): List of OrderBatch objects containing the orders to cancel.
+            good_til_block (int): The last block the short term order cancellations can be executed at.
+            tx_options (TxOptions, optional): Options for transaction to support authenticators.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+:::
+
 Cancel a batch of short-terms [Orders].
 
 [Orders]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
@@ -7,16 +23,6 @@ Cancel a batch of short-terms [Orders].
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn batch_cancel_orders(
-    &mut self,
-    account: &mut Account,
-    subaccount: Subaccount,
-    short_term_cancels: Vec<OrderBatch>,
-    until_block: Height,
-) -> Result<TxHash, NodeError>
-```
 
 ```python [Python]
 async def batch_cancel_orders(
@@ -30,19 +36,17 @@ async def batch_cancel_orders(
 ```
 
 ```typescript [TypeScript]
-async batchCancelShortTermOrdersWithMarketId(
-    subaccount: SubaccountInfo,
-    shortTermOrders: OrderBatchWithMarketId[],
-    goodTilBlock: number,
-    broadcastMode?: BroadcastMode,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+TODO: batchCancelShortTermOrders
+```
 
-async batchCancelShortTermOrdersWithClobPairId(
-    subaccount: SubaccountInfo,
-    shortTermOrders: OrderBatch[],
-    goodTilBlock: number,
-    broadcastMode?: BroadcastMode,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
+```rust [Rust]
+pub async fn batch_cancel_orders(
+    &mut self,
+    account: &mut Account,
+    subaccount: Subaccount,
+    short_term_cancels: Vec<OrderBatch>,
+    until_block: Height,
+) -> Result<TxHash, NodeError>
 ```
 
 ```url [API]
@@ -50,18 +54,26 @@ async batchCancelShortTermOrdersWithClobPairId(
 
 :::
 
+:::details[Unification Plan]
+:::
 
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

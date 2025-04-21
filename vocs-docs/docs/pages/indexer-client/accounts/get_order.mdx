@@ -1,10 +1,27 @@
 ### Get Order
 
-// TODO: Add description
+Retrieves detailed information about a specific order based on its unique identifier.
+
+This method allows clients to fetch the details of a particular order from the exchange by providing its order ID.
+
+The method sends a GET request to the `/v4/orders/{orderId}` endpoint and returns the order data.
 
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_order(
+    self,
+    order_id: str,
+) -> Any
+```
+
+```typescript [TypeScript]
+async getOrder(
+    orderId: string,
+): Promise<Data>
+```
 
 ```rust [Rust]
 pub async fn get_order(
@@ -13,52 +30,44 @@ pub async fn get_order(
 ) -> Result<OrderResponseObject, Error>
 ```
 
-```python [Python]
-def get_order(
-    self,
-    order_id: str
-) -> Response
-```
-
-```typescript [TypeScript]
-async getOrder(orderId: string): Promise<Data>
-```
-
 ```url [API]
 /v4/orders/{order_id}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter     | Location | Type                      | Description   |
+| ------------- | -------- | ------------------------- | ------------- |
+| `order_id`    | query    | [OrderId]                 | The order ID. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                  | Description     |
+| ------ | ----------- | ----------------------- | --------------- |
+| `200`  | [OK]        | [OrderResponseObject] ⛁ | The order data. |
 
 #### Method Usage
 
 :::code-group
 
+```python [Python]
+TODO
+```
+
+```typescript [TypeScript]
+TODO
+```
+
 ```rust [Rust]
 let response = accounts.get_order(&order_id).await?;
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 :::
 
-
-
+[OrderId]: /types/order_id
+[OrderResponseObject]: /types/order_response_object

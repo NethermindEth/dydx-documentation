@@ -1,17 +1,22 @@
 ### Get User Fee Tier
 
+:::details[TODO: Check]
+        """
+        Retrieves the user fee tier for a given address.
+
+        Args:
+            address (str): The user address.
+
+        Returns:
+            fee_tier_query.QueryUserFeeTierResponse: The response containing the user fee tier.
+        """
+:::
+
 Query for perpetual fee tier for the address.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_user_fee_tier(
-    &mut self,
-    address: Address,
-) -> Result<PerpetualFeeTier, Error>
-```
 
 ```python [Python]
 async def get_user_fee_tier(
@@ -23,22 +28,38 @@ async def get_user_fee_tier(
 async getUserFeeTier(address: string): Promise<FeeTierModule.QueryUserFeeTierResponse>
 ```
 
+```rust [Rust]
+pub async fn get_user_fee_tier(
+    &mut self,
+    address: Address,
+) -> Result<PerpetualFeeTier, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

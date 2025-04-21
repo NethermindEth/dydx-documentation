@@ -1,17 +1,19 @@
 ### Get Prices
 
+:::details[TODO: Check]
+        """
+        Retrieves all market prices.
+
+        Returns:
+            QueryAllMarketPricesResponse: The response containing all market prices.
+        """
+:::
+
 Query for all markets prices.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_prices(
-    &mut self,
-    pagination: Option<V4PageRequest>,
-) -> Result<Vec<MarketPrice>, Error>
-```
 
 ```python [Python]
 async def get_prices(self) -> QueryAllMarketPricesResponse
@@ -21,22 +23,38 @@ async def get_prices(self) -> QueryAllMarketPricesResponse
 async getAllPrices(): Promise<PricesModule.QueryAllMarketPricesResponse>
 ```
 
+```rust [Rust]
+pub async fn get_prices(
+    &mut self,
+    pagination: Option<V4PageRequest>,
+) -> Result<Vec<MarketPrice>, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

@@ -1,10 +1,25 @@
 ### Get Subaccounts
 
-// TODO: Add description
+Retrieves a list of subaccounts associated with a given address. Subaccounts are related addresses that fall under the authority or ownership of the primary address.
 
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_subaccounts(
+    self,
+    address: str,
+    limit: Optional[int] = None,
+) -> Any
+```
+
+```typescript [TypeScript]
+async getSubaccounts(
+    address: string,
+    limit?: number,
+): Promise<Data>
+```
 
 ```rust [Rust]
 pub async fn get_subaccounts(
@@ -13,43 +28,37 @@ pub async fn get_subaccounts(
 ) -> Result<AddressResponse, Error>
 ```
 
-```python [Python]
-def get_subaccounts(
-    self,
-    address: str,
-    limit: int = None,
-) -> Response
-```
-
-```typescript [TypeScript]
-async getSubaccounts(address: string, limit?: number): Promise<Data>
-```
-
 ```url [API]
 /v4/addresses/{address}
 ```
 
 :::
 
+:::details[Unification Plan]
+- Rust implementation doesn't have optional parameters.
+:::
+
 #### Parameters
 
-| Parameter | Location | Type      | Required | Description |
-| --------- | -------- | --------- | -------- | ----------- |
-| address   | path     | [Address] | true     |             |
+| Parameter           | Location | Type               | Description                                                       |
+| ------------------- | -------- | ------------------ | ------------------------------------------------------------------|
+| `address`           | query    | [Address]          | The primary address for which to retrieve associated subaccounts. |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                    |
+| ----------------------------- | -------- | ------------------------- | ---------------------------------------------- |
+| `limit`                       | query    | [u32]                     | The maximum number of subaccounts to retrieve. |
 
 #### Response
 
-| Status | Meaning | Description | Schema            |
-| ------ | ------- | ----------- | ----------------- |
-| 200    | [OK]    | Ok          | [AddressResponse] |
+| Status | Meaning     | Schema                          | Description           |
+| ------ | ----------- | ------------------------------- | --------------------- |
+| `200`  | [OK]        | [AddressResponse]               | The subaccounts data. |
 
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-let response = accounts.get_subaccounts(&address).await?;
-```
 
 ```python [Python]
 
@@ -59,7 +68,11 @@ let response = accounts.get_subaccounts(&address).await?;
 
 ```
 
-```bash [API]
+```rust [Rust]
+let response = accounts.get_subaccounts(&address).await?;
+```
+
+```curl [API]
 
 ```
 
@@ -68,3 +81,4 @@ let response = accounts.get_subaccounts(&address).await?;
 [Address]: /types/address
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [AddressResponse]: /types/address_response
+[u32]: /types/u32

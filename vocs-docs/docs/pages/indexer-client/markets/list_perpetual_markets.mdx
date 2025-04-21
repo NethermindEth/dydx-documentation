@@ -1,10 +1,34 @@
 ### List Perpetual Markets
 
+:::details[TODO: Check]
+        """
+        Retrieves perpetual markets.
+
+        Args:
+            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
+
+        Returns:
+            dict: The perpetual markets data.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_perpetual_markets(
+    self,
+    market: Optional[str] = None,
+) -> dict
+
+```
+
+```typescript [TypeScript]
+
+```
 
 ```rust [Rust]
 pub async fn list_perpetual_markets(
@@ -13,30 +37,31 @@ pub async fn list_perpetual_markets(
 ) -> Result<HashMap<Ticker, PerpetualMarket>, Error>
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -59,6 +84,3 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 ```
 
 :::
-
-
-

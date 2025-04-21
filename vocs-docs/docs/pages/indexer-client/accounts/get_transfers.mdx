@@ -1,28 +1,22 @@
 ### Get Transfers
 
-// TODO: Add description
+Retrieves the transfer history for a specific subaccount.
+
+This method allows you to query and filter the transfer transactions associated with a particular subaccount.
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_transfers(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<GetTransfersOpts>,
-) -> Result<Vec<TransferResponseObject>, Error>
-```
-
 ```python [Python]
-def get_subaccount_transfers(
+async def get_subaccount_transfers(
     self,
     address: str,
     subaccount_number: int,
-    limit: int = None,
-    created_before_or_at_height: int = None,
-    created_before_or_at_time: str = None,
-) -> Response
+    limit: Optional[int] = None,
+    created_before_or_at_height: Optional[int] = None,
+    created_before_or_at: Optional[str] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]
@@ -36,31 +30,58 @@ async getSubaccountTransfers(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_transfers(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<GetTransfersOpts>,
+) -> Result<Vec<TransferResponseObject>, Error>
+```
+
 ```url [API]
 /v4/transfers
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | string | true | |
-| subaccount_number | param | uint32 | true | |
-| limit | param | uint32 | false | |
-| created_before_or_at_height | param | uint32 | false | |
-| created_before_or_at | param | uint32 | false | |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of items in the response. |
+| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp. |
+| `page`                        | query    | [u32]                     | The page number for paginated results. |
+
+:::
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200 | [OK] | OK | List of [TransferResponseObject] |
+| Status | Meaning     | Schema                     | Description         |
+| ------ | ----------- | -------------------------- | ------------------- |
+| `200`  | [OK]        | [TransferResponseObject] ⛁ | The transfers data. |
 
 #### Method Usage
 
 :::code-group
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
 
 ```rust [Rust]
 let opts = GetTransfersOpts {
@@ -71,17 +92,12 @@ let opts = GetTransfersOpts {
 let response = accounts.get_transfers(&subaccount, Some(opts)).await?;
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 :::
 
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
 [OK]: /types/OK
 [TransferResponseObject]: /types/transfer_response_object
-
-
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime]: /types/date_time

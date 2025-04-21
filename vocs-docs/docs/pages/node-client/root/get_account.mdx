@@ -1,5 +1,17 @@
 ### Get Account
 
+:::details[TODO: Check]
+        """
+        Retrieves the account information for a given address.
+
+        Args:
+            address (str): The account address.
+
+        Returns:
+            BaseAccount: The base account information.
+        """
+:::
+
 Query for [an account] by it’s address.
 
 [an account]: https://github.com/cosmos/cosmos-sdk/tree/main/x/auth#account-1
@@ -7,13 +19,6 @@ Query for [an account] by it’s address.
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_account(
-    &mut self,
-    address: &Address,
-) -> Result<BaseAccount, Error>
-```
 
 ```python [Python]
 async def get_account(self, address: str) -> BaseAccount
@@ -23,22 +28,38 @@ async def get_account(self, address: str) -> BaseAccount
 async getAccount(address: string): Promise<Account>
 ```
 
+```rust [Rust]
+pub async fn get_account(
+    &mut self,
+    address: &Address,
+) -> Result<BaseAccount, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

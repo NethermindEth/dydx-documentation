@@ -1,19 +1,23 @@
 ### Add
 
+:::details[TODO: Check]
+        """
+        Adds authenticator to a subaccount.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction or authenticating the request.
+            authenticator Authenticator: The authenticator to be added.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+:::
+
 Add an authenticator.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn add(
-    &mut self,
-    account: &mut Account,
-    address: Address,
-    authenticator: Authenticator,
-) -> Result<TxHash, NodeError>
-```
 
 ```python [Python]
 async def add_authenticator(
@@ -31,22 +35,40 @@ async addAuthenticator(
 )
 ```
 
+```rust [Rust]
+pub async fn add(
+    &mut self,
+    account: &mut Account,
+    address: Address,
+    authenticator: Authenticator,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

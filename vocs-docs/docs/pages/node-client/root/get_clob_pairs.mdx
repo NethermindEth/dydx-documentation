@@ -1,17 +1,19 @@
 ### Get Clob Pairs
 
+:::details[TODO: Check]
+        """
+        Retrieves all CLOB pairs.
+
+        Returns:
+            QueryClobPairAllResponse: The response containing all CLOB pairs.
+        """
+:::
+
 Query for all orderbook pairs.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_clob_pairs(
-    &mut self,
-    pagination: Option<V4PageRequest>,
-) -> Result<Vec<ClobPair>, Error>
-```
 
 ```python [Python]
 async def get_clob_pairs(self) -> QueryClobPairAllResponse
@@ -21,29 +23,42 @@ async def get_clob_pairs(self) -> QueryClobPairAllResponse
 async getAllClobPairs(): Promise<ClobModule.QueryClobPairAllResponse>
 ```
 
+```rust [Rust]
+pub async fn get_clob_pairs(
+    &mut self,
+    pagination: Option<V4PageRequest>,
+) -> Result<Vec<ClobPair>, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-```
 
 ```python [Python]
 network = Network.testnet()
@@ -54,6 +69,9 @@ clob_pairs = client.get.clob_pairs()
 ```typescript [TypeScript]
 const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const clobpairs = await client.get.getAllClobPairs();
+```
+
+```rust [Rust]
 ```
 
 :::

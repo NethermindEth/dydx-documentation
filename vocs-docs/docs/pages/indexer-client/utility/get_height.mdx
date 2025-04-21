@@ -1,21 +1,30 @@
 ### Get Height
 
+:::details[TODO: Check]
+        """
+        Get the block height of the most recent block processed by the Indexer.
+
+        Returns:
+            Dict[str, str]: A dictionary containing the block height and time.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_height(&self) -> Result<HeightResponse, Error>
-```
-
 ```python [Python]
-def get_height(self) -> Response
+async def get_height(self) -> Dict[str, str]
 ```
 
 ```typescript [TypeScript]
 async getHeight(): Promise<HeightResponse>
+```
+
+```rust [Rust]
+pub async fn get_height(&self) -> Result<HeightResponse, Error>
 ```
 
 ```url [API]
@@ -24,17 +33,26 @@ async getHeight(): Promise<HeightResponse>
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -53,6 +71,3 @@ let height = utility.get_height().await?;
 ```
 
 :::
-
-
-

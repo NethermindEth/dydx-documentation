@@ -1,21 +1,48 @@
 ### List Orders
 
-// TODO: Add description
+:::details[TODO: Check]
+        """
+        Retrieves orders for a specific subaccount.
+
+        Args:
+            address (str): The address.
+            subaccount_number (int): The subaccount number.
+            ticker (Optional[str]): The ticker filter.
+            ticker_type (TickerType): The ticker type filter.
+            side (Optional[OrderSide]): The order side filter.
+            status (Optional[OrderStatus]): The order status filter.
+            type (Optional[OrderType]): The order type filter.
+            limit (Optional[int]): The maximum number of orders to retrieve.
+            good_til_block_before_or_at (Optional[int]): The block number filter for orders good until before or at.
+            good_til_block_time_before_or_at (Optional[str]): The timestamp filter for orders good until before or at.
+            return_latest_orders (Optional[bool]): Whether to return only the latest orders.
+
+        Returns:
+            Any: The orders data.
+        """
+:::
+
+Retrieves orders for a specific subaccount, with various filtering options to narrow down the results based on order characteristics.
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn list_orders(
-    &self,
-    subaccount: &Subaccount,
-    opts: Option<ListOrdersOpts>,
-) -> Result<ListOrdersResponse, Error>
-```
-
 ```python [Python]
-
+async def get_subaccount_orders(
+    self,
+    address: str,
+    subaccount_number: int,
+    ticker: Optional[str] = None,
+    ticker_type: TickerType = TickerType.PERPETUAL,
+    side: Optional[OrderSide] = None,
+    status: Optional[OrderStatus] = None,
+    type: Optional[OrderType] = None,
+    limit: Optional[int] = None,
+    good_til_block_before_or_at: Optional[int] = None,
+    good_til_block_time_before_or_at: Optional[str] = None,
+    return_latest_orders: Optional[bool] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]
@@ -34,31 +61,40 @@ async getSubaccountOrders(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn list_orders(
+    &self,
+    subaccount: &Subaccount,
+    opts: Option<ListOrdersOpts>,
+) -> Result<ListOrdersResponse, Error>
+```
+
 ```url [API]
 /v4/orders
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address | param | string | true | |
-| subaccount_number | param | uint32 | true | |
-| limit | param | uint32 | false | |
-| ticker | param | [Ticker] | false | |
-| side | param | [OrderStatus] | false | |
-| order_type | param | [OrderType] | false | |
-| good_til_block_before_or_at | param | uint32 | false | |
-| return_latest_orders | param | bool | false | |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
 
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200 | [OK] | OK | List of [OrderResponseObject] |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

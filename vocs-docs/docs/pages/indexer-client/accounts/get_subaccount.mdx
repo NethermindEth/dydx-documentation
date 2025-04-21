@@ -1,10 +1,26 @@
 ### Get Subaccount
 
-// TODO: Add description
+Retrieves a specific subaccount associated with a given address and subaccount number.
+This method allows you to access detailed information about a single subaccount rather than retrieving all subaccounts for an address.
 
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_subaccount(
+    self,
+    address: str,
+    subaccount_number: int,
+) -> Any
+```
+
+```typescript [TypeScript]
+async getSubaccount(
+    address: string,
+    subaccountNumber: number,
+): Promise<Data>
+```
 
 ```rust [Rust]
 pub async fn get_subaccount(
@@ -13,44 +29,31 @@ pub async fn get_subaccount(
 ) -> Result<SubaccountResponseObject, Error>
 ```
 
-```python [Python]
-def get_subaccount(
-    self,
-    address: str,
-    subaccount_number: int,
-) -> Response
-```
-
-```typescript [TypeScript]
-async getSubaccount(address: string, subaccountNumber: number): Promise<Data>
-```
-
 ```url [API]
 /v4/addresses/{address}/subaccountNumber/{subaccount_number}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-| address   | path     | [Address] |   true       |             |
-| subaccount_number | path | [SubaccountNumber]    | true  |
+| Parameter           | Location | Type               | Description                                          |
+| ------------------- | -------- | ------------------ | ---------------------------------------------------- |
+| `address`           | query    | [Address]          | The primary address to which the subaccount belongs. |
+| `subaccount_number` | query    | [SubaccountNumber] | The specific subaccount number to retrieve.          |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-| 200    | [OK]    | Ok          | [SubaccountResponseObject] |
-
+| Status | Meaning     | Schema                          | Description          |
+| ------ | ----------- | ------------------------------- | -------------------- |
+| `200`  | [OK]        | [SubaccountResponseObject]      | The subaccount data. |
+k
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-let response = accounts.get_subaccount(&subaccount).await?;
-```
 
 ```python [Python]
 
@@ -58,6 +61,10 @@ let response = accounts.get_subaccount(&subaccount).await?;
 
 ```typescript [TypeScript]
 
+```
+
+```rust [Rust]
+let response = accounts.get_subaccount(&subaccount).await?;
 ```
 
 :::

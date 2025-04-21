@@ -1,14 +1,19 @@
 ### Get Rewards Params
 
+:::details[TODO: Check]
+        """
+        Retrieves the rewards parameters.
+
+        Returns:
+            rewards_query.QueryParamsResponse: The response containing the rewards parameters.
+        """
+:::
+
 Query for rewards params.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_rewards_params(&mut self) -> Result<Params, Error>
-```
 
 ```python [Python]
 async def get_rewards_params(self) -> rewards_query.QueryParamsResponse
@@ -18,22 +23,35 @@ async def get_rewards_params(self) -> rewards_query.QueryParamsResponse
 async getRewardsParams(): Promise<RewardsModule.QueryParamsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_rewards_params(&mut self) -> Result<Params, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

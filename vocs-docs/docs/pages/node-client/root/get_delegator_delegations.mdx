@@ -1,5 +1,17 @@
 ### Get Delegator Delegations
 
+:::details[TODO: Check]
+        """
+        Retrieves the delegations for a given delegator address.
+
+        Args:
+            delegator_addr (str): The delegator address.
+
+        Returns:
+            staking_query.QueryDelegatorDelegationsResponse: The response containing the delegator delegations.
+        """
+:::
+
 Query for [all delegations] of a given delegator address.
 
 [all delegations]: https://github.com/cosmos/cosmos-sdk/tree/main/x/staking#delegatordelegations
@@ -7,6 +19,18 @@ Query for [all delegations] of a given delegator address.
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_delegator_delegations(
+    self, delegator_addr: str
+) -> staking_query.QueryDelegatorDelegationsResponse
+```
+
+```typescript [TypeScript]
+async getDelegatorDelegations(
+    delegatorAddr: string,
+): Promise<StakingModule.QueryDelegatorDelegationsResponse>
+```
 
 ```rust [Rust]
 pub async fn get_delegator_delegations(
@@ -16,34 +40,31 @@ pub async fn get_delegator_delegations(
 ) -> Result<Vec<DelegationResponse>, Error>
 ```
 
-```python [Python]
-async def get_delegator_delegations(
-    self, delegator_addr: str
-) -> staking_query.QueryDelegatorDelegationsResponse    
-```
-
-```typescript [TypeScript]
-async getDelegatorDelegations(
-    delegatorAddr: string,
-): Promise<StakingModule.QueryDelegatorDelegationsResponse>
-```
-
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

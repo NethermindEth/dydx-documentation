@@ -1,22 +1,36 @@
 ### Get Rewards Aggregated
 
+:::details[TODO: Check]
+        """
+        Retrieves aggregated historical trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            period (TradingRewardAggregationPeriod): The aggregation period.
+            limit (Optional[int]): The maximum number of aggregated rewards to retrieve.
+            starting_before_or_at (Optional[str]): The timestamp filter for rewards starting before or at.
+            starting_before_or_at_height (Optional[int]): The block height filter for rewards starting before or at.
+
+        Returns:
+            Any: The aggregated historical trading rewards data.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_rewards_aggregated(
-    &self,
-    address: &Address,
-    period: TradingRewardAggregationPeriod,
-    opts: Option<GetAggregationsOpts>,
-) -> Result<Vec<HistoricalTradingRewardAggregation>, Error>
-```
-
 ```python [Python]
-
+async def get_historical_trading_rewards_aggregated(
+    self,
+    address: str,
+    period: TradingRewardAggregationPeriod = TradingRewardAggregationPeriod.DAILY,
+    limit: Optional[int] = None,
+    starting_before_or_at: Optional[str] = None,
+    starting_before_or_at_height: Optional[int] = None,
+) -> Any
 ```
 
 ```typescript [TypeScript]
@@ -29,23 +43,41 @@ async getHistoricalTradingRewardsAggregations(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_rewards_aggregated(
+    &self,
+    address: &Address,
+    period: TradingRewardAggregationPeriod,
+    opts: Option<GetAggregationsOpts>,
+) -> Result<Vec<HistoricalTradingRewardAggregation>, Error>
+```
+
 ```url [API]
 /v4/historicalTradingRewardAggregations/{address}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -69,6 +101,3 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 ```
 
 :::
-
-
-

@@ -1,5 +1,21 @@
 ### Cancel Order
 
+:::details[TODO: Check]
+        """
+        Cancels an order.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            order_id (OrderId): The ID of the order to cancel.
+            good_til_block (int, optional): The block number until which the order is valid. Defaults to None.
+            good_til_block_time (int, optional): The block time until which the order is valid. Defaults to None.
+            tx_options (TxOptions, optional): Options for transaction to support authenticators.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+:::
+
 Cancel [Order].
 
 [Order]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
@@ -7,15 +23,6 @@ Cancel [Order].
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn cancel_order(
-    &mut self,
-    account: &mut Account,
-    order_id: OrderId,
-    until: impl Into<OrderGoodUntil>,
-) -> Result<TxHash, NodeError>
-```
 
 ```python [Python]
 async def cancel_order(
@@ -37,7 +44,7 @@ async cancelOrder(
     goodTilBlock?: number,
     goodTilTimeInSeconds?: number,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
+
 async signCancelOrder(
     subaccount: SubaccountInfo,
     clientId: number,
@@ -48,23 +55,41 @@ async signCancelOrder(
 ): Promise<string>
 ```
 
+```rust [Rust]
+pub async fn cancel_order(
+    &mut self,
+    account: &mut Account,
+    order_id: OrderId,
+    until: impl Into<OrderGoodUntil>,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

@@ -1,5 +1,17 @@
 ### Get All Validators
 
+:::details[TODO: Check]
+        """
+        Retrieves all validators with an optional status filter.
+
+        Args:
+            status (str, optional): The validator status filter. Defaults to an empty string.
+
+        Returns:
+            staking_query.QueryValidatorsResponse: The response containing all validators.
+        """
+:::
+
 Query for [all validators] that match the given status.
 
 [all validators]: https://github.com/cosmos/cosmos-sdk/tree/main/x/staking#validators-2
@@ -8,16 +20,10 @@ Query for [all validators] that match the given status.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_all_validators(
-    &mut self,
-    status: Option<String>,
-) -> Result<Vec<Validator>, Error>
-```
-
 ```python [Python]
 async def get_all_validators(
-    self, status: str = ""
+    self,
+    status: str = "",
 ) -> staking_query.QueryValidatorsResponse
 ```
 
@@ -25,22 +31,38 @@ async def get_all_validators(
 async getAllValidators(status: string = ''): Promise<StakingModule.QueryValidatorsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_all_validators(
+    &mut self,
+    status: Option<String>,
+) -> Result<Vec<Validator>, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

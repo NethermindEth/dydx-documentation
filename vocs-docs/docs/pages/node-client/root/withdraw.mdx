@@ -1,20 +1,26 @@
 ### Withdraw
 
+:::details[TODO: Check]
+        """
+        Withdraws funds from a subaccount.
+
+        Args:
+            wallet (Wallet): The wallet to use for signing the transaction.
+            sender_subaccount (SubaccountId): The sender subaccount ID.
+            recipient (str): The recipient address.
+            asset_id (int): The asset ID.
+            quantums (int): The amount of quantums to withdraw.
+
+        Returns:
+            The response from the transaction broadcast.
+        """
+:::
+
 Withdraw funds (USDC) from the subaccount to the address.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn withdraw(
-    &mut self,
-    account: &mut Account,
-    sender: Subaccount,
-    recipient: Address,
-    amount: impl Into<Usdc>,
-) -> Result<TxHash, NodeError>
-```
 
 ```python [Python]
 async def withdraw(
@@ -28,32 +34,17 @@ async def withdraw(
 ```
 
 ```typescript [TypeScript]
-async withdrawFromSubaccount(
-    subaccount: SubaccountInfo,
-    amount: string,
-    recipient?: string,
-    memo?: string,
-): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
-withdrawFromSubaccountMessage(
-    subaccount: SubaccountInfo,
-    amount: string,
-    recipient?: string,
-  ): EncodeObject
- 
-async withdrawFromMegavault(
-    subaccount: SubaccountInfo,
-    shares: number,
-    minAmount: number,
-    broadcastMode?: BroadcastMode,
-  ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
- 
-withdrawFromMegavaultMessage(
-    subaccount: SubaccountInfo,
-    shares: number,
-    minAmount: number,
-): EncodeObject
+TODO: withdraw
+```
+
+```rust [Rust]
+pub async fn withdraw(
+    &mut self,
+    account: &mut Account,
+    sender: Subaccount,
+    recipient: Address,
+    amount: impl Into<Usdc>,
+) -> Result<TxHash, NodeError>
 ```
 
 ```url [API]
@@ -61,17 +52,26 @@ withdrawFromMegavaultMessage(
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

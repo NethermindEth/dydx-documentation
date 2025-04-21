@@ -1,10 +1,32 @@
 ### Get Sparklines
 
+:::details[TODO: Check]
+        """
+        Retrieves sparkline data for perpetual markets.
+
+        Args:
+            period (str): The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS").
+
+        Returns:
+            dict: The sparkline data.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
+
+```python [Python]
+async def get_perpetual_market_sparklines(
+    self, period: str = TimePeriod.ONE_DAY
+) -> dict
+```
+
+```typescript [TypeScript]
+async getPerpetualMarketSparklines(period: string = TimePeriod.ONE_DAY): Promise<Data>
+```
 
 ```rust [Rust]
 pub async fn get_sparklines(
@@ -13,34 +35,32 @@ pub async fn get_sparklines(
 ) -> Result<SparklineResponseObject, Error>
 ```
 
-```python [Python]
-def get_perpetual_markets_sparklines(
-    self,
-    period: str = 'ONE_DAY'
-) -> Response
-```
-
-```typescript [TypeScript]
-async getPerpetualMarketSparklines(period: string = TimePeriod.ONE_DAY): Promise<Data>
-```
-
 ```url [API]
 /v4/sparklines
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -59,6 +79,3 @@ let response = markets.get_sparklines(SparklineTimePeriod::OneDay).await?;
 ```
 
 :::
-
-
-

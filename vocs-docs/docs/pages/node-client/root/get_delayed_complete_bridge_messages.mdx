@@ -1,22 +1,28 @@
 ### Get Delayed Complete Bridge Messages
 
+:::details[TODO: Check]
+        """
+        Retrieves the delayed complete bridge messages for a given address.
+
+        Args:
+            address (str, optional): The address. Defaults to an empty string.
+
+        Returns:
+            bridge_query.QueryDelayedCompleteBridgeMessagesResponse: The response containing the delayed complete bridge messages.
+        """
+:::
+
 Query for delayed bridge messages for the address.
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_delayed_complete_bridge_messages(
-    &mut self,
-    address: Address,
-) -> Result<Vec<DelayedCompleteBridgeMessage>, Error>
-```
-
 ```python [Python]
 async def get_delayed_complete_bridge_messages(
-    self, address: str = ""
-) -> bridge_query.QueryDelayedCompleteBridgeMessagesResponse   
+    self,
+    address: str = "",
+) -> bridge_query.QueryDelayedCompleteBridgeMessagesResponse
 ```
 
 ```typescript [TypeScript]
@@ -25,22 +31,38 @@ async getDelayedCompleteBridgeMessages(
 ): Promise<BridgeModule.QueryDelayedCompleteBridgeMessagesResponse>
 ```
 
+```rust [Rust]
+pub async fn get_delayed_complete_bridge_messages(
+    &mut self,
+    address: Address,
+) -> Result<Vec<DelayedCompleteBridgeMessage>, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

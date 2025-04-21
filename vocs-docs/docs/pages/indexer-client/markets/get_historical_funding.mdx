@@ -1,27 +1,34 @@
 ### Get Historical Funding
 
+:::details[TODO: Check]
+        """
+        Retrieves historical funding rates for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            effective_before_or_at (Optional[str]): The timestamp to retrieve funding rates effective before or at.
+            effective_before_or_at_height (Optional[int]): The block height to retrieve funding rates effective before or at.
+            limit (Optional[int]): The maximum number of funding rates to retrieve.
+
+        Returns:
+            dict: The historical funding rates data.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_historical_funding(
-    &self,
-    ticker: &Ticker,
-    opts: Option<GetHistoricalFundingOpts>,
-) -> Result<Vec<HistoricalFundingResponseObject>, Error>
-```
-
 ```python [Python]
-def get_perpetual_market_funding(
+async def get_perpetual_market_historical_funding(
     self,
     market: str,
-    effective_before_or_at: str = None,
-    effective_before_or_at_height: int = None,
-    limit: int = None,
-) -> Response
+    effective_before_or_at: Optional[str] = None,
+    effective_before_or_at_height: Optional[int] = None,
+    limit: Optional[int] = None,
+) -> dict
 ```
 
 ```typescript [TypeScript]
@@ -33,23 +40,40 @@ async getPerpetualMarketHistoricalFunding(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_historical_funding(
+    &self,
+    ticker: &Ticker,
+    opts: Option<GetHistoricalFundingOpts>,
+) -> Result<Vec<HistoricalFundingResponseObject>, Error>
+```
+
 ```url [API]
 /v4/historicalFunding/{ticker}
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -73,6 +97,3 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 ```
 
 :::
-
-
-

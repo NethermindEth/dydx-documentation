@@ -1,14 +1,19 @@
 ### Get Latest Block Height
 
+:::details[TODO: Check]
+        """
+        Retrieves the height of the latest block.
+
+        Returns:
+            int: The height of the latest block.
+        """
+:::
+
 Query for the latest block height.
 
 #### Method Declaration
 
 :::code-group
-
-```rust [Rust]
-pub async fn get_latest_block_height(&mut self) -> Result<Height, Error>
-```
 
 ```python [Python]
 async def latest_block_height(self) -> int
@@ -18,22 +23,35 @@ async def latest_block_height(self) -> int
 async latestBlockHeight(): Promise<number>
 ```
 
+```rust [Rust]
+pub async fn get_latest_block_height(&mut self) -> Result<Height, Error>
+```
+
 ```url [API]
 ```
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

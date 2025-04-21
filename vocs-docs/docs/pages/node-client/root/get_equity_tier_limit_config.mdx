@@ -1,5 +1,14 @@
 ### Get Equity Tier Limit Config
 
+:::details[TODO: Check]
+        """
+        Retrieves the equity tier limit configuration.
+
+        Returns:
+            equity_tier_limit_config_type.EquityTierLimitConfiguration: The equity tier limit configuration.
+        """
+:::
+
 Query for [EquityTierLimitConfiguration].
 
 [EquityTierLimitConfiguration]: /https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.EquityTierLimitConfiguration.html
@@ -8,18 +17,20 @@ Query for [EquityTierLimitConfiguration].
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_equity_tier_limit_config(
-    &mut self,
-) -> Result<EquityTierLimitConfiguration, Error>
-```
-
 ```python [Python]
-def equity_tier_limit_config(self) -> equity_tier_limit_config_type.EquityTierLimitConfiguration
+async def get_equity_tier_limit_config(
+    self,
+) -> equity_tier_limit_config_type.EquityTierLimitConfiguration:
 ```
 
 ```typescript [TypeScript]
 async getEquityTierLimitConfiguration(): Promise<ClobModule.QueryEquityTierLimitConfigurationResponse>
+```
+
+```rust [Rust]
+pub async fn get_equity_tier_limit_config(
+    &mut self,
+) -> Result<EquityTierLimitConfiguration, Error>
 ```
 
 ```url [API]
@@ -27,17 +38,26 @@ async getEquityTierLimitConfiguration(): Promise<ClobModule.QueryEquityTierLimit
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

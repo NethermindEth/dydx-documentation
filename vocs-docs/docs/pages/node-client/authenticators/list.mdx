@@ -6,21 +6,24 @@ List down added authenticators.
 
 :::code-group
 
+```python [Python]
+async def get_authenticators(
+    self,
+    address: str,
+) -> accountplus_query.GetAuthenticatorsResponse
+```
+
+```typescript [TypeScript]
+async getAuthenticators(
+    address: string,
+): Promise<GetAuthenticatorsResponse>
+```
+
 ```rust [Rust]
 pub async fn list(
     &mut self,
     address: Address,
 ) -> Result<Vec<AccountAuthenticator>, Error>
-```
-
-```python [Python]
-async def get_authenticators(
-    self, address: str
-) -> accountplus_query.GetAuthenticatorsResponse
-```
-
-```typescript [TypeScript]
-async getAuthenticators(address: string): Promise<GetAuthenticatorsResponse>
 ```
 
 ```url [API]
@@ -29,17 +32,26 @@ async getAuthenticators(address: string): Promise<GetAuthenticatorsResponse>
 
 :::
 
+:::details[Unification Plan]
+:::
+
 #### Parameters
 
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Method Usage
 

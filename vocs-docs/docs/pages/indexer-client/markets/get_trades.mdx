@@ -1,21 +1,32 @@
 ### Get Trades
 
+:::details[TODO: Check]
+        """
+        Retrieves trades for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            starting_before_or_at_height (Optional[int]): The block height to start retrieving trades from.
+            limit (Optional[int]): The maximum number of trades to retrieve.
+
+        Returns:
+            dict: The trades data.
+        """
+:::
+
 // TODO: Add description
 
 #### Method Declaration
 
 :::code-group
 
-```rust [Rust]
-```
-
 ```python [Python]
-def get_perpetual_market_trades(
-    self, 
-    market: str, 
-    starting_before_or_at_height: int = None, 
-    limit: int = None
-) -> Response
+async def get_perpetual_market_trades(
+    self,
+    market: str,
+    starting_before_or_at_height: Optional[int] = None,
+    limit: Optional[int] = None,
+) -> dict
 ```
 
 ```typescript [TypeScript]
@@ -28,11 +39,40 @@ async getPerpetualMarketTrades(
 ): Promise<Data>
 ```
 
+```rust [Rust]
+pub async fn get_trades(
+    &self,
+    ticker: &Ticker,
+    opts: Option<GetTradesOpts>,
+) -> Result<Vec<TradeResponseObject>, Error>
+```
+
 ```url [API]
 /v4/trades/perpetualMarket/{ticker}
 ```
 
 :::
+
+:::details[Unification Plan]
+:::
+
+#### Parameters
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 #### Parameters
 
@@ -68,6 +108,3 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 ```
 
 :::
-
-
-
