@@ -6,13 +6,6 @@ Query for all markets prices.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_prices(
-    &mut self,
-    pagination: Option<V4PageRequest>,
-) -> Result<Vec<MarketPrice>, Error>
-```
-
 ```python [Python]
 async def get_prices(self) -> QueryAllMarketPricesResponse
 ```
@@ -21,22 +14,17 @@ async def get_prices(self) -> QueryAllMarketPricesResponse
 async getAllPrices(): Promise<PricesModule.QueryAllMarketPricesResponse>
 ```
 
+```rust [Rust]
+pub async fn get_prices(
+    &mut self,
+    pagination: Option<V4PageRequest>,
+) -> Result<Vec<MarketPrice>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

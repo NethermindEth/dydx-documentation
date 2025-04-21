@@ -6,13 +6,6 @@ Query for perpetual fee tier for the address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_user_fee_tier(
-    &mut self,
-    address: Address,
-) -> Result<PerpetualFeeTier, Error>
-```
-
 ```python [Python]
 async def get_user_fee_tier(
     self, address: str
@@ -23,22 +16,17 @@ async def get_user_fee_tier(
 async getUserFeeTier(address: string): Promise<FeeTierModule.QueryUserFeeTierResponse>
 ```
 
+```rust [Rust]
+pub async fn get_user_fee_tier(
+    &mut self,
+    address: Address,
+) -> Result<PerpetualFeeTier, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

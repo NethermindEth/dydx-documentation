@@ -6,13 +6,6 @@ Query for user stats (Maker and Taker positions).
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_user_stats(
-    &mut self,
-    address: &Address,
-) -> Result<UserStats, Error>
-```
-
 ```python [Python]
 async def get_user_stats(self, address: str) -> stats_query.QueryUserStatsResponse
 ```
@@ -23,22 +16,17 @@ async getUserStats(
 ): Promise<{ takerNotional: Long; makerNotional: Long } | undefined>
 ```
 
+```rust [Rust]
+pub async fn get_user_stats(
+    &mut self,
+    address: &Address,
+) -> Result<UserStats, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

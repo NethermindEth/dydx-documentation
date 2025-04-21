@@ -6,13 +6,6 @@ Query for delayed bridge messages for the address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_delayed_complete_bridge_messages(
-    &mut self,
-    address: Address,
-) -> Result<Vec<DelayedCompleteBridgeMessage>, Error>
-```
-
 ```python [Python]
 async def get_delayed_complete_bridge_messages(
     self, address: str = ""
@@ -25,22 +18,17 @@ async getDelayedCompleteBridgeMessages(
 ): Promise<BridgeModule.QueryDelayedCompleteBridgeMessagesResponse>
 ```
 
+```rust [Rust]
+pub async fn get_delayed_complete_bridge_messages(
+    &mut self,
+    address: Address,
+) -> Result<Vec<DelayedCompleteBridgeMessage>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

@@ -8,15 +8,6 @@ Cancel [Order].
 
 :::code-group
 
-```rust [Rust]
-pub async fn cancel_order(
-    &mut self,
-    account: &mut Account,
-    order_id: OrderId,
-    until: impl Into<OrderGoodUntil>,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def cancel_order(
     self,
@@ -48,23 +39,20 @@ async signCancelOrder(
 ): Promise<string>
 ```
 
+```rust [Rust]
+pub async fn cancel_order(
+    &mut self,
+    account: &mut Account,
+    order_id: OrderId,
+    until: impl Into<OrderGoodUntil>,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

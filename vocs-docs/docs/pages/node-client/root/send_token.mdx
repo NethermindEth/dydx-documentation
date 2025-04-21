@@ -6,16 +6,6 @@ Transfer a token asset from one address to another one.
 
 :::code-group
 
-```rust [Rust]
-pub async fn send_token(
-    &mut self,
-    account: &mut Account,
-    sender: Address,
-    recipient: Address,
-    token: impl Tokenized,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def send_token(
     self,
@@ -38,22 +28,20 @@ async sendToken(
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
+```rust [Rust]
+pub async fn send_token(
+    &mut self,
+    account: &mut Account,
+    sender: Address,
+    recipient: Address,
+    token: impl Tokenized,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

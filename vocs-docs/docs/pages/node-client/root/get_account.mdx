@@ -8,13 +8,6 @@ Query for [an account] by it’s address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_account(
-    &mut self,
-    address: &Address,
-) -> Result<BaseAccount, Error>
-```
-
 ```python [Python]
 async def get_account(self, address: str) -> BaseAccount
 ```
@@ -23,22 +16,17 @@ async def get_account(self, address: str) -> BaseAccount
 async getAccount(address: string): Promise<Account>
 ```
 
+```rust [Rust]
+pub async fn get_account(
+    &mut self,
+    address: &Address,
+) -> Result<BaseAccount, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

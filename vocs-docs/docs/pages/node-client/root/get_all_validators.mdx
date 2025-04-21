@@ -8,13 +8,6 @@ Query for [all validators] that match the given status.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_all_validators(
-    &mut self,
-    status: Option<String>,
-) -> Result<Vec<Validator>, Error>
-```
-
 ```python [Python]
 async def get_all_validators(
     self, status: str = ""
@@ -25,22 +18,17 @@ async def get_all_validators(
 async getAllValidators(status: string = ''): Promise<StakingModule.QueryValidatorsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_all_validators(
+    &mut self,
+    status: Option<String>,
+) -> Result<Vec<Validator>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

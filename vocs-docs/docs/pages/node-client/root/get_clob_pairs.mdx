@@ -6,13 +6,6 @@ Query for all orderbook pairs.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_clob_pairs(
-    &mut self,
-    pagination: Option<V4PageRequest>,
-) -> Result<Vec<ClobPair>, Error>
-```
-
 ```python [Python]
 async def get_clob_pairs(self) -> QueryClobPairAllResponse
 ```
@@ -21,22 +14,17 @@ async def get_clob_pairs(self) -> QueryClobPairAllResponse
 async getAllClobPairs(): Promise<ClobModule.QueryClobPairAllResponse>
 ```
 
+```rust [Rust]
+pub async fn get_clob_pairs(
+    &mut self,
+    pagination: Option<V4PageRequest>,
+) -> Result<Vec<ClobPair>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

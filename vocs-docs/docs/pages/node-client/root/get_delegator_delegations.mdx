@@ -8,14 +8,6 @@ Query for [all delegations] of a given delegator address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_delegator_delegations(
-    &mut self,
-    delegator_address: Address,
-    pagination: Option<CosmosPageRequest>,
-) -> Result<Vec<DelegationResponse>, Error>
-```
-
 ```python [Python]
 async def get_delegator_delegations(
     self, delegator_addr: str
@@ -28,22 +20,18 @@ async getDelegatorDelegations(
 ): Promise<StakingModule.QueryDelegatorDelegationsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_delegator_delegations(
+    &mut self,
+    delegator_address: Address,
+    pagination: Option<CosmosPageRequest>,
+) -> Result<Vec<DelegationResponse>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

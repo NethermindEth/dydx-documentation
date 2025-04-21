@@ -8,14 +8,6 @@ Query for [all unbonding delegations] of a given delegator address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_delegator_unbonding_delegations(
-    &mut self,
-    delegator_address: Address,
-    pagination: Option<CosmosPageRequest>,
-) -> Result<Vec<UnbondingDelegation>, Error>
-```
-
 ```python [Python]
 async def get_delegator_unbonding_delegations(
     self, delegator_addr: str
@@ -28,22 +20,18 @@ async getDelegatorUnbondingDelegations(
 ): Promise<StakingModule.QueryDelegatorUnbondingDelegationsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_delegator_unbonding_delegations(
+    &mut self,
+    delegator_address: Address,
+    pagination: Option<CosmosPageRequest>,
+) -> Result<Vec<UnbondingDelegation>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

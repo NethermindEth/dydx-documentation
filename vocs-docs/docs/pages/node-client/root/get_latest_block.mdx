@@ -6,10 +6,6 @@ Query for the latest block.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_latest_block(&mut self) -> Result<Block, Error>
-```
-
 ```python [Python]
 async def latest_block(self) -> tendermint_query.GetLatestBlockResponse
 ```
@@ -18,22 +14,14 @@ async def latest_block(self) -> tendermint_query.GetLatestBlockResponse
 async latestBlock(): Promise<Block>
 ```
 
+```rust [Rust]
+pub async fn get_latest_block(&mut self) -> Result<Block, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

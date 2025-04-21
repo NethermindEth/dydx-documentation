@@ -8,14 +8,6 @@ Place [Order].
 
 :::code-group
 
-```rust [Rust]
-pub async fn place_order(
-    &mut self,
-    account: &mut Account,
-    order: Order,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def place_order(
     self,
@@ -45,7 +37,7 @@ async placeOrder(
     goodTilBlock?: number,
     memo?: string,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
+
 async signPlaceOrder(
     subaccount: SubaccountInfo,
     marketId: string,
@@ -63,22 +55,18 @@ async signPlaceOrder(
 ): Promise<string>
 ```
 
+```rust [Rust]
+pub async fn place_order(
+    &mut self,
+    account: &mut Account,
+    order: Order,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

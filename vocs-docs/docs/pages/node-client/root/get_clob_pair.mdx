@@ -6,10 +6,6 @@ Query for the orderbook pair by its id.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_clob_pair(&mut self, pair_id: u32) -> Result<ClobPair, Error>
-```
-
 ```python [Python]
 async def get_clob_pair(self, pair_id: int) -> clob_pair_type.ClobPair
 ```
@@ -18,22 +14,14 @@ async def get_clob_pair(self, pair_id: int) -> clob_pair_type.ClobPair
 async getClobPair(pairId: number): Promise<ClobModule.QueryClobPairResponse>
 ```
 
+```rust [Rust]
+pub async fn get_clob_pair(&mut self, pair_id: u32) -> Result<ClobPair, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

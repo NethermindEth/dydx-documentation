@@ -6,13 +6,6 @@ Query for the subacccount.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_subaccount(
-    &mut self,
-    subaccount: &Subaccount,
-) -> Result<SubaccountInfo, Error>
-```
-
 ```python [Python]
 async def get_subaccount(
     self, address: str, account_number: int
@@ -26,24 +19,19 @@ async getSubaccount(
 ): Promise<SubaccountsModule.QuerySubaccountResponse>
 ```
 
+```rust [Rust]
+pub async fn get_subaccount(
+    &mut self,
+    subaccount: &Subaccount,
+) -> Result<SubaccountInfo, Error>
+```
+
 ```url [API]
 const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 1);
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

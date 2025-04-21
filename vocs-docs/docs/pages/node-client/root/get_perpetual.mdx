@@ -6,13 +6,6 @@ Query for the perpetual.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_perpetual(
-    &mut self,
-    perpetual_id: u32,
-) -> Result<Perpetual, Error>
-```
-
 ```python [Python]
 async def get_perpetual(self, perpetual_id: int) -> QueryPerpetualResponse
 ```
@@ -21,22 +14,17 @@ async def get_perpetual(self, perpetual_id: int) -> QueryPerpetualResponse
 async getPerpetual(perpetualId: number): Promise<PerpetualsModule.QueryPerpetualResponse>
 ```
 
+```rust [Rust]
+pub async fn get_perpetual(
+    &mut self,
+    perpetual_id: u32,
+) -> Result<Perpetual, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

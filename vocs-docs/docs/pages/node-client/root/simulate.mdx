@@ -6,10 +6,6 @@ Simulate a transaction.
 
 :::code-group
 
-```rust [Rust]
-pub async fn simulate(&mut self, tx_raw: &Raw) -> Result<GasInfo, NodeError>
-```
-
 ```python [Python]
 async def simulate(self, transaction: Tx)
 ```
@@ -24,22 +20,14 @@ async simulate(
 ): Promise<StdFee>
 ```
 
+```rust [Rust]
+pub async fn simulate(&mut self, tx_raw: &Raw) -> Result<GasInfo, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

@@ -6,16 +6,6 @@ Transfer funds (USDC) between subaccounts.
 
 :::code-group
 
-```rust [Rust]
-pub async fn transfer(
-    &mut self,
-    account: &mut Account,
-    sender: Subaccount,
-    recipient: Subaccount,
-    amount: impl Into<Usdc>,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def transfer(
     self,
@@ -36,7 +26,7 @@ async transferToSubaccount(
     memo?: string,
     broadcastMode?: BroadcastMode,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
+
 transferToSubaccountMessage(
     subaccount: SubaccountInfo,
     recipientAddress: string,
@@ -45,22 +35,20 @@ transferToSubaccountMessage(
 ): EncodeObject
 ```
 
+```rust [Rust]
+pub async fn transfer(
+    &mut self,
+    account: &mut Account,
+    sender: Subaccount,
+    recipient: Subaccount,
+    amount: impl Into<Usdc>,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

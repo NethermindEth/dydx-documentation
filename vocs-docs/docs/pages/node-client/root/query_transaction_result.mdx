@@ -6,13 +6,6 @@ Query the network for a transaction result.
 
 :::code-group
 
-```rust [Rust]
-pub async fn query_transaction_result(
-    &mut self,
-    tx_hash: Result<TxHash, NodeError>,
-) -> Result<Option<Tx>, Error>
-```
-
 ```python [Python]
 
 ```
@@ -21,22 +14,17 @@ pub async fn query_transaction_result(
 
 ```
 
+```rust [Rust]
+pub async fn query_transaction_result(
+    &mut self,
+    tx_hash: Result<TxHash, NodeError>,
+) -> Result<Option<Tx>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

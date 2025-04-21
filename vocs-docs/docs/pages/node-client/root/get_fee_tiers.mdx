@@ -6,10 +6,6 @@ Query for fee tiers for perpetuals.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_fee_tiers(&mut self) -> Result<Vec<PerpetualFeeTier>, Error>
-```
-
 ```python [Python]
 async def get_fee_tiers(self) -> fee_tier_query.QueryPerpetualFeeParamsResponse
 ```
@@ -18,22 +14,14 @@ async def get_fee_tiers(self) -> fee_tier_query.QueryPerpetualFeeParamsResponse
 async getFeeTiers(): Promise<FeeTierModule.QueryPerpetualFeeParamsResponse>
 ```
 
+```rust [Rust]
+pub async fn get_fee_tiers(&mut self) -> Result<Vec<PerpetualFeeTier>, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

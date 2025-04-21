@@ -8,14 +8,6 @@ Query for account [balance] by address for a given denomination.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_account_balance(
-    &mut self,
-    address: &Address,
-    denom: &Denom,
-) -> Result<Coin, Error>
-```
-
 ```python [Python]
 async def get_account_balance(
     self, address: str, denom: str
@@ -26,22 +18,18 @@ async def get_account_balance(
 async getAccountBalance(address: string, denom: string): Promise<Coin | undefined>
 ```
 
+```rust [Rust]
+pub async fn get_account_balance(
+    &mut self,
+    address: &Address,
+    denom: &Denom,
+) -> Result<Coin, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

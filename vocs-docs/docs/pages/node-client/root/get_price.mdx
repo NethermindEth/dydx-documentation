@@ -6,10 +6,6 @@ Query for the market price.
 
 :::code-group
 
-```rust [Rust]
-pub async fn get_price(&mut self, market_id: u32) -> Result<MarketPrice, Error>
-```
-
 ```python [Python]
 async def get_price(self, market_id: int) -> market_price_type.MarketPrice
 ```
@@ -18,22 +14,14 @@ async def get_price(self, market_id: int) -> market_price_type.MarketPrice
 async getPrice(marketId: number): Promise<PricesModule.QueryMarketPriceResponse>
 ```
 
+```rust [Rust]
+pub async fn get_price(&mut self, market_id: u32) -> Result<MarketPrice, Error>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

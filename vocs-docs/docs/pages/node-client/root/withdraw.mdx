@@ -6,16 +6,6 @@ Withdraw funds (USDC) from the subaccount to the address.
 
 :::code-group
 
-```rust [Rust]
-pub async fn withdraw(
-    &mut self,
-    account: &mut Account,
-    sender: Subaccount,
-    recipient: Address,
-    amount: impl Into<Usdc>,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def withdraw(
     self,
@@ -34,21 +24,21 @@ async withdrawFromSubaccount(
     recipient?: string,
     memo?: string,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
+
 withdrawFromSubaccountMessage(
     subaccount: SubaccountInfo,
     amount: string,
     recipient?: string,
   ): EncodeObject
- 
+
 async withdrawFromMegavault(
     subaccount: SubaccountInfo,
     shares: number,
     minAmount: number,
     broadcastMode?: BroadcastMode,
   ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
- 
- 
+
+
 withdrawFromMegavaultMessage(
     subaccount: SubaccountInfo,
     shares: number,
@@ -56,22 +46,20 @@ withdrawFromMegavaultMessage(
 ): EncodeObject
 ```
 
+```rust [Rust]
+pub async fn withdraw(
+    &mut self,
+    account: &mut Account,
+    sender: Subaccount,
+    recipient: Address,
+    amount: impl Into<Usdc>,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

@@ -6,13 +6,6 @@ Broadcast a transaction
 
 :::code-group
 
-```rust [Rust]
-pub async fn broadcast_transaction(
-    &mut self,
-    tx_raw: Raw,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def broadcast(self, transaction: Tx, mode=BroadcastMode.BROADCAST_MODE_SYNC)
 ```
@@ -30,22 +23,17 @@ async broadcastTransactionSync(tx: Uint8Array): Promise<BroadcastTxSyncResponse>
 async broadcastTransactionCommit(tx: Uint8Array): Promise<IndexedTx>
 ```
 
+```rust [Rust]
+pub async fn broadcast_transaction(
+    &mut self,
+    tx_raw: Raw,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 

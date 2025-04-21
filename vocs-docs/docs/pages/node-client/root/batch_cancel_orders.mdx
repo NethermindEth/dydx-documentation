@@ -8,16 +8,6 @@ Cancel a batch of short-terms [Orders].
 
 :::code-group
 
-```rust [Rust]
-pub async fn batch_cancel_orders(
-    &mut self,
-    account: &mut Account,
-    subaccount: Subaccount,
-    short_term_cancels: Vec<OrderBatch>,
-    until_block: Height,
-) -> Result<TxHash, NodeError>
-```
-
 ```python [Python]
 async def batch_cancel_orders(
     self,
@@ -45,23 +35,20 @@ async batchCancelShortTermOrdersWithClobPairId(
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
 ```
 
+```rust [Rust]
+pub async fn batch_cancel_orders(
+    &mut self,
+    account: &mut Account,
+    subaccount: Subaccount,
+    short_term_cancels: Vec<OrderBatch>,
+    until_block: Height,
+) -> Result<TxHash, NodeError>
+```
+
 ```url [API]
 ```
 
 :::
-
-
-#### Parameters
-
-| Parameter | Location | Type  | Required | Description |
-| --------- | -------- | ----- | -------- | ----------- |
-|           |          |       |          |             |
-
-#### Response
-
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
 
 #### Method Usage
 
