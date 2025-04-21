@@ -1,22 +1,10 @@
 ### Get Historical Pnl
 
-        """
-        Retrieves historical PnLs for a specific subaccount.
-
-        Args:
-            address (str): The address.
-            subaccount_number (int): The subaccount number.
-            effective_before_or_at (Optional[str]): The timestamp filter for PnLs effective before or at.
-            effective_at_or_after (Optional[str]): The timestamp filter for PnLs effective at or after.
-
-        Returns:
-            Any: The historical PnLs data.
-        """
-
 Retrieves historical profit and loss (PNL) data for a specific subaccount on the exchange.
 
 This function queries the dYdX indexer API to fetch historical PNL records
 associated with a particular subaccount. The endpoint being called is '/v4/historical-pnl'.
+
 These records provide insights into the trading performance over time.
 
 #### Method Declaration
@@ -60,6 +48,11 @@ pub async fn get_historical_pnl(
 
 :::
 
+:::details[Unification Plan]
+- Parameter `created_on_or_after_height` is missing
+- Parameter `created_on_or_after` is missing
+:::
+
 #### Parameters
 
 | Parameter           | Location | Type               | Description                                                           |
@@ -70,24 +63,30 @@ pub async fn get_historical_pnl(
 :::details[Optional]
 | Parameter                     | Location | Type                      | Description |
 | ----------------------------- | -------- | ------------------------- | ----------- |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
+| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+| `created_on_or_after_height`  | query    | [Height]                  | Restricts results to positions created on or after a specific blockchain height. |
+| `created_on_or_after`         | query    | [DateTime]                | Restricts results to positions created on or after a specific timestamp (ISO 8601 format). |
+| `page`                        | query    | [u32]                     | The page number for paginated results. |
 :::
 
 #### Response
 
-| Status | Meaning | Description | Schema |
-| ------ | ------- | ----------- | ------ |
-|        |         |             |        |
+| Status | Meaning     | Schema                     | Description               |
+| ------ | ----------- | -------------------------- | ------------------------- |
+| `200`  | [OK]        | [PnlTicksResponseObject] ⛁ | The historical PnLs data. |
 
 #### Method Usage
 
 :::code-group
 
 ```python [Python]
-
+TODO
 ```
 
 ```typescript [TypeScript]
-
+TODO
 ```
 
 ```rust [Rust]
