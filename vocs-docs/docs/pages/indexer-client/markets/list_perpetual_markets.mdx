@@ -1,18 +1,6 @@
 ### List Perpetual Markets
 
-:::details[TODO: Check]
-        """
-        Retrieves perpetual markets.
-
-        Args:
-            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
-
-        Returns:
-            dict: The perpetual markets data.
-        """
-:::
-
-// TODO: Add description
+Retrieves perpetual markets.
 
 #### Method Declaration
 
@@ -27,7 +15,7 @@ async def get_perpetual_markets(
 ```
 
 ```typescript [TypeScript]
-
+TODO
 ```
 
 ```rust [Rust]
@@ -38,32 +26,30 @@ pub async fn list_perpetual_markets(
 ```
 
 ```url [API]
+/v4/perpetualMarkets
 ```
 
 :::
 
 :::details[Unification Plan]
+- Add alias for the return type in Rust: `PerpetualMarketsMap`
 :::
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter                     | Location | Type                      | Description                                                                       |
+| ----------------------------- | -------- | ------------------------- | --------------------------------------------------------------------------------- |
+| `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned.|
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                | Description                 |
+| ------ | ----------- | --------------------- | --------------------------- |
+| `200`  | [OK]        | [PerpetualMarketsMap] | The perpetual markets data. |
 
 #### Method Usage
 
@@ -86,3 +72,6 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 ```
 
 :::
+
+[Ticker]: /types/ticker
+[PerpetualMarketsMap]: /types/perpetual_markets_map

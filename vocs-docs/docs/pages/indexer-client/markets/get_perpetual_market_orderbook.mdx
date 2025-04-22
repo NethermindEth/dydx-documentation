@@ -1,18 +1,6 @@
 ### Get Perpetual Market Orderbook
 
-:::details[TODO: Check]
-        """
-        Retrieves the orderbook for a specific perpetual market.
-
-        Args:
-            market (str): The market ticker.
-
-        Returns:
-            dict: The orderbook data.
-        """
-:::
-
-// TODO: Add description
+Retrieves the orderbook for a specific perpetual market.
 
 #### Method Declaration
 
@@ -47,32 +35,20 @@ pub async fn get_perpetual_market_orderbook(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter           | Location | Type               | Description                                 |
+| ------------------- | -------- | ------------------ | ------------------------------------------- |
+| `market`            | query    | [Ticker]           | The market ticker.                          |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                      | Description         |
+| ------ | ----------- | --------------------------- | ------------------- |
+| `200`  | [OK]        | [OrderBookResponseObject] ⛁ | The orderbook data. |
 
 
 #### Method Usage
 
 :::code-group
-
-```rust [Rust]
-let response = markets.get_perpetual_market_orderbook(&ticker).await?;
-```
 
 ```python [Python]
 
@@ -82,4 +58,12 @@ let response = markets.get_perpetual_market_orderbook(&ticker).await?;
 
 ```
 
+```rust [Rust]
+let response = markets.get_perpetual_market_orderbook(&ticker).await?;
+```
+
 :::
+
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[Ticker]: /types/ticker
+[OrderBookResponseObject]: /types/order_book_response_object

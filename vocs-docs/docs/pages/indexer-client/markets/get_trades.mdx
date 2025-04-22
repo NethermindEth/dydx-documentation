@@ -1,20 +1,6 @@
 ### Get Trades
 
-:::details[TODO: Check]
-        """
-        Retrieves trades for a specific perpetual market.
-
-        Args:
-            market (str): The market ticker.
-            starting_before_or_at_height (Optional[int]): The block height to start retrieving trades from.
-            limit (Optional[int]): The maximum number of trades to retrieve.
-
-        Returns:
-            dict: The trades data.
-        """
-:::
-
-// TODO: Add description
+Retrieves trades for a specific perpetual market.
 
 #### Method Declaration
 
@@ -58,23 +44,24 @@ pub async fn get_trades(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter           | Location | Type               | Description                                 |
+| ------------------- | -------- | ------------------ | ------------------------------------------- |
+| `market`            | query    | [Ticker]           | The market ticker.                          |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter                      | Location | Type                      | Description                                                  |
+| ------------------------------ | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                        | query    | [u32]                     | The maximum number of trades to retrieve. |
+| `starting_before_or_at_height` | query    | [Height]                  | The block height to start retrieving trades from. |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                  | Description      |
+| ------ | ----------- | ----------------------- | ---------------- |
+| `200`  | [OK]        | [TradeResponseObject] ⛁ | The trades data. |
 
 #### Method Usage
 
@@ -98,3 +85,8 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 ```
 
 :::
+
+[Ticker]: /types/ticker
+[u32]: /types/u32
+[Height]: /types/height
+[TradeResponseObject]: /types/trade_response_object
