@@ -57,19 +57,21 @@ pub async fn get_rewards(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `address`           | path    | [Address]          | The wallet address that owns the subaccount.                          |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `starting_before_or_at_height` | query | [Height] | |
+| `starting_before_or_at` | query | [DateTime] | |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | List of [HistoricalBlockTradingReward] ⛁ |
 
 #### Method Usage
 
@@ -93,3 +95,8 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[Height]: /types/height
+[DateTime]: /types/date_time
+[HistoricalBlockTradingReward]: /types/historical_block_trading_reward

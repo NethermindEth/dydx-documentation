@@ -49,7 +49,7 @@ pub async fn get_historical_funding(
 ```
 
 ```url [API]
-/v4/historicalFunding/{ticker}
+/v4/historicalFunding/{market}
 ```
 
 :::
@@ -61,19 +61,22 @@ pub async fn get_historical_funding(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `effective_before_or_at_height`   | query | [Height] | |
+| `effective_before_or_at` | query | [DateTime in utc] | |
+
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | List of [HistoricalFundingResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -97,3 +100,7 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 ```
 
 :::
+
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
+[HistoricalFundingResponseObject]: /types/historical_funding_response_object

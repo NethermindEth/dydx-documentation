@@ -12,7 +12,7 @@
         """
 :::
 
-// TODO: Add description
+Fetch list o perpetual market
 
 #### Method Declaration
 
@@ -38,6 +38,7 @@ pub async fn list_perpetual_markets(
 ```
 
 ```url [API]
+/v4/perpetualMarkets
 ```
 
 :::
@@ -47,21 +48,18 @@ pub async fn list_perpetual_markets(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `ticker` | query | [Ticker] | |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | Key value pair of [Ticker] -> [PerpetualMarket] ⛁ |
 
 #### Method Usage
 
@@ -84,3 +82,6 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 ```
 
 :::
+
+[Ticker]: /types/address
+[PerpetualMarket]: /types/perpetual_market

@@ -53,7 +53,7 @@ pub async fn get_candles(
 ```
 
 ```url [API]
-/v4/candles/perpetualMarkets/{ticker}
+/v4/candles/perpetualMarkets/{market}
 ```
 
 :::
@@ -65,19 +65,22 @@ pub async fn get_candles(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
+| `resolution` | query | [CandleResolution] | |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `from_iso` | query | [DateTime in utc] | |
+| `ti_iso` | query | [DateTime in utc] | |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | List of [CandleResponseObject] ⛁ |
 
 #### Method Usage
 
@@ -101,3 +104,8 @@ let response = markets.get_candles(&ticker, Some(opts)).await?;
 ```
 
 :::
+
+[Ticker]: /types/ticker
+[DateTime in utc]: /types/date_time
+[CandleResolution]: /types/candle_resolution
+[CandleResponseObject]: /types/candle_response_object

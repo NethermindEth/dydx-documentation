@@ -65,19 +65,22 @@ pub async fn get_rewards_aggregated(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `address`           | path    | [Address]          | The wallet address that owns the subaccount.                          |
+| `period`            | query | [TradingRewardAggregationPeriod] | Aggregation period of the trading |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `startingBeforeOrAt` | query | string | |
+| `startingBeforeOrAtHeight` | query | string | | 
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | List of [HistoricalTradingRewardAggregation] ⛁ |
 
 #### Method Usage
 
@@ -101,3 +104,7 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[TradingRewardAggregationPeriod]: /types/trading_reward_aggregation_period
+[HistoricalTradingRewardAggregation]: /types/historical_trading_rewards_aggregation
