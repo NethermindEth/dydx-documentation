@@ -1,9 +1,7 @@
 ### Get Perpetual Markets
 
-<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
-<<<<<<< HEAD
 Retrieves perpetual markets.
-=======
+
 :::details[TODO: Check]
         """
         Retrieves perpetual markets.
@@ -16,12 +14,6 @@ Retrieves perpetual markets.
         """
 :::
 
-Fetch list o perpetual market
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
-=======
-Get information of perpetual market
->>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
-
 #### Method Declaration
 
 :::code-group
@@ -31,11 +23,7 @@ def get_perpetual_markets(self, market: str = None) -> Response
 ```
 
 ```typescript [TypeScript]
-<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
-TODO
-=======
 async getPerpetualMarkets(market?: string): Promise<Data>
->>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
 ```
 
 ```rust [Rust]
@@ -59,30 +47,18 @@ pub async fn list_perpetual_markets(
 
 :::details[Optional]
 
-<<<<<<< HEAD
 | Parameter                     | Location | Type                      | Description                                                                       |
 | ----------------------------- | -------- | ------------------------- | --------------------------------------------------------------------------------- |
 | `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned.|
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                | Description                 |
-| ------ | ----------- | --------------------- | --------------------------- |
-| `200`  | [OK]        | [PerpetualMarketsMap] | The perpetual markets data. |
-=======
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `ticker` | query | [Ticker] | |
-
-#### Response
-
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | Key value pair of [Ticker] -> [PerpetualMarket] ⛁ |
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
+| `200`  | [OK]        | [PerpetualMarketsMap] |
 
 #### Method Usage
 
@@ -106,15 +82,7 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 
 :::
 
-<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
-<<<<<<< HEAD
 [Ticker]: /types/ticker
 [PerpetualMarketsMap]: /types/perpetual_markets_map
-=======
-=======
 [OK]: /types/ok
 [u32]: /types/u32
->>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
-[Ticker]: /types/address
-[PerpetualMarket]: /types/perpetual_market
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

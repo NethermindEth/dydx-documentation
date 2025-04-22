@@ -1,8 +1,7 @@
 ### Get Candles
 
-<<<<<<< HEAD
 Retrieves candle data for a specific perpetual market.
-=======
+
 :::details[TODO: Check]
         """
         Retrieves candle data for a specific perpetual market.
@@ -18,9 +17,6 @@ Retrieves candle data for a specific perpetual market.
             dict: The candle data.
         """
 :::
-
-Get perpetual market candles by market id and candle resolution
->>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -67,10 +63,9 @@ pub async fn get_candles(
 
 #### Parameters
 
-<<<<<<< HEAD
 | Parameter           | Location | Type               | Description                                            |
 | ------------------- | -------- | ------------------ | ------------------------------------------------------ |
-| `ticker`            | query    | [Ticker]           | The market ticker.                                     |
+| `market`            | path    | [Ticker]           | The market ticker.                                     |
 | `resolution`        | query    | [CandleResolution] | The candle resolution (e.g., "1DAY", "1HOUR", "1MIN"). |
 
 :::details[Optional]
@@ -88,26 +83,6 @@ pub async fn get_candles(
 | Status | Meaning     | Schema                   | Description      |
 | ------ | ----------- | ------------------------ | ---------------- |
 | `200`  | [OK]        | [CandleResponseObject] ⛁ | The candle data. |
-=======
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
-| `resolution` | query | [CandleResolution] | |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `from_iso` | query | [DateTime in utc] | |
-| `ti_iso` | query | [DateTime in utc] | |
-
-#### Response
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | List of [CandleResponseObject] ⛁ |
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -135,14 +110,6 @@ let response = markets.get_candles(&ticker, Some(opts)).await?;
 [OK]: /types/ok
 [u32]: /types/u32
 [Ticker]: /types/ticker
-<<<<<<< HEAD
 [CandleResolution]: /types/candle_resolution
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
-[u32]: /types/u32
 [DateTime]: /types/date_time
-[CandleResponseObject]: /types/candel_response_object
-=======
-[DateTime in utc]: /types/date_time
-[CandleResolution]: /types/candle_resolution
 [CandleResponseObject]: /types/candle_response_object
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

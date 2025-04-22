@@ -36,7 +36,6 @@ pub async fn get_sparklines(
 
 #### Parameters
 
-<<<<<<< HEAD
 | Parameter           | Location | Type                  | Description                                                             |
 | ------------------- | -------- | --------------------- | ----------------------------------------------------------------------- |
 | `period`            | query    | [SparklineTimePeriod] | The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS"). |
@@ -46,19 +45,6 @@ pub async fn get_sparklines(
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [SparklineResponseObject] ⛁ | The sparkline data. |
-=======
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `timePeriod`           | query    | [SparklineTimePeriod]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-#### Response
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [SparklineResponseObject] ⛁ |
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -80,8 +66,4 @@ let response = markets.get_sparklines(SparklineTimePeriod::OneDay).await?;
 
 [OK]: /types/ok
 [SparklineTimePeriod]: /types/sparkline_time_period
-<<<<<<< HEAD
 [SparklineResponseObject]: /types/sparkline_response_object
-=======
-[SparklineResponseObject]: /types/sparkline_response_object
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

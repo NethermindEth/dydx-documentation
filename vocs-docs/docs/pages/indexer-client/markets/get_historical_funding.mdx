@@ -1,8 +1,7 @@
 ### Get Historical Funding
 
-<<<<<<< HEAD
 Retrieves historical funding rates for a specific perpetual market.
-=======
+
 :::details[TODO: Check]
         """
         Retrieves historical funding rates for a specific perpetual market.
@@ -17,9 +16,6 @@ Retrieves historical funding rates for a specific perpetual market.
             dict: The historical funding rates data.
         """
 :::
-
-Get historical funding pf perpetual market by id
->>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -65,8 +61,7 @@ pub async fn get_historical_funding(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-<<<<<<< HEAD
-| `market`            | query    | [Ticker]           | The market ticker.                                                    |
+| `market`            | path    | [Ticker]           | The market ticker.                                                    |
 
 :::details[Optional]
 
@@ -82,25 +77,7 @@ pub async fn get_historical_funding(
 
 | Status | Meaning     | Schema                              | Description                        |
 | ------ | ----------- | ----------------------------------- | ---------------------------------- |
-| `200`  | [OK]        | [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
-=======
-| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `effective_before_or_at_height`   | query | [Height] | |
-| `effective_before_or_at` | query | [DateTime in utc] | |
-
-
-#### Response
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | List of [HistoricalFundingResponseObject] ⛁ |
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
+| `200`  | [OK]        | List of [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
 
 #### Method Usage
 
@@ -125,20 +102,9 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 
 :::
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 [Ticker]: /types/ticker
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
-[u32]: /types/u32
-[Height]: /types/height
-[DateTime]: /types/date_time
-[HistoricalFundingResponseObject]: /types/historical_funding_response_object
-=======
-=======
 [OK]: /types/ok
 [u32]: /types/u32
->>>>>>> fe35aef (Added description and fixed some linkings)
 [Height]: /types/height
 [DateTime in utc]: /types/date_time
 [HistoricalFundingResponseObject]: /types/historical_funding_response_object
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

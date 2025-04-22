@@ -1,8 +1,7 @@
 ### Get Perpetual Market Orderbook
 
-<<<<<<< HEAD
 Retrieves the orderbook for a specific perpetual market.
-=======
+
 :::details[TODO: Check]
         """
         Retrieves the orderbook for a specific perpetual market.
@@ -14,9 +13,6 @@ Retrieves the orderbook for a specific perpetual market.
             dict: The orderbook data.
         """
 :::
-
-Get order book of perpetual market by market id
->>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -51,28 +47,15 @@ pub async fn get_perpetual_market_orderbook(
 
 #### Parameters
 
-<<<<<<< HEAD
 | Parameter           | Location | Type               | Description                                 |
 | ------------------- | -------- | ------------------ | ------------------------------------------- |
-| `market`            | query    | [Ticker]           | The market ticker.                          |
+| `market`            | path    | [Ticker]           | The market ticker.                          |
 
 #### Response
 
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [OrderBookResponseObject] ⛁ | The orderbook data. |
-=======
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `market`           | Path    | [Ticker]          | The wallet address that owns the subaccount.                          |
-
-#### Response
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [OrderBookResponseObject] ⛁ |
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
-
 
 #### Method Usage
 
@@ -91,14 +74,6 @@ let response = markets.get_perpetual_market_orderbook(&ticker).await?;
 ```
 
 :::
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
-=======
->>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
-=======
 [OK]: /types/ok
->>>>>>> fe35aef (Added description and fixed some linkings)
 [Ticker]: /types/ticker
 [OrderBookResponseObject]: /types/order_book_response_object
