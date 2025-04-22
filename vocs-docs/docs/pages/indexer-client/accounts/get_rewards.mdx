@@ -2,18 +2,17 @@
 
 :::details[TODO: Check]
         """
-        Retrieves historical block trading rewards for the specified address.
 
         Args:
             address (str): The address.
             limit (Optional[int]): The maximum number of rewards to retrieve.
 
         Returns:
-            Any: The historical block trading rewards data.
+            Any:
         """
 :::
 
-// TODO: Add description
+Retrieves historical block trading rewards for the specified address.
 
 #### Method Declaration
 
@@ -67,9 +66,9 @@ pub async fn get_rewards(
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                           | Description                                |
+| ------ | ----------- | -------------------------------- | ------------------------------------------ |
+| `200`  | [OK]        | [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
 
 #### Method Usage
 
@@ -93,3 +92,7 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[HistoricalBlockTradingReward]: HistoricalBlockTradingReward
