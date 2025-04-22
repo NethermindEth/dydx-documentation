@@ -34,7 +34,7 @@ pub async fn get_historical_funding(
 ```
 
 ```url [API]
-/v4/historicalFunding/{ticker}
+/v4/historicalFunding/{market}
 ```
 
 :::
@@ -46,6 +46,7 @@ pub async fn get_historical_funding(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+<<<<<<< HEAD
 | `market`            | query    | [Ticker]           | The market ticker.                                                    |
 
 :::details[Optional]
@@ -63,6 +64,24 @@ pub async fn get_historical_funding(
 | Status | Meaning     | Schema                              | Description                        |
 | ------ | ----------- | ----------------------------------- | ---------------------------------- |
 | `200`  | [OK]        | [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
+=======
+| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `effective_before_or_at_height`   | query | [Height] | |
+| `effective_before_or_at` | query | [DateTime in utc] | |
+
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | List of [HistoricalFundingResponseObject] ⛁ |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -87,9 +106,15 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 
 :::
 
+<<<<<<< HEAD
 [Ticker]: /types/ticker
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [u32]: /types/u32
 [Height]: /types/height
 [DateTime]: /types/date_time
 [HistoricalFundingResponseObject]: /types/historical_funding_response_object
+=======
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
+[HistoricalFundingResponseObject]: /types/historical_funding_response_object
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

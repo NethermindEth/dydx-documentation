@@ -44,21 +44,29 @@ pub async fn get_rewards(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `address`           | path    | [Address]          | The wallet address that owns the subaccount.                          |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `starting_before_or_at_height` | query | [Height] | |
+| `starting_before_or_at` | query | [DateTime] | |
 
 :::
 
 #### Response
 
+<<<<<<< HEAD
 | Status | Meaning     | Schema                           | Description                                |
 | ------ | ----------- | -------------------------------- | ------------------------------------------ |
 | `200`  | [OK]        | [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
+=======
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | List of [HistoricalBlockTradingReward] ⛁ |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -84,5 +92,11 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 :::
 
 [Address]: /types/address
+<<<<<<< HEAD
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [HistoricalBlockTradingReward]: HistoricalBlockTradingReward
+=======
+[Height]: /types/height
+[DateTime]: /types/date_time
+[HistoricalBlockTradingReward]: /types/historical_block_trading_reward
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

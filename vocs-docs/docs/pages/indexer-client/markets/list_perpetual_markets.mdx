@@ -1,6 +1,22 @@
 ### List Perpetual Markets
 
+<<<<<<< HEAD
 Retrieves perpetual markets.
+=======
+:::details[TODO: Check]
+        """
+        Retrieves perpetual markets.
+
+        Args:
+            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
+
+        Returns:
+            dict: The perpetual markets data.
+        """
+:::
+
+Fetch list o perpetual market
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Declaration
 
@@ -39,6 +55,7 @@ pub async fn list_perpetual_markets(
 
 :::details[Optional]
 
+<<<<<<< HEAD
 | Parameter                     | Location | Type                      | Description                                                                       |
 | ----------------------------- | -------- | ------------------------- | --------------------------------------------------------------------------------- |
 | `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned.|
@@ -50,6 +67,18 @@ pub async fn list_perpetual_markets(
 | Status | Meaning     | Schema                | Description                 |
 | ------ | ----------- | --------------------- | --------------------------- |
 | `200`  | [OK]        | [PerpetualMarketsMap] | The perpetual markets data. |
+=======
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `ticker` | query | [Ticker] | |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | Key value pair of [Ticker] -> [PerpetualMarket] ⛁ |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -73,5 +102,10 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 
 :::
 
+<<<<<<< HEAD
 [Ticker]: /types/ticker
 [PerpetualMarketsMap]: /types/perpetual_markets_map
+=======
+[Ticker]: /types/address
+[PerpetualMarket]: /types/perpetual_market
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

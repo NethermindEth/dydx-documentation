@@ -25,7 +25,7 @@ pub async fn get_perpetual_market_orderbook(
 ```
 
 ```url [API]
-/v4/orderbooks/perpetualMarket/{ticker}
+/v4/orderbooks/perpetualMarket/{market}
 ```
 
 :::
@@ -35,6 +35,7 @@ pub async fn get_perpetual_market_orderbook(
 
 #### Parameters
 
+<<<<<<< HEAD
 | Parameter           | Location | Type               | Description                                 |
 | ------------------- | -------- | ------------------ | ------------------------------------------- |
 | `market`            | query    | [Ticker]           | The market ticker.                          |
@@ -44,6 +45,17 @@ pub async fn get_perpetual_market_orderbook(
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [OrderBookResponseObject] ⛁ | The orderbook data. |
+=======
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `market`           | Path    | [Ticker]          | The wallet address that owns the subaccount.                          |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [OrderBookResponseObject] ⛁ |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 
 #### Method Usage
@@ -64,6 +76,9 @@ let response = markets.get_perpetual_market_orderbook(&ticker).await?;
 
 :::
 
+<<<<<<< HEAD
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+=======
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 [Ticker]: /types/ticker
 [OrderBookResponseObject]: /types/order_book_response_object

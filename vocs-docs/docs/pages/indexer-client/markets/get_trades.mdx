@@ -34,7 +34,7 @@ pub async fn get_trades(
 ```
 
 ```url [API]
-/v4/trades/perpetualMarket/{ticker}
+/v4/trades/perpetualMarket/{market}
 ```
 
 :::
@@ -44,6 +44,7 @@ pub async fn get_trades(
 
 #### Parameters
 
+<<<<<<< HEAD
 | Parameter           | Location | Type               | Description                                 |
 | ------------------- | -------- | ------------------ | ------------------------------------------- |
 | `market`            | query    | [Ticker]           | The market ticker.                          |
@@ -62,6 +63,37 @@ pub async fn get_trades(
 | Status | Meaning     | Schema                  | Description      |
 | ------ | ----------- | ----------------------- | ---------------- |
 | `200`  | [OK]        | [TradeResponseObject] ⛁ | The trades data. |
+=======
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `market`           | path    | [Ticker]          | The wallet address that owns the subaccount.                          |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query | [Height] | |
+| `created_before_or_at`    | query | [DateTime] | |
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | List of [TradeResponseObject] ⛁ |
+
+#### Parameters
+
+| Parameter | Location | Type  | Required | Description |
+| --------- | -------- | ----- | -------- | ----------- |
+|           |          |       |          |             |
+
+#### Response
+
+| Status | Meaning | Description | Schema |
+| ------ | ------- | ----------- | ------ |
+|        |         |             |        |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -86,7 +118,13 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 
 :::
 
+<<<<<<< HEAD
 [Ticker]: /types/ticker
 [u32]: /types/u32
 [Height]: /types/height
 [TradeResponseObject]: /types/trade_response_object
+=======
+[Height]: /types/height
+[DateTime]: /types/date_time
+[TradeResponseObject]: /types/trade_response_object
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

@@ -47,6 +47,7 @@ pub async fn get_rewards_aggregated(
 
 #### Parameters
 
+<<<<<<< HEAD
 | Parameter           | Location | Type                             | Description                                  |
 | ------------------- | -------- | -------------------------------- | -------------------------------------------- |
 | `address`           | query    | [Address]                        | The wallet address that owns the subaccount. |
@@ -67,6 +68,26 @@ pub async fn get_rewards_aggregated(
 | Status | Meaning     | Schema                                 | Description                                     |
 | ------ | ----------- | -------------------------------------- | ----------------------------------------------- |
 | `200`  | [OK]        | [HistoricalTradingRewardAggregation] ⛁ | The aggregated historical trading rewards data. |
+=======
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `address`           | path    | [Address]          | The wallet address that owns the subaccount.                          |
+| `period`            | query | [TradingRewardAggregationPeriod] | Aggregation period of the trading |
+
+:::details[Optional]
+
+| Parameter                     | Location | Type                      | Description                                                  |
+| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `startingBeforeOrAt` | query | string | |
+| `startingBeforeOrAtHeight` | query | string | | 
+
+#### Response
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | List of [HistoricalTradingRewardAggregation] ⛁ |
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
 
 #### Method Usage
 
@@ -92,7 +113,12 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 :::
 
 [Address]: /types/address
+<<<<<<< HEAD
 [SubaccountNumber]: /types/subaccount_number
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [DateTime]: /types/date_time
 [Height]: /types/height
+=======
+[TradingRewardAggregationPeriod]: /types/trading_reward_aggregation_period
+[HistoricalTradingRewardAggregation]: /types/historical_trading_rewards_aggregation
+>>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
