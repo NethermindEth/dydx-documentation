@@ -1,6 +1,26 @@
 ### Get Rewards Aggregated
 
+<<<<<<< HEAD
 Retrieves aggregated historical trading rewards for the specified address.
+=======
+:::details[TODO: Check]
+        """
+        Retrieves aggregated historical trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            period (TradingRewardAggregationPeriod): The aggregation period.
+            limit (Optional[int]): The maximum number of aggregated rewards to retrieve.
+            starting_before_or_at (Optional[str]): The timestamp filter for rewards starting before or at.
+            starting_before_or_at_height (Optional[int]): The block height filter for rewards starting before or at.
+
+        Returns:
+            Any: The aggregated historical trading rewards data.
+        """
+:::
+
+Get information on historical trading aggregation by address and period.
+>>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -79,8 +99,8 @@ pub async fn get_rewards_aggregated(
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `startingBeforeOrAt` | query | string | |
-| `startingBeforeOrAtHeight` | query | string | | 
+| `startingBeforeOrAt` | query | [DateTime in utc] | |
+| `startingBeforeOrAtHeight` | query | [Height] | | 
 
 #### Response
 
@@ -112,13 +132,20 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Address]: /types/address
+<<<<<<< HEAD
 <<<<<<< HEAD
 [SubaccountNumber]: /types/subaccount_number
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [DateTime]: /types/date_time
 [Height]: /types/height
 =======
+=======
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
+>>>>>>> fe35aef (Added description and fixed some linkings)
 [TradingRewardAggregationPeriod]: /types/trading_reward_aggregation_period
 [HistoricalTradingRewardAggregation]: /types/historical_trading_rewards_aggregation
 >>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)

@@ -1,6 +1,23 @@
 ### Get Rewards
 
+<<<<<<< HEAD
 Retrieves historical block trading rewards for the specified address.
+=======
+:::details[TODO: Check]
+        """
+        Retrieves historical block trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            limit (Optional[int]): The maximum number of rewards to retrieve.
+
+        Returns:
+            Any: The historical block trading rewards data.
+        """
+:::
+
+Get trading rewards of historical block by address
+>>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -52,7 +69,7 @@ pub async fn get_rewards(
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 | `starting_before_or_at_height` | query | [Height] | |
-| `starting_before_or_at` | query | [DateTime] | |
+| `starting_before_or_at` | query | [DateTime in utc] | |
 
 :::
 
@@ -91,12 +108,19 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Address]: /types/address
 <<<<<<< HEAD
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [HistoricalBlockTradingReward]: HistoricalBlockTradingReward
 =======
 [Height]: /types/height
+<<<<<<< HEAD
 [DateTime]: /types/date_time
 [HistoricalBlockTradingReward]: /types/historical_block_trading_reward
 >>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
+=======
+[DateTime in utc]: /types/date_time
+[HistoricalBlockTradingReward]: /types/historical_block_trading_reward
+>>>>>>> fe35aef (Added description and fixed some linkings)

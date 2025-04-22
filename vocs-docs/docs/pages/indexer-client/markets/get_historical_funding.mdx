@@ -1,6 +1,25 @@
 ### Get Historical Funding
 
+<<<<<<< HEAD
 Retrieves historical funding rates for a specific perpetual market.
+=======
+:::details[TODO: Check]
+        """
+        Retrieves historical funding rates for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            effective_before_or_at (Optional[str]): The timestamp to retrieve funding rates effective before or at.
+            effective_before_or_at_height (Optional[int]): The block height to retrieve funding rates effective before or at.
+            limit (Optional[int]): The maximum number of funding rates to retrieve.
+
+        Returns:
+            dict: The historical funding rates data.
+        """
+:::
+
+Get historical funding pf perpetual market by id
+>>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -107,6 +126,7 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 :::
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [Ticker]: /types/ticker
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [u32]: /types/u32
@@ -114,6 +134,10 @@ let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 [DateTime]: /types/date_time
 [HistoricalFundingResponseObject]: /types/historical_funding_response_object
 =======
+=======
+[OK]: /types/ok
+[u32]: /types/u32
+>>>>>>> fe35aef (Added description and fixed some linkings)
 [Height]: /types/height
 [DateTime in utc]: /types/date_time
 [HistoricalFundingResponseObject]: /types/historical_funding_response_object

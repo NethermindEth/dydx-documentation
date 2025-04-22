@@ -1,6 +1,26 @@
 ### Get Candles
 
+<<<<<<< HEAD
 Retrieves candle data for a specific perpetual market.
+=======
+:::details[TODO: Check]
+        """
+        Retrieves candle data for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            resolution (str): The candle resolution (e.g., "1DAY", "1HOUR", "1MIN").
+            from_iso (Optional[str]): The start timestamp in ISO format.
+            to_iso (Optional[str]): The end timestamp in ISO format.
+            limit (Optional[int]): The maximum number of candles to retrieve.
+
+        Returns:
+            dict: The candle data.
+        """
+:::
+
+Get perpetual market candles by market id and candle resolution
+>>>>>>> fe35aef (Added description and fixed some linkings)
 
 #### Method Declaration
 
@@ -112,6 +132,8 @@ let response = markets.get_candles(&ticker, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Ticker]: /types/ticker
 <<<<<<< HEAD
 [CandleResolution]: /types/candle_resolution

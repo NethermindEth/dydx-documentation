@@ -1,5 +1,6 @@
-### List Perpetual Markets
+### Get Perpetual Markets
 
+<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
 <<<<<<< HEAD
 Retrieves perpetual markets.
 =======
@@ -17,21 +18,24 @@ Retrieves perpetual markets.
 
 Fetch list o perpetual market
 >>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
+=======
+Get information of perpetual market
+>>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-async def get_perpetual_markets(
-    self,
-    market: Optional[str] = None,
-) -> dict
-
+def get_perpetual_markets(self, market: str = None) -> Response
 ```
 
 ```typescript [TypeScript]
+<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
 TODO
+=======
+async getPerpetualMarkets(market?: string): Promise<Data>
+>>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
 ```
 
 ```rust [Rust]
@@ -102,10 +106,15 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 
 :::
 
+<<<<<<< HEAD:vocs-docs/docs/pages/indexer-client/markets/list_perpetual_markets.mdx
 <<<<<<< HEAD
 [Ticker]: /types/ticker
 [PerpetualMarketsMap]: /types/perpetual_markets_map
 =======
+=======
+[OK]: /types/ok
+[u32]: /types/u32
+>>>>>>> fe35aef (Added description and fixed some linkings):vocs-docs/docs/pages/indexer-client/markets/get_perpetual_markets.mdx
 [Ticker]: /types/address
 [PerpetualMarket]: /types/perpetual_market
 >>>>>>> a90c3c0 (Added all urls, request param, and response param of indexer client)
