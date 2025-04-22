@@ -1,21 +1,29 @@
-### List Perpetual Markets
+### Get Perpetual Markets
 
 Retrieves perpetual markets.
+
+:::details[TODO: Check]
+        """
+        Retrieves perpetual markets.
+
+        Args:
+            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
+
+        Returns:
+            dict: The perpetual markets data.
+        """
+:::
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-async def get_perpetual_markets(
-    self,
-    market: Optional[str] = None,
-) -> dict
-
+def get_perpetual_markets(self, market: str = None) -> Response
 ```
 
 ```typescript [TypeScript]
-TODO
+async getPerpetualMarkets(market?: string): Promise<Data>
 ```
 
 ```rust [Rust]
@@ -42,14 +50,15 @@ pub async fn list_perpetual_markets(
 | Parameter                     | Location | Type                      | Description                                                                       |
 | ----------------------------- | -------- | ------------------------- | --------------------------------------------------------------------------------- |
 | `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned.|
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                | Description                 |
-| ------ | ----------- | --------------------- | --------------------------- |
-| `200`  | [OK]        | [PerpetualMarketsMap] | The perpetual markets data. |
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [PerpetualMarketsMap] |
 
 #### Method Usage
 
@@ -75,3 +84,5 @@ let response = markets.list_perpetual_markets(Some(opts)).await?;
 
 [Ticker]: /types/ticker
 [PerpetualMarketsMap]: /types/perpetual_markets_map
+[OK]: /types/ok
+[u32]: /types/u32

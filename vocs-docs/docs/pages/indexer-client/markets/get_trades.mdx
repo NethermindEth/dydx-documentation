@@ -2,6 +2,20 @@
 
 Retrieves trades for a specific perpetual market.
 
+:::details[TODO: Check]
+        """
+        Retrieves trades for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            starting_before_or_at_height (Optional[int]): The block height to start retrieving trades from.
+            limit (Optional[int]): The maximum number of trades to retrieve.
+
+        Returns:
+            dict: The trades data.
+        """
+:::
+
 #### Method Declaration
 
 :::code-group
@@ -34,7 +48,7 @@ pub async fn get_trades(
 ```
 
 ```url [API]
-/v4/trades/perpetualMarket/{ticker}
+/v4/trades/perpetualMarket/{market}
 ```
 
 :::
@@ -46,7 +60,7 @@ pub async fn get_trades(
 
 | Parameter           | Location | Type               | Description                                 |
 | ------------------- | -------- | ------------------ | ------------------------------------------- |
-| `market`            | query    | [Ticker]           | The market ticker.                          |
+| `market`            | path    | [Ticker]           | The market ticker.                          |
 
 :::details[Optional]
 
@@ -61,7 +75,7 @@ pub async fn get_trades(
 
 | Status | Meaning     | Schema                  | Description      |
 | ------ | ----------- | ----------------------- | ---------------- |
-| `200`  | [OK]        | [TradeResponseObject] ⛁ | The trades data. |
+| `200`  | [OK]        | List of [TradeResponseObject] ⛁ | The trades data. |
 
 #### Method Usage
 
@@ -85,8 +99,8 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 ```
 
 :::
-
 [Ticker]: /types/ticker
 [u32]: /types/u32
 [Height]: /types/height
 [TradeResponseObject]: /types/trade_response_object
+[OK]: /types/ok

@@ -12,7 +12,7 @@
         """
 :::
 
-// TODO: Add description
+Query for screening results (compliance) of the address.
 
 #### Method Declaration
 
@@ -48,6 +48,7 @@ pub async fn get_screen(
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
 
+
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
@@ -60,7 +61,7 @@ pub async fn get_screen(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [ComplianceResponse] ⛁ |
 
 #### Method Usage
 
@@ -79,3 +80,6 @@ let response = utility.get_screen(&address).await?;
 ```
 
 :::
+
+[OK]: /types/ok
+[ComplianceResponse]: /types/compliance_response

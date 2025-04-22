@@ -2,6 +2,22 @@
 
 Retrieves candle data for a specific perpetual market.
 
+:::details[TODO: Check]
+        """
+        Retrieves candle data for a specific perpetual market.
+
+        Args:
+            market (str): The market ticker.
+            resolution (str): The candle resolution (e.g., "1DAY", "1HOUR", "1MIN").
+            from_iso (Optional[str]): The start timestamp in ISO format.
+            to_iso (Optional[str]): The end timestamp in ISO format.
+            limit (Optional[int]): The maximum number of candles to retrieve.
+
+        Returns:
+            dict: The candle data.
+        """
+:::
+
 #### Method Declaration
 
 :::code-group
@@ -37,7 +53,7 @@ pub async fn get_candles(
 ```
 
 ```url [API]
-/v4/candles/perpetualMarkets/{ticker}
+/v4/candles/perpetualMarkets/{market}
 ```
 
 :::
@@ -49,7 +65,7 @@ pub async fn get_candles(
 
 | Parameter           | Location | Type               | Description                                            |
 | ------------------- | -------- | ------------------ | ------------------------------------------------------ |
-| `ticker`            | query    | [Ticker]           | The market ticker.                                     |
+| `market`            | path    | [Ticker]           | The market ticker.                                     |
 | `resolution`        | query    | [CandleResolution] | The candle resolution (e.g., "1DAY", "1HOUR", "1MIN"). |
 
 :::details[Optional]
@@ -91,9 +107,9 @@ let response = markets.get_candles(&ticker, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Ticker]: /types/ticker
 [CandleResolution]: /types/candle_resolution
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
-[u32]: /types/u32
 [DateTime]: /types/date_time
-[CandleResponseObject]: /types/candel_response_object
+[CandleResponseObject]: /types/candle_response_object

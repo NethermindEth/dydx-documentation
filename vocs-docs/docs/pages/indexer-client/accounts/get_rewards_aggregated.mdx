@@ -2,6 +2,22 @@
 
 Retrieves aggregated historical trading rewards for the specified address.
 
+:::details[TODO: Check]
+        """
+        Retrieves aggregated historical trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            period (TradingRewardAggregationPeriod): The aggregation period.
+            limit (Optional[int]): The maximum number of aggregated rewards to retrieve.
+            starting_before_or_at (Optional[str]): The timestamp filter for rewards starting before or at.
+            starting_before_or_at_height (Optional[int]): The block height filter for rewards starting before or at.
+
+        Returns:
+            Any: The aggregated historical trading rewards data.
+        """
+:::
+
 #### Method Declaration
 
 :::code-group
@@ -49,7 +65,7 @@ pub async fn get_rewards_aggregated(
 
 | Parameter           | Location | Type                             | Description                                  |
 | ------------------- | -------- | -------------------------------- | -------------------------------------------- |
-| `address`           | query    | [Address]                        | The wallet address that owns the subaccount. |
+| `address`           | path    | [Address]                        | The wallet address that owns the subaccount. |
 | `period`            | query    | [TradingRewardAggregationPeriod] | The aggregation period.                      |
 
 :::details[Optional]
@@ -91,8 +107,10 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Address]: /types/address
-[SubaccountNumber]: /types/subaccount_number
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [DateTime]: /types/date_time
 [Height]: /types/height
+[TradingRewardAggregationPeriod]: /types/trading_reward_aggregation_period
+[HistoricalTradingRewardAggregation]: /types/historical_trading_rewards_aggregation

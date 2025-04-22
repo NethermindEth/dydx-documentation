@@ -2,6 +2,19 @@
 
 Retrieves historical block trading rewards for the specified address.
 
+:::details[TODO: Check]
+        """
+        Retrieves historical block trading rewards for the specified address.
+
+        Args:
+            address (str): The address.
+            limit (Optional[int]): The maximum number of rewards to retrieve.
+
+        Returns:
+            Any: The historical block trading rewards data.
+        """
+:::
+
 #### Method Declaration
 
 :::code-group
@@ -44,21 +57,22 @@ pub async fn get_rewards(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `address`           | path    | [Address]          | The wallet address that owns the subaccount.                          |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
+| `starting_before_or_at_height` | query | [Height] | |
+| `starting_before_or_at` | query | [DateTime in utc] | |
 :::
 
 #### Response
 
 | Status | Meaning     | Schema                           | Description                                |
 | ------ | ----------- | -------------------------------- | ------------------------------------------ |
-| `200`  | [OK]        | [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
+| `200`  | [OK]        | List of [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
 
 #### Method Usage
 
@@ -83,6 +97,9 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Address]: /types/address
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
 [HistoricalBlockTradingReward]: HistoricalBlockTradingReward
+[Height]: /types/height
+[DateTime in utc]: /types/date_time

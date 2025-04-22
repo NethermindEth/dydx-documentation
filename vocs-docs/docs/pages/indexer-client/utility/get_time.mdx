@@ -9,7 +9,7 @@
         """
 :::
 
-// TODO: Add description
+Get current server time of Indexer
 
 #### Method Declaration
 
@@ -54,7 +54,7 @@ pub async fn get_time(&self) -> Result<TimeResponse, Error>
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [TimeResponse] ⛁ |
 
 #### Method Usage
 
@@ -73,3 +73,6 @@ let time = utility.get_time().await?;
 ```
 
 :::
+
+[OK]: /types/ok
+[TimeResponse]: /types/time_response
