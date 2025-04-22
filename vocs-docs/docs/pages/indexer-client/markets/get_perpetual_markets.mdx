@@ -2,18 +2,6 @@
 
 Retrieves perpetual markets.
 
-:::details[TODO: Check]
-        """
-        Retrieves perpetual markets.
-
-        Args:
-            market (Optional[str]): The specific market ticker to retrieve. If not provided, all markets are returned.
-
-        Returns:
-            dict: The perpetual markets data.
-        """
-:::
-
 #### Method Declaration
 
 :::code-group
@@ -59,28 +47,6 @@ pub async fn list_perpetual_markets(
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [PerpetualMarketsMap] |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let opts = ListPerpetualMarketsOpts {
-    limit: Some(5),
-    ticker: Some(ticker),
-};
-let response = markets.list_perpetual_markets(Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
 
 [Ticker]: /types/ticker
 [PerpetualMarketsMap]: /types/perpetual_markets_map

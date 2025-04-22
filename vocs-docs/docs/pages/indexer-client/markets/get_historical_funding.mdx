@@ -2,21 +2,6 @@
 
 Retrieves historical funding rates for a specific perpetual market.
 
-:::details[TODO: Check]
-        """
-        Retrieves historical funding rates for a specific perpetual market.
-
-        Args:
-            market (str): The market ticker.
-            effective_before_or_at (Optional[str]): The timestamp to retrieve funding rates effective before or at.
-            effective_before_or_at_height (Optional[int]): The block height to retrieve funding rates effective before or at.
-            limit (Optional[int]): The maximum number of funding rates to retrieve.
-
-        Returns:
-            dict: The historical funding rates data.
-        """
-:::
-
 #### Method Declaration
 
 :::code-group
@@ -77,30 +62,7 @@ pub async fn get_historical_funding(
 
 | Status | Meaning     | Schema                              | Description                        |
 | ------ | ----------- | ----------------------------------- | ---------------------------------- |
-| `200`  | [OK]        | List of [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
-
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-```rust [Rust]
-let opts = GetHistoricalFundingOpts {
-    limit: Some(5),
-    effective_before_or_at_height: None,
-    effective_before_or_at: None,
-};
-let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
-```
-
-:::
+| `200`  | [OK]        | [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
 
 [Ticker]: /types/ticker
 [OK]: /types/ok

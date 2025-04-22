@@ -1,14 +1,5 @@
 ### Get Height
 
-:::details[TODO: Check]
-        """
-        Get the block height of the most recent block processed by the Indexer.
-
-        Returns:
-
-        """
-:::
-
 Current block height and block time (UTC) parsed by Indexer.
 
 #### Method Declaration
@@ -55,24 +46,6 @@ pub async fn get_height(&self) -> Result<HeightResponse, Error>
 | Status | Meaning     | Schema                          | Description |
 | ------ | ----------- | ------------------------------- | ----------- |
 | `200`  | [OK]        | [HeightResponse] ⛁ | Dictionary containing the block height and time. |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let height = utility.get_height().await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
 
 [OK]: /types/ok
 [HeightResponse]: /types/height_response

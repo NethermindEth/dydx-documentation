@@ -43,7 +43,7 @@ pub async fn get_order(
 
 | Parameter     | Location | Type                      | Description   |
 | ------------- | -------- | ------------------------- | ------------- |
-| `order_id`    | query    | [OrderId]                 | The order ID. |
+| `order_id`    | path    | [OrderId]                 | The order ID. |
 
 #### Response
 
@@ -51,23 +51,6 @@ pub async fn get_order(
 | ------ | ----------- | ----------------------- | --------------- |
 | `200`  | [OK]        | [OrderResponseObject] ⛁ | The order data. |
 
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-TODO
-```
-
-```typescript [TypeScript]
-TODO
-```
-
-```rust [Rust]
-let response = accounts.get_order(&order_id).await?;
-```
-
-:::
-
+[OK]: /types/ok
 [OrderId]: /types/order_id
 [OrderResponseObject]: /types/order_response_object

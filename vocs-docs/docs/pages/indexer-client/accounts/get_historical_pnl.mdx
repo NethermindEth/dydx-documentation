@@ -79,32 +79,7 @@ pub async fn get_historical_pnl(
 | ------ | ----------- | -------------------------- | ------------------------- |
 | `200`  | [OK]        | [PnlTicksResponseObject] ⛁ | The historical PnLs data. |
 
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-TODO
-```
-
-```typescript [TypeScript]
-TODO
-```
-
-```rust [Rust]
-let opts = GetHistoricalPnlOpts {
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-    created_on_or_after_height: None,
-    created_on_or_after: None,
-};
-let response = accounts.get_historical_pnl(&subaccount, Some(opts)).await?;
-```
-
-:::
-
-
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number
-[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[OK]: /types/ok
+[PnlTicksResponseObject]: /types/pnl_ticks_response_object

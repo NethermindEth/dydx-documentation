@@ -1,13 +1,6 @@
 ### Get Time
 
-:::details[TODO: Check]
-        """
-        Get the current time of the Indexer.
 
-        Returns:
-            Dict[str, str]: A dictionary containing the isoString and epoch time.
-        """
-:::
 
 Get current server time of Indexer
 
@@ -55,24 +48,6 @@ pub async fn get_time(&self) -> Result<TimeResponse, Error>
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [TimeResponse] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let time = utility.get_time().await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
 
 [OK]: /types/ok
 [TimeResponse]: /types/time_response

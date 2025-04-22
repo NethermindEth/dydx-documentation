@@ -1,17 +1,5 @@
 ### Get Perpetual
 
-:::details[TODO: Check]
-        """
-        Retrieves a perpetual by its ID.
-
-        Args:
-            perpetual_id (int): The perpetual ID.
-
-        Returns:
-            QueryPerpetualResponse: The response containing the perpetual.
-        """
-:::
-
 Query for the perpetual.
 
 #### Method Declaration
@@ -34,6 +22,7 @@ pub async fn get_perpetual(
 ```
 
 ```url [API]
+/dydxprotocol.perpetuals.Query/Perpetual
 ```
 
 :::
@@ -45,13 +34,7 @@ pub async fn get_perpetual(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `id`           | query    | [u32]          |                          |
 
 :::
 
@@ -59,27 +42,13 @@ pub async fn get_perpetual(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-perpetual = await node_client.get_perpetual(1)
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const perpetual = await client.get.getPerpetual(1);
-```
-
-:::
+| `200`  | [OK]        | [Perpetual] |
 
 Examples: [Python] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L118
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L83
+
+[u32]: /types/u32
+[OK]: /types/ok
+[Perpetual]: /types/perpetual

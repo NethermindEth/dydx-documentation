@@ -1,14 +1,5 @@
 ### Get Prices
 
-:::details[TODO: Check]
-        """
-        Retrieves all market prices.
-
-        Returns:
-            QueryAllMarketPricesResponse: The response containing all market prices.
-        """
-:::
-
 Query for all markets prices.
 
 #### Method Declaration
@@ -31,6 +22,7 @@ pub async fn get_prices(
 ```
 
 ```url [API]
+/dydxprotocol.prices.Query/AllMarketPrices
 ```
 
 :::
@@ -40,15 +32,15 @@ pub async fn get_prices(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `key`                       | query    | [u8]                     | Maximum number of asset positions to return in the response. |
+| `offset` | query | [u64] | |
+| `limit` | query | [u64] | |
+| `count_total` | query | bool | |
+| `reverse` | query | bool | |
 
 :::
 
@@ -56,28 +48,15 @@ pub async fn get_prices(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-price = await node_client.get_prices()
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const prices = await client.get.getAllPrices();
-```
-
-:::
+| `200`  | [OK]        | [MarketPrice] ⛁ |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L110
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-js/examples/validator_get_example.ts#L57
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L80
+
+[OK]: /types/ok
+[MarketPrice]: /types/market_price
+[u8]: /types/u8
+[u64]: /types/u64

@@ -44,7 +44,9 @@ pub async fn get_account_balance(
 ) -> Result<Coin, Error>
 ```
 
+
 ```url [API]
+/cosmos.bank.v1beta1.Query/Balance
 ```
 
 :::
@@ -57,43 +59,20 @@ pub async fn get_account_balance(
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| `denom`   | query | [Denom] | |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-response = await node_client.get_account_balances(TEST_ADDRESS)
-```
-
-```typescript [TypeScript]
-const client = new CompositeClient(network);
-wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
-const tx = await client.validatorClient.get.getAccountBalance(
-    wallet.address,
-    client.validatorClient.config.denoms.USDC_DENOM,
-);```
-
-:::
+| `200`  | [OK]        | [Coin] |
 
 Examples: [Python] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L28
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L38
+
+[Address]: /types/address
+[Denom]: /types/denom
+[OK]: /types/ok
+[Coin]: /types/coin

@@ -1,6 +1,6 @@
 ### Get Parent Asset Positions
 
-// TODO: Add description
+Query for asset positions (size, buy/sell etc) for a parent subaccount.
 
 #### Method Declaration
 
@@ -35,14 +35,7 @@ pub async fn get_parent_asset_positions(
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| `parent_subaccount_number` | query | [SubaccountNumber] | The parent subaccount number of this wallet |
 
 #### Response
 
@@ -50,24 +43,6 @@ pub async fn get_parent_asset_positions(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response_list = accounts.get_parent_asset_positions(&parent_subaccount).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
-
 [Address]: /types/address
 [AssetPositionResponseObject]: /types/asset_position_response_object
-[OK]: /types/OK
+[OK]: /types/ok

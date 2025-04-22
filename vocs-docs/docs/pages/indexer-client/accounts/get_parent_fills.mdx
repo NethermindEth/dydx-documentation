@@ -1,6 +1,6 @@
 ### Get Parent Fills
 
-// TODO: Add description
+Query for fills (i.e. filled orders data) for a parent subaccount.
 
 #### Method Declaration
 
@@ -43,12 +43,17 @@ pub async fn get_parent_fills(
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `patent_subaccount_number` | query | [SubaccountNumber] | |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query | [Height] | |
+|`created_before_or_at` | query | [DateTime in utc] | |
+| `market`  | query | [Ticker] | |
+| `market_type` | query | [MarketType] | |
 
 :::
 
@@ -56,29 +61,13 @@ pub async fn get_parent_fills(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [FillResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let opts = GetFillsOpts {
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-    market: Some(ticker),
-    market_type: Some(MarketType::Perpetual),
-};
-let response = accounts.get_fills(&parent_subaccount, Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
+[Ticker]: /types/ticker
+[MarketType]: /types/market_type
+[FillResponseObject]: /types/fill_response_object

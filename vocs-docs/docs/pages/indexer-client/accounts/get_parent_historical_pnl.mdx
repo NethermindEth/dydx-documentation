@@ -1,6 +1,6 @@
 ### Get Parent Historical Pnl
 
-// TODO: Add description
+Query for profit and loss report for the specified time/block range of a parent subaccount.
 
 #### Method Declaration
 
@@ -45,12 +45,17 @@ pub async fn get_parent_historical_pnl(
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `parent_subaccount_number` | query | [SubaccountNumber] | |
 
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `created_before_or_at_height` | query | [Height] | |
+| `created_before_or_at` | query | [DateTime in utc] | |
+| `created_on_or_after_height` | query | [Height] | |
+| `created_on_or_after` | query | [DateTime in utc] | |
 
 :::
 
@@ -58,29 +63,11 @@ pub async fn get_parent_historical_pnl(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [PnlTicksResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let opts = GetHistoricalPnlOpts {
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-    created_on_or_after_height: None,
-    created_on_or_after: None,
-};
-let response = accounts.get_parent_historical_pnl(&parent_subaccount, Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
+[PnlTicksResponseObject]: /types/pnl_ticks_response_object
