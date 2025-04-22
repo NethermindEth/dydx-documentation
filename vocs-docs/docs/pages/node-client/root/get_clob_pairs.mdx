@@ -1,14 +1,5 @@
 ### Get Clob Pairs
 
-:::details[TODO: Check]
-        """
-        Retrieves all CLOB pairs.
-
-        Returns:
-            QueryClobPairAllResponse: The response containing all CLOB pairs.
-        """
-:::
-
 Query for all orderbook pairs.
 
 #### Method Declaration
@@ -31,6 +22,7 @@ pub async fn get_clob_pairs(
 ```
 
 ```url [API]
+/dydxprotocol.clob.Query/ClobPairAll
 ```
 
 :::
@@ -40,15 +32,15 @@ pub async fn get_clob_pairs(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `key`                       | query    | [u8]                     | Maximum number of asset positions to return in the response. |
+| `offset` | query | [u64] | |
+| `limit` | query | [u64] | |
+| `count_total` | query | bool | |
+| `reverse` | query | bool | |
 
 :::
 
@@ -56,30 +48,15 @@ pub async fn get_clob_pairs(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-network = Network.testnet()
-client = ValidatorClient(network.validator_config)
-clob_pairs = client.get.clob_pairs()
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const clobpairs = await client.get.getAllClobPairs();
-```
-
-```rust [Rust]
-```
-
-:::
+| `200`  | [OK]        | [ClobPair] ⛁ |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L94
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-js/examples/validator_get_example.ts#L49
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L74
+
+[u8]: /types/u8
+[u64]: /types/u64
+[OK]: /types/ok
+[ClobPair]: /types/clob_pair

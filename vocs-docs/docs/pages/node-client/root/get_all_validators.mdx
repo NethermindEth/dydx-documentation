@@ -1,17 +1,5 @@
 ### Get All Validators
 
-:::details[TODO: Check]
-        """
-        Retrieves all validators with an optional status filter.
-
-        Args:
-            status (str, optional): The validator status filter. Defaults to an empty string.
-
-        Returns:
-            staking_query.QueryValidatorsResponse: The response containing all validators.
-        """
-:::
-
 Query for [all validators] that match the given status.
 
 [all validators]: https://github.com/cosmos/cosmos-sdk/tree/main/x/staking#validators-2
@@ -39,6 +27,7 @@ pub async fn get_all_validators(
 ```
 
 ```url [API]
+/cosmos.staking.v1beta1.Query/Validators
 ```
 
 :::
@@ -48,15 +37,11 @@ pub async fn get_all_validators(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
 :::details[Optional]
 
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| `status`                       | query    | string                     |  |
 
 :::
 
@@ -64,28 +49,13 @@ pub async fn get_all_validators(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-validators = await node_client.get_all_validators()
-```
-
-```typescript [TypeScript]
-const getAllBondedValidators = await client.get.getAllValidators('BOND_STATUS_BONDED');
-```
-
-:::
+| `200`  | [OK]        | [Validator] ⛁ |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L60
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-js/examples/validator_get_example.ts#L131
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L62
+
+[OK]: /types/ok
+[Validator]: /types/validator

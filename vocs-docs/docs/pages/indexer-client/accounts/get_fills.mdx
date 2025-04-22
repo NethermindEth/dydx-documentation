@@ -89,32 +89,6 @@ A promise that resolves to fill data containing details such as order ID, market
 | -------- | ----------- | ---------------------- | --------------- |
 | `200`    | [OK]        | [FillResponseObject] ⛁ | The fills data. |
 
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-TODO
-```
-
-```typescript [TypeScript]
-TODO
-```
-
-```rust [Rust]
-let opts = GetFillsOpts {
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-    market: Some(ticker),
-    market_type: Some(MarketType::Perpetual),
-};
-let response = accounts.get_fills(&subaccount, Some(opts)).await?;
-```
-
-:::
-
-
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1

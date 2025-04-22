@@ -1,17 +1,5 @@
 ### Get Screen
 
-:::details[TODO: Check]
-        """
-        Screen an address to see if it is restricted.
-
-        Args:
-            address (str): The EVM or dYdX address to screen.
-
-        Returns:
-            Dict[str, bool]: A dictionary indicating whether the specified address is restricted.
-        """
-:::
-
 Query for screening results (compliance) of the address.
 
 #### Method Declaration
@@ -62,24 +50,6 @@ pub async fn get_screen(
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [ComplianceResponse] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response = utility.get_screen(&address).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
 
 [OK]: /types/ok
 [ComplianceResponse]: /types/compliance_response
