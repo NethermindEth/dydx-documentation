@@ -1,18 +1,5 @@
 ### Get Sparklines
-
-:::details[TODO: Check]
-        """
-        Retrieves sparkline data for perpetual markets.
-
-        Args:
-            period (str): The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS").
-
-        Returns:
-            dict: The sparkline data.
-        """
-:::
-
-// TODO: Add description
+Retrieves sparkline data for perpetual markets.
 
 #### Method Declaration
 
@@ -20,12 +7,15 @@
 
 ```python [Python]
 async def get_perpetual_market_sparklines(
-    self, period: str = TimePeriod.ONE_DAY
+    self,
+    period: str = TimePeriod.ONE_DAY
 ) -> dict
 ```
 
 ```typescript [TypeScript]
-async getPerpetualMarketSparklines(period: string = TimePeriod.ONE_DAY): Promise<Data>
+async getPerpetualMarketSparklines(
+    period: string = TimePeriod.ONE_DAY,
+): Promise<Data>
 ```
 
 ```rust [Rust]
@@ -46,23 +36,15 @@ pub async fn get_sparklines(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter           | Location | Type                  | Description                                                             |
+| ------------------- | -------- | --------------------- | ----------------------------------------------------------------------- |
+| `period`            | query    | [SparklineTimePeriod] | The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS"). |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                      | Description         |
+| ------ | ----------- | --------------------------- | ------------------- |
+| `200`  | [OK]        | [SparklineResponseObject] ⛁ | The sparkline data. |
 
 #### Method Usage
 
@@ -81,3 +63,6 @@ let response = markets.get_sparklines(SparklineTimePeriod::OneDay).await?;
 ```
 
 :::
+
+[SparklineTimePeriod]: /types/sparkline_time_period
+[SparklineResponseObject]: /types/sparkline_response_object
