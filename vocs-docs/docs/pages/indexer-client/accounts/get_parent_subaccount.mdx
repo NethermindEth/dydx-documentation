@@ -42,6 +42,8 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 
+:::
+
 #### Response
 
 | Status | Meaning     | Schema                          |
@@ -65,6 +67,3 @@ let response = accounts.get_parent_subaccount(&parent_subaccount).await?;
 ```
 
 :::
-
-
-
