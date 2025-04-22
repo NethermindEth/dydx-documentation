@@ -13,7 +13,7 @@
         """
 :::
 
-// TODO: Add description
+Get trading rewards of historical block by address
 
 #### Method Declaration
 
@@ -65,7 +65,7 @@ pub async fn get_rewards(
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 | `starting_before_or_at_height` | query | [Height] | |
-| `starting_before_or_at` | query | [DateTime] | |
+| `starting_before_or_at` | query | [DateTime in utc] | |
 
 #### Response
 
@@ -96,7 +96,9 @@ let response = accounts.get_rewards(&address, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Address]: /types/address
 [Height]: /types/height
-[DateTime]: /types/date_time
+[DateTime in utc]: /types/date_time
 [HistoricalBlockTradingReward]: /types/historical_block_trading_reward

@@ -14,7 +14,7 @@
         """
 :::
 
-// TODO: Add description
+Get perpetual market trade information by market id
 
 #### Method Declaration
 
@@ -68,7 +68,7 @@ pub async fn get_trades(
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
 | `created_before_or_at_height` | query | [Height] | |
-| `created_before_or_at`    | query | [DateTime] | |
+| `created_before_or_at`    | query | [DateTime in utc] | |
 
 #### Response
 
@@ -111,6 +111,8 @@ let response = markets.get_trades(&ticker, Some(opts)).await?;
 
 :::
 
+[OK]: /types/ok
+[u32]: /types/u32
 [Height]: /types/height
-[DateTime]: /types/date_time
+[DateTime in utc]: /types/date_time
 [TradeResponseObject]: /types/trade_response_object
