@@ -18,7 +18,7 @@ async getParentSubaccountNumberTransfers(
     createdBeforeOrAtHeight?: number | null,
     createdBeforeOrAt?: string | null,
     page?: number | null,
-): Promise<Data> 
+): Promise<Data>
 ```
 
 ```rust [Rust]
@@ -49,6 +49,8 @@ pub async fn get_parent_transfers(
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+:::
 
 #### Response
 
@@ -81,5 +83,3 @@ let response = accounts.get_parent_transfers(&parent_subaccount, Some(opts)).awa
 
 [OK]: /types/OK
 [TransferResponseObject]: /types/transfer_response_object
-
-

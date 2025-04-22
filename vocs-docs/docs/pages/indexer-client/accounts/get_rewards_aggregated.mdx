@@ -1,22 +1,6 @@
 ### Get Rewards Aggregated
 
-:::details[TODO: Check]
-        """
-        Retrieves aggregated historical trading rewards for the specified address.
-
-        Args:
-            address (str): The address.
-            period (TradingRewardAggregationPeriod): The aggregation period.
-            limit (Optional[int]): The maximum number of aggregated rewards to retrieve.
-            starting_before_or_at (Optional[str]): The timestamp filter for rewards starting before or at.
-            starting_before_or_at_height (Optional[int]): The block height filter for rewards starting before or at.
-
-        Returns:
-            Any: The aggregated historical trading rewards data.
-        """
-:::
-
-// TODO: Add description
+Retrieves aggregated historical trading rewards for the specified address.
 
 #### Method Declaration
 
@@ -63,21 +47,26 @@ pub async fn get_rewards_aggregated(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter           | Location | Type                             | Description                                  |
+| ------------------- | -------- | -------------------------------- | -------------------------------------------- |
+| `address`           | query    | [Address]                        | The wallet address that owns the subaccount. |
+| `period`            | query    | [TradingRewardAggregationPeriod] | The aggregation period.                      |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter                      | Location | Type                      | Description                                                |
+| ------------------------------ | -------- | ------------------------- | ---------------------------------------------------------- |
+| `limit`                        | query    | [u32]                     | The maximum number of aggregated rewards to retrieve.      |
+| `starting_before_or_at`        | query    | [DateTime]                | The timestamp filter for rewards starting before or at.    |
+| `starting_before_or_at_height` | query    | [Height]                  | The block height filter for rewards starting before or at. |
+
+:::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                                 | Description                                     |
+| ------ | ----------- | -------------------------------------- | ----------------------------------------------- |
+| `200`  | [OK]        | [HistoricalTradingRewardAggregation] ⛁ | The aggregated historical trading rewards data. |
 
 #### Method Usage
 
@@ -101,3 +90,9 @@ let response = accounts.get_rewards_aggregated(&address, Some(opts)).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[DateTime]: /types/date_time
+[Height]: /types/height

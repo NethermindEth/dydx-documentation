@@ -1,21 +1,6 @@
 ### Get Historical Funding
 
-:::details[TODO: Check]
-        """
-        Retrieves historical funding rates for a specific perpetual market.
-
-        Args:
-            market (str): The market ticker.
-            effective_before_or_at (Optional[str]): The timestamp to retrieve funding rates effective before or at.
-            effective_before_or_at_height (Optional[int]): The block height to retrieve funding rates effective before or at.
-            limit (Optional[int]): The maximum number of funding rates to retrieve.
-
-        Returns:
-            dict: The historical funding rates data.
-        """
-:::
-
-// TODO: Add description
+Retrieves historical funding rates for a specific perpetual market.
 
 #### Method Declaration
 
@@ -61,23 +46,35 @@ pub async fn get_historical_funding(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `market`            | query    | [Ticker]           | The market ticker.                                                    |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter                       | Location | Type       | Description                                                        |
+| ------------------------------- | -------- | ---------- | ------------------------------------------------------------------ |
+| `limit`                         | query    | [u32]      | The maximum number of funding rates to retrieve.                   |
+| `effective_before_or_at`        | query    | [DateTime] | The timestamp to retrieve funding rates effective before or at.    |
+| `effective_before_or_at_height` | query    | [Height]   | The block height to retrieve funding rates effective before or at. |
+
+:::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                              | Description                        |
+| ------ | ----------- | ----------------------------------- | ---------------------------------- |
+| `200`  | [OK]        | [HistoricalFundingResponseObject] ⛁ | The historical funding rates data. |
 
 #### Method Usage
 
 :::code-group
+
+```python [Python]
+
+```
+
+```typescript [TypeScript]
+
+```
 
 ```rust [Rust]
 let opts = GetHistoricalFundingOpts {
@@ -88,12 +85,11 @@ let opts = GetHistoricalFundingOpts {
 let response = markets.get_historical_funding(&ticker, Some(opts)).await?;
 ```
 
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
 :::
+
+[Ticker]: /types/ticker
+[OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[u32]: /types/u32
+[Height]: /types/height
+[DateTime]: /types/date_time
+[HistoricalFundingResponseObject]: /types/historical_funding_response_object

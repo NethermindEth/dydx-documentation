@@ -22,7 +22,7 @@ async getParentSubaccountNumberOrders(
     goodTilBlockBeforeOrAt?: number | null,
     goodTilBlockTimeBeforeOrAt?: string | null,
     returnLatestOrders?: boolean | null,
-): Promise<Data> 
+): Promise<Data>
 ```
 
 ```rust [Rust]
@@ -53,6 +53,8 @@ pub async fn list_parent_orders(
 | Parameter                     | Location | Type                      | Description                                                  |
 | ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+
+:::
 
 #### Response
 
@@ -87,6 +89,3 @@ let response = accounts.list_parent_orders(&parent_subaccount, Some(opts)).await
 ```
 
 :::
-
-
-

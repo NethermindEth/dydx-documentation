@@ -61,6 +61,7 @@ pub async fn get_historical_pnl(
 | `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
 
 :::details[Optional]
+
 | Parameter                     | Location | Type                      | Description |
 | ----------------------------- | -------- | ------------------------- | ----------- |
 | `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
@@ -69,6 +70,7 @@ pub async fn get_historical_pnl(
 | `created_on_or_after_height`  | query    | [Height]                  | Restricts results to positions created on or after a specific blockchain height. |
 | `created_on_or_after`         | query    | [DateTime]                | Restricts results to positions created on or after a specific timestamp (ISO 8601 format). |
 | `page`                        | query    | [u32]                     | The page number for paginated results. |
+
 :::
 
 #### Response
