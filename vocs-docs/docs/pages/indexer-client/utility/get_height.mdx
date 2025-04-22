@@ -5,7 +5,7 @@
         Get the block height of the most recent block processed by the Indexer.
 
         Returns:
-            Dict[str, str]: A dictionary containing the block height and time.
+
         """
 :::
 
@@ -52,9 +52,9 @@ pub async fn get_height(&self) -> Result<HeightResponse, Error>
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema                          | Description |
+| ------ | ----------- | ------------------------------- | ----------- |
+| `200`  | [OK]        | [HeightResponse] ⛁ | Dictionary containing the block height and time. |
 
 #### Method Usage
 
