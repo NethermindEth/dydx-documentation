@@ -1,6 +1,6 @@
 ### Get MegaVaults Positions
 
-// TODO: Add description
+MegaVault positions.
 
 #### Method Declaration
 
@@ -29,38 +29,11 @@ pub async fn get_megavault_positions(&self) -> Result<Vec<VaultPosition>, Error>
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
-
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [VaultPosition] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response = vaults.get_megavault_positions().await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+[OK]: /types/ok
+[VaultPosition]: /types/vault_position

@@ -1,6 +1,6 @@
 ### Get MegaVault Historical Pnl
 
-// TODO: Add description
+MegaVault historical PnL.
 
 #### Method Declaration
 
@@ -34,36 +34,14 @@ pub async fn get_megavault_historical_pnl(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| `resolution`           | query    | [PnlTickInterval]                              |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [PnlTicksResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response = vaults.get_megavault_historical_pnl(PnlTickInterval::Hour).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+[PnlTickInterval]: /types/pnl_tick_interval
+[OK]: /types/ok 
+[PnlTicksResponseObject]: /types/pnl_ticks_response_object

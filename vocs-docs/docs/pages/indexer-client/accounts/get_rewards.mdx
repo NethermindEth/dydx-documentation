@@ -59,34 +59,11 @@ pub async fn get_rewards(
 
 | Status | Meaning     | Schema                           | Description                                |
 | ------ | ----------- | -------------------------------- | ------------------------------------------ |
-| `200`  | [OK]        | List of [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let opts = GetTradingRewardsOpts {
-    limit: Some(5),
-    starting_before_or_at_height: None,
-    starting_before_or_at: None,
-};
-let response = accounts.get_rewards(&address, Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+| `200`  | [OK]        | [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
 
 [OK]: /types/ok
 [u32]: /types/u32
 [Address]: /types/address
-[HistoricalBlockTradingReward]: HistoricalBlockTradingReward
+[HistoricalBlockTradingReward]: /types/get_historical_block_trading_reward
 [Height]: /types/height
 [DateTime in utc]: /types/date_time

@@ -1,6 +1,6 @@
 ### Get Parent Subaccount
 
-// TODO: Add description
+Query for the parent subaccount, its child subaccounts, equity, collateral and margin.
 
 #### Method Declaration
 
@@ -48,7 +48,7 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [ParentSubaccountResponseObject] |
 
 #### Method Usage
 
@@ -67,3 +67,7 @@ let response = accounts.get_parent_subaccount(&parent_subaccount).await?;
 ```
 
 :::
+
+[Address]: /types/address
+[u32]: /types/u32
+[ParentSubaccountResponseObject]: /types/parent_subaccount_response_object

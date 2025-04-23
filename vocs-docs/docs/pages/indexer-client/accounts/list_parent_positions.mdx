@@ -1,6 +1,6 @@
 ### List Parent Positions
 
-// TODO: Add description
+List all positions of a parent subaccount.
 
 #### Method Declaration
 
@@ -49,33 +49,14 @@ pub async fn list_parent_positions(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let opts = ListPositionOpts {
-    status: Some(PerpetualPositionStatus::Open),
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-};
-let response_list = accounts.list_parent_positions(&parent_subaccount, Some(opts)).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+| `200`  | [OK]        | [PerpetualPositionResponseObject] ⛁ |
 
 [Address]: /types/address
 [ParentSubaccountNumber]: /types/parent_subaccount_number
 [OK]: https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1
+[PerpetualPositionResponseObject]: /types/perpetual_position_response_object
+
+[Address]: /types/address
+[u32]: /types/u32
+[OK]: /types/ok
 [PerpetualPositionResponseObject]: /types/perpetual_position_response_object
