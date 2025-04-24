@@ -55,28 +55,6 @@ pub async fn get_latest_block(&mut self) -> Result<Block, Error>
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
- network = Network.config_network()
-client = CompositeClient(
-    network,
-)
-latest_block = client.validator_client.get.latest_block()
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const latestBlock = await client.get.latestBlock();
-```
-
-:::
-
 Examples: [Python] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/validator_get_example.py#L36

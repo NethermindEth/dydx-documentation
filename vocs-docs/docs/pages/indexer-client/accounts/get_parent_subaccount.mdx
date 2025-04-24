@@ -1,6 +1,6 @@
 ### Get Parent Subaccount
 
-// TODO: Add description
+Query for the parent subaccount, its child subaccounts, equity, collateral and margin.
 
 #### Method Declaration
 
@@ -32,38 +32,18 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter | Location  | Type                  | Description                                                           |
+| --------- | --------- | --------------------- | --------------------------------------------------------------------- |
+| `address` | path      | [Address]             | The wallet address that owns the subaccount.                          |
+| `number`  | path      | [SubaccountNumber]    |                                                                       |
 
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [ParentSubaccountResponseObject] |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response = accounts.get_parent_subaccount(&parent_subaccount).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
+[Address]: /types/address
+[u32]: /types/u32
+[ParentSubaccountResponseObject]: /types/parent_subaccount_response_object

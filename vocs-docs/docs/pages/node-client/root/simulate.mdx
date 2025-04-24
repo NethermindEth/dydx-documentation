@@ -64,33 +64,6 @@ pub async fn simulate(&mut self, tx_raw: &Raw) -> Result<GasInfo, NodeError>
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-
-wallet = await Wallet.from_mnemonic(node, DYDX_TEST_MNEMONIC, TEST_ADDRESS)
-
-withdraw_tx = partial(withdraw, subaccount(TEST_ADDRESS, 0), TEST_ADDRESS, 0)
-amount = 100_000_000
-
-simulated_txs = node.builder.build(wallet, withdraw_tx(amount))
-simulation = await node.simulate(simulated_txs)
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const totalFee = await client.post.simulate(subaccount.wallet, () => msgs, undefined, undefined);
-```
-
-
-:::
-
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/transfer_example_withdraw_other.py#L20

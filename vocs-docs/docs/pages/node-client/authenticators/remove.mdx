@@ -67,32 +67,6 @@ pub async fn remove(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-authenticators = await node.get_authenticators(wallet.address)
-auth_id = authenticators.account_authenticators[0].id
-response = await node.remove_authenticator(wallet, last_auth_id)
-```
-
-```typescript [TypeScript]
-const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
-const network = Network.staging();
-const client = await CompositeClient.connect(network);
-const subaccount = new SubaccountInfo(wallet, 0);
-const authenticators = await client.getAuthenticators(wallet1.address!);
-const lastElement = authenticators.accountAuthenticators.length - 1;
-const authenticatorID = authenticators.accountAuthenticators[lastElement].id;
-
-await removeAuthenticator(client, subaccount, authenticatorID);
-```
-
-:::
 
 Examples: [Python] | [TypeScript] | [Rust]
 

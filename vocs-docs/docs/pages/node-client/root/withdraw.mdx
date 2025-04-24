@@ -75,29 +75,6 @@ pub async fn withdraw(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-
-wallet = await Wallet.from_mnemonic(node, DYDX_TEST_MNEMONIC, TEST_ADDRESS)
-
-response = await node.withdraw(
-    wallet, subaccount(TEST_ADDRESS, 0), TEST_ADDRESS, 0, 1_00_000_000
-)
-```
-
-```typescript [TypeScript]
-const tx = await client.withdrawFromSubaccount(subaccount, amount, recipient, memo);
-```
-
-:::
-
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-js/examples/transfer_example_subaccount_transfer.ts

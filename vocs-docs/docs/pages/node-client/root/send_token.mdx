@@ -82,38 +82,6 @@ pub async fn send_token(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
- response = await node_client.send_token(
-    wallet,
-    test_address,
-    recipient,
-    10000000,
-    "adv4tnt",
-)
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const tx = await client.post.sendToken(
-    subaccount,
-    TEST_RECIPIENT_ADDRESS,
-    client.config.denoms.CHAINTOKEN_DENOM,
-    amountAfterFee.toString(),
-    false,
-    Method.BroadcastTxCommit,
-);
-```
-
-:::
-
 Examples: [Rust]
-
 
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/send_token.rs

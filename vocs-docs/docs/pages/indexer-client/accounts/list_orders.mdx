@@ -65,18 +65,16 @@ pub async fn list_orders(
 
 :::details[Optional]
 
-| Parameter                          | Location | Type                      | Description                                                  |
-| ---------------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                            | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `ticker`                           | query    |                           | The ticker filter. |
-| `ticker_type`                      | query    |                           | The ticker type filter. |
-| `side`                             | query    |                           | The order side filter. |
-| `status`                           | query    |                           | The order status filter. |
-| `type`                             | query    |                           | The order type filter. |
-| `limit`                            | query    |                           | The maximum number of orders to retrieve. |
-| `good_til_block_before_or_at`      | query    |                           | The block number filter for orders good until before or at. |
-| `good_til_block_time_before_or_at` | query    |                           | The timestamp filter for orders good until before or at. |
-| `return_latest_orders`             | query    |                           | Whether to return only the latest orders. |
+| Parameter                          | Location | Type              | Description                                                   |
+| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------- |
+| `limit`                            | query    | [u32]             | Maximum number of asset positions to return in the response.  |
+| `ticker`                           | query    | [Ticker]          | The ticker filter.                                            |
+| `side`                             | query    | [OrderSide]       | The order side filter.                                        |
+| `status`                           | query    | [OrderStatus]     | The order status filter.                                      |
+| `type`                             | query    | [OrderType]       | The order type filter.                                        |
+| `good_til_block_before_or_at`      | query    | [Height]          | The block number filter for orders good until before or at.   |
+| `good_til_block_time_before_or_at` | query    | [DateTime in utc] | The timestamp filter for orders good until before or at.      |
+| `return_latest_orders`             | query    | bool              | Whether to return only the latest orders.                     |
 
 :::
 
@@ -86,36 +84,14 @@ pub async fn list_orders(
 | ------ | ----------- | -------------------- | ---------------- |
 | `200`  | [OK]        | [ListOrdersResponse] | The orders data. |
 
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-```rust [Rust]
-let opts = ListOrdersOpts {
-    limit: Some(5),
-    ticker: Some(ticker),
-    side: Some(OrderSide::Buy),
-    status: Some(OrderStatus::Open),
-    order_type: Some(OrderType::Limit),
-    good_til_block_before_or_at: None,
-    good_til_block_time_before_or_at: None,
-    return_latest_orders: None,
-};
-let response = accounts.list_orders(&subaccount, Some(opts)).await?;
-```
-
-:::
-
+[Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
+[u32]: /types/u32
 [Ticker]: /types/ticker
+[OrderSide]: /types/order_side
 [OrderStatus]: /types/order_status
 [OrderType]: /types/order_type
-[OK]: /types/OK
+[Height]: /types/height
+[DateTime in utc]: /types/date_time
 [ListOrdersResponse]: /types/list_orders_response
+[OK]: /types/ok

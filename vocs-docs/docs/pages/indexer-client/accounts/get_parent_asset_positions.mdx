@@ -32,10 +32,10 @@ pub async fn get_parent_asset_positions(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `parent_subaccount_number` | query | [SubaccountNumber] | The parent subaccount number of this wallet |
+| Parameter                     | Location  | Type               | Description                                                           |
+| ------------------------------| --------- | ------------------ | --------------------------------------------------------------------- |
+| `address`                     | query     | [Address]          | The wallet address that owns the subaccount.                          |
+| `parent_subaccount_number`    | query     | [SubaccountNumber] | The parent subaccount number of this wallet                           |
 
 #### Response
 
@@ -44,5 +44,6 @@ pub async fn get_parent_asset_positions(
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
 [Address]: /types/address
+[SubaccountNumber]: /types/subaccount_number
 [AssetPositionResponseObject]: /types/asset_position_response_object
 [OK]: /types/ok

@@ -42,28 +42,28 @@ pub async fn get_parent_historical_pnl(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `parent_subaccount_number` | query | [SubaccountNumber] | |
+| Parameter                     | Location  | Type               | Description                                  |
+| ----------------------------- | --------- | ------------------ | -------------------------------------------- |
+| `address`                     | query     | [Address]          | The wallet address that owns the subaccount. |
+| `parent_subaccount_number`    | query     | [SubaccountNumber] |                                              |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `created_before_or_at_height` | query | [Height] | |
-| `created_before_or_at` | query | [DateTime in utc] | |
-| `created_on_or_after_height` | query | [Height] | |
-| `created_on_or_after` | query | [DateTime in utc] | |
+| Parameter                     | Location  | Type              | Description                                                   |
+| ----------------------------- | --------- | ----------------- | ------------------------------------------------------------- |
+| `limit`                       | query     | [u32]             | Maximum number of asset positions to return in the response.  |
+| `created_before_or_at_height` | query     | [Height]          |                                                               |
+| `created_before_or_at`        | query     | [DateTime in utc] |                                                               |
+| `created_on_or_after_height`  | query     | [Height]          |                                                               |
+| `created_on_or_after`         | query     | [DateTime in utc] |                                                               |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [PnlTicksResponseObject] ⛁ |
+| Status | Meaning     | Schema                         |
+| ------ | ----------- | ------------------------------ |
+| `200`  | [OK]        | [PnlTicksResponseObject] ⛁     |
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number

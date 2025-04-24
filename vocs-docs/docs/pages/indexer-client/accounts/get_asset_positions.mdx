@@ -64,12 +64,12 @@ pub async fn get_asset_positions(
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description |
-| ----------------------------- | -------- | ------------------------- | ----------- |
+| Parameter                     | Location | Type                      | Description                                                                                                                |
+| ----------------------------- | -------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `status`                      | query    | [PerpetualPositionStatus] | Filter to retrieve positions with a specific status. If not provided, all positions will be returned regardless of status. |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height. |
-| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response.                                                               |
+| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height.                                          |
+| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).                                |
 
 :::
 
@@ -77,9 +77,9 @@ pub async fn get_asset_positions(
 
 A data structure containing the requested asset positions. Typically includes details such as asset ID, size, side (buy/sell), entry price, realized PnL, and other position-specific information.
 
-| Status | Meaning     | Schema                          | Description               |
-| ------ | ----------- | ------------------------------- | ------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ | The asset positions data. |
+| Status | Meaning     | Schema                           | Description                  |
+| ------ | ----------- | -------------------------------  | ---------------------------- |
+| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ | The asset positions data.     |
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number

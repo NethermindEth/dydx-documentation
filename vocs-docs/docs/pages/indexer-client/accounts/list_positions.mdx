@@ -71,30 +71,6 @@ pub async fn list_positions(
 | ------ | ----------- | ----------------------------------- | ----------------------------- |
 | `200`  | [OK]        | [PerpetualPositionResponseObject] ⛁ | The perpetual positions data. |
 
-#### Method Usage
-
-:::code-group
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-```rust [Rust]
-let opts = ListPositionOpts {
-    status: Some(PerpetualPositionStatus::Open),
-    limit: Some(5),
-    created_before_or_at_height: None,
-    created_before_or_at: None,
-};
-let response_list = accounts.list_positions(&subaccount, Some(opts)).await?;
-```
-
-:::
-
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number
 [PerpetualPositionStatus]: /types/perpetual_position_status

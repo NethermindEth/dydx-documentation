@@ -47,13 +47,13 @@ pub async fn get_parent_fills(
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `created_before_or_at_height` | query | [Height] | |
-|`created_before_or_at` | query | [DateTime in utc] | |
-| `market`  | query | [Ticker] | |
-| `market_type` | query | [MarketType] | |
+| Parameter                     | Location  | Type              | Description                                                   |
+| ----------------------------- | --------- | ----------------- | ------------------------------------------------------------- |
+| `limit`                       | query     | [u32]             | Maximum number of asset positions to return in the response.  |
+| `created_before_or_at_height` | query     | [Height]          |                                                               |
+| `created_before_or_at`        | query     | [DateTime in utc] |                                                               |
+| `market`                      | query     | [Ticker]          |                                                               |
+| `market_type`                 | query     | [MarketType]      |                                                               |
 
 :::
 
@@ -61,7 +61,7 @@ pub async fn get_parent_fills(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [FillResponseObject] ⛁ |
+| `200`  | [OK]        | [FillResponseObject] ⛁          |
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number
@@ -71,3 +71,4 @@ pub async fn get_parent_fills(
 [Ticker]: /types/ticker
 [MarketType]: /types/market_type
 [FillResponseObject]: /types/fill_response_object
+[OK]: /types/ok

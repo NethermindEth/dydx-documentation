@@ -71,27 +71,6 @@ pub async fn broadcast_transaction(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-fee = node.calculate_fee(simulation.gas_info.gas_used)
-withdraw_tx = partial(withdraw, subaccount(TEST_ADDRESS, 0), TEST_ADDRESS, 0)
-final_withdraw_tx = withdraw_tx(amount - fee.amount[0].amount)
-final_txs = node.build(wallet, final_withdraw_tx, fee)
-response = await node.broadcast(final_txs)
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
-
 Examples: [Rust]
 
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/withdraw_other.rs#L71

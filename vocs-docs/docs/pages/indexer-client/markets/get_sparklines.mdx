@@ -1,4 +1,5 @@
 ### Get Sparklines
+
 Retrieves sparkline data for perpetual markets.
 
 #### Method Declaration
@@ -45,24 +46,6 @@ pub async fn get_sparklines(
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [SparklineResponseObject] ⛁ | The sparkline data. |
-
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-let response = markets.get_sparklines(SparklineTimePeriod::OneDay).await?;
-```
-
-```python [Python]
-
-```
-
-```typescript [TypeScript]
-
-```
-
-:::
 
 [OK]: /types/ok
 [SparklineTimePeriod]: /types/sparkline_time_period

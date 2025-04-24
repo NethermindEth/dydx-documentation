@@ -2,22 +2,33 @@
 
 Represents the details of a trade fill, including size, price, market information, and metadata related to the order and subaccount.
 
-| Field                | Type                       | Description                               |
-|---------------------|----------------------------|--------------------------------------------|
-| `id`                | [FillId]                   | Unique identifier of the fill.             |
-| `side`              | [OrderSide]                | Side of the order: buy or sell.            |
-| `size`              | [BigDecimal]               | Quantity filled.                           |
-| `fee`               | [BigDecimal]               | Fee charged for the fill.                  |
-| `fill_type`         | [FillType]                 | Type of fill (e.g., maker or taker).       |
-| `liquidity`         | [Liquidity]                | Indicates whether the fill added or removed liquidity. |
-| `market`            | [Ticker]                   | Market ticker (e.g., `BTC-USD`).           |
-| `market_type`       | [MarketType]               | Type of market: `"SPOT"` or `"PERPETUAL"`. |
-| `price`             | [Price]                    | Price at which the order was filled.       |
-| `subaccount_number` | [SubaccountNumber]         | Subaccount that executed the trade.        |
-| `created_at_height` | [Height]                   | Block height at which the fill occurred.   |
-| `created_at`        | [DateTime]                 | Timestamp (UTC) when the fill occurred.    |
-| `client_metadata`   | [ClientMetadata]           | Optional metadata provided by the client.  |
-| `order_id`          | [OrderId]                  | Optional ID of the related order.          |
+`id`: [FillId]
+
+`side`: [OrderSide]
+
+`size`: [BigDecimal]
+
+`fee`: [BigDecimal]
+
+`fill_type`: [FillType]
+
+`liquidity`: [Liquidity]
+
+`market`: [Ticker]
+
+`market_type`: [MarketType]
+
+`price`: [Price]
+
+`subaccount_number`: [SubaccountNumber]
+
+`created_at_height`: [Height]
+
+`created_at`: [DateTime]
+
+`client_metadata`: [ClientMetadata]
+
+`order_id`: [OrderId]
 
 :::details[Unification Plan]
 - Check the fields are really `market` and `market_type` (I guess yes since deserializer is strict)

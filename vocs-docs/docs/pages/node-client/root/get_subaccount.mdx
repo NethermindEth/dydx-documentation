@@ -41,8 +41,8 @@ pub async fn get_subaccount(
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `owner`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `number` | query | [SubaccountNumber] | |
+| `owner`             | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `number`            | query    | [SubaccountNumber] |                                                                       |
 
 :::
 
@@ -50,7 +50,7 @@ pub async fn get_subaccount(
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [SubaccountInfo] |
+| `200`  | [OK]        | [SubaccountInfo]                |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
@@ -58,6 +58,7 @@ Examples: [Python] | [TypeScript] | [Rust]
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-js/examples/validator_get_example.ts#L33
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L65
 
+[Address]: /types/address
 [OK]: /types/ok
 [SubaccountNumber]: /types/subaccount_number
 [SubaccountInfo]: /types/subacccount_info
