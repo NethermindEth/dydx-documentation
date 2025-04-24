@@ -75,38 +75,6 @@ pub async fn transfer(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-network = Network.config_network()
-client = ValidatorClient(network.validator_config)
-tx = client.post.transfer(
-    subaccount=subaccount,
-    recipient_address=subaccount.address,
-    recipient_subaccount_number=1,
-    asset_id=0,
-    amount=5_000_000,
-)
-```
-
-```typescript [TypeScript]
-const client = new CompositeClient(network);
-const tx = await client.transferToSubaccount(
-    subaccount,
-    destinationAddress,
-    destinationSubaccountNumber,
-    parseFloat(amount).toFixed(6),
-    Method.BroadcastTxCommit,
-);
-```
-
-:::
-
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-py-v2/examples/transfer_example_transfer.py

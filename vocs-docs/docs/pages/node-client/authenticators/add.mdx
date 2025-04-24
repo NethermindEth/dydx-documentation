@@ -72,45 +72,6 @@ pub async fn add(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-
-wallet = await Wallet.from_mnemonic(
-    node,
-    mnemonic=DYDX_TEST_MNEMONIC,
-    address=TEST_ADDRESS,
-)
-
-trader_wallet = await Wallet.from_mnemonic(
-    node,
-    mnemonic=DYDX_TEST_MNEMONIC_2,
-    address=TEST_ADDRESS_2,
-)
-
-place_order_auth = Authenticator.signature_verification(
-    trader_wallet.public_key.key
-)
-
-response = await node.add_authenticator(wallet, place_order_auth)
-```
-
-```typescript [TypeScript]
-const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
-const network = Network.staging();
-const client = await CompositeClient.connect(network);
-const subaccount = new SubaccountInfo(wallet, 0);
-await addAuthenticator(client, subaccount, wallet.pubKey!.value);
-```
-
-:::
-
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/authenticator_management.py#L53

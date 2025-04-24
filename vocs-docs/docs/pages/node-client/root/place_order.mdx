@@ -89,62 +89,6 @@ pub async fn place_order(
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
 
-#### Method Usage
-
-:::code-group
-
-```rust [Rust]
-```
-
-```python [Python]
-network = Network.config_network()
-client = CompositeClient(
-    network,
-)
-tx = client.place_order(
-    subaccount,
-    market="ETH-USD",
-    type=type,
-    side=side,
-    price=price,
-    size=0.01,
-    client_id=randrange(0, 100000000),
-    time_in_force=time_in_force,
-    good_til_block=good_til_block,
-    good_til_time_in_seconds=time_in_force_seconds,
-    execution=OrderExecution.DEFAULT,
-    post_only=post_only,
-    reduce_only=False,
-)
-```
-
-```typescript [TypeScript]
-const client = await CompositeClient.connect(network);
-const type = OrderType[orderParams.type as keyof typeof OrderType];
-const side = OrderSide[orderParams.side as keyof typeof OrderSide];
-const timeInForceString = orderParams.timeInForce ?? 'GTT';
-const timeInForce = OrderTimeInForce[timeInForceString as keyof typeof OrderTimeInForce];
-const price = orderParams.price ?? 1350;
-const timeInForceSeconds = timeInForce === OrderTimeInForce.GTT ? 60 : 0;
-const postOnly = orderParams.postOnly ?? false;
-const tx = await client.placeOrder(
-subaccount,
-'ETH-USD',
-type,
-side,
-price,
-0.01,
-randomInt(MAX_CLIENT_ID),
-timeInForce,
-timeInForceSeconds,
-OrderExecution.DEFAULT,
-postOnly,
-false,
-);
-```
-
-:::
-
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-py-v2/examples/short_term_order_cancel_example.py#L36
