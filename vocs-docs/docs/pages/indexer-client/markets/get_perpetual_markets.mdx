@@ -35,18 +35,18 @@ pub async fn list_perpetual_markets(
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                                       |
-| ----------------------------- | -------- | ------------------------- | --------------------------------------------------------------------------------- |
-| `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned.|
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter                     | Location | Type                      | Description                                                                        |
+| ----------------------------- | -------- | ------------------------- | ---------------------------------------------------------------------------------- |
+| `market`                      | query    | [Ticker]                  | The specific market ticker to retrieve. If not provided, all markets are returned. |
+| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response.                       |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [PerpetualMarketMap] |
+| Status | Meaning     | Schema                 |
+| ------ | ----------- | ---------------------- |
+| `200`  | [OK]        | [PerpetualMarketMap]   |
 
 [Ticker]: /types/ticker
 [PerpetualMarketMap]: /types/perpetual_market_map

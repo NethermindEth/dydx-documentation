@@ -40,26 +40,26 @@ pub async fn get_parent_transfers(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `parent_subaccount_number` | query | [SubaccountNumber] | |
+| Parameter                     | Location  | Type               | Description                                   |
+| ----------------------------- | --------- | ------------------ | --------------------------------------------- |
+| `address`                     | query     | [Address]          | The wallet address that owns the subaccount.  |
+| `parent_subaccount_number`    | query     | [SubaccountNumber] |                                               |
 
 :::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-| `created_before_or_at_height` | query | [Height] | |
-| `created_before_or_at` | query | [DateTime in utc] | |
+| Parameter                     | Location  | Type                      | Description                                                   |
+| ----------------------------- | --------- | ------------------------- | ------------------------------------------------------------- |
+| `limit`                       | query     | [u32]                     | Maximum number of asset positions to return in the response.  |
+| `created_before_or_at_height` | query     | [Height]                  |                                                               |
+| `created_before_or_at`        | query     | [DateTime in utc]         |                                                               |
 
 :::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [TransferResponseObject] ⛁ |
+| Status | Meaning     | Schema                         |
+| ------ | ----------- | ------------------------------ |
+| `200`  | [OK]        | [TransferResponseObject] ⛁    |
 
 
 [Address]: /types/address

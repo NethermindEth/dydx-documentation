@@ -20,16 +20,16 @@ Issuing order cancellations does not affect open positions. To close or reduce a
 gRPC URL: `dydxprotocol.clob.MsgCancelOrder`
 :::
 
-| Parameter | Description |
-| --- | --- |
-| `Account` | User's account |
-| `OrderId` | Order ID |
-| `OrderGoodUntil` | Cancellation validity block / time |
+| Parameter         | Description                           |
+| ----------------- | ------------------------------------- |
+| `Account`         | User's account                        |
+| `OrderId`         | Order ID                              |
+| `OrderGoodUntil`  | Cancellation validity block / time    |
 
 ### Response
 
 This returns the transaction hash if successful, or an error with the message reason returned by the server.
 
-| Parameter | Description |
-| --- | --- |
-| `TxHash` | Transaction hash |
+| Parameter | Description       |
+| --------- | ----------------- |
+| `TxHash`  | Transaction hash  |

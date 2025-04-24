@@ -32,17 +32,11 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter | Location  | Type                  | Description                                                           |
+| --------- | --------- | --------------------- | --------------------------------------------------------------------- |
+| `address` | path      | [Address]             | The wallet address that owns the subaccount.                          |
+| `number`  | path      | [SubaccountNumber]    |                                                                       |
 
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
 
 #### Response
 

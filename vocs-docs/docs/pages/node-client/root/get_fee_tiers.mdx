@@ -29,15 +29,15 @@ pub async fn get_fee_tiers(&mut self) -> Result<Vec<PerpetualFeeTier>, Error>
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `user`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter     | Location | Type               | Description                                                           |
+| ------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `user`        | query    | [Address]          | The wallet address that owns the subaccount.                          |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [PerpetualFeeTier] ⛁ |
+| Status | Meaning     | Schema                        |
+| ------ | ----------- | ----------------------------- |
+| `200`  | [OK]        | [PerpetualFeeTier] ⛁          |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
