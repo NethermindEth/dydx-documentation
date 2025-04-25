@@ -36,19 +36,19 @@ TODO: Not available
 
 #### Parameters
 
-| Parameter                   | Location  | Type    | Description |
-| --------------------------- | --------- | ------- | ----------- |
-| `sourceAddress`             | query     | string  |             |
-| `sourceSubaccountNumber`    | query     | string  |             |
-| `recipientAddress`          | query     | string  |             |
-| `recipientSubaccountNumber` | query     | string  |             |
+| Parameter                   | Location  | Type    | Description                                                                   |
+| --------------------------- | --------- | ------- | ----------------------------------------------------------------------------- |
+| `sourceAddress`             | query     | string  | Sender's wallet address                                                       |
+| `sourceSubaccountNumber`    | query     | string  | The identifier for the specific subaccount within the sender wallet address.  |
+| `recipientAddress`          | query     | string  | Receiver wallet address                                                       |
+| `recipientSubaccountNumber` | query     | string  | he identifier for the specific subaccount within the receiver wallet address. |
 
 
 :::details[Optional]
 
-| Parameter                       | Location | Type     | Description                                                |
-| ------------------------------- | -------- | -------- | ----------- |
-| `createdBeforeOrAtHeight`       | query    | number   |             |
-| `createdBeforeOrAt`             | query    | string   |             |
+| Parameter                       | Location | Type     | Description                                                                                 |
+| ------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------- |
+| `createdBeforeOrAtHeight`       | query    | number   | Restricts results to positions created at or before a specific blockchain height.           |
+| `createdBeforeOrAt`             | query    | string   | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
 
 :::

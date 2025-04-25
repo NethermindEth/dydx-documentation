@@ -40,18 +40,18 @@ pub async fn get_parent_transfers(
 
 #### Parameters
 
-| Parameter                     | Location  | Type               | Description                                   |
-| ----------------------------- | --------- | ------------------ | --------------------------------------------- |
-| `address`                     | query     | [Address]          | The wallet address that owns the subaccount.  |
-| `parent_subaccount_number`    | query     | [SubaccountNumber] |                                               |
+| Parameter                     | Location  | Type               | Description                                                              |
+| ----------------------------- | --------- | ------------------ | ------------------------------------------------------------------------ |
+| `address`                     | query     | [Address]          | The wallet address that owns the parent subaccount.                      |
+| `parent_subaccount_number`    | query     | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address.    |
 
 :::details[Optional]
 
-| Parameter                     | Location  | Type                      | Description                                                   |
-| ----------------------------- | --------- | ------------------------- | ------------------------------------------------------------- |
-| `limit`                       | query     | [u32]                     | Maximum number of asset positions to return in the response.  |
-| `created_before_or_at_height` | query     | [Height]                  |                                                               |
-| `created_before_or_at`        | query     | [DateTime in utc]         |                                                               |
+| Parameter                     | Location  | Type                      | Description                                                                                   |
+| ----------------------------- | --------- | ------------------------- | --------------------------------------------------------------------------------------------- |
+| `limit`                       | query     | [u32]                     | Maximum number of asset positions to return in the response.                                  |
+| `created_before_or_at_height` | query     | [Height]                  | Restricts results to positions created at or before a specific blockchain height.             |
+| `created_before_or_at`        | query     | [DateTime in utc]         | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).   |
 
 :::
 

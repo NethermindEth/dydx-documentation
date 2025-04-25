@@ -1,18 +1,5 @@
 ### Get Account Balance
 
-:::details[TODO: Check]
-        """
-        Retrieves the account balance for a specific denomination.
-
-        Args:
-            address (str): The account address.
-            denom (str): The denomination of the balance.
-
-        Returns:
-            bank_query.QueryBalanceResponse: The response containing the account balance.
-        """
-:::
-
 Query for account [balance] by address for a given denomination.
 
 [balance]: https://github.com/cosmos/cosmos-sdk/tree/main/x/bank#balance
@@ -59,7 +46,7 @@ pub async fn get_account_balance(
 | Parameter | Location  | Type      | Description                                   |
 | --------- | --------- | --------- | --------------------------------------------- |
 | `address` | query     | [Address] | The wallet address that owns the subaccount.  |
-| `denom`   | query     | [Denom]   |                                               |
+| `denom`   | query     | [Denom]   | The denomination of the balance.              |
 
 #### Response
 
