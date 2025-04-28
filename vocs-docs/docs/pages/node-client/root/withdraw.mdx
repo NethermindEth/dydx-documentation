@@ -1,21 +1,5 @@
 ### Withdraw
 
-:::details[TODO: Check]
-        """
-        Withdraws funds from a subaccount.
-
-        Args:
-            wallet (Wallet): The wallet to use for signing the transaction.
-            sender_subaccount (SubaccountId): The sender subaccount ID.
-            recipient (str): The recipient address.
-            asset_id (int): The asset ID.
-            quantums (int): The amount of quantums to withdraw.
-
-        Returns:
-            The response from the transaction broadcast.
-        """
-:::
-
 Withdraw funds (USDC) from the subaccount to the address.
 
 #### Method Declaration
@@ -57,26 +41,26 @@ pub async fn withdraw(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter                 | Location  | Type              | Description                                       |
+| ------------------------- | --------- | ----------------- | ------------------------------------------------- |
+| `wallet`                  | query     | [Wallet]          | The wallet to use for signing the transaction.    |
+| `sender_subaccount`       | query     | [SubaccountId]    | The sender subaccount ID.                         |
+| `recipient`               | query     | string            | The recipient subaccount ID.                      |
+| `asset_id`                | query     | int               | The asset ID.                                     |
+| `quantums`                | query     | int               | The amount of quantums to withdraw.               |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema |
+| ------ | ----------- | ------ |
+| `200`  | [OK]        | string |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-js/examples/transfer_example_subaccount_transfer.ts
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-js/examples/transfer_example_withdraw.ts
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/withdraw.rs
+
+
+[Wallet]: /types/wallet
+[SubaccountId]: /types/subaccount_id

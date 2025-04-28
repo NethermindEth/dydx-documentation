@@ -1,21 +1,5 @@
 ### Send Token
 
-:::details[TODO: Check]
-        """
-        Sends tokens from one address to another.
-
-        Args:
-            wallet (Wallet): The wallet to use for signing the transaction.
-            sender (str): The sender address.
-            recipient (str): The recipient address.
-            quantums (int): The amount of quantums to send.
-            denomination (str): The denomination of the token.
-
-        Returns:
-            The response from the transaction broadcast.
-        """
-:::
-
 Transfer a token asset from one address to another one.
 
 #### Method Declaration
@@ -64,24 +48,22 @@ pub async fn send_token(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter         | Location  | Type      | Description                                       |
+| ----------------- | --------- | --------- | ------------------------------------------------- |
+| `wallet`          | query     | [Wallet]  | The wallet to use for signing the transaction.    |
+| `sender`          | query     | string    | The sender address.                               |
+| `recipient`       | query     | string    | The recipient address.                            |
+| `quantums`        | query     | int       | The amount of quantums to send.                   |
+| `denomination`    | query     | int       | The denomination of the token.                    |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema |
+| ------ | ----------- | ------ |
+| `200`  | [OK]        | string |
 
 Examples: [Rust]
 
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/send_token.rs
+
+[Wallet]: /types/wallet

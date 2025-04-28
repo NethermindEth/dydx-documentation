@@ -1,21 +1,5 @@
 ### Batch Cancel Orders
 
-:::details[TODO: Check]
-        """
-        Batch cancels orders for a subaccount.
-
-        Args:
-            wallet (Wallet): The wallet to use for signing the transaction.
-            subaccount_id (SubaccountId): The subaccount ID for which to cancel orders.
-            short_term_cancels (List[OrderBatch]): List of OrderBatch objects containing the orders to cancel.
-            good_til_block (int): The last block the short term order cancellations can be executed at.
-            tx_options (TxOptions, optional): Options for transaction to support authenticators.
-
-        Returns:
-            The response from the transaction broadcast.
-        """
-:::
-
 Cancel a batch of short-terms [Orders].
 
 [Orders]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
@@ -59,26 +43,28 @@ pub async fn batch_cancel_orders(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter             | Location  | Type              | Description                                                           |
+| --------------------- | --------- | ----------------- | --------------------------------------------------------------------- |
+| `wallet`              | query     | [Wallet]          | The wallet to use for signing the transaction.                        |
+| `subaccount_id`       | query     | [SubaccountId]    | The subaccount ID for which to cancel orders.                         |
+| `short_term_cancels`  | query     | [OrderBatch] ⛁   | List of OrderBatch objects containing the orders to cancel.            |
+| `good_til_block`      | query     | int               | The last block the short term order cancellations can be executed at. |
 
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| `tx_options`          | query     | [TxOptions]       | Options for transaction to support authenticators.                    |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema |
+| ------ | ----------- | ------ |
+| `200`  | [OK]        | string |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-py-v2/examples/batch_cancel_example.py
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-js/examples/batch_cancel_orders_example.ts
 [Rust]:https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/batch_cancel_orders.rs
+
+[Wallet]: /types/wallet
+[SubaccountId]: /types/subaccount_id
+[OrderBatch]: /types/order_batch
+[TxOptions]: /types/tx_options
