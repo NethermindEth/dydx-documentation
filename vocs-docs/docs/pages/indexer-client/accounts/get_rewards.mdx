@@ -42,12 +42,12 @@ pub async fn get_rewards(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                           |
-| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
-| `address`           | path    | [Address]           | true        | The wallet address that owns the subaccount.                          |
-| `limit`                           | query     | [u32]             | false     | Maximum number of asset positions to return in the response.  |
-| `starting_before_or_at_height`    | query     | [Height]          | false     | The timestamp filter for rewards starting before or at.       |
-| `starting_before_or_at`           | query     | [DateTime in utc] | false     | The block height filter for rewards starting before or at.    |
+| Parameter                         | Location  | Type              | Required  | Description                                                           |
+| --------------------------------- | --------- | ----------------- | --------- | --------------------------------------------------------------------- |
+| `address`                         | path      | [Address]         | true      | The wallet address that owns the subaccount.                          |
+| `limit`                           | query     | [u32]             | false     | Maximum number of asset positions to return in the response.          |
+| `starting_before_or_at_height`    | query     | [Height]          | false     | The timestamp filter for rewards starting before or at.               |
+| `starting_before_or_at`           | query     | [DateTime in utc] | false     | The block height filter for rewards starting before or at.            |
 
 #### Response
 

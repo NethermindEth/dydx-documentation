@@ -37,12 +37,11 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 | `address` | path      | [Address]             | true      | The wallet address that owns the parent subaccount.                   |
 | `number`  | path      | [SubaccountNumber]    | true      | The identifier for the specific subaccount within the wallet address. |
 
-
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [ParentSubaccountResponseObject] |
+| Status | Meaning     | Schema                             |
+| ------ | ----------- | ---------------------------------- |
+| `200`  | [OK]        | [ParentSubaccountResponseObject]   |
 
 [Address]: /types/address
 [u32]: /types/u32

@@ -42,15 +42,15 @@ pub async fn get_parent_historical_pnl(
 
 #### Parameters
 
-| Parameter                     | Location  | Type               | Required | Description                                                              |
-| ----------------------------- | --------- | ------------------ | -------- | ------------------------------------------------------------------------ |
-| `address`                     | query     | [Address]          | true     | The wallet address that owns the parent subaccount.                      |
-| `parent_subaccount_number`    | query     | [SubaccountNumber] | true     | The identifier for the specific subaccount within the wallet address.    |
-| `limit`                       | query     | [u32]             | false     | Maximum number of asset positions to return in the response.                                  |
-| `created_before_or_at_height` | query     | [Height]          | false     | Restricts results to positions created at or before a specific blockchain height.             |
-| `created_before_or_at`        | query     | [DateTime in utc] | false     | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).   |
-| `created_on_or_after_height`  | query     | [Height]          | false     | Restricts results to positions created on or after a specific blockchain height.              |
-| `created_on_or_after`         | query     | [DateTime in utc] | false     | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).    |
+| Parameter                     | Location  | Type                  | Required  | Description                                                                                   |
+| ----------------------------- | --------- | --------------------- | --------- | --------------------------------------------------------------------------------------------- |
+| `address`                     | query     | [Address]             | true      | The wallet address that owns the parent subaccount.                                           |
+| `parent_subaccount_number`    | query     | [SubaccountNumber]    | true      | The identifier for the specific subaccount within the wallet address.                         |
+| `limit`                       | query     | [u32]                 | false     | Maximum number of asset positions to return in the response.                                  |
+| `created_before_or_at_height` | query     | [Height]              | false     | Restricts results to positions created at or before a specific blockchain height.             |
+| `created_before_or_at`        | query     | [DateTime in utc]     | false     | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).   |
+| `created_on_or_after_height`  | query     | [Height]              | false     | Restricts results to positions created on or after a specific blockchain height.              |
+| `created_on_or_after`         | query     | [DateTime in utc]     | false     | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).    |
 
 #### Response
 

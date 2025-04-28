@@ -44,12 +44,12 @@ pub async fn get_historical_funding(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                           |
-| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
-| `market`            | path    | [Ticker]           | true         | The market ticker.                                                    |
-| `limit`                         | query    | [u32]      | false       | The maximum number of funding rates to retrieve.                   |
-| `effective_before_or_at`        | query    | [DateTime] | false       | The timestamp to retrieve funding rates effective before or at.    |
-| `effective_before_or_at_height` | query    | [Height]   | false       | The block height to retrieve funding rates effective before or at. |
+| Parameter                         | Location  | Type          | Required  | Description                                                           |
+| --------------------------------- | --------- | ------------- | --------- | --------------------------------------------------------------------- |
+| `market`                          | path      | [Ticker]      | true      | The market ticker.                                                    |
+| `limit`                           | query     | [u32]         | false     | The maximum number of funding rates to retrieve.                      |
+| `effective_before_or_at`          | query     | [DateTime]    | false     | The timestamp to retrieve funding rates effective before or at.       |
+| `effective_before_or_at_height`   | query     | [Height]      | false     | The block height to retrieve funding rates effective before or at.    |
 
 #### Response
 

@@ -47,13 +47,13 @@ pub async fn get_rewards_aggregated(
 
 #### Parameters
 
-| Parameter           | Location    | Type                             | Required   | Description                                  |
-| ------------------- | ----------- | -------------------------------- | ---------- | -------------------------------------------- |
-| `address`           | path        | [Address]                        | true       | The wallet address that owns the subaccount. |
-| `period`            | query       | [TradingRewardAggregationPeriod] | true       | The aggregation period.                      |
-| `limit`                        | query    | [u32]                     | false     | The maximum number of aggregated rewards to retrieve.      |
-| `starting_before_or_at`        | query    | [DateTime]                | false     | The timestamp filter for rewards starting before or at.    |
-| `starting_before_or_at_height` | query    | [Height]                  | false     | The block height filter for rewards starting before or at. |
+| Parameter                         | Location  | Type                              | Required  | Description                                                   |
+| --------------------------------- | --------- | --------------------------------- | --------- | ------------------------------------------------------------- |
+| `address`                         | path      | [Address]                         | true      | The wallet address that owns the subaccount.                  |
+| `period`                          | query     | [TradingRewardAggregationPeriod]  | true      | The aggregation period.                                       |
+| `limit`                           | query     | [u32]                             | false     | The maximum number of aggregated rewards to retrieve.         |
+| `starting_before_or_at`           | query     | [DateTime]                        | false     | The timestamp filter for rewards starting before or at.       |
+| `starting_before_or_at_height`    | query     | [Height]                          | false     | The block height filter for rewards starting before or at.    |
 
 #### Response
 
