@@ -41,13 +41,13 @@ pub async fn withdraw(
 
 #### Parameters
 
-| Parameter                 | Location  | Type              | Description                                       |
-| ------------------------- | --------- | ----------------- | ------------------------------------------------- |
-| `wallet`                  | query     | [Wallet]          | The wallet to use for signing the transaction.    |
-| `sender_subaccount`       | query     | [SubaccountId]    | The sender subaccount ID.                         |
-| `recipient`               | query     | string            | The recipient subaccount ID.                      |
-| `asset_id`                | query     | int               | The asset ID.                                     |
-| `quantums`                | query     | int               | The amount of quantums to withdraw.               |
+| Parameter                 | Location  | Type              | Required  | Description                                       |
+| ------------------------- | --------- | ----------------- | --------- | ------------------------------------------------- |
+| `wallet`                  | query     | [Wallet]          | true      | The wallet to use for signing the transaction.    |
+| `sender_subaccount`       | query     | [SubaccountId]    | true      | The sender subaccount ID.                         |
+| `recipient`               | query     | string            | true      | The recipient subaccount ID.                      |
+| `asset_id`                | query     | int               | true      | The asset ID.                                     |
+| `quantums`                | query     | int               | true      | The amount of quantums to withdraw.               |
 
 #### Response
 

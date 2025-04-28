@@ -59,14 +59,13 @@ pub async fn cancel_order(
 
 #### Parameters
 
-| Parameter             | Location  | Type          | Description                                                           |
-| --------------------- | --------- | ------------- | --------------------------------------------------------------------- |
-| `wallet`              | query     | [Wallet]      | The wallet to use for signing the transaction.                        |
-| `order_id`            | query     | [OrderId]     | The ID of the order to cancel.                                        |
-
-| `good_til_block`      | query     | [i32]         | The block number until which the order is valid. Defaults to None.    |
-| `good_til_block_time` | query     | [i32]         | The block time until which the order is valid. Defaults to None.      |
-| `tx_options`          | query     | [TxOptions]   | Options for transaction to support authenticators.                    |
+| Parameter             | Location  | Type          | Required  | Description                                                           |
+| --------------------- | --------- | ------------- | --------- | --------------------------------------------------------------------- |
+| `wallet`              | query     | [Wallet]      | true      | The wallet to use for signing the transaction.                        |
+| `order_id`            | query     | [OrderId]     | true      | The ID of the order to cancel.                                        |
+| `good_til_block`      | query     | [i32]         | false     | The block number until which the order is valid. Defaults to None.    |
+| `good_til_block_time` | query     | [i32]         | false     | The block time until which the order is valid. Defaults to None.      |
+| `tx_options`          | query     | [TxOptions]   | false     | Options for transaction to support authenticators.                    |
 
 :::
 

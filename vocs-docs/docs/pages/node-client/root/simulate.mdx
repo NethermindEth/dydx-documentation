@@ -34,9 +34,9 @@ pub async fn simulate(&mut self, tx_raw: &Raw) -> Result<GasInfo, NodeError>
 
 #### Parameters
 
-| Parameter     | Location  | Type  | Description                   |
-| ------------- | --------- | ----- | ----------------------------- |
-| `transaction` | query     | [Tx]  | The transaction to simulate.  |
+| Parameter     | Location  | Type  | Required  | Description                   |
+| ------------- | --------- | ----- |---------- | ----------------------------- |
+| `transaction` | query     | [Tx]  | true      | The transaction to simulate.  |
 
 
 #### Response

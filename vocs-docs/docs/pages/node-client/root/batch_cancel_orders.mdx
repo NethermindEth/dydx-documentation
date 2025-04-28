@@ -43,14 +43,13 @@ pub async fn batch_cancel_orders(
 
 #### Parameters
 
-| Parameter             | Location  | Type              | Description                                                           |
-| --------------------- | --------- | ----------------- | --------------------------------------------------------------------- |
-| `wallet`              | query     | [Wallet]          | The wallet to use for signing the transaction.                        |
-| `subaccount_id`       | query     | [SubaccountId]    | The subaccount ID for which to cancel orders.                         |
-| `short_term_cancels`  | query     | [OrderBatch] ⛁   | List of OrderBatch objects containing the orders to cancel.            |
-| `good_til_block`      | query     | int               | The last block the short term order cancellations can be executed at. |
-
-| `tx_options`          | query     | [TxOptions]       | Options for transaction to support authenticators.                    |
+| Parameter             | Location  | Type              | Required  | Description                                                           |
+| --------------------- | --------- | ----------------- | --------- | --------------------------------------------------------------------- |
+| `wallet`              | query     | [Wallet]          | true      | The wallet to use for signing the transaction.                        |
+| `subaccount_id`       | query     | [SubaccountId]    | true      | The subaccount ID for which to cancel orders.                         |
+| `short_term_cancels`  | query     | [OrderBatch] ⛁    | true      | List of OrderBatch objects containing the orders to cancel.           |
+| `good_til_block`      | query     | int               | true      | The last block the short term order cancellations can be executed at. |
+| `tx_options`          | query     | [TxOptions]       | false     | Options for transaction to support authenticators.                    |
 
 #### Response
 

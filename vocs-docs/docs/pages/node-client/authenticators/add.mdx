@@ -41,10 +41,10 @@ pub async fn add(
 
 #### Parameters
 
-| Parameter         | Location  | Type              | Description                                                                   |
-| ----------------- | --------- | ----------------- | ----------------------------------------------------------------------------- |
-| `wallet`          | query     | [Wallet]          | The wallet to use for signing the transaction or authenticating the request.  |
-| `authenticator`   | query     | [Authenticator]   | The authenticator to be added.                                                |
+| Parameter         | Location  | Type              | Required  | Description                                                                   |
+| ----------------- | --------- | ----------------- | --------- | ----------------------------------------------------------------------------- |
+| `wallet`          | query     | [Wallet]          | true      | The wallet to use for signing the transaction or authenticating the request.  |
+| `authenticator`   | query     | [Authenticator]   | true      | The authenticator to be added.                                                |
 
 #### Response
 

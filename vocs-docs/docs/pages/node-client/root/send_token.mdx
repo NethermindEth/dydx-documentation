@@ -48,13 +48,13 @@ pub async fn send_token(
 
 #### Parameters
 
-| Parameter         | Location  | Type      | Description                                       |
-| ----------------- | --------- | --------- | ------------------------------------------------- |
-| `wallet`          | query     | [Wallet]  | The wallet to use for signing the transaction.    |
-| `sender`          | query     | string    | The sender address.                               |
-| `recipient`       | query     | string    | The recipient address.                            |
-| `quantums`        | query     | int       | The amount of quantums to send.                   |
-| `denomination`    | query     | int       | The denomination of the token.                    |
+| Parameter         | Location  | Type      | Required  | Description                                       |
+| ----------------- | --------- | --------- | --------- | ------------------------------------------------- |
+| `wallet`          | query     | [Wallet]  | true      | The wallet to use for signing the transaction.    |
+| `sender`          | query     | string    | true      | The sender address.                               |
+| `recipient`       | query     | string    | true      | The recipient address.                            |
+| `quantums`        | query     | int       | true      | The amount of quantums to send.                   |
+| `denomination`    | query     | int       | true      | The denomination of the token.                    |
 
 #### Response
 

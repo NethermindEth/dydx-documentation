@@ -36,10 +36,10 @@ pub async fn remove(
 
 #### Parameters
 
-| Parameter             | Location  | Type      | Description                                                                   |
-| --------------------- | --------- | --------- | ----------------------------------------------------------------------------- |
-| `wallet`              | query     | [Wallet]  | The wallet to use for signing the transaction or authenticating the request.  |
-| `authenticator_id`    | query     | int       | The authenticator identifier.                                                 |
+| Parameter             | Location  | Type      | Required  | Description                                                                   |
+| --------------------- | --------- | --------- | --------- | ----------------------------------------------------------------------------- |
+| `wallet`              | query     | [Wallet]  | true      | The wallet to use for signing the transaction or authenticating the request.  |
+| `authenticator_id`    | query     | int       | true      | The authenticator identifier.                                                 |
 
 #### Response
 

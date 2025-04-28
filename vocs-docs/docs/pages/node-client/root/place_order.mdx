@@ -57,12 +57,11 @@ pub async fn place_order(
 
 #### Parameters
 
-| Parameter     | Location  | Type          | Description                                           |
-| ------------- | --------- | ------------- | ----------------------------------------------------- |
-| `wallet`      | query     | [Wallet]      | The wallet to use for signing the transaction.        |
-| `order`       | query     | [Order]       | The order to place.                                   |
-
-| `tx_options`  | query     | [TxOptions]   | Options for transaction to support authenticators.    |
+| Parameter     | Location  | Type          | Required  | Description                                           |
+| ------------- | --------- | ------------- | --------- | ----------------------------------------------------- |
+| `wallet`      | query     | [Wallet]      | true      | The wallet to use for signing the transaction.        |
+| `order`       | query     | [Order]       | true      | The order to place.                                   |
+| `tx_options`  | query     | [TxOptions]   | false     | Options for transaction to support authenticators.    |
 
 #### Response
 

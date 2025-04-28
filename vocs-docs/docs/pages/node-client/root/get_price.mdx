@@ -29,11 +29,9 @@ pub async fn get_price(&mut self, market_id: u32) -> Result<MarketPrice, Error>
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | [u32]              |                                                                       |
-
-:::
+| Parameter           | Location | Type               | Required    | Description                                                           |
+| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
+| `id`                | query    | [u32]              | true        | market id to get price                                                |
 
 #### Response
 

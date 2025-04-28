@@ -40,11 +40,10 @@ pub async fn broadcast_transaction(
 
 #### Parameters
 
-| Parameter     | Location  | Type              | Description                                                           |
-| ------------- | --------- | ----------------- | --------------------------------------------------------------------- |
-| `transaction` | query     | [Tx]              | The transaction to broadcast.                        |
-
-| `mode`        | query     | [BroadcastMode]   | The broadcast mode. Defaults to BroadcastMode.BROADCAST_MODE_SYNC.    |
+| Parameter     | Location  | Type              | Required  | Description                                                           |
+| ------------- | --------- | ----------------- | --------- | --------------------------------------------------------------------- |
+| `transaction` | query     | [Tx]              | true      | The transaction to broadcast.                        |
+| `mode`        | query     | [BroadcastMode]   | false     | The broadcast mode. Defaults to BroadcastMode.BROADCAST_MODE_SYNC.    |
 
 :::
 

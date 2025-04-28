@@ -41,13 +41,13 @@ pub async fn transfer(
 
 #### Parameters
 
-| Parameter                 | Location  | Type              | Description                                       |
-| ------------------------- | --------- | ----------------- | ------------------------------------------------- |
-| `wallet`                  | query     | [Wallet]          | The wallet to use for signing the transaction.    |
-| `sender_subaccount`       | query     | [SubaccountId]    | The sender subaccount ID.                         |
-| `recipient_subaccount`    | query     | [SubaccountId]    | The recipient subaccount ID.                      |
-| `asset_id`                | query     | int               | The asset ID.                                     |
-| `amount`                  | query     | int               | The amount to transfer.                           |
+| Parameter                 | Location  | Type              | Required  | Description                                       |
+| ------------------------- | --------- | ----------------- | --------- | ------------------------------------------------- |
+| `wallet`                  | query     | [Wallet]          | true      | The wallet to use for signing the transaction.    |
+| `sender_subaccount`       | query     | [SubaccountId]    | true      | The sender subaccount ID.                         |
+| `recipient_subaccount`    | query     | [SubaccountId]    | true      | The recipient subaccount ID.                      |
+| `asset_id`                | query     | int               | true      | The asset ID.                                     |
+| `amount`                  | query     | int               | true      | The amount to transfer.                           |
 
 #### Response
 
