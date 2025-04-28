@@ -58,25 +58,18 @@ pub async fn list_orders(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
-
-:::details[Optional]
-
-| Parameter                          | Location | Type              | Description                                                   |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------- |
-| `limit`                            | query    | [u32]             | Maximum number of asset positions to return in the response.  |
-| `ticker`                           | query    | [Ticker]          | The ticker filter.                                            |
-| `side`                             | query    | [OrderSide]       | The order side filter.                                        |
-| `status`                           | query    | [OrderStatus]     | The order status filter.                                      |
-| `type`                             | query    | [OrderType]       | The order type filter.                                        |
-| `good_til_block_before_or_at`      | query    | [Height]          | The block number filter for orders good until before or at.   |
-| `good_til_block_time_before_or_at` | query    | [DateTime in utc] | The timestamp filter for orders good until before or at.      |
-| `return_latest_orders`             | query    | bool              | Whether to return only the latest orders.                     |
-
-:::
+| Parameter           | Location | Type               | Required    | Description                                                           |
+| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
+| `subaccount_number` | query    | [SubaccountNumber] | true        | The identifier for the specific subaccount within the wallet address. |
+| `limit`                            | query    | [u32]             | false     | Maximum number of asset positions to return in the response.  |
+| `ticker`                           | query    | [Ticker]          | false     | The ticker filter.                                            |
+| `side`                             | query    | [OrderSide]       | false     | The order side filter.                                        |
+| `status`                           | query    | [OrderStatus]     | false     | The order status filter.                                      |
+| `type`                             | query    | [OrderType]       | false     | The order type filter.                                        |
+| `good_til_block_before_or_at`      | query    | [Height]          | false     | The block number filter for orders good until before or at.   |
+| `good_til_block_time_before_or_at` | query    | [DateTime in utc] | false     | The timestamp filter for orders good until before or at.      |
+| `return_latest_orders`             | query    | bool              | false     | Whether to return only the latest orders.                     |
 
 #### Response
 

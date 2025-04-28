@@ -47,20 +47,13 @@ pub async fn get_candles(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                            |
-| ------------------- | -------- | ------------------ | ------------------------------------------------------ |
-| `market`            | path    | [Ticker]           | The market ticker.                                     |
-| `resolution`        | query    | [CandleResolution] | The candle resolution (e.g., "1DAY", "1HOUR", "1MIN"). |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------ |
-| `limit`                       | query    | [u32]                     | The maximum number of candles to retrieve. |
-| `from_iso`                    | query    | [DateTime]                | The start timestamp in ISO format.         |
-| `to_iso`                      | query    | [DateTime]                | The end timestamp in ISO format.           |
-
-:::
+| Parameter           | Location | Type               | Required    | Description                                            |
+| ------------------- | -------- | ------------------ | ----------- | ------------------------------------------------------ |
+| `market`            | path    | [Ticker]           | true         | The market ticker.                                     |
+| `resolution`        | query    | [CandleResolution] | true        | The candle resolution (e.g., "1DAY", "1HOUR", "1MIN"). |
+| `limit`                       | query    | [u32]                     | false      | The maximum number of candles to retrieve. |
+| `from_iso`                    | query    | [DateTime]                | false      | The start timestamp in ISO format.         |
+| `to_iso`                      | query    | [DateTime]                | false      | The end timestamp in ISO format.           |
 
 #### Response
 
