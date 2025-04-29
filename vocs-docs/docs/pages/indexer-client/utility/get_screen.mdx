@@ -32,18 +32,10 @@ pub async fn get_screen(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter           | Location | Type               | Required    | Description                                                           |
+| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
+| `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
+| `limit`             | query    | [u32]              | false       | Maximum number of asset positions to return in the response.          |
 
 #### Response
 

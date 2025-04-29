@@ -1,21 +1,5 @@
 ### Deposit
 
-:::details[TODO: Check]
-        """
-        Deposits funds into a subaccount.
-
-        Args:
-            wallet (Wallet): The wallet to use for signing the transaction.
-            sender (str): The sender address.
-            recipient_subaccount (SubaccountId): The recipient subaccount ID.
-            asset_id (int): The asset ID.
-            quantums (int): The amount of quantums to deposit.
-
-        Returns:
-            The response from the transaction broadcast.
-        """
-:::
-
 Deposit funds (USDC) from the address to the subaccount.
 
 #### Method Declaration
@@ -57,20 +41,19 @@ pub async fn deposit(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter                 | Location  | Type              | Required  | Description                                       |
+| ------------------------- | --------- | ----------------- | --------- | ------------------------------------------------- |
+| `wallet`                  | query     | [Wallet]          | true      | The wallet to use for signing the transaction.    |
+| `sender`                  | query     | string            | true      | The sender address.                               |
+| `recipient_subaccount`    | query     | [SubaccountId]    | true      | The recipient subaccount ID.                      |
+| `asset_id`                | query     | int               | true      | The asset ID.                                     |
+| `quantums`                | query     | int               | true      | The amount of quantums to deposit.                |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema |
+| ------ | ----------- | ------ |
+| `200`  | [OK]        | string |
+
+[Wallet]: /types/wallet
+[SubaccountId]: /types/Subaccount_id

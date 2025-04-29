@@ -40,21 +40,14 @@ pub async fn get_parent_fills(
 
 #### Parameters
 
-| Parameter                     | Location  | Type               | Description                                                              |
-| ----------------------------- | --------- | ------------------ | ------------------------------------------------------------------------ |
-| `address`                     | query     | [Address]          | The wallet address that owns the parent subaccount.                      |
-| `parent_subaccount_number`    | query     | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address.    |
-
-:::details[Optional]
-
-| Parameter                     | Location  | Type              | Description                                                                       |
-| ----------------------------- | --------- | ----------------- | --------------------------------------------------------------------------------- |
-| `limit`                       | query     | [u32]             | Maximum number of asset positions to return in the response.                      |
-| `created_before_or_at_height` | query     | [Height]          | Restricts results to positions created at or before a specific blockchain height. |                                                            |
-| `market`                      | query     | [Ticker]          | Market id like USD-BTC, ETH-USD                                                   |
-| `market_type`                 | query     | [MarketType]      | Market type of filled order Data                                                  |
-
-:::
+| Parameter                     | Location  | Type               | Required | Description                                                                       |
+| ----------------------------- | --------- | ------------------ | -------- | --------------------------------------------------------------------------------- |
+| `address`                     | query     | [Address]          | true     | The wallet address that owns the parent subaccount.                               |
+| `parent_subaccount_number`    | query     | [SubaccountNumber] | true     | The identifier for the specific subaccount within the wallet address.             |
+| `limit`                       | query     | [u32]             | false     | Maximum number of asset positions to return in the response.                      |
+| `created_before_or_at_height` | query     | [Height]          | false     | Restricts results to positions created at or before a specific blockchain height. |                                                            |
+| `market`                      | query     | [Ticker]          | false     | Market id like USD-BTC, ETH-USD                                                   |
+| `market_type`                 | query     | [MarketType]      | false     | Market type of filled order Data                                                  |
 
 #### Response
 

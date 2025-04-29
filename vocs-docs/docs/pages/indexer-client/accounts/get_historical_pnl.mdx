@@ -55,23 +55,16 @@ pub async fn get_historical_pnl(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-| `subaccount_number` | query    | [SubaccountNumber] | The identifier for the specific subaccount within the wallet address. |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                                                        |
-| ----------------------------- | -------- | ------------------------- | -------------------------------------------------------------------------------------------------- |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response.                                       |
-| `created_before_or_at_height` | query    | [Height]                  | Restricts results to positions created at or before a specific blockchain height.                  |
-| `created_before_or_at`        | query    | [DateTime]                | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).        |
-| `created_on_or_after_height`  | query    | [Height]                  | Restricts results to positions created on or after a specific blockchain height.                   |
-| `created_on_or_after`         | query    | [DateTime in utc]         | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).         |
-| `page`                        | query    | [u32]                     | The page number for paginated results.                                                             |
-
-:::
+| Parameter                     | Location | Type               | Required   | Description                                                                                  |
+| ----------------------------- | -------- | ------------------ | ---------- | -------------------------------------------------------------------------------------------- |
+| `address`                     | query    | [Address]          | true       | The wallet address that owns the subaccount.                                                 |
+| `subaccount_number`           | query    | [SubaccountNumber] | true       | The identifier for the specific subaccount within the wallet address.                        |
+| `limit`                       | query    | [u32]              | false      | Maximum number of asset positions to return in the response.                                 |
+| `created_before_or_at_height` | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.            |
+| `created_before_or_at`        | query    | [DateTime]         | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).  |
+| `created_on_or_after_height`  | query    | [Height]           | false      | Restricts results to positions created on or after a specific blockchain height.             |
+| `created_on_or_after`         | query    | [DateTime in utc]  | false      | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).   |
+| `page`                        | query    | [u32]              | false      | The page number for paginated results.                                                       |
 
 #### Response
 

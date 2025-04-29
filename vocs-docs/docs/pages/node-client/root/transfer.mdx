@@ -1,21 +1,5 @@
 ### Transfer
 
-:::details[TODO: Check]
-        """
-        Transfers funds between subaccounts.
-
-        Args:
-            wallet (Wallet): The wallet to use for signing the transaction.
-            sender_subaccount (SubaccountId): The sender subaccount ID.
-            recipient_subaccount (SubaccountId): The recipient subaccount ID.
-            asset_id (int): The asset ID.
-            amount (int): The amount to transfer.
-
-        Returns:
-            The response from the transaction broadcast.
-        """
-:::
-
 Transfer funds (USDC) between subaccounts.
 
 #### Method Declaration
@@ -57,26 +41,25 @@ pub async fn transfer(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
-
-:::details[Optional]
-
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
+| Parameter                 | Location  | Type              | Required  | Description                                       |
+| ------------------------- | --------- | ----------------- | --------- | ------------------------------------------------- |
+| `wallet`                  | query     | [Wallet]          | true      | The wallet to use for signing the transaction.    |
+| `sender_subaccount`       | query     | [SubaccountId]    | true      | The sender subaccount ID.                         |
+| `recipient_subaccount`    | query     | [SubaccountId]    | true      | The recipient subaccount ID.                      |
+| `asset_id`                | query     | int               | true      | The asset ID.                                     |
+| `amount`                  | query     | int               | true      | The amount to transfer.                           |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema |
+| ------ | ----------- | ------ |
+| `200`  | [OK]        | string |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
 [Python]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-py-v2/examples/transfer_example_transfer.py
 [TypeScript]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-js/examples/transfer_example_subaccount_transfer.ts
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/transfer.rs
+
+[Wallet]: /types/wallet
+[SubaccountId]: /types/subaccount_id

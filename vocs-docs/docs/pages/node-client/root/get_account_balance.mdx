@@ -43,10 +43,10 @@ pub async fn get_account_balance(
 
 #### Parameters
 
-| Parameter | Location  | Type      | Description                                   |
-| --------- | --------- | --------- | --------------------------------------------- |
-| `address` | query     | [Address] | The wallet address that owns the subaccount.  |
-| `denom`   | query     | [Denom]   | The denomination of the balance.              |
+| Parameter | Location  | Type      | Required  | Description                                   |
+| --------- | --------- | --------- | --------- | --------------------------------------------- |
+| `address` | query     | [Address] | true      | The wallet address that owns the subaccount.  |
+| `denom`   | query     | [Denom]   | true      | The denomination of the balance.              |
 
 #### Response
 
