@@ -37,16 +37,16 @@ pub async fn get_delayed_complete_bridge_messages(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                           |
-| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
+| Parameter | Location | Type      | Required | Description                                  |
+| --------- | -------- | --------- | -------- | -------------------------------------------- |
+| `address` | query    | [Address] | true     | The wallet address that owns the subaccount. |
 
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [DelayedCompleteBridgeMessage] ⛁ |
+| Status | Meaning | Schema                           |
+| ------ | ------- | -------------------------------- |
+| `200`  | [OK]    | [DelayedCompleteBridgeMessage] ⛁ |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
@@ -55,4 +55,5 @@ Examples: [Python] | [TypeScript] | [Rust]
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L104
 
 [Address]: /types/address
+[OK]: /types/ok
 [DelayedCompleteBridgeMessage]: /types/delayed_complete_bridge_messages
