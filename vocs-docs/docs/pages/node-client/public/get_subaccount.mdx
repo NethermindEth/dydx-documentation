@@ -39,16 +39,16 @@ pub async fn get_subaccount(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                             |
-| ------------------- | -------- | ------------------ | ----------- | ----------------------------------------------------------------------- |
-| `owner`             | query    | [Address]          | true        | The wallet address that owns the subaccount.                            |
-| `number`            | query    | [SubaccountNumber] | true        | The identifier for the specific subaccount withing the wallet address.  |
+| Parameter           | Location | Type               | Required  | Description                                                             |
+| ------------------- | -------- | ------------------ | --------- | ----------------------------------------------------------------------- |
+| `owner`             | query    | [Address]          | true      | The wallet address that owns the subaccount.                            |
+| `number`            | query    | [SubaccountNumber] | true      | The identifier for the specific subaccount withing the wallet address.  |
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [SubaccountInfo]                |
+| Status | Meaning | Schema           |
+| ------ | ------- | ---------------- |
+| `200`  | [OK]    | [SubaccountInfo] |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
