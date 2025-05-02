@@ -209,6 +209,16 @@ export default defineConfig({
                 {
                     text: 'Node API',
                     link: '/node-client',
+                    items: [
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
+                        },
+                        {
+                            text: 'Private API',
+                            link: '/node-client/private',
+                        },
+                    ],
                 },
                 {
                     text: 'Indexer API',

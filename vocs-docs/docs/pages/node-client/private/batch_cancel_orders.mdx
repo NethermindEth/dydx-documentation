@@ -39,23 +39,25 @@ pub async fn batch_cancel_orders(
 :::
 
 :::details[Unification Plan]
+- `TxOptions` is not available in Rust
+- No implementation if TypeScript?
 :::
 
 #### Parameters
 
-| Parameter             | Location  | Type              | Required  | Description                                                           |
-| --------------------- | --------- | ----------------- | --------- | --------------------------------------------------------------------- |
-| `wallet`              | query     | [Wallet]          | true      | The wallet to use for signing the transaction.                        |
-| `subaccount_id`       | query     | [SubaccountId]    | true      | The subaccount ID for which to cancel orders.                         |
-| `short_term_cancels`  | query     | [OrderBatch] ⛁    | true      | List of OrderBatch objects containing the orders to cancel.           |
-| `good_til_block`      | query     | int               | true      | The last block the short term order cancellations can be executed at. |
-| `tx_options`          | query     | [TxOptions]       | false     | Options for transaction to support authenticators.                    |
+| Parameter             | Location  | Type           | Required  | Description                                                           |
+| --------------------- | --------- | -------------- | --------- | --------------------------------------------------------------------- |
+| `wallet`              | query     | [Wallet]       | true      | The wallet to use for signing the transaction.                        |
+| `subaccount_id`       | query     | [SubaccountId] | true      | The subaccount ID for which to cancel orders.                         |
+| `short_term_cancels`  | query     | [OrderBatch] ⛁ | true      | List of OrderBatch objects containing the orders to cancel.           |
+| `good_til_block`      | query     | [Height]       | true      | The last block the short term order cancellations can be executed at. |
+| `tx_options`          | query     | [TxOptions]    | false     | Options for transaction to support authenticators.                    |
 
 #### Response
 
-| Status | Meaning     | Schema |
-| ------ | ----------- | ------ |
-| `200`  | [OK]        | string |
+| Status | Meaning     | Schema   |
+| ------ | ----------- | -------- |
+| `200`  | [OK]        | [String] |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
@@ -67,3 +69,5 @@ Examples: [Python] | [TypeScript] | [Rust]
 [SubaccountId]: /types/subaccount_id
 [OrderBatch]: /types/order_batch
 [TxOptions]: /types/tx_options
+[Height]: /types/height
+[String]: /types/string
