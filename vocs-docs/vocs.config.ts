@@ -41,21 +41,10 @@ export default defineConfig({
                 {
                     text: 'Trading',
                     link: '/interaction/trading',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Placing an order',
-                            link: '/interaction/trading/place-order',
-                        },
-                        {
-                            text: 'Cancelling an order',
-                            link: '/interaction/trading/cancel-order',
-                        },
-                    ],
                 },
                 {
                     text: 'Asset management',
-                    link: '/interaction/asset-managenent',
+                    link: '/interaction/asset-management',
                 },
                 {
                     text: 'Data',
@@ -122,25 +111,6 @@ export default defineConfig({
                 {
                     text: 'Permissioned Keys',
                     link: '/permissioned-keys',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Creating an authenticator',
-                            link: '/interaction/create',
-                        },
-                        {
-                            text: 'Add authenticator',
-                            link: '/interaction/add',
-                        },
-                        {
-                            text: 'Remove authenticator',
-                            link: '/interaction/remove',
-                        },
-                        {
-                            text: 'Permissioned trading',
-                            link: '/interaction/trading',
-                        },
-                    ],
                 },
             ],
         },
