@@ -142,14 +142,6 @@ export default defineConfig({
                         },
                     ],
                 },
-                {
-                    text: 'Noble client',
-                    link: '/interaction/noble',
-                },
-                {
-                    text: 'Faucet client',
-                    link: '/interaction/faucet',
-                },
             ],
         },
         {
@@ -251,6 +243,14 @@ export default defineConfig({
                 {
                     text: 'Indexer API',
                     link: '/indexer-client',
+                },
+                {
+                    text: 'Noble API',
+                    link: '/noble-client',
+                },
+                {
+                    text: 'Faucet API',
+                    link: '/faucet-client',
                 },
             ],
         },
