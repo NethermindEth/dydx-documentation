@@ -209,6 +209,7 @@ export default defineConfig({
                 {
                     text: 'Node API',
                     link: '/node-client',
+                    collapsed: false,
                     items: [
                         {
                             text: 'Public API',
