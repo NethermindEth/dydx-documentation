@@ -25,6 +25,7 @@ pub async fn get_rewards_params(&mut self) -> Result<Params, Error>
 :::
 
 :::details[Unification Plan]
+- Rename `Params` to `RewardsParams` in Rust
 :::
 
 #### Parameters
@@ -33,7 +34,7 @@ pub async fn get_rewards_params(&mut self) -> Result<Params, Error>
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [RewardParams]                  |
+| `200`  | [OK]        | [RewardsParams]                  |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
@@ -42,4 +43,4 @@ Examples: [Python] | [TypeScript] | [Rust]
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/3e8c7e1b960291b7ef273962d374d9934a5c4d33/v4-client-rs/client/examples/validator_get.rs#L116
 
 [OK]: /types/ok
-[RewardParams]: /types/rewards_params
+[RewardsParams]: /types/rewards_params

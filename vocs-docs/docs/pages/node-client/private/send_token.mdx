@@ -44,6 +44,10 @@ pub async fn send_token(
 :::
 
 :::details[Unification Plan]
+- All the types are different, revision is needed
+- Standard types like strings are used
+- Broadcast mode?
+- Zero fee?
 :::
 
 #### Parameters
@@ -51,19 +55,23 @@ pub async fn send_token(
 | Parameter         | Location  | Type      | Required  | Description                                       |
 | ----------------- | --------- | --------- | --------- | ------------------------------------------------- |
 | `wallet`          | query     | [Wallet]  | true      | The wallet to use for signing the transaction.    |
-| `sender`          | query     | string    | true      | The sender address.                               |
-| `recipient`       | query     | string    | true      | The recipient address.                            |
-| `quantums`        | query     | int       | true      | The amount of quantums to send.                   |
-| `denomination`    | query     | int       | true      | The denomination of the token.                    |
+| `sender`          | query     | [String]  | true      | The sender address.                               |
+| `recipient`       | query     | [String]  | true      | The recipient address.                            |
+| `quantums`        | query     | [i32]     | true      | The amount of quantums to send.                   |
+| `denomination`    | query     | [i32]     | true      | The denomination of the token.                    |
 
 #### Response
 
-| Status | Meaning     | Schema |
-| ------ | ----------- | ------ |
-| `200`  | [OK]        | string |
+| Status | Meaning     | Schema   |
+| ------ | ----------- | -------- |
+| `200`  | [OK]        | [TxHash] |
 
 Examples: [Rust]
 
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/send_token.rs
 
 [Wallet]: /types/wallet
+[TxHash]: /types/tx_hash
+[String]: /types/string
+[i32]: /types/i32
+[OK]: /types/ok

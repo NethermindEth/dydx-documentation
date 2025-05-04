@@ -49,9 +49,9 @@ pub async fn broadcast_transaction(
 
 #### Response
 
-| Status | Meaning     | Schema |
-| ------ | ----------- | ------ |
-| `200`  | [OK]        | string |
+| Status | Meaning     | Schema   |
+| ------ | ----------- | -------- |
+| `200`  | [OK]        | [TxHash] |
 
 Examples: [Rust]
 
@@ -60,3 +60,5 @@ Examples: [Rust]
 
 [Tx]: /types/tx
 [BroadcastMode]: /types/broadcast_mode
+[OK]: /types/ok
+[TxHash]: /types/tx_hash
