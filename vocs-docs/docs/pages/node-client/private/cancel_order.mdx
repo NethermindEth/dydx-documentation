@@ -28,15 +28,6 @@ async cancelOrder(
     goodTilBlock?: number,
     goodTilTimeInSeconds?: number,
 ): Promise<BroadcastTxAsyncResponse | BroadcastTxSyncResponse | IndexedTx>
-
-async signCancelOrder(
-    subaccount: SubaccountInfo,
-    clientId: number,
-    orderFlags: OrderFlags,
-    clobPairId: number,
-    goodTilBlock: number,
-    goodTilBlockTime: number,
-): Promise<string>
 ```
 
 ```rust [Rust]
@@ -55,6 +46,7 @@ pub async fn cancel_order(
 :::
 
 :::details[Unification Plan]
+- Check the `marketId` is really needed (used in `TypeScript`)
 :::
 
 #### Parameters
@@ -71,9 +63,9 @@ pub async fn cancel_order(
 
 #### Response
 
-| Status | Meaning     | Schema |
-| ------ | ----------- | ------ |
-| `200`  | [OK]        | string |
+| Status | Meaning     | Schema   |
+| ------ | ----------- | -------- |
+| `200`  | [OK]        | [TxHash] |
 
 Examples: [Rust]
 
@@ -83,3 +75,4 @@ Examples: [Rust]
 [OrderId]: /types/order_id
 [i32]: /types/i32
 [TxOptions]: /types/tx_options
+[TxHash]: /types/tx_options

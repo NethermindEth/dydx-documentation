@@ -1,8 +1,8 @@
 ### Place Order
 
-Place [Order].
+Place [an order].
 
-[Order]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
+[an order]: https://docs.rs/dydx-proto/0.2.0/x86_64-unknown-linux-gnu/dydx_proto/dydxprotocol/clob/struct.Order.html
 
 #### Method Declaration
 
@@ -53,6 +53,10 @@ pub async fn place_order(
 :::
 
 :::details[Unification Plan]
+- Use a convenient `Wallet` and `Order` pair for all clients
+- TypeScript doesn't use authenticators
+- In Python we use them explicitly
+- Consider to do the same like in Rust (set it automatically)
 :::
 
 #### Parameters
@@ -65,9 +69,9 @@ pub async fn place_order(
 
 #### Response
 
-| Status | Meaning     | Schema |
-| ------ | ----------- | ------ |
-| `200`  | [OK]        | string |
+| Status | Meaning     | Schema   |
+| ------ | ----------- | -------- |
+| `200`  | [OK]        | [TxHash] |
 
 Examples: [Python] | [TypeScript] | [Rust]
 
@@ -76,4 +80,7 @@ Examples: [Python] | [TypeScript] | [Rust]
 [Rust]: https://github.com/dydxprotocol/v4-clients/blob/main/v4-client-rs/client/examples/place_order_short_term.rs
 
 [Wallet]: /types/wallet
+[OK]: /types/ok
 [Order]: /types/order
+[TxHash]: /types/tx_hash
+[TxOptions]: /types/tx_options
