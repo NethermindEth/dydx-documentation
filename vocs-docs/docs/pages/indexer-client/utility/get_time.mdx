@@ -34,7 +34,7 @@ pub async fn get_time(&self) -> Result<TimeResponse, Error>
 | Parameter           | Location | Type               | Required    | Description                                                           |
 | ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
 | `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
-| `limit`             | query    | [u32]              | false       | Maximum number of asset positions to return in the response.          |
+| `limit`             | query    | [i32]              | false       | Maximum number of asset positions to return in the response.          |
 
 #### Response
 
@@ -45,3 +45,4 @@ pub async fn get_time(&self) -> Result<TimeResponse, Error>
 [Address]: /types/address
 [OK]: /types/ok
 [TimeResponse]: /types/time_response
+[i32]: /types/i32
