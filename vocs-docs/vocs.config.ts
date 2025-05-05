@@ -2,7 +2,8 @@ import { defineConfig } from 'vocs'
 
 export default defineConfig({
     title: 'dYdX Documentation',
-    basePath: '/dydx-documentation',
+    // basePath: '/dydx-documentation',
+    basePath: '/',
     sidebar: [
         {
             text: 'Getting Started',
