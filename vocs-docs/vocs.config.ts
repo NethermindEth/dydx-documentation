@@ -52,22 +52,6 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'List orders',
-                            link: '/interaction/list-orders',
-                        },
-                        {
-                            text: 'List positions',
-                            link: '/interaction/list-positions',
-                        },
-                        {
-                            text: 'List fills',
-                            link: '/interaction/list-fills',
-                        },
-                        {
-                            text: 'List markets',
-                            link: '/interaction/list-markets',
-                        },
-                        {
                             text: 'Trading rewards',
                             link: '/interaction/trading-rewards',
                         },
@@ -79,7 +63,7 @@ export default defineConfig({
                 },
                 {
                     text: 'MegaVault',
-                    link: 'interaction/megavault',
+                    link: '/interaction/megavault',
                 },
                 {
                     text: 'Permissioned Keys',
