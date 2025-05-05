@@ -52,10 +52,6 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Account balance',
-                            link: '/interaction/account-balance',
-                        },
-                        {
                             text: 'List orders',
                             link: '/interaction/list-orders',
                         },
@@ -72,20 +68,8 @@ export default defineConfig({
                             link: '/interaction/list-markets',
                         },
                         {
-                            text: 'Block height',
-                            link: '/interaction/block-height',
-                        },
-                        {
                             text: 'Trading rewards',
                             link: '/interaction/trading-rewards',
-                        },
-                        {
-                            text: 'Fee tiers',
-                            link: '/interaction/fee-tiers',
-                        },
-                        {
-                            text: 'Reward parameters',
-                            link: '/interaction/reward-parameters',
                         },
                         {
                             text: 'Watch orderbook',
@@ -95,22 +79,11 @@ export default defineConfig({
                 },
                 {
                     text: 'MegaVault',
-                    link: '/megavault',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Deposit',
-                            link: '/interaction/depoist',
-                        },
-                        {
-                            text: 'Withdraw',
-                            link: '/interaction/withdraw',
-                        },
-                    ],
+                    link: 'interaction/megavault',
                 },
                 {
                     text: 'Permissioned Keys',
-                    link: '/permissioned-keys',
+                    link: '/interaction/permissioned-keys',
                 },
             ],
         },
