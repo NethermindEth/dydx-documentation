@@ -27,7 +27,7 @@ export default defineConfig({
             ],
         },
         {
-            text: 'Interaction',
+            text: 'Guide',
             link: '/interaction',
             items: [
                 {
