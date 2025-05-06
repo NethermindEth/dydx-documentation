@@ -46,7 +46,7 @@ pub async fn list_parent_orders(
 
 | Parameter                             | Location  | Type                  | Required  | Description                                                           |
 | ------------------------------------- | --------- | --------------------- | --------- | --------------------------------------------------------------------- |
-| `address`                             | query     | [Address]             | true      | The wallet address that owns the subaccount.                          |
+| `address`                             | query     | [Address]             | true      | The wallet address that owns the account.                             |
 | `parent_subaccount_number`            | query     | [SubaccountNumber]    | true      | Parent subaccount number                                              |
 | `limit`                               | query     | [u32]                 | false     | Maximum number of asset positions to return in the response.          |
 | `ticker`                              | query     | [Ticker]              | false     | The ticker filter.                                                    |
