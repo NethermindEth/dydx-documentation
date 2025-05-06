@@ -63,7 +63,7 @@ pub async fn get_historical_pnl(
 | `created_before_or_at_height` | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.            |
 | `created_before_or_at`        | query    | [DateTime]         | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).  |
 | `created_on_or_after_height`  | query    | [Height]           | false      | Restricts results to positions created on or after a specific blockchain height.             |
-| `created_on_or_after`         | query    | [DateTime in utc]  | false      | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).   |
+| `created_on_or_after`         | query    | [DateTime in UTC]  | false      | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).   |
 | `page`                        | query    | [u32]              | false      | The page number for paginated results.                                                       |
 
 #### Response
@@ -78,4 +78,4 @@ pub async fn get_historical_pnl(
 [PnlTicksResponseObject]: /types/pnl_ticks_response_object
 [u32]: /types/u32
 [Height]: /types/height
-[DateTime in utc]: /types/date_time
+[DateTime in UTC]: /types/date_time
