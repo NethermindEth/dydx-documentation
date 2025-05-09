@@ -1,10 +1,127 @@
-import GetPrice from '../../node-client/public/get_price.mdx'
-import GetPrices from '../../node-client/public/get_prices.mdx'
-import PlaceOrder from '../../node-client/private/place_order.mdx'
-import CancelOrder from '../../node-client/private/cancel_order.mdx'
+# Trading
 
+Trading is the ultimate target to use `dydx` library and it's ecosystem. This guide will help you start trading with `dydx` platform.
 
-<GetPrice />
-<GetPrices />
-<PlaceOrder />
-<CancelOrder />
+::::steps
+
+## Get market price
+
+Trading should be done on certain market (or ticker) type. To fetch all available market and associated prices, please check the following code example.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+prices = await node_client.get_prices()
+```
+
+```rust [Rust]
+pub struct Getter {
+    client: NodeClient,
+    wallet: Wallet,
+}
+let mut getter = Getter::connect().await?;
+let prices = getter.client.get_prices(None).await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const prices = await client.get.getAllPrices();
+```
+
+:::
+
+To fetch certain market price, please check the following code examples.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+price = await node_client.get_price(1)
+```
+
+```rust [Rust]
+node_client = await NodeClient.connect(TESTNET.node)
+price = await node_client.get_price(1)
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const marketPrice = await client.validatorClient.get.getPrice(1);
+```
+
+:::
+
+## Place an order
+
+To place an order, you need wallet and order information. Please check the [Wallet setup] guide to check how to set up a wallet.
+
+You will require to form `order` object to place the order. Here is the steps:
+
+:::code-group
+
+```python [Python]
+node = await NodeClient.connect(TESTNET.node)
+indexer = IndexerClient(TESTNET.rest_indexer)
+market = Market(
+    (await indexer.markets.get_perpetual_markets(MARKET_ID))["markets"][MARKET_ID]
+)
+order_id = market.order_id(
+    TEST_ADDRESS, 0, random.randint(0, MAX_CLIENT_ID), OrderFlags.SHORT_TERM
+)
+order = market.order(
+    order_id,
+    OrderType.LIMIT,
+    Order.Side.SIDE_SELL,
+    size=0.01,
+    price=40000,
+    time_in_force=Order.TimeInForce.TIME_IN_FORCE_UNSPECIFIED,
+    reduce_only=False,
+    good_til_block=good_til_block,
+)
+place = await node.place_order(wallet, order)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let indexer = IndexerClient::new(config.indexer);
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let mut account = wallet.account(0, &mut placer.client).await?;
+let subaccount = account.subaccount(0)?;
+
+let market = indexer
+    .markets()
+    .get_perpetual_market(&ETH_USD_TICKER.into())
+    .await?;
+let current_block_height = client.get_latest_block_height().await?;
+let size = BigDecimal::from_str("0.02")?;
+let (_id, order) = OrderBuilder::new(market, subaccount)
+    .market(OrderSide::Buy, size)
+    .reduce_only(false)
+    .price(100) // market-order slippage protection price
+    .time_in_force(TimeInForce::Unspecified)
+    .until(current_block_height.ahead(10))
+    .short_term() // or .long_term() for long term order
+    .build(123456)?;
+let tx_hash = placer.client.place_order(&mut account, order).await?;
+```
+
+```typescript [TypeScript]
+const client = await CompositeClient.connect(network);
+const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const subaccount = new SubaccountInfo(wallet, 0);
+
+const tx = await client.placeShortTermOrder(
+    subaccount,
+    'ETH-USD',
+    side,
+    price,
+    0.01,
+    clientId,
+    goodTilBlock,
+    timeInForce,
+    false,
+    );
+```
+
+:::
