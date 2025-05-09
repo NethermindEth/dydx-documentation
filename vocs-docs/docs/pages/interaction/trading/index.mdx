@@ -125,3 +125,42 @@ const tx = await client.placeShortTermOrder(
 ```
 
 :::
+
+## Cancel an order
+
+You can cancel an order using the order id and associated account information. Here is sample code to do that.
+
+:::code-group
+
+```python [Python]
+tx = client.cancel_order(
+    subaccount,
+    short_term_client_id,
+    "ETH-USD",
+    ORDER_FLAGS_SHORT_TERM,
+    good_til_time_in_seconds=0,  # short term orders use GTB.
+    good_til_block=good_til_block,  # GTB should be the same or greater than order to cancel
+)
+```
+
+```rust [Rust]
+let cancel_tx_hash = placer
+    .client
+    .cancel_order(&mut account, order_id, good_until)
+    .await?;
+```
+
+```typescript [TypeScript]
+const tx = await client.cancelOrder(
+    subaccount,
+    longTermOrderClientId,
+    OrderFlags.LONG_TERM,
+    'ETH-USD',
+    0,
+    120,
+);
+```
+
+:::
+
+::::
