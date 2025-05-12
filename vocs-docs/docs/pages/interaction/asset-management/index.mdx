@@ -1,11 +1,131 @@
-import GetAccount from '../../node-client/public/get_account.mdx'
-import GetAccountBalance from '../../node-client/public/get_account_balance.mdx'
-import GetAccountBalances from '../../node-client/public/get_account_balances.mdx'
-import GetSubaccount from '../../node-client/public/get_subaccount.mdx'
-import GetSubaccounts from '../../node-client/public/get_subaccounts.mdx'
+# Asset
 
-<GetAccount />
-<GetAccountBalance />
-<GetAccountBalances />
-<GetSubaccount />
-<GetSubaccounts />
+Asset refers to accounts and subaccounts related information which are retrievable only. This section will guide you to fetch information from account and subaccounts.
+
+::::steps
+
+## Get Account
+
+Account information can be fetched as following:
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+account = await node_client.get_account(TEST_ADDRESS)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let account = getter.client.get_account(&address).await?;
+
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const account = await client.get.getAccount(DYDX_TEST_ADDRESS);
+```
+
+:::
+
+## Get Account Balances
+
+Account balance is an important piece of information while trading. You can fetch the balances of all accounts using node client.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+response = await node_client.get_account_balances(TEST_ADDRESS)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let balance = client
+    .get_account_balances(&address)
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const coins = await client.get.getAccountBalances(DYDX_TEST_ADDRESS);
+```
+
+:::
+
+## Get Account Balance
+
+You can fetch balance of certain denomination as following.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+response = await node_client.get_account_balance(TEST_ADDRESS, "adv4tnt")
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let balance = client
+    .get_account_balance(&address, &"adv4tnt".parse()?)
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const coins = await client.get.getAccountBalance(DYDX_TEST_ADDRESS, "adv4tnt");
+```
+
+:::
+
+## Get Subaccounts
+
+Subaccounts are individual entity associated with an account. An account can have multiple subaccount. To fetch all the subaccount, please follow the cod examples below:
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+subaccounts = await node_client.get_subaccounts()
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let subaccounts = client.get_subaccounts().await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const subaccounts = await client.get.getSubaccounts();
+```
+
+:::
+
+
+## Get Subaccount
+
+To fetch single subaccount, please follow the code examples:
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+subaccount = await node_client.get_subaccount(TEST_ADDRESS, 0)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account_offline(0)?;
+let subaccount = account.subaccount(0)?;
+let subaccount = client.get_subaccount(&subaccount).await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 0);
+```
+
+:::
+
+::::
