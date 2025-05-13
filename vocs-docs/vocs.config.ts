@@ -188,15 +188,14 @@ export default defineConfig({
         },
         {
             text: 'Policies',
-            link: '/todo',
             items: [
                 {
                     text: 'Security',
-                    link: '/todo',
+                    link: '/policies/security',
                 },
                 {
-                    text: 'Terms of Service and Privacy',
-                    link: '/todo',
+                    text: 'Terms of Service & Privacy',
+                    link: '/policies/terms',
                 },
             ],
         },
