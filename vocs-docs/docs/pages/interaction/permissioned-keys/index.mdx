@@ -1,7 +1,176 @@
-import Add from '../../node-client/authenticators/add.mdx'
-import List from '../../node-client/authenticators/list.mdx'
-import Remove from '../../node-client/authenticators/remove.mdx'
+# Permissioned Keys
 
-<Add />
-<List />
-<Remove />
+To access private APIs, authentication is required. This section will guide you to add, list, and remove authenticators.
+
+::::steps
+
+## List Authenticators
+
+Multiple authenticator can be added. You can list all the available authenticators using the code example below:
+
+:::code-group
+
+```python [Python]
+node = await NodeClient.connect(TESTNET.node)
+wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC,
+    address=TEST_ADDRESS,
+)
+authenticators = await node.get_authenticators(wallet.address)
+```
+
+```rust [Rust]
+let mut client = NodeClient::connect(config.node).await?;
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account(index, &mut client).await?;
+
+let auths = client
+    .authenticators()
+    .list(account.address().clone())
+    .await?;
+```
+
+```typescript [TypeScript]
+node = await NodeClient.connect(TESTNET.node)
+wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC,
+    address=TEST_ADDRESS,
+)
+authenticators = await node.get_authenticators(wallet.address)
+```
+:::
+
+## Add Authenticator
+
+Adding authenticator means allowing the node-client to access private APIs. Here is code example on how to add an authenticator.
+
+:::code-group
+
+```python [Python]
+node = await NodeClient.connect(TESTNET.node)
+trader_wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC_2,
+    address=TEST_ADDRESS_2,
+)
+place_order_auth = Authenticator.compose(
+    AuthenticatorType.AllOf,
+    [
+        Authenticator.signature_verification(trader_wallet.public_key.key),
+        Authenticator.message_filter("/dydxprotocol.clob.MsgPlaceOrder"),
+    ],
+)
+response = await node.add_authenticator(wallet, place_order_auth)
+```
+
+```rust [Rust]
+let mut client = NodeClient::connect(config.node).await?;
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account(index, &mut client).await?;
+let authenticator = Authenticator::AllOf(vec![
+        // The permissioned account needs to share its public key with the permissioning account.
+        // Through other channels, users can share their public keys using hex strings, e.g.,
+        // let keystring = hex::encode(&account.public_key().to_bytes())
+        // let bytes = hex::decode(&keystring);
+        Authenticator::SignatureVerification(permissioned.account.public_key().to_bytes()),
+        // The allowed actions. Several message types are allowed to be defined, separated by commas.
+        Authenticator::MessageFilter("/dydxprotocol.clob.MsgPlaceOrder".into()),
+        // The allowed markets. Several IDs allowed to be defined.
+        Authenticator::ClobPairIdFilter("0,1".into()),
+        // The allowed subaccounts. Several subaccounts allowed to be defined.
+        Authenticator::SubaccountFilter("0".into()),
+        // A transaction will only be accepted if all conditions above are satisfied.
+        // Alternatively, `Authenticator::AnyOf` can be used.
+        // If only one condition was declared (if so, it must be a `Authenticator::SignatureVerification`),
+        // `AllOf` or `AnyOf` should not be used.
+    ]);
+client
+    .authenticators()
+    .add(&account, account.address.clone(), authenticator)
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = await CompositeClient.connect(network);
+const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const subaccount = new SubaccountInfo(wallet, 0);
+const subAuth = [ {
+        type: AuthenticatorType.SIGNATURE_VERIFICATION,
+        config: authedPubKey,
+        },
+        {
+        type: AuthenticatorType.ANY_OF,
+        config: [
+            {
+                type: AuthenticatorType.MESSAGE_FILTER,
+                config: toBase64(new TextEncoder().encode('/dydxprotocol.clob.MsgPlaceOrder')),
+            },
+            {
+                type: AuthenticatorType.MESSAGE_FILTER,
+                config: toBase64(new TextEncoder().encode('/dydxprotocol.clob.MsgPlaceOrder')),
+            },
+        ]
+    }
+];
+const jsonString = JSON.stringify(subAuth);
+const encodedData = new TextEncoder().encode(jsonString);
+try {
+await client.addAuthenticator(subaccount, AuthenticatorType.ALL_OF, encodedData);
+} catch (error) {
+    console.log(error.message);
+}
+```
+:::
+
+## Remove Authenticators
+
+You can remove an authenticator whenever requires. Please check the following code examples to do so.
+
+:::code-group
+
+```python [Python]
+node = await NodeClient.connect(TESTNET.node)
+wallet = await Wallet.from_mnemonic(
+    node,
+    mnemonic=DYDX_TEST_MNEMONIC,
+    address=TEST_ADDRESS,
+)
+# Check if authenticator is added
+authenticators = await node.get_authenticators(wallet.address)
+last_auth = authenticators.account_authenticators[-1]
+last_auth_id = last_auth.id
+
+# Remove the authenticator
+response = await node.remove_authenticator(wallet, last_auth_id)
+```
+
+```rust [Rust]
+let mut client = NodeClient::connect(config.node).await?;
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account(index, &mut client).await?;
+let id = client
+    .authenticators()
+    .list(master_address.clone())
+    .await?
+    .last()
+    .unwrap()
+    .id;
+client
+    .authenticators()
+    .remove(&mut account, account.address.clone(), id)
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = await CompositeClient.connect(network);
+const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
+const subaccount = new SubaccountInfo(wallet, 0);
+const authenticators = await client.getAuthenticators(wallet.address!);
+const lastElement = authenticators.accountAuthenticators.length - 1;
+const id = authenticators.accountAuthenticators[lastElement].id;
+await client.removeAuthenticator(subaccount, id);
+```
+
+:::
