@@ -1,18 +1,218 @@
-import GetBalance from '../../node-client/public/get_account_balance.mdx'
-import GetBlockHeight from '../../node-client/public/get_latest_block_height.mdx'
-import FeeTiers from '../../node-client/public/get_user_fee_tier.mdx'
-import ListOrders from '../../indexer-client/accounts/list_orders.mdx'
-import ListFills from '../../indexer-client/accounts/get_fills.mdx'
-import ListMarkets from '../../indexer-client/feeds/markets.mdx'
-import ListPositions from '../../indexer-client/accounts/list_positions.mdx'
-import RewardsParameters from '../../node-client/public/get_rewards_params.mdx'
+# Data
 
+This section guides you to fetch some important data points from different clients (node client, indexer client etc).
 
-<GetBalance />
-<GetBlockHeight />
-<FeeTiers />
-<ListOrders />
-<ListFills />
-<ListMarkets />
-<ListPositions />
-<RewardsParameters />
+::::steps
+
+## Get Latest Block Height
+
+The Get Latest Block Height function asynchronously retrieves the most recent block height from a blockchain network. Please check the following code examples to fetch latest block height in the blockchain.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+height = await node_client.latest_block_height()
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let height = client.get_latest_block_height().await?;
+```
+
+```typescript [TypeScript]
+client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const height = await client.get.latestBlockHeight();
+```
+
+:::
+
+## Get User Fee Tier
+
+The Get User Fee Tier function retrieves the perpetual fee tier associated with a specific wallet address, providing information on the user's current fee structure. Please check the following code examples for better understanding.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+user_fee_tier = await node_client.get_user_fee_tier(TEST_ADDRESS)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
+```
+
+```typescript [TypeScript]
+client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
+```
+
+:::
+
+## List Orders
+
+Retrieves orders for a specific subaccount, with various filtering options to narrow down the results based on order characteristics. Please check the following code examples for demonstrations.
+
+:::code-group
+
+```python [Python]
+client = IndexerClient(config=Network.testnet().indexer_config,)
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
+address = subaccount.address
+orders_response = client.account.get_subaccount_orders(address, 0)
+```
+
+```rust [Rust]
+let rester = Rester::connect().await?;
+let account = rester.wallet.account_offline(0)?;
+let indexer = rester.indexer;
+let subaccount = account.subaccount(0)?;
+let orders = indexer
+    .accounts()
+    .list_orders(&subaccount, Some(ord_opts))
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getSubaccountOrders(DYDX_TEST_ADDRESS, 0);
+```
+
+:::
+
+## Get Fills
+
+Retrieves fill records for a specific subaccount on the exchange. Please check the following code examples for demonstrations.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+user_fee_tier = await node_client.get_user_fee_tier(TEST_ADDRESS)
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
+```
+
+```typescript [TypeScript]
+client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
+```
+
+:::
+
+## Get Fills
+
+Retrieves fill records for a specific subaccount on the exchange. Please check the following code examples for demonstrations.
+
+:::code-group
+
+```python [Python]
+client = IndexerClient(config=Network.testnet().indexer_config,)
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
+address = subaccount.address
+fills_response = client.account.get_subaccount_fills(address, 0)
+```
+
+```rust [Rust]
+let indexer = IndexerClient::new(config.indexer);
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account(0, &mut node).await?;
+let ticker = Ticker::from("ETH-USD");
+let subaccount = account.subaccount(0)?;
+indexer
+    .accounts()
+    .get_fills(&env.subaccount, None)
+    .await?;```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getSubaccountFills(DYDX_TEST_ADDRESS, 0);
+```
+
+:::
+
+## List Positions
+
+Retrieves perpetual positions for a specific subaccount. This examples below show you how to query and filter the active or historical perpetual positions associated with a particular subaccount.
+
+:::code-group
+
+```python [Python]
+client = IndexerClient(config=Network.testnet().indexer_config,)
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
+address = subaccount.address
+perpetual_positions_response = client.account.get_subaccount_perpetual_positions(address, 0)
+```
+
+```rust [Rust]
+let indexer = IndexerClient::new(config.indexer);
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
+let account = wallet.account(0, &mut node).await?;
+let subaccount = account.subaccount(0)?;
+indexer
+    .accounts()
+    .list_positions(&subaccount, Some(pos_opts))
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0);
+```
+
+:::
+
+## Get Rewards Params
+
+The Get Rewards Params function retrieves the parameters for the rewards system, providing insight into the set configurations for earning and distributing rewards. Please check the following code examples for demonstrations.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+rewards_params = await node_client.get_rewards_params()
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let reward_params = client.get_rewards_params().await?;
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const rewardsParams = await client.get.getRewardsParams();
+```
+
+:::
+
+## Trading Rewards
+
+Retrieves historical block trading rewards for the specified address. Please check the following code examples for demonstrations.
+
+:::code-group
+
+```python [Python]
+client = IndexerClient(config=Network.testnet().indexer_config,)
+response = await client.account.get_historical_block_trading_rewards(test_address, limit)
+```
+
+```rust [Rust]
+let indexer = IndexerClient::new(config.indexer);
+indexer
+    .accounts()
+    .get_rewards(&env.address, None)
+    .await?;
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getHistoricalBlockTradingRewards(DYDX_TEST_ADDRESS, limit);
+```
+
+:::
+
+::::
