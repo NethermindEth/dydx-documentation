@@ -144,7 +144,6 @@ export default defineConfig({
                 },
                 {
                     text: 'Trading / Perpetual Contracts',
-                    link: '/todo',
                     collapsed: true,
                     items: [
                         {
@@ -161,7 +160,11 @@ export default defineConfig({
                         },
                         {
                             text: 'Margin',
-                            link: '/todo',
+                            link: '/concepts/trading/margin',
+                        },
+                        {
+                            text: 'Rewards, Fees and Parameters',
+                            link: '/concepts/trading/rewards',
                         },
                         {
                             text: 'Funding',
