@@ -175,8 +175,8 @@ export default defineConfig({
                             link: '/concepts/trading/oracle',
                         },
                         {
-                            text: 'Permissioned keys / Authenticators',
-                            link: '/todo',
+                            text: 'Permissioned Keys',
+                            link: '/concepts/trading/authenticators',
                         },
                         {
                             text: 'MegaVault',
