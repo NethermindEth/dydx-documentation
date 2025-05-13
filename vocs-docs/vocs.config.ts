@@ -126,11 +126,10 @@ export default defineConfig({
             ],
         },
         {
-            text: 'Architecture',
-            link: '/todo',
+            text: 'Concepts',
             items: [
                 {
-                    text: 'Structure',
+                    text: 'Architecture',
                     link: '/todo',
                     collapsed: true,
                     items: [
