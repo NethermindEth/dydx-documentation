@@ -143,7 +143,7 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Trading / Perpetual Contracts',
+                    text: 'Trading',
                     collapsed: true,
                     items: [
                         {
@@ -156,7 +156,7 @@ export default defineConfig({
                         },
                         {
                             text: 'Orders',
-                            link: '/todo',
+                            link: '/concepts/trading/orders',
                         },
                         {
                             text: 'Margin',
