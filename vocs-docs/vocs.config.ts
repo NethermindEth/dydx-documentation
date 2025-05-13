@@ -168,7 +168,7 @@ export default defineConfig({
                         },
                         {
                             text: 'Funding',
-                            link: '/todo',
+                            link: '/concepts/trading/funding',
                         },
                         {
                             text: 'Price data',
