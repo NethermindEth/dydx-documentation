@@ -1,5 +1,7 @@
 # Orders
 
+An order is the way a trader manages positions in the dYdX markets. Different types of orders exist to support different trading strategies.
+
 ## Short-term vs Long-term
 
 **Short-term** orders are short-lived orders that are not stored on-chain unless filled. These orders stay in-memory of the network validators, for up to 20 blocks, with only their fill amount and expiry block height being committed to state. Short-term orders are mainly intended for use by market makers with high throughput or for market orders.
