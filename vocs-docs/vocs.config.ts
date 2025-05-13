@@ -171,8 +171,8 @@ export default defineConfig({
                             link: '/concepts/trading/funding',
                         },
                         {
-                            text: 'Price data',
-                            link: '/todo',
+                            text: 'Price Data',
+                            link: '/concepts/trading/oracle',
                         },
                         {
                             text: 'Permissioned keys / Authenticators',
