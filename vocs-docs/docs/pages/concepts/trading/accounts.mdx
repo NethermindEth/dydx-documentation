@@ -1,0 +1,16 @@
+# Accounts and Subaccounts
+
+**Main Account**
+* Otherwise known as your wallet/address account.
+* This account holds tokens that are sent to/from the chain, including tokens used for gas and collateral.
+* Gas for transactions is used from the main account.
+* Main accounts cannot trade.
+
+**Subaccounts**
+* Subaccounts are used to trade.
+* Each main account can have 128,001 subaccounts.
+* Each subaccount is uniquely identified using as subaccount ID of `(main account address, integer)`
+* Once you deposit funds to a valid subaccount ID, the subaccount will automatically be created.
+* Only the main account can send transactions on behalf of a subaccount.
+* Subaccounts do not require gas (no gas is used for trading).
+* Subaccounts require collateral token (currently USDC) in order to trade.
