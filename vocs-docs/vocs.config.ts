@@ -182,10 +182,6 @@ export default defineConfig({
                             text: 'MegaVault',
                             link: '/concepts/trading/megavault',
                         },
-                        {
-                            text: 'Markets',
-                            link: '/todo',
-                        },
                     ],
                 },
             ],
