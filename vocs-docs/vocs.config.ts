@@ -147,10 +147,6 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Accounts and Subaccounts',
-                            link: '/concepts/trading/accounts',
-                        },
-                        {
                             text: 'Perpetuals and Assets',
                             link: '/concepts/trading/assets',
                         },
@@ -159,12 +155,16 @@ export default defineConfig({
                             link: '/concepts/trading/orders',
                         },
                         {
-                            text: 'Margin',
-                            link: '/concepts/trading/margin',
+                            text: 'Accounts and Subaccounts',
+                            link: '/concepts/trading/accounts',
                         },
                         {
                             text: 'Rewards, Fees and Parameters',
                             link: '/concepts/trading/rewards',
+                        },
+                        {
+                            text: 'Margin',
+                            link: '/concepts/trading/margin',
                         },
                         {
                             text: 'Funding',
