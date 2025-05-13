@@ -8,29 +8,29 @@ The payments are credited or debited at the start of each hour, and are included
 
 The main component of the funding rate is a premium that takes into account market activity for the perpetual. It is calculated for each market, every minute (at a random point within the minute) using the formula:
 
-<pre class="center-column">
-Premium = (Max(0, Impact Bid Price - Index Price) - Max(0, Index Price - Impact Ask Price)) / Index Price
-</pre>
+```
+Premium = (Max(0, IBP - Index Price) - Max(0, Index Price - IAP)) / Index Price
+```
 
-Where the impact bid and impact ask prices are defined as:
+Where the impact bid (IBP) and impact ask (IAP) prices are defined as:
 
-<pre class="center-column">
-Impact Bid Price = Average execution price for a market sell of the impact notional value
-Impact Ask Price = Average execution price for a market buy of the impact notional value
-</pre>
+```
+IBP = Average execution price for a market sell of the impact notional value
+IAP = Average execution price for a market buy of the impact notional value
+```
 
 And the impact notional amount for a market is:
 
-<pre class="center-column">
+```
 Impact Notional Amount = 500 USDC / Initial Margin Fraction
-</pre>
+```
 
 For example, for a market with a 10% initial margin fraction, the impact notional value is 5,000 USDC.
 
 At the end of each hour, the premium component is calculated as the simple average (i.e. TWAP) of the 60 premiums calculated over the course of the last hour. In addition to the premium component, each market has a fixed interest rate component that aims to account for the difference in interest rates of the base and quote currencies. The funding rate is then:
 
-<pre class="center-column">
+```
 Funding Rate = (Premium Component / 8) + Interest Rate Component
-</pre>
+```
 
 Currently, the interest rate component for all dYdX markets is `0%`. The funding rate is simply the one-hour premium for markets with no interest rate component.
