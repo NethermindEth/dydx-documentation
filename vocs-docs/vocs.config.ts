@@ -72,74 +72,6 @@ export default defineConfig({
                 },
             ],
         },
-        {
-            text: 'Architecture',
-            link: '/todo',
-            items: [
-                {
-                    text: 'Structure',
-                    link: '/todo',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Validators (aka Nodes)',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Indexer',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Networks',
-                            link: '/todo',
-                        },
-                    ],
-                },
-                {
-                    text: 'Trading / Perpetual Contracts',
-                    link: '/todo',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Accounts and Subaccounts',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Assets and Perpetuals',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Orders',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Margin',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Funding',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Price data',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Permissioned keys / Authenticators',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'MegaVault',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Markets',
-                            link: '/todo',
-                        },
-                    ],
-                },
-            ],
-        },
         /*
         {
             text: 'Full API',
@@ -190,6 +122,67 @@ export default defineConfig({
                 {
                     text: 'Faucet API',
                     link: '/faucet-client',
+                },
+            ],
+        },
+        {
+            text: 'Concepts',
+            items: [
+                {
+                    text: 'Architecture',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Overview',
+                            link: '/concepts/architecture/overview',
+                        },
+                        {
+                            text: 'Indexer',
+                            link: '/concepts/architecture/indexer',
+                        },
+                    ],
+                },
+                {
+                    text: 'Trading',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Perpetuals and Assets',
+                            link: '/concepts/trading/assets',
+                        },
+                        {
+                            text: 'Orders',
+                            link: '/concepts/trading/orders',
+                        },
+                        {
+                            text: 'Accounts and Subaccounts',
+                            link: '/concepts/trading/accounts',
+                        },
+                        {
+                            text: 'Rewards, Fees and Parameters',
+                            link: '/concepts/trading/rewards',
+                        },
+                        {
+                            text: 'Margin',
+                            link: '/concepts/trading/margin',
+                        },
+                        {
+                            text: 'Funding',
+                            link: '/concepts/trading/funding',
+                        },
+                        {
+                            text: 'Price Data',
+                            link: '/concepts/trading/oracle',
+                        },
+                        {
+                            text: 'Permissioned Keys',
+                            link: '/concepts/trading/authenticators',
+                        },
+                        {
+                            text: 'MegaVault',
+                            link: '/concepts/trading/megavault',
+                        },
+                    ],
                 },
             ],
         },
