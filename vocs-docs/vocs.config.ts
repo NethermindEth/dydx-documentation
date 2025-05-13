@@ -72,6 +72,59 @@ export default defineConfig({
                 },
             ],
         },
+        /*
+        {
+            text: 'Full API',
+            link: '/todo',
+            items: [
+                {
+                    text: 'HTTP API',
+                    link: '/todo',
+                },
+                {
+                    text: 'WebSockets',
+                    link: '/todo',
+                },
+                {
+                    text: 'gRPC',
+                    link: '/todo',
+                },
+            ],
+        },
+        */
+        {
+            text: 'Full API',
+            link: '/api',
+            items: [
+                {
+                    text: 'Node API',
+                    link: '/node-client',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
+                        },
+                        {
+                            text: 'Private API',
+                            link: '/node-client/private',
+                        },
+                    ],
+                },
+                {
+                    text: 'Indexer API',
+                    link: '/indexer-client',
+                },
+                {
+                    text: 'Noble API',
+                    link: '/noble-client',
+                },
+                {
+                    text: 'Faucet API',
+                    link: '/faucet-client',
+                },
+            ],
+        },
         {
             text: 'Architecture',
             link: '/todo',
@@ -137,59 +190,6 @@ export default defineConfig({
                             link: '/todo',
                         },
                     ],
-                },
-            ],
-        },
-        /*
-        {
-            text: 'Full API',
-            link: '/todo',
-            items: [
-                {
-                    text: 'HTTP API',
-                    link: '/todo',
-                },
-                {
-                    text: 'WebSockets',
-                    link: '/todo',
-                },
-                {
-                    text: 'gRPC',
-                    link: '/todo',
-                },
-            ],
-        },
-        */
-        {
-            text: 'Full API',
-            link: '/api',
-            items: [
-                {
-                    text: 'Node API',
-                    link: '/node-client',
-                    collapsed: false,
-                    items: [
-                        {
-                            text: 'Public API',
-                            link: '/node-client/public',
-                        },
-                        {
-                            text: 'Private API',
-                            link: '/node-client/private',
-                        },
-                    ],
-                },
-                {
-                    text: 'Indexer API',
-                    link: '/indexer-client',
-                },
-                {
-                    text: 'Noble API',
-                    link: '/noble-client',
-                },
-                {
-                    text: 'Faucet API',
-                    link: '/faucet-client',
                 },
             ],
         },
