@@ -151,8 +151,8 @@ export default defineConfig({
                             link: '/concepts/trading/accounts',
                         },
                         {
-                            text: 'Assets and Perpetuals',
-                            link: '/todo',
+                            text: 'Perpetuals and Assets',
+                            link: '/concepts/trading/assets',
                         },
                         {
                             text: 'Orders',
