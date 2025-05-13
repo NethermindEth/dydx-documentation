@@ -130,20 +130,15 @@ export default defineConfig({
             items: [
                 {
                     text: 'Architecture',
-                    link: '/todo',
                     collapsed: true,
                     items: [
                         {
-                            text: 'Validators (aka Nodes)',
-                            link: '/todo',
+                            text: 'Overview',
+                            link: '/concepts/architecture/overview',
                         },
                         {
                             text: 'Indexer',
-                            link: '/todo',
-                        },
-                        {
-                            text: 'Networks',
-                            link: '/todo',
+                            link: '/concepts/architecture/indexer',
                         },
                     ],
                 },
