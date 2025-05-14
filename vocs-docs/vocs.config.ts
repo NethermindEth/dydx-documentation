@@ -40,10 +40,6 @@ export default defineConfig({
                     link: '/interaction/wallet-setup',
                 },
                 {
-                    text: 'Available clients',
-                    link: '/interaction/clients',
-                },
-                {
                     text: 'Trading',
                     link: '/interaction/trading',
                 },
