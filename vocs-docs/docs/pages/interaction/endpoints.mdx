@@ -1,13 +1,15 @@
 # Connecting to dYdX
 
 dYdX provides two networks for trading: a __mainnet__, and a __testnet__:
-- __mainnet__:
-- __testnet__: ...
+- __mainnet__: The core network where real financial transactions occur;
+- __testnet__: A separate, risk-free, network. Served mainly for the purposes of testing and experimenting before transitioning to the __mainnet__.
 It is advisable that for the purposes of learning and trying out the dYdX ecosystem that the __testnet__ is used and preferred over the __mainnet__.
+
+For the purposes of this guide, we'll assume that the __testnet__ is being used. Nevertheless, the API is exactly the same for both the __mainnet__ and the __testnet__, so any code working in the __testnet__ should work in the __mainnet__.
 
 ## Available clients
 
-Interacting with the dYdX network API is made through several sets of methods grouped with structures referred to as clients.
+Interacting with the dYdX network API is made through several sets of methods grouped with structures referred to as clients. Each of these clients essentially connects to a different server with its own functionality and purpose.
 
 ### Validator client
 
@@ -86,7 +88,7 @@ The Python and Rust APIs do not have a Composite client. The explicit Validator 
 
 ### Faucet client
 
-To test your trading strategy, test funds can be requested from the Faucet client. This client only works in the testnet. The test funds can only be used in the testnet.
+To test your trading strategy, test funds can be requested from the Faucet client. This client only works in the __testnet__. The acquired test funds can only be used in the __testnet__.
 
 :::code-group
 
@@ -150,3 +152,134 @@ let noble = NobleClient::connect(
 
 ## Endpoints
 
+Some known endpoints are provided below. Use these to connect to the dYdX networks.
+
+### Validator
+
+Connections with the Validator nodes are established using the (g)RPC protocol.
+
+:::details[mainnet]
+
+**RPC**
+
+| Team          | URI                                                    | Rate limit |
+| ------------- | ------------------------------------------------------ | ---------- |
+| Polkachu      | `https://dydx-dao-rpc.polkachu.com:443`                | 300 req/m  |
+| KingNodes     | `https://dydx-ops-rpc.kingnodes.com:443`               | 250 req/m  |
+| Enigma        | `https://dydx-dao-rpc.enigma-validator.com:443`        |            |
+| Lavender.Five | `https://dydx-rpc.lavenderfive.com:443`                |            |
+| AutoStake     | `https://dydx-mainnet-rpc.autostake.com:443`           | 4 req/s    |
+| EcoStake      | `https://rpc-dydx.ecostake.com:443`                    |            |
+| PublicNode    | `https://dydx-rpc.publicnode.com:443`                  |            |
+| Silk Nodes    | `https://dydx.rpc.silknodes.io:443`                    |            |
+
+**REST**
+
+| Team          | URI                                                    | Rate limit |
+| ------------- | ------------------------------------------------------ | ---------- |
+| Polkachu      | `https://dydx-dao-api.polkachu.com:443`                | 300 req/m  |
+| KingNodes     | `https://dydx-ops-rest.kingnodes.com:443`              | 250 req/m  |
+| Enigma        | `https://dydx-dao-lcd.enigma-validator.com:443`        |            |
+| Lavender.Five | `https://dydx-api.lavenderfive.com:443`                |            |
+| AutoStake     | `https://dydx-mainnet-lcd.autostake.com:443`           | 4 req/s    |
+| EcoStake      | `https://rest-dydx.ecostake.com:443`                   |            |
+| PublicNode    | `https://dydx-rest.publicnode.com:443`                 |            |
+| Silk Nodes    | `https://dydx.api.silknodes.io:443`                    |            |
+
+**gRPC**
+
+| Team          | URI                                                                                                                                                                                                                                                 | Rate limit |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Polkachu      | `https://dydx-dao-grpc-1.polkachu.com:443` <br/> `https://dydx-dao-grpc-2.polkachu.com:443` <br/> `https://dydx-dao-grpc-3.polkachu.com:443` <br/> `https://dydx-dao-grpc-4.polkachu.com:443` <br/> `https://dydx-dao-grpc-5.polkachu.com:443` | 300 req/m  |
+| KingNodes     | `https://dydx-ops-grpc.kingnodes.com:443`                                                                                                                                                                                                           | 250 req/m  |
+| Enigma        | `https://dydx-dao-grpc.enigma-validator.com:443`                                                                                                                                                                                                    |            |
+| Lavender.Five | `https://dydx.lavendarfive.com:443`                                                                                                                                                                                                            |            |
+| PublicNode    | `https://dydx-grpc.publicnode.com:443`                                                                                                                                                                                                              |            |
+| Silk Nodes    | `https://dydx.grpc.silknodes.io:443`                                                                                                                                                                                                                |            |
+:::
+
+:::details[testnet]
+
+**RPC**
+
+| Team          | URI                                             |
+| ------------- | ----------------------------------------------- |
+| Enigma        | `https://dydx-rpc-testnet.enigma-validator.com` |
+| Lavender Five | `https://testnet-dydx-rpc.lavenderfive.com`     |
+| King Nodes    | `https://test-dydx-rpc.kingnodes.com`           |
+| Polkachu      | `https://dydx-testnet-rpc.polkachu.com`         |
+
+**REST**
+
+| Team          | URI                                             |
+| ------------- | ----------------------------------------------- |
+| Enigma        | `https://dydx-lcd-testnet.enigma-validator.com` |
+| Lavender Five | `https://testnet-dydx-api.lavenderfive.com`     |
+| King Nodes    | `https://test-dydx-rest.kingnodes.com`          |
+| Polkachu      | `https://dydx-testnet-api.polkachu.com`         |
+
+**gRPC**
+
+| Team          | URI                                                |
+| ------------- | -------------------------------------------------- |
+| Lavender Five | `testnet-dydx.lavenderfive.com:443 (TLS)`          |
+| King Nodes    | `test-dydx-grpc.kingnodes.com:443 (TLS)`           |
+| Polkachu      | `dydx-testnet-grpc.polkachu.com:23890 (plaintext)` |
+
+:::
+
+### Indexer
+
+Connections with the Indexer are established either using HTTP (for spontaneuous data retrieval) or WebSockets (for data streaming).
+
+:::details[mainnet]
+
+| Type | URI                              |
+| ---- | -------------------------------- |
+| HTTP  | `https://indexer.dydx.trade/v4` |
+| WS   | `wss://indexer.dydx.trade/v4/ws` |
+
+:::
+
+:::details[testnet]
+
+| Type | URI                                           |
+| ---- | --------------------------------------------- |
+| HTTP  | `https://indexer.v4testnet.dydx.exchange`    |
+| WS   | `wss://indexer.v4testnet.dydx.exchange/v4/ws` |
+
+:::
+
+### Faucet
+
+Used to retrieve test funds.
+
+:::details[testnet]
+
+`https://faucet.v4testnet.dydx.exchange`
+
+:::
+
+
+### Noble
+
+Connections with the Noble blockchain. Similarly to the dYdX networks, Noble also has a __mainnet__ and a __testnet__.
+
+:::details[mainnet]
+
+| Team          | URI                                                |
+| ------------- | -------------------------------------------------- |
+| Polkachu      | `http://noble-grpc.polkachu.com:21590 (plaintext)` |
+
+:::
+
+:::details[testnet]
+
+| Team          | URI                                                |
+| ------------- | -------------------------------------------------- |
+| Polkachu      | `noble-testnet-grpc.polkachu.com:21590 (plaintext)`|
+
+:::info
+In the Cosmos blockchains (dYdX, Noble, etc.) inter-blockchain communications require IBC relayers to be present that facilitate bridging between networks.
+These IBC relayers may not be active, specially for the __testnet__ networks.
+:::
