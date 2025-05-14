@@ -35,20 +35,23 @@ pub async fn send_token_ibc(
 
 #### Parameters
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| Parameter         | Location  | Type          | Mandatory | Description                       |
+| ----------------- | --------- | ------------- | --------- | --------------------------------- |
+| `account`         | query     | [Account]     | true      | The account                       |
+| `sender`          | query     | [Address]     | true      | Address of the sender             |
+| `recipient`       | query     | [Address]     | true      | Address of the recipient          |
+| `token`           | query     | [Tokenized]   | true      |                                   |
+| `source_channel`  | query     | String        | true      |                                   |           
 
-:::details[Optional]
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
-
-:::
 
 #### Response
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| Status | Meaning     | Schema     |
+| ------ | ----------- | ---------- |
+| `200`  | [OK]        | [TxHash]   |
+
+[OK]: /types/ok
+[Account]: /types/account
+[Address]: /types/address
+[Tokenized]: /types/tokenized

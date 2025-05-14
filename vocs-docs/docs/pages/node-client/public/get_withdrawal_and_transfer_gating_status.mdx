@@ -1,0 +1,39 @@
+### Get Withdrawal and Transfer Gating Status
+
+Get withdrawal and transfer gating status.
+
+#### Method Declaration
+
+:::code-group
+
+```python [Python]
+```
+
+```rust [Rust]
+```
+
+```typescript [TypeScript]
+async getWithdrawalAndTransferGatingStatus(
+    perpetualId: number,
+): Promise<SubaccountsModule.QueryGetWithdrawalAndTransfersBlockedInfoResponse>
+```
+
+```url
+/dydxprotocol.subaccounts.Query/GetWithdrawalAndTransfersBlockedInfo
+```
+:::
+
+#### Parameters
+
+| Parameter     | Location  | Type  | Mandatory | Description   |
+| ------------- | --------- | ----- | --------- | ------------- |
+| perpetualId   | Query     | int   | true      | Perpetual id  |
+
+#### Response
+
+| Status    | Meaning   | Schema                                                                |
+| --------- | --------- | --------------------------------------------------------------------- |
+| `200`     | [OK]      | [SubaccountsModule.QueryGetWithdrawalAndTransfersBlockedInfoResponse] |
+
+[OK]: /types/ok
+[SubaccountsModule.QueryGetWithdrawalAndTransfersBlockedInfoResponse]: /types/cosmos
