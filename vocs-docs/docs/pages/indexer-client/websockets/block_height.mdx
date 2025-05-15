@@ -1,27 +1,30 @@
 ### Block Height
 
-// TODO: Add description
+Data feed of current block height. Data contains the last block height and time.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-
+# Coming soon.
 ```
 
 ```typescript [TypeScript]
-
+// Coming soon.
 ```
 
 ```rust [Rust]
+// struct `Feeds`
 pub async fn block_height(
     &mut self,
     batched: bool,
 ) -> Result<Feed<BlockHeightMessage>, FeedError>
+// The stream is unsubscribed when the `Feed` object is dropped
 ```
 
-```url [API]
+```url [Channel]
+v4_block_height
 ```
 
 :::
@@ -29,15 +32,29 @@ pub async fn block_height(
 :::details[Unification Plan]
 :::
 
-#### Parameters
+#### JSON Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                           |
-| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
-| `limit`             | query    | [u32]              | false      | Maximum number of asset positions to return in the response.           |
+##### Subscribe
 
-#### Response
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
+
+##### Unsubscribe
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+
+#### Data
+
+##### Initial message
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [BlockHeightInitialMessage]     |
+
+##### Update message
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [BlockHeightUpdateMessage]      |
