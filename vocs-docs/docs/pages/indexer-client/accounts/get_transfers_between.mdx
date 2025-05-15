@@ -1,13 +1,13 @@
 ### Get Transfers Between
 
-TODO
+Fetch information regarding a transfer between two subaccount.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-TODO: Not available
+
 ```
 
 ```typescript [TypeScript]
@@ -22,7 +22,7 @@ async getTransfersBetween(
 ```
 
 ```rust [Rust]
-TODO: Not available
+
 ```
 
 ```url [API]
@@ -32,6 +32,7 @@ TODO: Not available
 :::
 
 :::details[Unification Plan]
+- Response object does not have defined structure in TypeScript client. Will have to work on it.
 :::
 
 #### Parameters
@@ -44,3 +45,9 @@ TODO: Not available
 | `recipientSubaccountNumber` | query     | string  | true      | The identifier for the specific subaccount within the receiver wallet address.              |
 | `createdBeforeOrAtHeight`   | query     | number  | false     | Restricts results to positions created at or before a specific blockchain height.           |
 | `createdBeforeOrAt`         | query     | string  | false     | Restricts results to positions created at or before a specific timestamp (ISO 8601 format). |
+
+#### Response
+
+:::note
+Response object is not strongly typed in TypeScript client. It will be fixed during unification.
+:::
