@@ -37,20 +37,9 @@ v4_orderbook
 :::details[Unification Plan]
 :::
 
-#### JSON Parameters
+#### Schema `id`
 
-##### Subscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The relevant market/ticker.                                           |
-| `batched`           | query    | bool               | Reduce incoming messaging by batching contents.                       |
-
-##### Unsubscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The relevant market/ticker.                                           |
+The field `id` is the market/ticker as a string.
 
 #### Data
 

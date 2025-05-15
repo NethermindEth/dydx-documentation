@@ -38,20 +38,9 @@ v4_candles
 :::details[Unification Plan]
 :::
 
-#### JSON Parameters
+#### Schema `id`
 
-##### Subscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The market and candle resolution formatted as `{market}/{resolution}`.|
-| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
-
-##### Unsubscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The market and candle resolution formatted as `{market}/{resolution}`.|
+The field `id` is a string containing the market and candle resolution. It is formatted as `{market}/{resolution}`.
 
 #### Data
 

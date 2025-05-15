@@ -53,8 +53,8 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Trading rewards',
-                            link: '/interaction/trading-rewards',
+                            text: 'Feeds',
+                            link: '/interaction/data/feeds',
                         },
                         {
                             text: 'Watch orderbook',

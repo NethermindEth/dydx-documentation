@@ -35,20 +35,9 @@ v4_parent_subaccounts
 :::details[Unification Plan]
 :::
 
-#### JSON Parameters
+#### Schema `id`
 
-##### Subscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The subaccount ID formatted as `{address}/{subaccount-number}.` |
-| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
-
-##### Unsubscribe
-
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `id`                | query    | string             | The subaccount ID formatted as `{address}/{subaccount-number}.`       |
+The field `id` is a string containing the subaccount ID (address and subaccount number). It is formattted as `{address}/{subaccount-number}`.
 
 #### Data
 
