@@ -1,28 +1,35 @@
 ### Subaccounts
 
-// TODO: Add description
+Data feed of a subaccount. Data contains updates to the subaccount such as position, orders and fills updates.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-
+# class `Subaccounts`
+def subscribe(self, address: str, subaccount_number: int) -> Self
+def unsubscribe(self, address: str, subaccount_number: int)
 ```
 
 ```typescript [TypeScript]
-
+// class `IndexerSocket`
+subscribeToSubaccount(address: string, subaccountNumber: number): void
+unsubscribeFromSubaccount(address: string, subaccountNumber: number): void
 ```
 
 ```rust [Rust]
+// struct `Feeds`
 pub async fn subaccounts(
     &mut self,
     subaccount: Subaccount,
     batched: bool,
 ) -> Result<Feed<SubaccountsMessage>, FeedError>
+// The stream is unsubscribed when the `Feed` object is dropped
 ```
 
-```url [API]
+```url [Channel]
+v4_subaccounts
 ```
 
 :::
@@ -32,20 +39,32 @@ pub async fn subaccounts(
 
 #### Parameters
 
+##### Subscribe
+
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `id`                | query    | string             | The subaccount ID formatted as `{address}/{subaccount-number}.` |
+| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
 
-:::details[Optional]
+##### Unsubscribe
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `id`                | query    | string             | The subaccount ID formatted as `{address}/{subaccount-number}.`       |
 
-:::
+#### Data
 
-#### Response
+##### Initial message
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [SubaccountsInitialMessage]     |
+
+##### Update message
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [SubaccountsUpdateMessage]      |
+
+[address]: /types/address
+[subaccount-number]: /types/subaccount_number
