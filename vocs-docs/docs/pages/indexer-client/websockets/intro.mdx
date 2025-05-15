@@ -37,9 +37,11 @@ Use the following schema to subscribe to a feed.
 
 | Parameter           | Type               | Description                                                           |
 | ------------------- | ------------------ | --------------------------------------------------------------------- |
-| `type`              | string             | Message type (`connected`).                                           |
+| `type`              | string             | Message type (`subscribed`).                                          |
 | `connection_id`     | string             | String identifying the subscription.                                  |
 | `message_id`        | int                | Message sequence number sent on the subscription.                     |
+| `id`                | string             | Selector for channel-specific data.                                   |
+| `contents`          | value              | Feed-specific initial data.                                           |
 
 ### Unsubscribe
 
@@ -48,11 +50,11 @@ Similar scheme to the `subscribe` schema, however with the `unsubscribe` type, a
 
 #### JSON Schema
 
-| Parameter           | Location | Type               | Description                                                           |
-| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `type`              | query    | string             | Message type (`unsubscribe`).                                         |
-| `channel`           | query    | string             | Feed type identifier.                                                 |
-| `id`                | query    | string             | Selector for channel-specific data.                                   |
+| Parameter           | Type               | Description                                                           |
+| ------------------- | ------------------ | --------------------------------------------------------------------- |
+| `type`              | string             | Message type (`unsubscribe`).                                         |
+| `channel`           | string             | Feed type identifier.                                                 |
+| `id`                | string             | Selector for channel-specific data.                                   |
 
 :::details[Example]
 ```tsx
@@ -73,5 +75,20 @@ Similar scheme to the `subscribe` schema, however with the `unsubscribe` type, a
 | `channel`           | string             | Feed type identifier.                                                 |
 | `message_id`        | int                | Message sequence number sent on the subscription.                     |
 | `id`                | string             | Selector for channel-specific data. Only used in some channels.       |
+
+### Data
+
+After subscription, the incoming messages will be serialized using the following schema.
+
+#### JSON Schema
+
+| Parameter           | Type               | Description                                                           |
+| ------------------- | ------------------ | --------------------------------------------------------------------- |
+| `connection_id`     | string             | String identifying the subscription.                                  |
+| `channel`           | string             | Feed type identifier.                                                 |
+| `id`                | string             | Selector for channel-specific data. Only used in some channels.       |
+| `message_id`        | int                | Message sequence number sent on the subscription.                     |
+| `version`           | string             | Protocol identifier.                                                  |
+| `contents`          | value              | Feed-specific update data.                                            |
 
 ## Feeds
