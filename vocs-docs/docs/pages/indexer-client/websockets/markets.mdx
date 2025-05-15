@@ -1,27 +1,34 @@
 ### Markets
 
-// TODO: Add description
+Data feed of all dYdX markets. Data contains updates to all markets, including market parameters and oracle prices.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-
+# class `Markets`
+def subscribe(self) -> Self
+def unsubscribe(self)
 ```
 
 ```typescript [TypeScript]
-
+// class `IndexerSocket`
+subscribeToMarkets(): void
+unsubscribeFromMarkets(): void
 ```
 
 ```rust [Rust]
+// struct `Feeds`
 pub async fn markets(
     &mut self,
     batched: bool,
 ) -> Result<Feed<MarketsMessage>, FeedError>
+// The stream is unsubscribed when the `Feed` object is dropped
 ```
 
-```url [API]
+```url [Channel]
+v4_markets
 ```
 
 :::
@@ -31,20 +38,27 @@ pub async fn markets(
 
 #### Parameters
 
+##### Subscribe
+
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
 
-:::details[Optional]
+##### Unsubscribe
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
 
-:::
+#### Data
 
-#### Response
+##### Initial message
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [MarketsInitialMessage]         |
+
+##### Update message
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [MarketsUpdateMessage]          |
