@@ -2,7 +2,7 @@
 
 The Indexer can provide realtime data through its WebSockets endpoint.
 
-Below we provide an example of how to establish a connection and watch realtime trades updates. See the full API specification [here](/indexer-client/websockets).
+Below an example is provided of how to establish a connection and watch realtime **trades** updates. See the full API specification [here](/indexer-client/websockets) for other data feeds.
 
 ::::steps
 
@@ -64,83 +64,58 @@ This message maybe abstracted away, depending on the client.
 
 ## Subscribe
 
-You may subscribe to any channel following the subscribe instructions above. Subscribing to a channel has the following fields:
-
-- `type` - Should always be specified to `subscribe`
-- `channel` - Specifies the channel you are subscribing to. The specific string is specified in each channel’s documentation
-- `id` - required for all channels other than market. Specifies the market or subaccount you are subscribing to.
+After a connection is established, you may subscribe to several feeds, containing different types of data.
+Feeds include information on __markets__, __trades__, __orders__, __candles__, and __subaccounts__.
 
 :::code-group
 
 ```python [Python]
-def handler(ws: IndexerSocket, message: dict):
-    print(message)
-
-socket = IndexerSocket(TESTNET.websocket_indexer, on_message=handler).connect() # [!code focus]
+ws.trades.subscribe(ETH_USD)
 ```
 
 ```typescript [TypeScript]
-const mySocket = new SocketClient(
-  Network.testnet().indexerConfig,
-  () => {
-    console.log('socket opened');
-  },
-  () => {
-    console.log('socket closed');
-  },
-  (message) => {
-    console.log(message);
-  },
-  (event) => {
-    console.error('Encountered error:', event.message);
-  },
-);
-mySocket.connect();
+mySocket.subscribeToTrades('ETH-USD');
 ```
 
 ```rust [Rust]
-let mut indexer = IndexerClient::new(config.indexer);
-let feeds = indexer.feeds(); // [!code focus]
+let trades_feed = indexer.feed().trades(&"ETH-USD", false).await?;
 ```
+:::
 
+## Handling the data
+
+After subscription, you will start receiving the update messages.
+Here, the update messages contain the finalized trades (fills) for the `ETH-USD` market/ticker.
+
+For each received message, the `handler()` function will be called on it.
+
+:::details[Handling in Rust]
+In Rust, callbacks are not used. Intead, the handle returned on subscription must be polled.
+
+```rust [Rust]
+// Continuous loop running until the feed is stopped.
+while let Some(msg) = trades_feed.recv().await {
+    println!("New trades update: {msg:?}");
+}
+```
 :::
 
 ## Unsubscribe
 
-Utilize the same message to subscribe but replace the type with `unsubscribe`. For example:
-`{ "type": "unsubscribe", "channel": "v4_trades", "id": "BTC-USD" }`
+When the data feed is not needed anymore, you may stop it and unsubscribe from it.
 
 :::code-group
 
 ```python [Python]
-def handler(ws: IndexerSocket, message: dict):
-    print(message)
-
-socket = IndexerSocket(TESTNET.websocket_indexer, on_message=handler).connect() # [!code focus]
+ws.trades.unsubscribe(ETH_USD)
 ```
 
 ```typescript [TypeScript]
-const mySocket = new SocketClient(
-  Network.testnet().indexerConfig,
-  () => {
-    console.log('socket opened');
-  },
-  () => {
-    console.log('socket closed');
-  },
-  (message) => {
-    console.log(message);
-  },
-  (event) => {
-    console.error('Encountered error:', event.message);
-  },
-);
-mySocket.connect();
+mySocket.unsubscribeFromTrades('ETH-USD');
 ```
 
 ```rust [Rust]
-let mut indexer = IndexerClient::new(config.indexer);
-let feeds = indexer.feeds(); // [!code focus]
+// To unsubscribe, drop the feed handle (here `trades_feed`).
 ```
 
 :::
