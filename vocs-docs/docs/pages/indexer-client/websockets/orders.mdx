@@ -8,7 +8,7 @@ Data feed of the orders of a market. Data contains lists of the bids and asks of
 
 ```python [Python]
 # class `Orders`
-def subscribe(self, market: str) -> Self
+def subscribe(self, market: str, batched: bool = True) -> Self
 def unsubscribe(self, market: str)
 ```
 

@@ -1,29 +1,36 @@
 ### Candles
 
-// TODO: Add description
+Data feed of the [candles](https://en.wikipedia.org/wiki/Candlestick_chart) of a market. Data contains updates for open, low, high, and close prices, trade volume, for a certain time resolution.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-
+# class `Candles`
+def subscribe(self, id: str, resolution: CandlesResolution, batched: bool = True) -> Self
+def unsubscribe(self, id: str, resolution: CandlesResolution)
 ```
 
 ```typescript [TypeScript]
-
+// class `IndexerSocket`
+subscribeToCandles(market: string, resolution: CandlesResolution): void
+unsubscribeFromCandles(market: string, resolution: CandlesResolution): void
 ```
 
 ```rust [Rust]
+// struct `Feeds`
 pub async fn candles(
     &mut self,
     ticker: &Ticker,
     resolution: CandleResolution,
     batched: bool,
 ) -> Result<Feed<CandlesMessage>, FeedError>
+// The stream is unsubscribed when the `Feed` object is dropped
 ```
 
-```url [API]
+```url [Channel]
+v4_candles
 ```
 
 :::
@@ -31,15 +38,31 @@ pub async fn candles(
 :::details[Unification Plan]
 :::
 
-#### Parameters
+#### JSON Parameters
 
-| Parameter           | Location | Type               | Required    | Description                                                           |
-| ------------------- | -------- | ------------------ | ----------- | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | true        | The wallet address that owns the subaccount.                          |
-| `limit`             | query    | [u32]              | false       | Maximum number of asset positions to return in the response.          |
+##### Subscribe
 
-#### Response
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `id`                | query    | string             | The market and candle resolution formatted as `{market}/{resolution}`.|
+| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
+
+##### Unsubscribe
+
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `id`                | query    | string             | The market and candle resolution formatted as `{market}/{resolution}`.|
+
+#### Data
+
+##### Initial message
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [CandlesInitialMessage]          |
+
+##### Update message
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [CandlesUpdateMessage]           |
