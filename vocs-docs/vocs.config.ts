@@ -114,6 +114,17 @@ export default defineConfig({
                 {
                     text: 'Indexer API',
                     link: '/indexer-client',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: 'HTTP API',
+                            link: '/indexer-client/http',
+                        },
+                        {
+                            text: 'WebSockets API',
+                            link: '/indexer-client/websockets',
+                        },
+                    ],
                 },
                 {
                     text: 'Noble API',

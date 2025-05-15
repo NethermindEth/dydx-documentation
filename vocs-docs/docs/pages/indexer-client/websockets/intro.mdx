@@ -1,0 +1,38 @@
+## WebSockets
+
+The WebSockets API provides data feeds providing the trader real-time information.
+
+:::code-group
+
+```python [Python]
+def handler(ws: IndexerSocket, message: dict):
+    print(message)
+
+socket = IndexerSocket(TESTNET.websocket_indexer, on_message=handler).connect() # [!code focus]
+```
+
+```typescript [TypeScript]
+const mySocket = new SocketClient(
+  Network.testnet().indexerConfig,
+  () => {
+    console.log('socket opened');
+  },
+  () => {
+    console.log('socket closed');
+  },
+  (message) => {
+    console.log(message);
+  },
+  (event) => {
+    console.error('Encountered error:', event.message);
+  },
+);
+mySocket.connect();
+```
+
+```rust [Rust]
+let mut indexer = IndexerClient::new(config.indexer);
+let feeds = indexer.feeds(); // [!code focus]
+```
+
+:::
