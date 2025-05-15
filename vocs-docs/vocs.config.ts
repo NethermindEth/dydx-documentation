@@ -32,12 +32,12 @@ export default defineConfig({
             link: '/interaction',
             items: [
                 {
-                    text: 'Wallet Setup',
-                    link: '/interaction/wallet-setup',
+                    text: 'Preparing to trade',
+                    link: '/interaction/endpoints',
                 },
                 {
-                    text: 'Available clients',
-                    link: '/interaction/clients',
+                    text: 'Wallet Setup',
+                    link: '/interaction/wallet-setup',
                 },
                 {
                     text: 'Trading',
