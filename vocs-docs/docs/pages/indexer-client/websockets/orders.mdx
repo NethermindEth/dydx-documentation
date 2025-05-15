@@ -1,28 +1,35 @@
 ### Orders
 
-// TODO: Add description
+Data feed of the orders of a market. Data contains lists of the bids and asks of the order book.
 
 #### Method Declaration
 
 :::code-group
 
 ```python [Python]
-
+# class `Orders`
+def subscribe(self, market: str) -> Self
+def unsubscribe(self, market: str)
 ```
 
 ```typescript [TypeScript]
-
+// class `IndexerSocket`
+subscribeToOrderbook(market: string): void
+unsubscribeFromOrderbook(market: string): void
 ```
 
 ```rust [Rust]
+// struct `Feeds`
 pub async fn orders(
     &mut self,
     ticker: &Ticker,
     batched: bool,
 ) -> Result<Feed<OrdersMessage>, FeedError>
+// The stream is unsubscribed when the `Feed` object is dropped
 ```
 
-```url [API]
+```url [Channel]
+v4_orderbook
 ```
 
 :::
@@ -30,22 +37,31 @@ pub async fn orders(
 :::details[Unification Plan]
 :::
 
-#### Parameters
+#### JSON Parameters
+
+##### Subscribe
 
 | Parameter           | Location | Type               | Description                                                           |
 | ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
-| `address`           | query    | [Address]          | The wallet address that owns the subaccount.                          |
+| `id`                | query    | string             | The relevant market/ticker. |
+| `batched`           | query    | bool               | Reduce incoming messaging by batching contents. |
 
-:::details[Optional]
+##### Unsubscribe
 
-| Parameter                     | Location | Type                      | Description                                                  |
-| ----------------------------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| `limit`                       | query    | [u32]                     | Maximum number of asset positions to return in the response. |
+| Parameter           | Location | Type               | Description                                                           |
+| ------------------- | -------- | ------------------ | --------------------------------------------------------------------- |
+| `id`                | query    | string             | The relevant market/ticker.  |
 
-:::
+#### Data
 
-#### Response
+##### Initial message
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [AssetPositionResponseObject] ⛁ |
+| `200`  | [OK]        | [OrdersInitialMessage]          |
+
+##### Update message
+
+| Status | Meaning     | Schema                          |
+| ------ | ----------- | ------------------------------- |
+| `200`  | [OK]        | [OrdersUpdateMessage]           |
