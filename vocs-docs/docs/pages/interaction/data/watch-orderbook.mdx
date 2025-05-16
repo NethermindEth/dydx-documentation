@@ -1,1 +1,197 @@
-# Watch Orderbook
+# Watch orderbook
+
+Depending on your trading strategy, keeping track of the current order book can be essential. The orderbook is a list of all the unmatched orders, divided into the **bids** (buy orders) and the **asks** (sell orders).
+
+We'll use the Indexer WebSockets data streams for this.
+
+::::steps
+
+## Subscribe to the Orders feed
+
+Lets take as reference the previous [section](/interaction/data/feeds). Subscribe to the Orders feed.
+
+:::code-group
+
+```python [Python]
+def handler(ws: IndexerSocket, message: dict):
+  if message["type"] == "connected":
+      # Subscribe. [!code focus]
+      ws.orders.subscribe(ETH_USD) # [!code focus]
+  print(message)
+```
+
+```typescript [TypeScript]
+// In the `handler()` function [!code focus]
+// ...
+      if (data.type === IncomingMessageTypes.CONNECTED) {
+        // Subscribe. [!code focus]
+        mySocket.subscribeToOrders('ETH-USD');  // [!code focus]
+      }
+// ...
+```
+
+```rust [Rust]
+// Subscribe.
+let trades_feed = indexer.feed().orders(&"ETH-USD", false).await?;
+```
+:::
+
+## Parse the update messages
+
+Grab the bids and asks lists from the incoming messages.
+
+:::code-group
+
+```python [Python]
+```
+
+```typescript [TypeScript]
+```
+
+```rust [Rust]
+```
+
+:::
+
+## Keeping track
+
+:::code-group
+
+```python [Python]
+```
+
+```typescript [TypeScript]
+```
+
+```rust [Rust]
+```
+
+:::
+
+## Uncrossing the orderbook
+
+Given the decentralized nature of dYdX, sometimes, some of the bids will be higher than some of the asks.
+
+If trader needs the orderbook uncrossed, then one way is to use the order of messages as a logical timestamp. That is, when a message is received, update a global locally-held offset. Each WebSockets update has a `message-id` which is a logical offset to use.
+
+:::info
+:::details[Crossed orderbook]
+There is no guarantee that prices do not cross (a bid higher than a ask) because there is no centralized order book. For that reason, the software does not include a global offset. The _correct_ orderbook at any given time is whatever the current block proposer has in its mempool, which is not what the indexer or the front end can directly see. The block proposer changes every block, so there is a new canonical mempool, and therefore, a new canonical orderbook every block. Due to the particulars of message propagation, that means there will be slight differences in the canonical orderbook every block. The prices will uncross eventually.
+:::
+
+:::code-group
+
+```python [Python]
+if remove_crossed_prices == True:
+  highestbidprice = 0
+  lowestaskprice = 0
+  while len(bidarray) > 0 and len(askarray) > 0 and ( highestbidprice == 0 or highestbidprice >= lowestaskprice ):
+    highestbid = bidarray[0]
+    lowestask = askarray[0]
+    highestbidprice = float(highestbid[0])
+    lowestaskprice = float(lowestask[0])
+    highestbidsize = float(highestbid[1])
+    lowestasksize = float(lowestask[1])
+    highestbidoffset = int(highestbid[2])
+    lowestaskoffset = int(lowestask[2])
+    if highestbidprice >= lowestaskprice:
+      if highestbidoffset < lowestaskoffset:
+        bidarray.pop(0)
+      elif highestbidoffset > lowestaskoffset:
+        askarray.pop(0)
+      else:
+        fp = open(ramdiskpath+'/'+market+'/TRAPsameoffset', "a")
+        fp.write(str(highestbidprice)+','+str(highestbidsize)+','+str(lowestaskprice)+','+str(lowestasksize)+','+str(highestbidoffset)+','+datetime.now().strftime("%Y-%m-%d %H:%M:%S")+'\n')
+        fp.close()
+        if highestbidsize > lowestasksize:
+          askarray.pop(0)
+          bidarray[0] = [ str(highestbidprice), str(highestbidsize - lowestasksize), str(highestbidoffset), highestbid[3], highestbid[4] ]
+        elif highestbidsize < lowestasksize:
+          askarray[0] = [ str(lowestaskprice), str(lowestasksize - highestbidsize), str(lowestaskoffset), lowestask[3], lowestask[4] ]
+          bidarray.pop(0)
+        else:
+          askarray.pop(0)
+          bidarray.pop(0)
+```
+
+```typescript [TypeScript]
+const resolveCrossedOrderBook = (
+  orderBookBidList: [number, number, number][],
+  orderBookAskList: [number, number, number][],
+): [[number, number, number][], [number, number, number][]] => {
+  while (orderBookBidList[0][0] >= orderBookAskList[0][0]) {
+    if (orderBookBidList[0][2] < orderBookAskList[0][2]) {
+      orderBookBidList.shift();
+    } else if (orderBookBidList[0][2] > orderBookAskList[0][2]) {
+      orderBookAskList.shift();
+    } else {
+      if (orderBookBidList[0][1] > orderBookAskList[0][1]) {
+        orderBookBidList[0][1] -= orderBookAskList[0][1];
+        orderBookAskList.shift();
+      } else if (orderBookBidList[0][1] < orderBookAskList[0][1]) {
+        orderBookAskList[0][1] -= orderBookBidList[0][1];
+        orderBookBidList.shift();
+      } else {
+        orderBookAskList.shift();
+        orderBookBidList.shift();
+      }
+    }
+  }
+
+  return [orderBookBidList, orderBookAskList];
+};
+```
+
+```rust [Rust]
+```
+:::
+
+## Additional logic
+
+Now with an always up-to-date orderbook, implement your trading strategy based on this data. For simplicity here, we'll just print the current state.
+
+:::code-group
+
+```python [Python]
+```
+
+```typescript [TypeScript]
+const printOrderBook = (
+  orderBookBidList: [number, number, number][],
+  orderBookAskList: [number, number, number][],
+): void => {
+  // print
+  console.log(`OrderBook for ETH-USD:`);
+  console.log(`Price     Qty`);
+  for (let i = 4; i > -1; i--) {
+    const priceStr = String(orderBookAskList[i][0]);
+    const spaces = createSpaces(10 - priceStr.length);
+    console.log(`${priceStr}${spaces}${orderBookAskList[i][1]}`);
+  }
+  console.log('---------------------');
+  for (let i = 0; i < 5; i++) {
+    const priceStr = String(orderBookBidList[i][0]);
+    const spaces = createSpaces(10 - priceStr.length);
+    console.log(`${priceStr}${spaces}${orderBookBidList[i][1]}`);
+  }
+  console.log('');
+};
+
+function createSpaces(count: number): string {
+  if (count <= 0) {
+    return '';
+  }
+
+  let spaces = '';
+  for (let i = 0; i < count; i++) {
+    spaces += ' ';
+  }
+  return spaces;
+}
+```
+
+```rust [Rust]
+```
+:::
+
+::::
