@@ -70,14 +70,38 @@ Feeds include information on __markets__, __trades__, __orders__, __candles__, a
 :::code-group
 
 ```python [Python]
-ws.trades.subscribe(ETH_USD)
+# Modify the `handler()` function.
+# Subscribe only after a succesful connection.
+def handle_message(ws: IndexerSocket, message: dict):
+  if message["type"] == "connected":
+      # Subscribe.
+      ws.trades.subscribe(ETH_USD)
+  print(message)
 ```
 
 ```typescript [TypeScript]
-mySocket.subscribeToTrades('ETH-USD');
+// Modify the `handler()` function.
+// Subscribe only after a succesful connection.
+function handler(message) {
+  console.log(message);
+  if (typeof message.data === 'string') {
+    const jsonString = message.data as string;
+    try {
+      const data = JSON.parse(jsonString);
+      if (data.type === IncomingMessageTypes.CONNECTED) {
+        // Subscribe.
+        mySocket.subscribeToTrades('ETH-USD');
+      }
+      console.log(data);
+    } catch (e) {
+      console.error('Error parsing JSON message:', e);
+    }
+  }
+}
 ```
 
 ```rust [Rust]
+// Subscribe.
 let trades_feed = indexer.feed().trades(&"ETH-USD", false).await?;
 ```
 :::
@@ -85,9 +109,9 @@ let trades_feed = indexer.feed().trades(&"ETH-USD", false).await?;
 ## Handling the data
 
 After subscription, you will start receiving the update messages.
-Here, the update messages contain the finalized trades (fills) for the `ETH-USD` market/ticker.
+Here, the update messages contain the finalized trades (matched orders) for the `ETH-USD` ticker.
 
-For each received message, the `handler()` function will be called on it.
+For each received message, the `handler()` function will be called on it. Modify it to implement your desired logic.
 
 :::details[Handling in Rust]
 In Rust, callbacks are not used. Intead, the handle returned on subscription must be polled.
