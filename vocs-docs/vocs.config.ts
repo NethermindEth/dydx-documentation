@@ -21,10 +21,6 @@ export default defineConfig({
                     text: 'Quick start with TypeScript 🚧',
                     link: '/client/quick-start-ts',
                 },
-                {
-                    text: 'Getting the mnemonic phrase',
-                    link: '/todo',
-                },
             ],
         },
         {
