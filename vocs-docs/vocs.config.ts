@@ -53,8 +53,8 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Trading rewards',
-                            link: '/interaction/trading-rewards',
+                            text: 'Feeds',
+                            link: '/interaction/data/feeds',
                         },
                         {
                             text: 'Watch orderbook',
@@ -114,6 +114,17 @@ export default defineConfig({
                 {
                     text: 'Indexer API',
                     link: '/indexer-client',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: 'HTTP API',
+                            link: '/indexer-client/http',
+                        },
+                        {
+                            text: 'WebSockets API',
+                            link: '/indexer-client/websockets',
+                        },
+                    ],
                 },
                 {
                     text: 'Noble API',
