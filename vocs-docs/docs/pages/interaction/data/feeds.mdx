@@ -74,8 +74,8 @@ Feeds include information on __markets__, __trades__, __orders__, __candles__, a
 # Subscribe only after a succesful connection.
 def handler(ws: IndexerSocket, message: dict):
   if message["type"] == "connected":
-      # Subscribe.
-      ws.trades.subscribe(ETH_USD)
+    # Subscribe.
+    ws.trades.subscribe(ETH_USD)
   print(message)
 ```
 
