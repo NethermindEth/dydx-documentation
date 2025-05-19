@@ -70,6 +70,10 @@ export default defineConfig({
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
                 },
+                {
+                    text: 'Full Node Streaming',
+                    link: '/interaction/full-node-streaming',
+                },
             ],
         },
         /*
