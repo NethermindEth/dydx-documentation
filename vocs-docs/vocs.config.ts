@@ -200,8 +200,84 @@ export default defineConfig({
                             text: 'MegaVault',
                             link: '/concepts/trading/megavault',
                         },
+                        {
+                            text: 'Isolated Markets',
+                            link: '/concepts/trading/isolated-markets'
+                        },
+                        {
+                            text: 'Other Limits',
+                            link: '/concepts/trading/other-limits'
+                        },
+                        {
+                            text: 'Withdrawal Rate Limits and Gating',
+                            link: '/concepts/trading/withdrawal-rate-limits-and-gating'
+                        },
                     ],
                 },
+                {
+                    text: 'Node Deployment',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Hardware Requirements',
+                            link: '/concepts/node-deployment/hardware-requirement'
+                        },
+                        {
+                            text: 'Required Node Configs',
+                            link: '/concepts/node-deployment/required-node-configs'
+                        },
+                        {
+                            text: 'Set up a full node',
+                            link: '/concepts/node-deployment/set-up-a-full-node'
+                        },
+                        {
+                            text: 'Optimize Your Full Node',
+                            link: '/concepts/node-deployment/optimize-your-full-node'
+                        },
+                        {
+                            text: 'Running a Validator',
+                            link: '/concepts/node-deployment/running-a-validator'
+                        },
+                        {
+                            text: 'Snapshots',
+                            link: '/concepts/node-deployment/snapshots'
+                        },
+                        {
+                            text: 'Full Node Streaming',
+                            link: '/concepts/node-deployment/full-node-streaming'
+                        },
+                        {
+                            text: 'Upgrades',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Types of Upgrades',
+                                    link: '/concepts/node-deployment/upgrades/types-of-upgrades'
+                                },
+                                {
+                                    text: 'Performing Upgrades',
+                                    link: '/concepts/node-deployment/upgrades/performing-upgrades'
+                                },
+                                {
+                                    text: 'Cosmovisor',
+                                    link: '/concepts/node-deployment/upgrades/cosmovisor'
+                                },
+                                {
+                                    text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                                    link: '/concepts/node-deployment/upgrades/using-cosmovisor'
+                                },
+                                {
+                                    text: 'Upgrading Sidecar',
+                                    link: '/concepts/node-deployment/upgrades/upgrading-sidecar'
+                                }
+                            ]
+                        },
+                        {
+                            text: 'Peering with Gateway',
+                            link: '/concepts/node-deployment/peering-with-gateway'
+                        }
+                    ]
+                }
             ],
         },
         {
