@@ -58,7 +58,7 @@ export default defineConfig({
                         },
                         {
                             text: 'Watch orderbook',
-                            link: '/interaction/watch-orderbook',
+                            link: '/interaction/data/watch-orderbook',
                         },
                     ],
                 },
