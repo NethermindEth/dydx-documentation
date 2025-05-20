@@ -1,3 +1,5 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Block Height
 
 Data feed of current block height. Data contains the last block height and time.
@@ -39,14 +41,11 @@ The field `id` is not employed in the subscribe/unsubscribe schemas.
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [BlockHeightInitialMessage]     |
+| Initial | Update     |
+| ------ | ----------- |
+| [`BlockHeightInitialMessage`] | [`BlockHeightUpdateMessage`] <BatchedArray/> |
 
-##### Update message
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [BlockHeightUpdateMessage]      |
+[`BlockHeightInitialMessage`]: /types/block_height_initial_message
+[`BlockHeightUpdateMessage`]: /types/block_height_update_message

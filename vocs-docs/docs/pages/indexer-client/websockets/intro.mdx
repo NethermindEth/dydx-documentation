@@ -6,8 +6,8 @@ See the [guide](/interaction/data/feeds) for examples on how to use the WebSocke
 
 ## Common schemas
 
-Interactions with the WebSockets endpoint is done using common base JSON schemas for all feed types.
-To use specific feeds, see the following subsections.
+Interactions with the WebSockets endpoint is done using common base JSON schemas for all channels/feed types.
+For specific feeds, see the following [subsections](#feeds).
 
 ### Subscribe
 
@@ -89,6 +89,11 @@ After subscription, the incoming messages will be serialized using the following
 | `id`                | string             | Selector for channel-specific data. Only used in some channels.       |
 | `message_id`        | int                | Message sequence number sent on the subscription.                     |
 | `version`           | string             | Protocol identifier.                                                  |
-| `contents`          | value              | Feed-specific update data.                                            |
+| `contents`          | value              | Feed-specific message data.                                            |
 
 ## Feeds
+
+The available clients API is presented below.
+For each, the subscription and unsubscription functions are shown. Internally, these functions send messages serialized in the [subscribe](#json-schema) and [unsubscribe](#json-schema-1) JSON schemas above.
+
+For each channel/feed type the sub-schemas employed in the `contents` field of the received [Data](#json-schema-2) (after subscription) are shown. 

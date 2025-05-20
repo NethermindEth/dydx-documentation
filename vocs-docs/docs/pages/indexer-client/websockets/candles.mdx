@@ -1,3 +1,5 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Candles
 
 Data feed of the [candles](https://en.wikipedia.org/wiki/Candlestick_chart) of a market. Data contains updates for open, low, high, and close prices, trade volume, for a certain time resolution.
@@ -44,14 +46,11 @@ The field `id` is a string containing the market and candle resolution. It is fo
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [CandlesInitialMessage]          |
+| Initial | Update     |
+| ------ | ----------- | 
+| [`CandlesInitialMessage`] | [`CandlesUpdateMessage`] <BatchedArray/> |
 
-##### Update message
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [CandlesUpdateMessage]           |
+[`CandlesInitialMessage`]: /types/candles_initial_message
+[`CandlesUpdateMessage`]: /types/candles_update_message

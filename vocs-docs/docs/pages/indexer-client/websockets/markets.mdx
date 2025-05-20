@@ -1,3 +1,5 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Markets
 
 Data feed of all dYdX markets. Data contains updates to all markets, including market parameters and oracle prices.
@@ -42,14 +44,12 @@ The field `id` is not employed in the subscribe/unsubscribe schemas.
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [MarketsInitialMessage]         |
+| Initial | Update     | 
+| ------ | ----------- | 
+| [`MarketsInitialMessage`] | [`MarketsUpdateMessage`] <BatchedArray/> |
 
-##### Update message
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [MarketsUpdateMessage]          |
+[`MarketsInitialMessage`]: /types/markets_initial_message
+[`MarketsUpdateMessage`]: /types/markets_update_message
