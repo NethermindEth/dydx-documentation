@@ -1,3 +1,5 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Orders
 
 Data feed of the orders of a market. Data contains lists of the bids and asks of the order book.
@@ -43,14 +45,11 @@ The field `id` is the market/ticker as a string.
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [OrdersInitialMessage]          |
+| Initial | Update     |
+| ------ | ----------- | 
+| [`OrdersInitialMessage`] |[`OrdersUpdateMessage`] <BatchedArray/> |
 
-##### Update message
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [OrdersUpdateMessage]           |
+[`OrdersInitialMessage`]: /types/orders_initial_message
+[`OrdersUpdateMessage`]: /types/orders_update_message

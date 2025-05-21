@@ -1,3 +1,5 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Trades
 
 Data feed of the trades on a market. Data contains order fills updates, such as the order side, price and size.
@@ -43,14 +45,11 @@ The field `id` is the market/ticker as a string.
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [TradesInitialMessage]          |
+| Initial | Update     |
+| ------ | ----------- | 
+| [`TradesInitialMessage`] | [`TradesUpdateMessage`] <BatchedArray/> |
 
-##### Update message
-
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [TradesUpdateMessage]           |
+[`TradesInitialMessage`]: /types/trades_initial_message
+[`TradesUpdateMessage`]: /types/trades_update_message

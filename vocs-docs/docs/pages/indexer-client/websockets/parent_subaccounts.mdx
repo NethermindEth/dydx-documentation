@@ -1,6 +1,8 @@
+import BatchedArray from '../../../components/BatchedArray';
+
 ### Parent Subaccounts
 
-Data feed of a parent subaccount. This feed returns the same data as the [subaccount data feed](/indexer-client/websockets/subaccounts).
+Data feed of a parent subaccount. This feed returns similar data to the [subaccount data feed](/indexer-client/websockets/subaccounts).
 
 A parent subaccount is a subaccount numbered between 0 and 127. Used for isolated position management by the dYdX frontend (web).
 
@@ -41,14 +43,12 @@ The field `id` is a string containing the subaccount ID (address and subaccount 
 
 The field `contents` is serialized using the following schemas.
 
-##### Initial message
+##### Messages
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [SubaccountsInitialMessage]     |
+| Initial | Update     |
+| ------ | ----------- | 
+| [`ParentSubaccountsInitialMessage`] | [`ParentSubaccountsUpdateMessage`] <BatchedArray/> |
 
-##### Update message
 
-| Status | Meaning     | Schema                          |
-| ------ | ----------- | ------------------------------- |
-| `200`  | [OK]        | [SubaccountsUpdateMessage]      |
+[`ParentSubaccountsInitialMessage`]: /types/parent_subaccounts_initial_message
+[`ParentSubaccountsUpdateMessage`]: /types/parent_subaccounts_update_message
