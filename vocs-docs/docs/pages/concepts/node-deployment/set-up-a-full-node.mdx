@@ -1,7 +1,7 @@
 # Set Up a Full Node
 Installing and running a full node allows you to read orderbook and onchain data from a network, as well as place, confirm and cancel orders directly on that network.
 
-> Code snippets on this page use example values. Replace them with your own. See the [Network Configuration](../infrastructure_providers-network/network_constants.mdx) section of the documentation for network constants and other resources you need to configure a full node.
+> Code snippets on this page use example values. Replace them with your own. See the network configuration section of the documentation for network constants and other resources you need to configure a full node.
 
 ## Prerequisites
 To run a full node, the system that hosts the node must meet the following minimum requirements:
@@ -17,7 +17,7 @@ To set up a full node, you can either:
 
 Save the script with an `.sh` extension in your `$HOME` directory. Edit the script, replacing default values in fields such `VERSION` and `CHAIN-ID` with your own. Run the script with the following commands:
 
-> To find the current version of the [dYdX foundation](https://www.dydx.foundation/) mainnet, see the recommended protocol version on [mintscan.io](https://www.mintscan.io/dydx/parameters). To find network constants such as chain IDs, see the [Network Configuration](../infrastructure_providers-network/network_constants.mdx) section of the documentation.
+> To find the current version of the [dYdX foundation](https://www.dydx.foundation/) mainnet, see the recommended protocol version on [mintscan.io](https://www.mintscan.io/dydx/parameters). To find network constants such as chain IDs, see the network configuration section of the documentation.
 
 ```bash
 cd $HOME
@@ -103,7 +103,7 @@ To initialize your node, provide the ID of the chain to which you want to connec
 dydxprotocold init --chain-id=dydx-mainnet-1 my-node
 ```
 
-> See the [Network Configuration](../infrastructure_providers-network/network_constants.mdx) section of the documentation for chain IDs and other network constants.
+> See the network configuration section of the documentation for chain IDs and other network constants.
 
 When you initialize your node, `dydxprotocold` returns your default node configuration in JSON.
 
