@@ -70,32 +70,39 @@ export default defineConfig({
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
                 },
-                {
-                    text: 'Full Node Streaming',
-                    link: '/interaction/full-node-streaming',
-                },
             ],
         },
-        /*
         {
-            text: 'Full API',
-            link: '/todo',
+            text: 'Advanced',
+            collapsed: true,
             items: [
                 {
-                    text: 'HTTP API',
-                    link: '/todo',
+                    text: 'Running Your Node',
+                    items: [
+                        {
+                            text: 'Setup',
+                            link: '/advanced/running-node/setup',
+                        },
+                        {
+                            text: 'Optimize',
+                            link: '/advanced/running-node/optimize',
+                        },
+                    ],
                 },
                 {
-                    text: 'WebSockets',
-                    link: '/todo',
+                    text: 'Node Streaming',
+                    link: '/advanced/full-node-streaming',
                 },
                 {
-                    text: 'gRPC',
-                    link: '/todo',
+                    text: 'Network Constants',
+                    link: '/advanced/network-constants',
+                },
+                {
+                    text: 'Resources',
+                    link: '/advanced/resources',
                 },
             ],
         },
-        */
         {
             text: 'Full API',
             link: '/api',

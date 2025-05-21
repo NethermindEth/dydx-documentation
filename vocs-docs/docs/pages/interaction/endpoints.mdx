@@ -11,9 +11,9 @@ For the purposes of this guide, we'll assume that the __testnet__ is being used.
 
 Interacting with the dYdX network API is made through several sets of methods grouped with structures referred to as clients. Each of these clients essentially connects to a different server with its own functionality and purpose.
 
-### Validator client
+### Node client
 
-The Validator client (also known as the Node client) is the main client for interacting with the dYdX network. It provides the [Node API](/node-client/index) allowing the user to do operations that require authentication (e.g., issue trading orders) through the [Private API](/node-client/private/index), or query data through the [Public API](/node-client/public/index).
+The Node client (also known as the Validator client) is the main client for interacting with the dYdX network. It provides the [Node API](/node-client/index) allowing the user to do operations that require authentication (e.g., issue trading orders) through the [Private API](/node-client/private/index), or query data through the [Public API](/node-client/public/index).
 
 :::code-group
 
@@ -43,7 +43,7 @@ let client = NodeClient::connect(config.node).await?; // [!code focus]
 
 ### Indexer client
 
-The Indexer is a high-availability system designed to provide structured data and offload computational burden from the core Validator nodes. The Indexer client provides methods from the [Indexer API](/indexer-client/index). It serves both as a spontaneuous source of data retrieval through its REST endpoint, or a continuous feed of trading data through its WebSockets endpoint.
+The Indexer is a high-availability system designed to provide structured data and offload computational burden from the core full nodes. The Indexer client provides methods from the [Indexer API](/indexer-client/index). It serves both as a spontaneuous source of data retrieval through its REST endpoint, or a continuous feed of trading data through its WebSockets endpoint.
 
 :::code-group
 
@@ -73,7 +73,7 @@ let indexer = IndexerClient::new(config.indexer); // [!code focus]
 
 ### Composite client (TypeScript only)
 
-The Composite client groups commonly used methods into a single structure. It is essentially composed by both the Validator and Indexer clients.
+The Composite client groups commonly used methods into a single structure. It is essentially composed by both the Node and Indexer clients.
 
 ```typescript [TypeScript]
 import { CompositeClient, Network } from '@dydxprotocol/v4-client-js';
@@ -83,7 +83,7 @@ const client = await CompositeClient.connect(network); // [!code focus]
 ```
 
 :::info
-The Python and Rust APIs do not have a Composite client. The explicit Validator and Indexer clients should be used instead.
+The Python and Rust APIs do not have a Composite client. The explicit Node and Indexer clients should be used instead.
 :::
 
 ### Faucet client
@@ -155,9 +155,9 @@ let noble = NobleClient::connect( // [!code focus]
 
 Some known endpoints are provided below. Use these to connect to the dYdX networks.
 
-### Validator
+### Node
 
-Connections with the Validator nodes are established using the (g)RPC protocol.
+Connections with the full nodes are established using the (g)RPC protocol.
 
 :::details[mainnet]
 
