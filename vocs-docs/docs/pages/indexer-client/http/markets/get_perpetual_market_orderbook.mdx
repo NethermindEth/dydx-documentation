@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Perpetual Market Orderbook
 
 Retrieves the orderbook for a specific perpetual market.
@@ -44,6 +46,8 @@ pub async fn get_perpetual_market_orderbook(
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [OrderBookResponseObject] ⛁ | The orderbook data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/orderbooks/perpetualMarket/BTC-USD">API Example</Button>
 
 [OK]: /types/ok
 [Ticker]: /types/ticker

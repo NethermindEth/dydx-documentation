@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Historical PNL
 
 Retrieves historical profit and loss (PNL) data for a specific subaccount on the exchange.
@@ -60,10 +62,10 @@ pub async fn get_historical_pnl(
 | `address`                     | query    | [Address]          | true       | The wallet address that owns the account.                                                    |
 | `subaccount_number`           | query    | [SubaccountNumber] | true       | The identifier for the specific subaccount within the wallet address.                        |
 | `limit`                       | query    | [u32]              | false      | Maximum number of asset positions to return in the response.                                 |
-| `created_before_or_at_height` | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.            |
-| `created_before_or_at`        | query    | [DateTime in UTC]  | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).  |
-| `created_on_or_after_height`  | query    | [Height]           | false      | Restricts results to positions created on or after a specific blockchain height.             |
-| `created_on_or_after`         | query    | [DateTime in UTC]  | false      | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).   |
+| `createdBeforeOrAtHeight`     | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.            |
+| `createdBeforeOrAt`           | query    | [DateTime in UTC]  | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).  |
+| `createdOnOrAfterHeight`      | query    | [Height]           | false      | Restricts results to positions created on or after a specific blockchain height.             |
+| `createdOnOrAfter`            | query    | [DateTime in UTC]  | false      | Restricts results to positions created on or after a specific timestamp (ISO 8601 format).   |
 | `page`                        | query    | [u32]              | false      | The page number for paginated results.                                                       |
 
 #### Response
@@ -71,6 +73,8 @@ pub async fn get_historical_pnl(
 | Status | Meaning     | Schema                     | Description               |
 | ------ | ----------- | -------------------------- | ------------------------- |
 | `200`  | [OK]        | [PnlTicksResponseObject] ⛁ | The historical PnLs data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/historical-pnl?address=dydx14zzueazeh0hj67cghhf9jypslcf9sh2n5k6art&subaccountNumber=0">API Example</Button>
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number

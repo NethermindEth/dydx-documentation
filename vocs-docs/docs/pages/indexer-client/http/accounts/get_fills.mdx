@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Fills
 
 Retrieves fill records for a specific subaccount on the exchange.
@@ -66,12 +68,12 @@ pub async fn get_fills(
 | Parameter                     | Location | Type               | Required   | Description                                                                                                      |
 | ----------------------------- | -------- | ------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------- |
 | `address`                     | query    | [Address]          | true       | The wallet address that owns the account.                                                                        |
-| `subaccount_number`           | query    | [SubaccountNumber] | true       | The identifier for the specific subaccount within the wallet address.                                            |
+| `subaccountNumber`            | query    | [SubaccountNumber] | true       | The identifier for the specific subaccount within the wallet address.                                            |
 | `ticker`                      | query    | [Ticker]           | false      | The market symbol to filter fills by (e.g., "BTC-USD"). If not provided, fills for all markets will be returned. |
-| `ticker_type`                 | query    | [MarketType]       | false      | The type of market to filter by.                                                                                 |
+| `tickerType`                  | query    | [MarketType]       | false      | The type of market to filter by.                                                                                 |
 | `limit`                       | query    | [u32]              | false      | Maximum number of asset positions to return in the response.                                                     |
-| `created_before_or_at_height` | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.                                |
-| `created_before_or_at`        | query    | [DateTime]         | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).                      |
+| `createdBeforeOrAtHeight`     | query    | [Height]           | false      | Restricts results to positions created at or before a specific blockchain height.                                |
+| `createdBeforeOrAt`           | query    | [DateTime]         | false      | Restricts results to positions created at or before a specific timestamp (ISO 8601 format).                      |
 | `page`                        | query    | [u32]              | false      | The page number for paginated results.                                                                           |
 
 #### Response
@@ -81,6 +83,8 @@ A promise that resolves to fill data containing details such as order ID, market
 | Status   | Meaning     | Schema                 | Description     |
 | -------- | ----------- | ---------------------- | --------------- |
 | `200`    | [OK]        | [FillResponseObject] ⛁ | The fills data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/fills?address=dydx14zzueazeh0hj67cghhf9jypslcf9sh2n5k6art&subaccountNumber=0">API Example</Button>
 
 [Address]: /types/address
 [SubaccountNumber]: /types/subaccount_number

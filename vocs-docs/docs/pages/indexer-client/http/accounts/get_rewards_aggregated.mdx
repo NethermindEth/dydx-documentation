@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Rewards Aggregated
 
 Retrieves aggregated historical trading rewards for the specified address.
@@ -52,14 +54,16 @@ pub async fn get_rewards_aggregated(
 | `address`                         | path      | [Address]                         | true      | The wallet address that owns the account.                     |
 | `period`                          | query     | [TradingRewardAggregationPeriod]  | true      | The aggregation period.                                       |
 | `limit`                           | query     | [u32]                             | false     | The maximum number of aggregated rewards to retrieve.         |
-| `starting_before_or_at`           | query     | [DateTime]                        | false     | The timestamp filter for rewards starting before or at.       |
-| `starting_before_or_at_height`    | query     | [Height]                          | false     | The block height filter for rewards starting before or at.    |
+| `startingBeforeOrAt`              | query     | [DateTime]                        | false     | The timestamp filter for rewards starting before or at.       |
+| `startingBeforeOrAtHeight`        | query     | [Height]                          | false     | The block height filter for rewards starting before or at.    |
 
 #### Response
 
 | Status | Meaning     | Schema                                 | Description                                     |
 | ------ | ----------- | -------------------------------------- | ----------------------------------------------- |
 | `200`  | [OK]        | [HistoricalTradingRewardAggregation] ⛁ | The aggregated historical trading rewards data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/historicalTradingRewardAggregations/dydx14zzueazeh0hj67cghhf9jypslcf9sh2n5k6art?period=DAILY">API Example</Button>
 
 [OK]: /types/ok
 [u32]: /types/u32
