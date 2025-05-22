@@ -104,21 +104,6 @@ export default defineConfig({
             link: '/api',
             items: [
                 {
-                    text: 'Node API',
-                    link: '/node-client',
-                    collapsed: false,
-                    items: [
-                        {
-                            text: 'Public API',
-                            link: '/node-client/public',
-                        },
-                        {
-                            text: 'Private API',
-                            link: '/node-client/private',
-                        },
-                    ],
-                },
-                {
                     text: 'Indexer API',
                     link: '/indexer-client',
                     collapsed: false,
@@ -130,6 +115,21 @@ export default defineConfig({
                         {
                             text: 'WebSockets API',
                             link: '/indexer-client/websockets',
+                        },
+                    ],
+                },
+                {
+                    text: 'Node API',
+                    link: '/node-client',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
+                        },
+                        {
+                            text: 'Private API',
+                            link: '/node-client/private',
                         },
                     ],
                 },
