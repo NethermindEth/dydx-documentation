@@ -11,20 +11,20 @@ export default defineConfig({
             items: [
                 {
                     text: 'Getting Started',
-                    link: '/client',
+                    link: '/interaction/client',
                     collapsed: true,
                     items: [
                         {
                             text: 'Quick start with Python 🚧',
-                            link: '/client/quick-start-py',
+                            link: '/interaction/client/quick-start-py',
                         },
                         {
                             text: 'Quick start with Rust 🚧',
-                            link: '/client/quick-start-rs',
+                            link: '/interaction/client/quick-start-rs',
                         },
                         {
                             text: 'Quick start with TypeScript 🚧',
-                            link: '/client/quick-start-ts',
+                            link: '/interaction/client/quick-start-ts',
                         },
                     ],
                 },
