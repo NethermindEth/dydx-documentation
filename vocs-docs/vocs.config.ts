@@ -217,6 +217,34 @@ export default defineConfig({
                             text: 'Withdrawal Rate Limits and Gating',
                             link: '/concepts/trading/withdrawal-rate-limits-and-gating'
                         },
+                        {
+                            text: 'Base Urls',
+                            link: '/concepts/trading/base-urls'
+                        },
+                        {
+                            text: 'Contract Loss Mechanism',
+                            link: '/concepts/trading/contract-loss-mechanism'
+                        },
+                        {
+                            text: 'Index Prices',
+                            link: '/concepts/trading/index-prices'
+                        },
+                        {
+                            text: 'Liquiditions',
+                            link: '/concepts/trading/liquiditions'
+                        },
+                        {
+                            text: 'Number Formats',
+                            link: '/concepts/trading/number-formats'
+                        },
+                        {
+                            text: 'Rate Limits',
+                            link: '/concepts/trading/rate-limits'
+                        },
+                        {
+                            text: 'Testnet',
+                            link: '/concepts/trading/testnet'
+                        }
                     ],
                 },
                 {
