@@ -6,33 +6,30 @@ export default defineConfig({
     basePath: '/',
     sidebar: [
         {
-            text: 'Getting Started',
-            link: '/client',
-            items: [
-                {
-                    text: 'Quick start with Python 🚧',
-                    link: '/client/quick-start-py',
-                },
-                {
-                    text: 'Quick start with Rust 🚧',
-                    link: '/client/quick-start-rs',
-                },
-                {
-                    text: 'Quick start with TypeScript 🚧',
-                    link: '/client/quick-start-ts',
-                },
-                {
-                    text: 'Getting the mnemonic phrase',
-                    link: '/todo',
-                },
-            ],
-        },
-        {
             text: 'Guide',
             link: '/interaction',
             items: [
                 {
-                    text: 'Preparing to Trade',
+                    text: 'Getting Started',
+                    link: '/interaction/client',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Quick start with Python 🚧',
+                            link: '/interaction/client/quick-start-py',
+                        },
+                        {
+                            text: 'Quick start with Rust 🚧',
+                            link: '/interaction/client/quick-start-rs',
+                        },
+                        {
+                            text: 'Quick start with TypeScript 🚧',
+                            link: '/interaction/client/quick-start-ts',
+                        },
+                    ],
+                },
+                {
+                    text: 'Preparing to trade',
                     link: '/interaction/endpoints',
                 },
                 {
@@ -108,21 +105,6 @@ export default defineConfig({
             link: '/api',
             items: [
                 {
-                    text: 'Node API',
-                    link: '/node-client',
-                    collapsed: false,
-                    items: [
-                        {
-                            text: 'Public API',
-                            link: '/node-client/public',
-                        },
-                        {
-                            text: 'Private API',
-                            link: '/node-client/private',
-                        },
-                    ],
-                },
-                {
                     text: 'Indexer API',
                     link: '/indexer-client',
                     collapsed: false,
@@ -134,6 +116,21 @@ export default defineConfig({
                         {
                             text: 'WebSockets API',
                             link: '/indexer-client/websockets',
+                        },
+                    ],
+                },
+                {
+                    text: 'Node API',
+                    link: '/node-client',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
+                        },
+                        {
+                            text: 'Private API',
+                            link: '/node-client/private',
                         },
                     ],
                 },
@@ -204,8 +201,84 @@ export default defineConfig({
                             text: 'MegaVault',
                             link: '/concepts/trading/megavault',
                         },
+                        {
+                            text: 'Isolated Markets',
+                            link: '/concepts/trading/isolated-markets'
+                        },
+                        {
+                            text: 'Other Limits',
+                            link: '/concepts/trading/other-limits'
+                        },
+                        {
+                            text: 'Withdrawal Rate Limits and Gating',
+                            link: '/concepts/trading/withdrawal-rate-limits-and-gating'
+                        },
                     ],
                 },
+                {
+                    text: 'Node Deployment',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Hardware Requirements',
+                            link: '/concepts/node-deployment/hardware-requirement'
+                        },
+                        {
+                            text: 'Required Node Configs',
+                            link: '/concepts/node-deployment/required-node-configs'
+                        },
+                        {
+                            text: 'Set up a full node',
+                            link: '/concepts/node-deployment/set-up-a-full-node'
+                        },
+                        {
+                            text: 'Optimize Your Full Node',
+                            link: '/concepts/node-deployment/optimize-your-full-node'
+                        },
+                        {
+                            text: 'Running a Validator',
+                            link: '/concepts/node-deployment/running-a-validator'
+                        },
+                        {
+                            text: 'Snapshots',
+                            link: '/concepts/node-deployment/snapshots'
+                        },
+                        {
+                            text: 'Full Node Streaming',
+                            link: '/concepts/node-deployment/full-node-streaming'
+                        },
+                        {
+                            text: 'Upgrades',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Types of Upgrades',
+                                    link: '/concepts/node-deployment/upgrades/types-of-upgrades'
+                                },
+                                {
+                                    text: 'Performing Upgrades',
+                                    link: '/concepts/node-deployment/upgrades/performing-upgrades'
+                                },
+                                {
+                                    text: 'Cosmovisor',
+                                    link: '/concepts/node-deployment/upgrades/cosmovisor'
+                                },
+                                {
+                                    text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                                    link: '/concepts/node-deployment/upgrades/using-cosmovisor'
+                                },
+                                {
+                                    text: 'Upgrading Sidecar',
+                                    link: '/concepts/node-deployment/upgrades/upgrading-sidecar'
+                                }
+                            ]
+                        },
+                        {
+                            text: 'Peering with Gateway',
+                            link: '/concepts/node-deployment/peering-with-gateway'
+                        }
+                    ]
+                }
             ],
         },
         {
