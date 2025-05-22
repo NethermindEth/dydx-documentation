@@ -6,27 +6,28 @@ export default defineConfig({
     basePath: '/',
     sidebar: [
         {
-            text: 'Getting Started',
-            link: '/client',
-            items: [
-                {
-                    text: 'Quick start with Python 🚧',
-                    link: '/client/quick-start-py',
-                },
-                {
-                    text: 'Quick start with Rust 🚧',
-                    link: '/client/quick-start-rs',
-                },
-                {
-                    text: 'Quick start with TypeScript 🚧',
-                    link: '/client/quick-start-ts',
-                },
-            ],
-        },
-        {
             text: 'Guide',
             link: '/interaction',
             items: [
+                {
+                    text: 'Getting Started',
+                    link: '/client',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Quick start with Python 🚧',
+                            link: '/client/quick-start-py',
+                        },
+                        {
+                            text: 'Quick start with Rust 🚧',
+                            link: '/client/quick-start-rs',
+                        },
+                        {
+                            text: 'Quick start with TypeScript 🚧',
+                            link: '/client/quick-start-ts',
+                        },
+                    ],
+                },
                 {
                     text: 'Preparing to trade',
                     link: '/interaction/endpoints',
