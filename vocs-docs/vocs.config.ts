@@ -32,7 +32,7 @@ export default defineConfig({
             link: '/interaction',
             items: [
                 {
-                    text: 'Preparing to trade',
+                    text: 'Preparing to Trade',
                     link: '/interaction/endpoints',
                 },
                 {
