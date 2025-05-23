@@ -1,77 +1,58 @@
 # Data
 
-This section guides you to fetch some important data points from different clients (node client, indexer client etc).
+This section guides you on how to fetch some important data points from different clients (Node client, Indexer client etc).
+We focus here on getting data using spontaneous (single) requests. For continuous data streams of data see also the [WebSockets guide](/interaction/data/feeds).
 
-::::steps
+## Market List
 
-## Get Latest Block Height
-
-The Get Latest Block Height function asynchronously retrieves the most recent block height from a blockchain network. Please check the following code examples to fetch latest block height in the blockchain.
-
-:::code-group
-
-```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-height = await node_client.latest_block_height()
-```
-
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let height = client.get_latest_block_height().await?;
-```
-
-```typescript [TypeScript]
-client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const height = await client.get.latestBlockHeight();
-```
-
-:::
-
-## Get User Fee Tier
-
-The Get User Fee Tier function retrieves the perpetual fee tier associated with a specific wallet address, providing information on the user's current fee structure. Please check the following code examples for better understanding.
+A market (sometimes referred by the ticker name, e.g., `ETH-USD`) is associated with a perpetual and it is the place where trading happens.
+To fetch the available markets see the code below.
 
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-user_fee_tier = await node_client.get_user_fee_tier(TEST_ADDRESS)
-```
-
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
+from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
+from dydx_v4_client.network import TESTNET
+client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
+response = await client.markets.get_perpetual_markets() # [!code focus]
+print(response["markets"]) # [!code focus]
 ```
 
 ```typescript [TypeScript]
-client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
+import { IndexerClient, Network } from '@dydxprotocol/v4-client-js'; 
+const client = new IndexerClient(Network.testnet().indexerConfig); // [!code focus]
+const response = await client.markets.getPerpetualMarkets(); // [!code focus]
+console.log(response.markets); // [!code focus]
+```
+
+```rust [Rust]
+use dydx::{config::ClientConfig, indexer::IndexerClient};
+let config = ClientConfig::from_file("config.toml").await?;
+let indexer = IndexerClient::new(config.indexer); // [!code focus]
+let markets = indexer // [!code focus]
+        .markets() // [!code focus]
+        .list_perpetual_markets(None) // `None`: Use default options.  // [!code focus]
+        .await?; // [!code focus]
+println!("{markets:?}"); // [!code focus]
 ```
 
 :::
+
+See the [API reference](/indexer-client/http/markets/get_perpetual_markets) for the complete method definition.
 
 ## List Orders
 
-Retrieves orders for a specific subaccount, with various filtering options to narrow down the results based on order characteristics. Please check the following code examples for demonstrations.
+Retrieve orders for a specific subaccount, with various filtering options to narrow down the results based on order characteristics.
 
 :::code-group
 
 ```python [Python]
-client = IndexerClient(config=Network.testnet().indexer_config,)
-subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
-address = subaccount.address
-orders_response = client.account.get_subaccount_orders(address, 0)
-```
-
-```rust [Rust]
-let rester = Rester::connect().await?;
-let account = rester.wallet.account_offline(0)?;
-let indexer = rester.indexer;
-let subaccount = account.subaccount(0)?;
-let orders = indexer
-    .accounts()
-    .list_orders(&subaccount, Some(ord_opts))
-    .await?;
+from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
+from dydx_v4_client.network import TESTNET
+client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC) # [!code focus]
+address = subaccount.address # [!code focus]
+orders_response = client.account.get_subaccount_orders(address, 0) # [!code focus]
 ```
 
 ```typescript [TypeScript]
@@ -79,11 +60,150 @@ const client = new IndexerClient(Network.testnet().indexerConfig);
 const response = await client.account.getSubaccountOrders(DYDX_TEST_ADDRESS, 0);
 ```
 
+```rust [Rust]
+use dydx::{config::ClientConfig, indexer::IndexerClient, node::Wallet};
+let config = ClientConfig::from_file("config.toml").await?;
+let indexer = IndexerClient::new(config.indexer); // [!code focus]
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?; // [!code focus]
+let account = wallet.account_offline(0)?; // [!code focus]
+let subaccount = account.subaccount(0)?; // [!code focus]
+let orders = indexer // [!code focus]
+    .accounts() // [!code focus]
+    .list_orders(&subaccount, None) // [!code focus]
+    .await?; // [!code focus]
+```
+
+:::
+
+See the [API reference](/indexer-client/http/accounts/list_orders) the complete method definition.
+
+:::tip[Orderbook]
+
+For some trading strategies it is useful to have a continouos view of the [orderbook](https://en.wikipedia.org/wiki/Order_book) up-to-date. See the [Watch Orderbook](/interaction/data/watch-orderbook) guide on how to set this up.
+
 :::
 
 ## Get Fills
 
-Retrieves fill records for a specific subaccount on the exchange. Please check the following code examples for demonstrations.
+Retrieve order fill records for a specific subaccount on the exchange. Fills are matched orders.
+
+:::code-group
+
+```python [Python]
+from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
+from dydx_v4_client.network import TESTNET
+client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC) # [!code focus]
+address = subaccount.address # [!code focus]
+fills_response = client.account.get_subaccount_fills(address, 0) # [!code focus]
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getSubaccountFills(DYDX_TEST_ADDRESS, 0);
+```
+
+```rust [Rust]
+use dydx::{config::ClientConfig, indexer::{IndexerClient, Ticker}, node::Wallet}; 
+let config = ClientConfig::from_file("config.toml").await?;
+let indexer = IndexerClient::new(config.indexer); // [!code focus]
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?; // [!code focus]
+let account = wallet.account(0, &mut node).await?; // [!code focus]
+let ticker = Ticker::from("ETH-USD"); // [!code focus]
+let subaccount = account.subaccount(0)?; // [!code focus]
+let fills = indexer // [!code focus]
+    .accounts() // [!code focus]
+    .get_fills(&env.subaccount, None) // [!code focus]
+    .await?; // [!code focus]
+```
+
+:::
+
+See the [API reference](/indexer-client/http/accounts/get_fills) the complete method definition.
+
+## List Positions
+
+Retrieve perpetual positions for a specific subaccount. This example below show you how to query and filter the active or historical perpetual positions associated with a particular subaccount.
+
+:::code-group
+
+```python [Python]
+from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
+from dydx_v4_client.network import TESTNET
+client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
+subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC) # [!code focus]
+address = subaccount.address # [!code focus]
+perpetual_positions_response = client.account.get_subaccount_perpetual_positions(address, 0) # [!code focus]
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0);
+```
+
+```rust [Rust]
+use dydx::{config::ClientConfig, indexer::{IndexerClient, Ticker}, node::Wallet}; 
+let config = ClientConfig::from_file("config.toml").await?;
+let indexer = IndexerClient::new(config.indexer); // [!code focus]
+let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?; // [!code focus]
+let account = wallet.account(0, &mut node).await?; // [!code focus]
+let subaccount = account.subaccount(0)?; // [!code focus]
+let positions = indexer // [!code focus]
+    .accounts() // [!code focus]
+    .list_positions(&subaccount, None) // [!code focus]
+    .await?; // [!code focus]
+```
+
+:::
+
+See the [API reference](/indexer-client/http/accounts/list_positions) for the complete method definition.
+
+## Price History
+
+Price history in the classic [candlestick](https://en.wikipedia.org/wiki/Candlestick_chart) can also be fetched. Data will be organized into a _open_, _high_, _low_, and _close_ (OHLC) prices for some _period_.
+
+:::code-group
+
+```python [Python]
+from dydx_v4_client.indexer.candles_resolution import CandlesResolution
+from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
+from dydx_v4_client.network import TESTNET
+client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
+response = await client.markets.get_perpetual_market_candles( # [!code focus]
+    market="BTC-USD", resolution=CandlesResolution.ONE_MINUTE # [!code focus]
+) # [!code focus]
+print(response["candles"]) # [!code focus]
+```
+
+```typescript [TypeScript]
+import { IndexerClient, Network } from '@dydxprotocol/v4-client-js'; 
+const client = new IndexerClient(Network.testnet().indexerConfig); // [!code focus]
+const response = await client.markets.getPerpetualMarketCandles('BTC-USD', '1MIN'); // [!code focus]
+console.log(response.candles); // [!code focus]
+```
+
+```rust [Rust]
+use dydx::{config::ClientConfig, indexer::{CandleResolution, IndexerClient}};
+let config = ClientConfig::from_file("config.toml").await?;
+let indexer = IndexerClient::new(config.indexer); // [!code focus]
+let candles = indexer // [!code focus]
+    .markets() // [!code focus]
+    .get_candles(&"BTC-USD".into(), CandleResolution::M1, None) // [!code focus]
+    .await?; // [!code focus]
+println!("{candles:?}"); // [!code focus]
+```
+
+:::
+
+See the [API reference](/indexer-client/http/markets/get_candles) for the complete method definition.
+
+:::info[Sparklines]
+See also the [sparklines method](/indexer-client/http/markets/get_sparklines) for price history.
+:::
+
+## Get User Fee Tier
+
+The Get User Fee Tier function retrieves the perpetual fee tier associated with a specific wallet address, providing information on the user's current fee structure.
 
 :::code-group
 
@@ -92,83 +212,23 @@ node_client = await NodeClient.connect(TESTNET.node)
 user_fee_tier = await node_client.get_user_fee_tier(TEST_ADDRESS)
 ```
 
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
-```
-
 ```typescript [TypeScript]
 client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
 ```
 
-:::
-
-## Get Fills
-
-Retrieves fill records for a specific subaccount on the exchange. Please check the following code examples for demonstrations.
-
-:::code-group
-
-```python [Python]
-client = IndexerClient(config=Network.testnet().indexer_config,)
-subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
-address = subaccount.address
-fills_response = client.account.get_subaccount_fills(address, 0)
-```
-
 ```rust [Rust]
-let indexer = IndexerClient::new(config.indexer);
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
-let account = wallet.account(0, &mut node).await?;
-let ticker = Ticker::from("ETH-USD");
-let subaccount = account.subaccount(0)?;
-indexer
-    .accounts()
-    .get_fills(&env.subaccount, None)
-    .await?;```
-
-```typescript [TypeScript]
-const client = new IndexerClient(Network.testnet().indexerConfig);
-const response = await client.account.getSubaccountFills(DYDX_TEST_ADDRESS, 0);
+let client = NodeClient::connect(config.node).await?;
+let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
 ```
 
 :::
 
-## List Positions
-
-Retrieves perpetual positions for a specific subaccount. This examples below show you how to query and filter the active or historical perpetual positions associated with a particular subaccount.
-
-:::code-group
-
-```python [Python]
-client = IndexerClient(config=Network.testnet().indexer_config,)
-subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
-address = subaccount.address
-perpetual_positions_response = client.account.get_subaccount_perpetual_positions(address, 0)
-```
-
-```rust [Rust]
-let indexer = IndexerClient::new(config.indexer);
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
-let account = wallet.account(0, &mut node).await?;
-let subaccount = account.subaccount(0)?;
-indexer
-    .accounts()
-    .list_positions(&subaccount, Some(pos_opts))
-    .await?;
-```
-
-```typescript [TypeScript]
-const client = new IndexerClient(Network.testnet().indexerConfig);
-const response = await client.account.getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0);
-```
-
-:::
+See the [API reference](/node-client/public/get_user_fee_tier) for the complete method definition.
 
 ## Get Rewards Params
 
-The Get Rewards Params function retrieves the parameters for the rewards system, providing insight into the set configurations for earning and distributing rewards. Please check the following code examples for demonstrations.
+The Get Rewards Params function retrieves the parameters for the rewards system, providing insight into the set configurations for earning and distributing rewards.
 
 :::code-group
 
@@ -177,27 +237,34 @@ node_client = await NodeClient.connect(TESTNET.node)
 rewards_params = await node_client.get_rewards_params()
 ```
 
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let reward_params = client.get_rewards_params().await?;
-```
-
 ```typescript [TypeScript]
 const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const rewardsParams = await client.get.getRewardsParams();
 ```
 
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let reward_params = client.get_rewards_params().await?;
+```
+
 :::
+
+See the [API reference](/node-client/public/get_rewards_params) for the complete method definition.
 
 ## Trading Rewards
 
-Retrieves historical block trading rewards for the specified address. Please check the following code examples for demonstrations.
+Retrieve historical block trading rewards for the specified address.
 
 :::code-group
 
 ```python [Python]
-client = IndexerClient(config=Network.testnet().indexer_config,)
+client = IndexerClient(config=Network.testnet().indexer_config)
 response = await client.account.get_historical_block_trading_rewards(test_address, limit)
+```
+
+```typescript [TypeScript]
+const client = new IndexerClient(Network.testnet().indexerConfig);
+const response = await client.account.getHistoricalBlockTradingRewards(DYDX_TEST_ADDRESS, limit);
 ```
 
 ```rust [Rust]
@@ -208,11 +275,31 @@ indexer
     .await?;
 ```
 
+:::
+
+See the [API reference](/indexer-client/http/accounts/get_rewards) for the complete method definition.
+
+## Get Latest Block Height
+
+Retrieve the most recent block's height. This can serve to see if the blockchain node you are connected to is in sync.
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+height = await node_client.latest_block_height()
+```
+
 ```typescript [TypeScript]
-const client = new IndexerClient(Network.testnet().indexerConfig);
-const response = await client.account.getHistoricalBlockTradingRewards(DYDX_TEST_ADDRESS, limit);
+client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const height = await client.get.latestBlockHeight();
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let height = client.get_latest_block_height().await?;
 ```
 
 :::
 
-::::
+See the [API reference](/node-client/public/get_latest_block_height) for the complete method definition.
