@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Parent Subaccount
 
 Query for the parent subaccount, its child subaccounts, equity, collateral and margin.
@@ -42,6 +44,8 @@ async getParentSubaccount(address: string, parentSubaccountNumber: number): Prom
 | Status | Meaning     | Schema                             |
 | ------ | ----------- | ---------------------------------- |
 | `200`  | [OK]        | [ParentSubaccountResponseObject]   |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/addresses/dydx14zzueazeh0hj67cghhf9jypslcf9sh2n5k6art/parentSubaccountNumber/0">API Example</Button>
 
 [Address]: /types/address
 [u32]: /types/u32

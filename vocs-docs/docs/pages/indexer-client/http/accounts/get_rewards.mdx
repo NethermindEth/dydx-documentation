@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Rewards
 
 Retrieves historical block trading rewards for the specified address.
@@ -46,14 +48,16 @@ pub async fn get_rewards(
 | --------------------------------- | --------- | ----------------- | --------- | --------------------------------------------------------------------- |
 | `address`                         | path      | [Address]         | true      | The wallet address that owns the account.                             |
 | `limit`                           | query     | [u32]             | false     | Maximum number of asset positions to return in the response.          |
-| `starting_before_or_at_height`    | query     | [Height]          | false     | The timestamp filter for rewards starting before or at.               |
-| `starting_before_or_at`           | query     | [DateTime in UTC] | false     | The block height filter for rewards starting before or at.            |
+| `startingBeforeOrAtHeight`        | query     | [Height]          | false     | The timestamp filter for rewards starting before or at.               |
+| `startingBeforeOrAt`              | query     | [DateTime in UTC] | false     | The block height filter for rewards starting before or at.            |
 
 #### Response
 
 | Status | Meaning     | Schema                           | Description                                |
 | ------ | ----------- | -------------------------------- | ------------------------------------------ |
 | `200`  | [OK]        | [HistoricalBlockTradingReward] ⛁ | The historical block trading rewards data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/historicalBlockTradingRewards/dydx14zzueazeh0hj67cghhf9jypslcf9sh2n5k6art">API Example</Button>
 
 [OK]: /types/ok
 [u32]: /types/u32

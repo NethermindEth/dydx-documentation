@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Vaults Historical Pnl
 
 Vaults historical PnL.
@@ -34,13 +36,15 @@ pub async fn get_vaults_historical_pnl(
 
 | Parameter           | Location | Type               | Required    | Description             |
 | ------------------- | -------- | ------------------ | ----------- | ----------------------- |
-| `resolution`           | query    | [PnlTickInterval] true        | PnL tick resolution.    |
+| `resolution`           | query    | [PnlTickInterval] | true        | PnL tick resolution.    |
 
 #### Response
 
 | Status | Meaning     | Schema                          |
 | ------ | ----------- | ------------------------------- |
 | `200`  | [OK]        | [VaultHistoricalPnl] ⛁          |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/vault/v1/megavault/historicalPnl?resolution=day">API Example</Button>
 
 [PnlTickInterval]: /types/pnl_tick_interval
 [OK]: /types/ok

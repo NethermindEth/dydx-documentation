@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Time
 
 Get current server time of the Indexer.
@@ -34,6 +36,8 @@ pub async fn get_time(&self) -> Result<TimeResponse, Error>
 | Status | Meaning     | Schema         |
 | ------ | ----------- | -------------- |
 | `200`  | [OK]        | [TimeResponse] |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/time">API Example</Button>
 
 [OK]: /types/ok
 [TimeResponse]: /types/time_response

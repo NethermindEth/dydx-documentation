@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Sparklines
 
 Retrieves sparkline data for perpetual markets.
@@ -39,13 +41,15 @@ pub async fn get_sparklines(
 
 | Parameter           | Location | Type                  | Required | Description                                                             |
 | ------------------- | -------- | --------------------- | -------- | ----------------------------------------------------------------------- |
-| `period`            | query    | [SparklineTimePeriod] | true     | The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS"). |
+| `timePeriod`        | query    | [SparklineTimePeriod] | true     | The time period for the sparkline data (e.g., "ONE_DAY", "SEVEN_DAYS"). |
 
 #### Response
 
 | Status | Meaning     | Schema                      | Description         |
 | ------ | ----------- | --------------------------- | ------------------- |
 | `200`  | [OK]        | [SparklineResponseObject] ⛁ | The sparkline data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/sparklines?timePeriod=ONE_DAY">API Example</Button>
 
 [OK]: /types/ok
 [SparklineTimePeriod]: /types/sparkline_time_period

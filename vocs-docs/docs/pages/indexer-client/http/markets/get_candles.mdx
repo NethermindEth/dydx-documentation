@@ -1,3 +1,5 @@
+import { Button } from 'vocs/components'
+
 ### Get Candles
 
 Retrieves candle data for a specific perpetual market.
@@ -52,14 +54,16 @@ pub async fn get_candles(
 | `market`      | path      | [Ticker]              | true      | The market ticker.                                        |
 | `resolution`  | query     | [CandleResolution]    | true      | The candle resolution (e.g., "1DAY", "1HOUR", "1MIN").    |
 | `limit`       | query     | [u32]                 | false     | The maximum number of candles to retrieve.                |
-| `from_iso`    | query     | [DateTime]            | false     | The start timestamp in ISO format.                        |
-| `to_iso`      | query     | [DateTime]            | false     | The end timestamp in ISO format.                          |
+| `fromIso`     | query     | [DateTime]            | false     | The start timestamp in ISO format.                        |
+| `toIso`       | query     | [DateTime]            | false     | The end timestamp in ISO format.                          |
 
 #### Response
 
 | Status | Meaning     | Schema                   | Description      |
 | ------ | ----------- | ------------------------ | ---------------- |
 | `200`  | [OK]        | [CandleResponseObject] ⛁ | The candle data. |
+
+<Button href="https://indexer.v4testnet.dydx.exchange/v4/candles/perpetualMarkets/BTC-USD?resolution=1DAY">API Example</Button>
 
 [OK]: /types/ok
 [u32]: /types/u32
