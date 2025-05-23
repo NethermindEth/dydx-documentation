@@ -29,7 +29,7 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Preparing to trade',
+                    text: 'Preparing to Trade',
                     link: '/interaction/endpoints',
                 },
                 {
@@ -41,7 +41,7 @@ export default defineConfig({
                     link: '/interaction/trading',
                 },
                 {
-                    text: 'Asset management',
+                    text: 'Asset Management',
                     link: '/interaction/asset-management',
                 },
                 {
@@ -66,6 +66,10 @@ export default defineConfig({
                 {
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
+                },
+                {
+                    text: 'Deposits and Withdrawals',
+                    link: '/interaction/deposits-and-withdrawals',
                 },
             ],
         },
