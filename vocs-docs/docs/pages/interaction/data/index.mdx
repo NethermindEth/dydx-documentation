@@ -121,43 +121,6 @@ let fills = indexer // [!code focus]
 
 See the [API reference](/indexer-client/http/accounts/get_fills) the complete method definition.
 
-## List Positions
-
-Retrieve perpetual positions for a specific subaccount. This example below show you how to query and filter the active or historical perpetual positions associated with a particular subaccount.
-
-:::code-group
-
-```python [Python]
-from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
-from dydx_v4_client.network import TESTNET
-client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
-subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC) # [!code focus]
-address = subaccount.address # [!code focus]
-perpetual_positions_response = client.account.get_subaccount_perpetual_positions(address, 0) # [!code focus]
-```
-
-```typescript [TypeScript]
-const client = new IndexerClient(Network.testnet().indexerConfig);
-const response = await client.account.getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0);
-```
-
-```rust [Rust]
-use dydx::{config::ClientConfig, indexer::{IndexerClient, Ticker}, node::Wallet}; 
-let config = ClientConfig::from_file("config.toml").await?;
-let indexer = IndexerClient::new(config.indexer); // [!code focus]
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?; // [!code focus]
-let account = wallet.account(0, &mut node).await?; // [!code focus]
-let subaccount = account.subaccount(0)?; // [!code focus]
-let positions = indexer // [!code focus]
-    .accounts() // [!code focus]
-    .list_positions(&subaccount, None) // [!code focus]
-    .await?; // [!code focus]
-```
-
-:::
-
-See the [API reference](/indexer-client/http/accounts/list_positions) for the complete method definition.
-
 ## Price History
 
 Price history in the classic [candlestick](https://en.wikipedia.org/wiki/Candlestick_chart) can also be fetched. Data will be organized into a _open_, _high_, _low_, and _close_ (OHLC) prices for some _period_.
