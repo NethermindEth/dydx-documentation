@@ -88,29 +88,6 @@ Retrieves fill records for a specific subaccount on the exchange. Please check t
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-user_fee_tier = await node_client.get_user_fee_tier(TEST_ADDRESS)
-```
-
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let user_fee_tier = client.get_user_fee_tier(address.clone()).await?;
-```
-
-```typescript [TypeScript]
-client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const userfeeTier = await client.get.getUserFeeTier(DYDX_TEST_ADDRESS);
-```
-
-:::
-
-## Get Fills
-
-Retrieves fill records for a specific subaccount on the exchange. Please check the following code examples for demonstrations.
-
-:::code-group
-
-```python [Python]
 client = IndexerClient(config=Network.testnet().indexer_config,)
 subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC)
 address = subaccount.address
