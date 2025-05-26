@@ -16,7 +16,7 @@ Choose and install [Python 3.9+](https://www.python.org/downloads/) and [Poetry]
 git clone https://github.com/dydxprotocol/v4-clients.git
 ```
 
-## Set up virtual environment
+## Set up virtual environment (Only for Linux)
 
 It's a good practice to use virtual environment to isolate dependencies for a project. Run the following command to create virtual environment.
 
@@ -26,14 +26,6 @@ python -m venv myenv
 
 Activate the virtual environment:
 
-- On Windows
-
-```powershell
-myenv\Scripts\ctivate
-```
-
-- On macOS/Linux
-
 ```bash
 source myenv/bin/activate
 ```
@@ -42,7 +34,7 @@ After activation, you should see the environment name in the terminal prompt, in
 
 ## Adding the `dydx` Dependency
 
-Use the `pip install` command to add the dependencies. It will install the latest version of the client in the current virtual environment.
+Use the `pip install` command to add the dependencies. It will install the latest version of the client.
 
 ```bash
 pip install dydx-v4-client

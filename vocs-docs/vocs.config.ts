@@ -68,6 +68,10 @@ export default defineConfig({
                     link: '/interaction/permissioned-keys',
                 },
                 {
+                    text: 'dYdX Chain: Deposits, Withdrawals & Troubleshooting Guide',
+                    link: '/interaction/troubleshooting',
+                },
+                {
                     text: 'Deposits and Withdrawals',
                     link: '/interaction/deposits-and-withdrawals',
                 },
@@ -81,6 +85,14 @@ export default defineConfig({
                     text: 'Running Your Node',
                     items: [
                         {
+                            text: 'Hardware Requirements',
+                            link: '/advanced/running-node/hardware-requirement'
+                        },
+                        {
+                            text: 'Required Node Configs',
+                            link: '/advanced/running-node/required-node-configs'
+                        },
+                        {
                             text: 'Setup',
                             link: '/advanced/running-node/setup',
                         },
@@ -88,11 +100,53 @@ export default defineConfig({
                             text: 'Optimize',
                             link: '/advanced/running-node/optimize',
                         },
+                        {
+                            text: 'Running a Validator',
+                            link: '/advanced/running-node/running-a-validator'
+                        },
+                        {
+                            text: 'Snapshots',
+                            link: '/advanced/running-node/snapshots'
+                        },
+                        {
+                            text: 'Peering with Gateway',
+                            link: '/advanced/running-node/peering-with-gateway'
+                        },
+                        {
+                            text: 'Voting',
+                            link: '/advanced/running-node/voting'
+                        },
                     ],
                 },
                 {
                     text: 'Node Streaming',
                     link: '/advanced/full-node-streaming',
+                },
+                {
+                    text: 'Upgrades',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Types of Upgrades',
+                            link: '/advanced/upgrades/types-of-upgrades'
+                        },
+                        {
+                            text: 'Performing Upgrades',
+                            link: '/advanced/upgrades/performing-upgrades'
+                        },
+                        {
+                            text: 'Cosmovisor',
+                            link: '/advanced/upgrades/cosmovisor'
+                        },
+                        {
+                            text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                            link: '/advanced/upgrades/using-cosmovisor'
+                        },
+                        {
+                            text: 'Upgrading Sidecar',
+                            link: '/advanced/upgrades/upgrading-sidecar'
+                        }
+                    ]
                 },
                 {
                     text: 'Network Constants',
@@ -217,72 +271,36 @@ export default defineConfig({
                             text: 'Withdrawal Rate Limits and Gating',
                             link: '/concepts/trading/withdrawal-rate-limits-and-gating'
                         },
+                        {
+                            text: 'Base Urls',
+                            link: '/concepts/trading/base-urls'
+                        },
+                        {
+                            text: 'Contract Loss Mechanism',
+                            link: '/concepts/trading/contract-loss-mechanism'
+                        },
+                        {
+                            text: 'Index Prices',
+                            link: '/concepts/trading/index-prices'
+                        },
+                        {
+                            text: 'Liquiditions',
+                            link: '/concepts/trading/liquiditions'
+                        },
+                        {
+                            text: 'Number Formats',
+                            link: '/concepts/trading/number-formats'
+                        },
+                        {
+                            text: 'Rate Limits',
+                            link: '/concepts/trading/rate-limits'
+                        },
+                        {
+                            text: 'Testnet',
+                            link: '/concepts/trading/testnet'
+                        }
                     ],
                 },
-                {
-                    text: 'Node Deployment',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Hardware Requirements',
-                            link: '/concepts/node-deployment/hardware-requirement'
-                        },
-                        {
-                            text: 'Required Node Configs',
-                            link: '/concepts/node-deployment/required-node-configs'
-                        },
-                        {
-                            text: 'Set up a full node',
-                            link: '/concepts/node-deployment/set-up-a-full-node'
-                        },
-                        {
-                            text: 'Optimize Your Full Node',
-                            link: '/concepts/node-deployment/optimize-your-full-node'
-                        },
-                        {
-                            text: 'Running a Validator',
-                            link: '/concepts/node-deployment/running-a-validator'
-                        },
-                        {
-                            text: 'Snapshots',
-                            link: '/concepts/node-deployment/snapshots'
-                        },
-                        {
-                            text: 'Full Node Streaming',
-                            link: '/concepts/node-deployment/full-node-streaming'
-                        },
-                        {
-                            text: 'Upgrades',
-                            collapsed: true,
-                            items: [
-                                {
-                                    text: 'Types of Upgrades',
-                                    link: '/concepts/node-deployment/upgrades/types-of-upgrades'
-                                },
-                                {
-                                    text: 'Performing Upgrades',
-                                    link: '/concepts/node-deployment/upgrades/performing-upgrades'
-                                },
-                                {
-                                    text: 'Cosmovisor',
-                                    link: '/concepts/node-deployment/upgrades/cosmovisor'
-                                },
-                                {
-                                    text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
-                                    link: '/concepts/node-deployment/upgrades/using-cosmovisor'
-                                },
-                                {
-                                    text: 'Upgrading Sidecar',
-                                    link: '/concepts/node-deployment/upgrades/upgrading-sidecar'
-                                }
-                            ]
-                        },
-                        {
-                            text: 'Peering with Gateway',
-                            link: '/concepts/node-deployment/peering-with-gateway'
-                        }
-                    ]
-                }
             ],
         },
         {
