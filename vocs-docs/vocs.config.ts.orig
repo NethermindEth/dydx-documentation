@@ -67,7 +67,7 @@ export default defineConfig({
                     link: '/interaction/permissioned-keys',
                 },
                 {
-                    text: 'Chain Troubleshooting',
+                    text: 'dYdX Chain: Deposits, Withdrawals & Troubleshooting Guide',
                     link: '/interaction/troubleshooting',
                 },
                 {
