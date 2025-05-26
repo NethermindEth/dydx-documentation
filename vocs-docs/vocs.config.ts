@@ -29,7 +29,7 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Preparing to trade',
+                    text: 'Preparing to Trade',
                     link: '/interaction/endpoints',
                 },
                 {
@@ -41,7 +41,7 @@ export default defineConfig({
                     link: '/interaction/trading',
                 },
                 {
-                    text: 'Asset management',
+                    text: 'Asset Management',
                     link: '/interaction/asset-management',
                 },
                 {
@@ -70,6 +70,10 @@ export default defineConfig({
                 {
                     text: 'dYdX Chain: Deposits, Withdrawals & Troubleshooting Guide',
                     link: '/interaction/troubleshooting',
+                },
+                {
+                    text: 'Deposits and Withdrawals',
+                    link: '/interaction/deposits-and-withdrawals',
                 },
             ],
         },
