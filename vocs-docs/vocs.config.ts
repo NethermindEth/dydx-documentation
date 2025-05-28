@@ -6,7 +6,6 @@ export default defineConfig({
     sidebar: [
         {
             text: 'Guide',
-            link: '/interaction',
             collapsed: true,
             items: [
                 {
@@ -45,10 +44,13 @@ export default defineConfig({
                     link: '/interaction/asset-management',
                 },
                 {
-                    text: 'Data',
-                    link: '/interaction/data',
+                    text: 'Trading Data',
                     collapsed: true,
                     items: [
+                        {
+                            text: 'Market Data',
+                            link: '/interaction/data',
+                        },
                         {
                             text: 'Feeds',
                             link: '/interaction/data/feeds',
@@ -62,10 +64,6 @@ export default defineConfig({
                 {
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
-                },
-                {
-                    text: 'Chain Troubleshooting',
-                    link: '/interaction/troubleshooting',
                 },
                 {
                     text: 'Deposits and Withdrawals',
