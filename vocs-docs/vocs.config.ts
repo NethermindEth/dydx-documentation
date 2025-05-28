@@ -59,10 +59,6 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'MegaVault',
-                    link: '/interaction/megavault',
-                },
-                {
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
                 },
