@@ -72,6 +72,94 @@ export default defineConfig({
             ],
         },
         {
+            text: 'Advanced',
+            collapsed: true,
+            items: [
+                {
+                    text: 'Running Your Node',
+                    items: [
+                        {
+                            text: 'Hardware Requirements',
+                            link: '/advanced/running-node/hardware-requirement'
+                        },
+                        {
+                            text: 'Required Node Configs',
+                            link: '/advanced/running-node/required-node-configs'
+                        },
+                        {
+                            text: 'Setup',
+                            link: '/advanced/running-node/setup',
+                        },
+                        {
+                            text: 'Optimize',
+                            link: '/advanced/running-node/optimize',
+                        },
+                        {
+                            text: 'Running a Validator',
+                            link: '/advanced/running-node/running-a-validator'
+                        },
+                        {
+                            text: 'Snapshots',
+                            link: '/advanced/running-node/snapshots'
+                        },
+                        {
+                            text: 'Peering with Gateway',
+                            link: '/advanced/running-node/peering-with-gateway'
+                        },
+                        {
+                            text: 'Voting',
+                            link: '/advanced/running-node/voting'
+                        },
+                    ],
+                },
+                {
+                    text: 'Node Streaming',
+                    link: '/advanced/full-node-streaming',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Example',
+                            link: '/advanced/full-node-streaming/example'
+                        }
+                    ]
+                },
+                {
+                    text: 'Upgrades',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Types of Upgrades',
+                            link: '/advanced/upgrades/types-of-upgrades'
+                        },
+                        {
+                            text: 'Performing Upgrades',
+                            link: '/advanced/upgrades/performing-upgrades'
+                        },
+                        {
+                            text: 'Cosmovisor',
+                            link: '/advanced/upgrades/cosmovisor'
+                        },
+                        {
+                            text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                            link: '/advanced/upgrades/using-cosmovisor'
+                        },
+                        {
+                            text: 'Upgrading Sidecar',
+                            link: '/advanced/upgrades/upgrading-sidecar'
+                        }
+                    ]
+                },
+                {
+                    text: 'Network Constants',
+                    link: '/advanced/network-constants',
+                },
+                {
+                    text: 'Resources',
+                    link: '/advanced/resources',
+                },
+            ],
+        },
+        {
             text: 'Full API',
             collapsed: true,
             items: [
