@@ -6,7 +6,7 @@ export default defineConfig({
     sidebar: [
         {
             text: 'Guide',
-            link: '/interaction',
+            collapsed: true,
             items: [
                 {
                     text: 'Getting Started',
@@ -44,10 +44,13 @@ export default defineConfig({
                     link: '/interaction/asset-management',
                 },
                 {
-                    text: 'Data',
-                    link: '/interaction/data',
+                    text: 'Trading Data',
                     collapsed: true,
                     items: [
+                        {
+                            text: 'Market Data',
+                            link: '/interaction/data',
+                        },
                         {
                             text: 'Feeds',
                             link: '/interaction/data/feeds',
@@ -59,16 +62,8 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'MegaVault',
-                    link: '/interaction/megavault',
-                },
-                {
                     text: 'Permissioned Keys',
                     link: '/interaction/permissioned-keys',
-                },
-                {
-                    text: 'Chain Troubleshooting',
-                    link: '/interaction/troubleshooting',
                 },
                 {
                     text: 'Deposits and Withdrawals',
@@ -77,94 +72,13 @@ export default defineConfig({
             ],
         },
         {
-            text: 'Advanced',
-            collapsed: true,
-            items: [
-                {
-                    text: 'Running Your Node',
-                    items: [
-                        {
-                            text: 'Hardware Requirements',
-                            link: '/advanced/running-node/hardware-requirement'
-                        },
-                        {
-                            text: 'Required Node Configs',
-                            link: '/advanced/running-node/required-node-configs'
-                        },
-                        {
-                            text: 'Setup',
-                            link: '/advanced/running-node/setup',
-                        },
-                        {
-                            text: 'Optimize',
-                            link: '/advanced/running-node/optimize',
-                        },
-                        {
-                            text: 'Running a Validator',
-                            link: '/advanced/running-node/running-a-validator'
-                        },
-                        {
-                            text: 'Snapshots',
-                            link: '/advanced/running-node/snapshots'
-                        },
-                        {
-                            text: 'Peering with Gateway',
-                            link: '/advanced/running-node/peering-with-gateway'
-                        },
-                        {
-                            text: 'Voting',
-                            link: '/advanced/running-node/voting'
-                        },
-                    ],
-                },
-                {
-                    text: 'Node Streaming',
-                    link: '/advanced/full-node-streaming',
-                },
-                {
-                    text: 'Upgrades',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Types of Upgrades',
-                            link: '/advanced/upgrades/types-of-upgrades'
-                        },
-                        {
-                            text: 'Performing Upgrades',
-                            link: '/advanced/upgrades/performing-upgrades'
-                        },
-                        {
-                            text: 'Cosmovisor',
-                            link: '/advanced/upgrades/cosmovisor'
-                        },
-                        {
-                            text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
-                            link: '/advanced/upgrades/using-cosmovisor'
-                        },
-                        {
-                            text: 'Upgrading Sidecar',
-                            link: '/advanced/upgrades/upgrading-sidecar'
-                        }
-                    ]
-                },
-                {
-                    text: 'Network Constants',
-                    link: '/advanced/network-constants',
-                },
-                {
-                    text: 'Resources',
-                    link: '/advanced/resources',
-                },
-            ],
-        },
-        {
             text: 'Full API',
-            link: '/api',
+            collapsed: true,
             items: [
                 {
                     text: 'Indexer API',
                     link: '/indexer-client',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         {
                             text: 'HTTP API',
@@ -179,7 +93,7 @@ export default defineConfig({
                 {
                     text: 'Node API',
                     link: '/node-client',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         {
                             text: 'Public API',
@@ -192,17 +106,24 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Noble API',
-                    link: '/noble-client',
-                },
-                {
-                    text: 'Faucet API',
-                    link: '/faucet-client',
-                },
+                    text: 'Other API',
+                    collapsed: true,
+                    items: [
+                         {
+                            text: 'Noble API',
+                            link: '/noble-client',
+                        },
+                        {
+                            text: 'Faucet API',
+                            link: '/faucet-client',
+                        },
+                    ]
+                }
             ],
         },
         {
             text: 'Concepts',
+            collapsed: true,
             items: [
                 {
                     text: 'Architecture',
@@ -219,7 +140,7 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Trading',
+                    text: 'Orders',
                     collapsed: true,
                     items: [
                         {
@@ -300,10 +221,93 @@ export default defineConfig({
                         }
                     ],
                 },
+                {
+                    text: 'Advanced',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Running Your Node',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Hardware Requirements',
+                                    link: '/concepts/advanced/running-node/hardware-requirement'
+                                },
+                                {
+                                    text: 'Required Node Configs',
+                                    link: '/concepts/advanced/running-node/required-node-configs'
+                                },
+                                {
+                                    text: 'Setup',
+                                    link: '/concepts/advanced/running-node/setup',
+                                },
+                                {
+                                    text: 'Optimize',
+                                    link: '/concepts/advanced/running-node/optimize',
+                                },
+                                {
+                                    text: 'Running a Validator',
+                                    link: '/concepts/advanced/running-node/running-a-validator'
+                                },
+                                {
+                                    text: 'Snapshots',
+                                    link: '/concepts/advanced/running-node/snapshots'
+                                },
+                                {
+                                    text: 'Peering with Gateway',
+                                    link: '/concepts/advanced/running-node/peering-with-gateway'
+                                },
+                                {
+                                    text: 'Voting',
+                                    link: '/concepts/advanced/running-node/voting'
+                                },
+                            ],
+                        },
+                        {
+                            text: 'Node Streaming',
+                            link: '/concepts/advanced/full-node-streaming',
+                        },
+                        {
+                            text: 'Upgrades',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Types of Upgrades',
+                                    link: '/concepts/advanced/upgrades/types-of-upgrades'
+                                },
+                                {
+                                    text: 'Performing Upgrades',
+                                    link: '/concepts/advanced/upgrades/performing-upgrades'
+                                },
+                                {
+                                    text: 'Cosmovisor',
+                                    link: '/concepts/advanced/upgrades/cosmovisor'
+                                },
+                                {
+                                    text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                                    link: '/concepts/advanced/upgrades/using-cosmovisor'
+                                },
+                                {
+                                    text: 'Upgrading Sidecar',
+                                    link: '/concepts/advanced/upgrades/upgrading-sidecar'
+                                }
+                            ]
+                        },
+                        {
+                            text: 'Network Constants',
+                            link: '/concepts/advanced/network-constants',
+                        },
+                        {
+                            text: 'Resources',
+                            link: '/concepts/advanced/resources',
+                        },
+                    ],
+                },
             ],
         },
         {
             text: 'Policies',
+            collapsed: true,
             items: [
                 {
                     text: 'Security',
