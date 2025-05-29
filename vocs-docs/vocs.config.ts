@@ -120,6 +120,13 @@ export default defineConfig({
                 {
                     text: 'Node Streaming',
                     link: '/advanced/full-node-streaming',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Example',
+                            link: '/advanced/full-node-streaming/example'
+                        }
+                    ]
                 },
                 {
                     text: 'Upgrades',
