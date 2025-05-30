@@ -2,7 +2,7 @@
 
 [Indexer-based orderbook streaming](/interaction/data/watch-orderbook), due to the increased latency introduced by the Indexer, can cause issues like more outdated orders or a crossed orderbook.
 In a full node, the orderbook available will be more up-to-date and should be preferred over the Indexer-based solution.
-This requires a full node with [gRPC streaming enabled](/advanced/full-node-streaming).
+This requires a full node with [gRPC streaming enabled](/concepts/advanced/full-node-streaming).
 
 :::note
 While more up-to-date than the Indexer, the orderbook state can vary slightly between nodes due to dYdX's offchain orderbook design.
