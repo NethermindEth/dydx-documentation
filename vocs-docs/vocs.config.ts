@@ -14,15 +14,15 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Quick start with Python 🚧',
+                            text: 'Quick start with Python',
                             link: '/interaction/client/quick-start-py',
                         },
                         {
-                            text: 'Quick start with Rust 🚧',
+                            text: 'Quick start with Rust',
                             link: '/interaction/client/quick-start-rs',
                         },
                         {
-                            text: 'Quick start with TypeScript 🚧',
+                            text: 'Quick start with TypeScript',
                             link: '/interaction/client/quick-start-ts',
                         },
                     ],
