@@ -160,7 +160,7 @@ export default defineConfig({
             ],
         },
         {
-            text: 'Full API',
+            text: 'API',
             collapsed: true,
             items: [
                 {
