@@ -72,94 +72,6 @@ export default defineConfig({
             ],
         },
         {
-            text: 'Advanced',
-            collapsed: true,
-            items: [
-                {
-                    text: 'Running Your Node',
-                    items: [
-                        {
-                            text: 'Hardware Requirements',
-                            link: '/advanced/running-node/hardware-requirement'
-                        },
-                        {
-                            text: 'Required Node Configs',
-                            link: '/advanced/running-node/required-node-configs'
-                        },
-                        {
-                            text: 'Setup',
-                            link: '/advanced/running-node/setup',
-                        },
-                        {
-                            text: 'Optimize',
-                            link: '/advanced/running-node/optimize',
-                        },
-                        {
-                            text: 'Running a Validator',
-                            link: '/advanced/running-node/running-a-validator'
-                        },
-                        {
-                            text: 'Snapshots',
-                            link: '/advanced/running-node/snapshots'
-                        },
-                        {
-                            text: 'Peering with Gateway',
-                            link: '/advanced/running-node/peering-with-gateway'
-                        },
-                        {
-                            text: 'Voting',
-                            link: '/advanced/running-node/voting'
-                        },
-                    ],
-                },
-                {
-                    text: 'Node Streaming',
-                    link: '/advanced/full-node-streaming',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Example',
-                            link: '/advanced/full-node-streaming/example'
-                        }
-                    ]
-                },
-                {
-                    text: 'Upgrades',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Types of Upgrades',
-                            link: '/advanced/upgrades/types-of-upgrades'
-                        },
-                        {
-                            text: 'Performing Upgrades',
-                            link: '/advanced/upgrades/performing-upgrades'
-                        },
-                        {
-                            text: 'Cosmovisor',
-                            link: '/advanced/upgrades/cosmovisor'
-                        },
-                        {
-                            text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
-                            link: '/advanced/upgrades/using-cosmovisor'
-                        },
-                        {
-                            text: 'Upgrading Sidecar',
-                            link: '/advanced/upgrades/upgrading-sidecar'
-                        }
-                    ]
-                },
-                {
-                    text: 'Network Constants',
-                    link: '/advanced/network-constants',
-                },
-                {
-                    text: 'Resources',
-                    link: '/advanced/resources',
-                },
-            ],
-        },
-        {
             text: 'API',
             collapsed: true,
             items: [
@@ -228,168 +140,192 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Orders',
+                    text: 'Trading',
                     collapsed: true,
                     items: [
                         {
-                            text: 'Perpetuals and Assets',
-                            link: '/concepts/trading/assets',
-                        },
-                        {
-                            text: 'Orders',
-                            link: '/concepts/trading/orders',
-                        },
-                        {
-                            text: 'Accounts and Subaccounts',
-                            link: '/concepts/trading/accounts',
-                        },
-                        {
-                            text: 'Rewards, Fees and Parameters',
-                            link: '/concepts/trading/rewards',
-                        },
-                        {
-                            text: 'Margin',
-                            link: '/concepts/trading/margin',
-                        },
-                        {
-                            text: 'Funding',
-                            link: '/concepts/trading/funding',
-                        },
-                        {
-                            text: 'Price Data',
-                            link: '/concepts/trading/oracle',
-                        },
-                        {
-                            text: 'Permissioned Keys',
-                            link: '/concepts/trading/authenticators',
-                        },
-                        {
-                            text: 'MegaVault',
-                            link: '/concepts/trading/megavault',
-                        },
-                        {
-                            text: 'Isolated Markets',
-                            link: '/concepts/trading/isolated-markets'
-                        },
-                        {
-                            text: 'Other Limits',
-                            link: '/concepts/trading/other-limits'
-                        },
-                        {
-                            text: 'Withdrawal Rate Limits and Gating',
-                            link: '/concepts/trading/withdrawal-rate-limits-and-gating'
-                        },
-                        {
-                            text: 'Base Urls',
-                            link: '/concepts/trading/base-urls'
-                        },
-                        {
-                            text: 'Contract Loss Mechanism',
-                            link: '/concepts/trading/contract-loss-mechanism'
-                        },
-                        {
-                            text: 'Index Prices',
-                            link: '/concepts/trading/index-prices'
-                        },
-                        {
-                            text: 'Liquiditions',
-                            link: '/concepts/trading/liquiditions'
-                        },
-                        {
-                            text: 'Number Formats',
-                            link: '/concepts/trading/number-formats'
-                        },
-                        {
-                            text: 'Rate Limits',
-                            link: '/concepts/trading/rate-limits'
-                        },
-                        {
-                            text: 'Testnet',
-                            link: '/concepts/trading/testnet'
-                        }
-                    ],
-                },
-                {
-                    text: 'Advanced',
-                    collapsed: true,
-                    items: [
-                        {
-                            text: 'Running Your Node',
+                            text: 'Markets',
                             collapsed: true,
                             items: [
                                 {
-                                    text: 'Hardware Requirements',
-                                    link: '/concepts/advanced/running-node/hardware-requirement'
+                                    text: 'Perpetuals and Assets',
+                                    link: '/concepts/trading/assets',
                                 },
                                 {
-                                    text: 'Required Node Configs',
-                                    link: '/concepts/advanced/running-node/required-node-configs'
+                                    text: 'Isolated Markets',
+                                    link: '/concepts/trading/isolated-markets'
                                 },
                                 {
-                                    text: 'Setup',
-                                    link: '/concepts/advanced/running-node/setup',
+                                    text: 'MegaVault',
+                                    link: '/concepts/trading/megavault',
                                 },
                                 {
-                                    text: 'Optimize',
-                                    link: '/concepts/advanced/running-node/optimize',
+                                    text: 'Contract Loss Mechanism',
+                                    link: '/concepts/trading/contract-loss-mechanism'
                                 },
                                 {
-                                    text: 'Running a Validator',
-                                    link: '/concepts/advanced/running-node/running-a-validator'
+                                    text: 'Index Prices',
+                                    link: '/concepts/trading/index-prices'
                                 },
                                 {
-                                    text: 'Snapshots',
-                                    link: '/concepts/advanced/running-node/snapshots'
-                                },
-                                {
-                                    text: 'Peering with Gateway',
-                                    link: '/concepts/advanced/running-node/peering-with-gateway'
-                                },
-                                {
-                                    text: 'Voting',
-                                    link: '/concepts/advanced/running-node/voting'
+                                    text: 'Price Data',
+                                    link: '/concepts/trading/oracle',
                                 },
                             ],
                         },
                         {
-                            text: 'Node Streaming',
-                            link: '/concepts/advanced/full-node-streaming',
-                        },
-                        {
-                            text: 'Upgrades',
+                            text: 'Account Operations',
                             collapsed: true,
                             items: [
                                 {
-                                    text: 'Types of Upgrades',
-                                    link: '/concepts/advanced/upgrades/types-of-upgrades'
+                                    text: 'Orders',
+                                    link: '/concepts/trading/orders',
                                 },
                                 {
-                                    text: 'Performing Upgrades',
-                                    link: '/concepts/advanced/upgrades/performing-upgrades'
+                                    text: 'Margin',
+                                    link: '/concepts/trading/margin',
                                 },
                                 {
-                                    text: 'Cosmovisor',
-                                    link: '/concepts/advanced/upgrades/cosmovisor'
+                                    text: 'Funding',
+                                    link: '/concepts/trading/funding',
                                 },
                                 {
-                                    text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
-                                    link: '/concepts/advanced/upgrades/using-cosmovisor'
+                                    text: 'Liquiditions',
+                                    link: '/concepts/trading/liquiditions'
                                 },
                                 {
-                                    text: 'Upgrading Sidecar',
-                                    link: '/concepts/advanced/upgrades/upgrading-sidecar'
+                                    text: 'Accounts and Subaccounts',
+                                    link: '/concepts/trading/accounts',
+                                },
+                                {
+                                    text: 'Permissioned Keys',
+                                    link: '/concepts/trading/authenticators',
+                                },
+                            ],
+                        },
+                        {
+                            text: 'Configuration, Controls & Environment',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Rewards, Fees and Parameters',
+                                    link: '/concepts/trading/rewards',
+                                },
+                                {
+                                    text: 'Other Limits',
+                                    link: '/concepts/trading/other-limits'
+                                },
+                                {
+                                    text: 'Withdrawal Rate Limits and Gating',
+                                    link: '/concepts/trading/withdrawal-rate-limits-and-gating'
+                                },
+                                {
+                                    text: 'Rate Limits',
+                                    link: '/concepts/trading/rate-limits'
+                                },
+                                {
+                                    text: 'Base URLs',
+                                    link: '/concepts/trading/base-urls'
+                                },
+                                {
+                                    text: 'Testnet',
+                                    link: '/concepts/trading/testnet'
+                                },
+                                {
+                                    text: 'Number Formats',
+                                    link: '/concepts/trading/number-formats'
                                 }
-                            ]
-                        },
-                        {
-                            text: 'Network Constants',
-                            link: '/concepts/advanced/network-constants',
-                        },
-                        {
-                            text: 'Resources',
-                            link: '/concepts/advanced/resources',
+                            ],
                         },
                     ],
+                },
+            ],
+        },
+        {
+            text: 'Nodes',
+            collapsed: true,
+            items: [
+                {
+                    text: 'Running Your Node',
+                    items: [
+                        {
+                            text: 'Hardware Requirements',
+                            link: '/nodes/running-node/hardware-requirement'
+                        },
+                        {
+                            text: 'Required Node Configs',
+                            link: '/nodes/running-node/required-node-configs'
+                        },
+                        {
+                            text: 'Setup',
+                            link: '/nodes/running-node/setup',
+                        },
+                        {
+                            text: 'Optimize',
+                            link: '/nodes/running-node/optimize',
+                        },
+                        {
+                            text: 'Running a Validator',
+                            link: '/nodes/running-node/running-a-validator'
+                        },
+                        {
+                            text: 'Snapshots',
+                            link: '/nodes/running-node/snapshots'
+                        },
+                        {
+                            text: 'Peering with Gateway',
+                            link: '/nodes/running-node/peering-with-gateway'
+                        },
+                        {
+                            text: 'Voting',
+                            link: '/nodes/running-node/voting'
+                        },
+                    ],
+                },
+                {
+                    text: 'Node Streaming',
+                    link: '/nodes/full-node-streaming',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Example',
+                            link: '/nodes/full-node-streaming/example'
+                        }
+                    ]
+                },
+                {
+                    text: 'Upgrades',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'Types of Upgrades',
+                            link: '/nodes/upgrades/types-of-upgrades'
+                        },
+                        {
+                            text: 'Performing Upgrades',
+                            link: '/nodes/upgrades/performing-upgrades'
+                        },
+                        {
+                            text: 'Cosmovisor',
+                            link: '/nodes/upgrades/cosmovisor'
+                        },
+                        {
+                            text: 'Using Cosmovisor to Stage dYdX Chain binary upgrade',
+                            link: '/nodes/upgrades/using-cosmovisor'
+                        },
+                        {
+                            text: 'Upgrading Sidecar',
+                            link: '/nodes/upgrades/upgrading-sidecar'
+                        }
+                    ]
+                },
+                {
+                    text: 'Network Constants',
+                    link: '/nodes/network-constants',
+                },
+                {
+                    text: 'Resources',
+                    link: '/nodes/resources',
                 },
             ],
         },
