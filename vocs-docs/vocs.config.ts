@@ -140,85 +140,103 @@ export default defineConfig({
                     ],
                 },
                 {
-                    text: 'Orders',
+                    text: 'Trading',
                     collapsed: true,
                     items: [
                         {
-                            text: 'Perpetuals and Assets',
-                            link: '/concepts/trading/assets',
+                            text: 'Markets',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Perpetuals and Assets',
+                                    link: '/concepts/trading/assets',
+                                },
+                                {
+                                    text: 'Isolated Markets',
+                                    link: '/concepts/trading/isolated-markets'
+                                },
+                                {
+                                    text: 'MegaVault',
+                                    link: '/concepts/trading/megavault',
+                                },
+                                {
+                                    text: 'Contract Loss Mechanism',
+                                    link: '/concepts/trading/contract-loss-mechanism'
+                                },
+                                {
+                                    text: 'Index Prices',
+                                    link: '/concepts/trading/index-prices'
+                                },
+                                {
+                                    text: 'Price Data',
+                                    link: '/concepts/trading/oracle',
+                                },
+                            ],
                         },
                         {
-                            text: 'Orders',
-                            link: '/concepts/trading/orders',
+                            text: 'Account Operations',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Orders',
+                                    link: '/concepts/trading/orders',
+                                },
+                                {
+                                    text: 'Margin',
+                                    link: '/concepts/trading/margin',
+                                },
+                                {
+                                    text: 'Funding',
+                                    link: '/concepts/trading/funding',
+                                },
+                                {
+                                    text: 'Liquiditions',
+                                    link: '/concepts/trading/liquiditions'
+                                },
+                                {
+                                    text: 'Accounts and Subaccounts',
+                                    link: '/concepts/trading/accounts',
+                                },
+                                {
+                                    text: 'Permissioned Keys',
+                                    link: '/concepts/trading/authenticators',
+                                },
+                            ],
                         },
                         {
-                            text: 'Accounts and Subaccounts',
-                            link: '/concepts/trading/accounts',
+                            text: 'Configuration, Controls & Environment',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'Rewards, Fees and Parameters',
+                                    link: '/concepts/trading/rewards',
+                                },
+                                {
+                                    text: 'Other Limits',
+                                    link: '/concepts/trading/other-limits'
+                                },
+                                {
+                                    text: 'Withdrawal Rate Limits and Gating',
+                                    link: '/concepts/trading/withdrawal-rate-limits-and-gating'
+                                },
+                                {
+                                    text: 'Rate Limits',
+                                    link: '/concepts/trading/rate-limits'
+                                },
+                                {
+                                    text: 'Base URLs',
+                                    link: '/concepts/trading/base-urls'
+                                },
+                                {
+                                    text: 'Testnet',
+                                    link: '/concepts/trading/testnet'
+                                },
+                                {
+                                    text: 'Number Formats',
+                                    link: '/concepts/trading/number-formats'
+                                }
+                            ],
                         },
-                        {
-                            text: 'Rewards, Fees and Parameters',
-                            link: '/concepts/trading/rewards',
-                        },
-                        {
-                            text: 'Margin',
-                            link: '/concepts/trading/margin',
-                        },
-                        {
-                            text: 'Funding',
-                            link: '/concepts/trading/funding',
-                        },
-                        {
-                            text: 'Price Data',
-                            link: '/concepts/trading/oracle',
-                        },
-                        {
-                            text: 'Permissioned Keys',
-                            link: '/concepts/trading/authenticators',
-                        },
-                        {
-                            text: 'MegaVault',
-                            link: '/concepts/trading/megavault',
-                        },
-                        {
-                            text: 'Isolated Markets',
-                            link: '/concepts/trading/isolated-markets'
-                        },
-                        {
-                            text: 'Other Limits',
-                            link: '/concepts/trading/other-limits'
-                        },
-                        {
-                            text: 'Withdrawal Rate Limits and Gating',
-                            link: '/concepts/trading/withdrawal-rate-limits-and-gating'
-                        },
-                        {
-                            text: 'Base Urls',
-                            link: '/concepts/trading/base-urls'
-                        },
-                        {
-                            text: 'Contract Loss Mechanism',
-                            link: '/concepts/trading/contract-loss-mechanism'
-                        },
-                        {
-                            text: 'Index Prices',
-                            link: '/concepts/trading/index-prices'
-                        },
-                        {
-                            text: 'Liquiditions',
-                            link: '/concepts/trading/liquiditions'
-                        },
-                        {
-                            text: 'Number Formats',
-                            link: '/concepts/trading/number-formats'
-                        },
-                        {
-                            text: 'Rate Limits',
-                            link: '/concepts/trading/rate-limits'
-                        },
-                        {
-                            text: 'Testnet',
-                            link: '/concepts/trading/testnet'
-                        }
                     ],
                 },
             ],
