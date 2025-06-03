@@ -77,7 +77,6 @@ export default defineConfig({
             items: [
                 {
                     text: 'Indexer API',
-                    link: '/indexer-client',
                     collapsed: true,
                     items: [
                         {
@@ -96,12 +95,12 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Public API',
-                            link: '/node-client/public',
-                        },
-                        {
                             text: 'Private API',
                             link: '/node-client/private',
+                        },
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
                         },
                     ],
                 },
