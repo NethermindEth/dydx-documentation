@@ -1,4 +1,4 @@
-# Asset Management
+# Assets
 
 Managing your portfolio and assets is a key component of your trading activity. This guide shows you how to check your balance, list your open positions, and transfer assets between accounts and subaccounts.
 
@@ -16,13 +16,11 @@ Account balance is an important piece of information while trading.
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-response = await node.get_account_balances(TEST_ADDRESS)
+response = await node.get_account_balances(ADDRESS)
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const coins = await client.get.getAccountBalances(DYDX_TEST_ADDRESS);
+const coins = await node.get.getAccountBalances(ADDRESS);
 ```
 
 ```rust [Rust]
@@ -39,21 +37,19 @@ The balance of a specific asset can also be fetched instead.
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(TESTNET.node) # [!code focus]
 # `adv4tnt` is the dYdX token (testnet) denomination.
 response = await node.get_account_balance(TEST_ADDRESS, "adv4tnt") # [!code focus]
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig); // [!code focus]
 // `adv4tnt` is the dYdX token (testnet) denomination.
-const coins = await client.get.getAccountBalance(DYDX_TEST_ADDRESS, "adv4tnt"); // [!code focus]
+const coins = await node.get.getAccountBalance(DYDX_TEST_ADDRESS, "adv4tnt"); // [!code focus]
 ```
 
 ```rust [Rust]
 let client = NodeClient::connect(config.node).await?; // [!code focus]
 // `adv4tnt` is the dYdX token (testnet) denomination.
-let balance = client // [!code focus]
+let balance = node // [!code focus]
     .get_account_balance(&address, &"adv4tnt".parse()?) // [!code focus]
     .await?; // [!code focus]
 ```
@@ -67,49 +63,33 @@ Assets are used to trade and manage (perpetual) positions opened and closed by [
 :::code-group
 
 ```python [Python]
-from dydx_v4_client.indexer.rest.indexer_client import IndexerClient
-from dydx_v4_client.network import TESTNET
 from dydx_v4_client.indexer.rest.constants import PositionStatus
-client = IndexerClient(TESTNET.rest_indexer) # [!code focus]
-subaccount = Subaccount.from_mnemonic(DYDX_TEST_MNEMONIC) # [!code focus]
-address = subaccount.address # [!code focus]
 
 # Fetch all subaccount '0' positions. [!code focus]
-perpetual_positions_response = await client # [!code focus]
+perpetual_positions_response = await indexer # [!code focus]
     .account # [!code focus]
-    .get_subaccount_perpetual_positions(address, 0) # [!code focus]
+    .get_subaccount_perpetual_positions(ADDRESS, 0) # [!code focus]
 
 # Fetch only open positions. # [!code focus]
-perpetual_positions_response = await client
+perpetual_positions_response = await indexer
     .account
     .get_subaccount_perpetual_positions(address, 0, PositionStatus.OPEN) # [!code focus]
 ```
 
 ```typescript [TypeScript]
-const client = new IndexerClient(Network.testnet().indexerConfig);
-
 // Fetch all subaccount '0' positions. 
-const response = await client
+const response = await indexer
   .account
   .getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0);
 
 // Fetch only open positions. 
-const response = await client
+const response = await indexer
   .account
   .getSubaccountPerpetualPositions(DYDX_TEST_ADDRESS, 0, PositionStatus.OPEN);
 ```
 
 ```rust [Rust]
-use dydx::{
-    config::ClientConfig,
-    indexer::{IndexerClient, PerpetualPositionStatus, Ticker},
-    node::Wallet
-}; 
-let config = ClientConfig::from_file("config.toml").await?;
-let indexer = IndexerClient::new(config.indexer); // [!code focus]
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?; // [!code focus]
-let account = wallet.account(0, &mut node).await?; // [!code focus]
-let subaccount = account.subaccount(0)?; // [!code focus]
+use dydx::indexer::PerpetualPositionStatus; 
 
 // Fetch all subaccount '0' positions. [!code focus]
 let positions = indexer // [!code focus]
@@ -143,18 +123,15 @@ Account information can be fetched using the address associated with that accoun
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(make_mainnet().node)
 account = await node.get_account(ADDRESS)
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.mainnet().validatorConfig);
-const account = await client.get.getAccount(ADDRESS);
+const account = await node.get.getAccount(ADDRESS);
 ```
 
 ```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let account = getter.client.get_account(&address).await?;
+let account = node.get_account(&address).await?;
 
 ```
 
@@ -167,17 +144,14 @@ An account can have multiple subaccounts. See how to fetch all known (with some 
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(make_mainnet().node)
 subaccounts = await node.get_subaccounts()
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const subaccounts = await client.get.getSubaccounts();
+const subaccounts = await node.get.getSubaccounts();
 ```
 
 ```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
 let subaccounts = client.get_subaccounts().await?;
 ```
 
@@ -188,24 +162,18 @@ To fetch a specific subaccount, use the account's address the the subaccount num
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-# Fetch subaccount '0' information.
-subaccount = await node.get_subaccount(TEST_ADDRESS, 0)
+response = await indexer.account.get_subaccount(ADDRESS, 0)
+subaccount = response["subaccount"]
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 // Fetch subaccount '0' information.
-const subaccount = await client.get.getSubaccount(DYDX_TEST_ADDRESS, 0);
+const subaccount = await node.get.getSubaccount(ADDRESS, 0);
 ```
 
 ```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
-let account = wallet.account_offline(0)?;
-let subaccount = account.subaccount(0)?;
 // Fetch subaccount '0' information.
-let subaccount = client.get_subaccount(&subaccount).await?;
+let subaccount = node.get_subaccount(&subaccount).await?;
 ```
 
 :::

@@ -40,23 +40,23 @@ export default defineConfig({
                     link: '/interaction/trading',
                 },
                 {
-                    text: 'Asset Management',
-                    link: '/interaction/asset-management',
-                },
-                {
                     text: 'Trading Data',
                     collapsed: true,
                     items: [
                         {
-                            text: 'Market Data',
-                            link: '/interaction/data',
+                            text: 'Assets',
+                            link: '/interaction/data/assets',
                         },
                         {
-                            text: 'Feeds',
+                            text: 'Market Data',
+                            link: '/interaction/data/market',
+                        },
+                        {
+                            text: 'WebSockets',
                             link: '/interaction/data/feeds',
                         },
                         {
-                            text: 'Watch orderbook',
+                            text: 'Watch Orderbook',
                             link: '/interaction/data/watch-orderbook',
                         },
                     ],
