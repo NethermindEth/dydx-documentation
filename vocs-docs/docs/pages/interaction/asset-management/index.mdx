@@ -16,8 +16,8 @@ Account balance is an important piece of information while trading.
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-response = await node_client.get_account_balances(TEST_ADDRESS)
+node = await NodeClient.connect(TESTNET.node)
+response = await node.get_account_balances(TEST_ADDRESS)
 ```
 
 ```typescript [TypeScript]
@@ -39,9 +39,9 @@ The balance of a specific asset can also be fetched instead.
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node) # [!code focus]
+node = await NodeClient.connect(TESTNET.node) # [!code focus]
 # `adv4tnt` is the dYdX token (testnet) denomination.
-response = await node_client.get_account_balance(TEST_ADDRESS, "adv4tnt") # [!code focus]
+response = await node.get_account_balance(TEST_ADDRESS, "adv4tnt") # [!code focus]
 ```
 
 ```typescript [TypeScript]
@@ -143,13 +143,13 @@ Account information can be fetched using the address associated with that accoun
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-account = await node_client.get_account(TEST_ADDRESS)
+node = await NodeClient.connect(make_mainnet().node)
+account = await node.get_account(ADDRESS)
 ```
 
 ```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const account = await client.get.getAccount(DYDX_TEST_ADDRESS);
+const client = await ValidatorClient.connect(Network.mainnet().validatorConfig);
+const account = await client.get.getAccount(ADDRESS);
 ```
 
 ```rust [Rust]
@@ -167,8 +167,8 @@ An account can have multiple subaccounts. See how to fetch all known (with some 
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-subaccounts = await node_client.get_subaccounts()
+node = await NodeClient.connect(make_mainnet().node)
+subaccounts = await node.get_subaccounts()
 ```
 
 ```typescript [TypeScript]
@@ -188,9 +188,9 @@ To fetch a specific subaccount, use the account's address the the subaccount num
 :::code-group
 
 ```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
+node = await NodeClient.connect(TESTNET.node)
 # Fetch subaccount '0' information.
-subaccount = await node_client.get_subaccount(TEST_ADDRESS, 0)
+subaccount = await node.get_subaccount(TEST_ADDRESS, 0)
 ```
 
 ```typescript [TypeScript]

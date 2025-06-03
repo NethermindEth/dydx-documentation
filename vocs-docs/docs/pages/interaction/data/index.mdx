@@ -40,6 +40,47 @@ println!("{markets:?}"); // [!code focus]
 
 See the [API reference](/indexer-client/http/markets/get_perpetual_markets) for the complete method definition.
 
+## Market Price
+
+The current price is one of the most important parameters. To fetch all available markets and associated prices,
+
+:::code-group
+
+```python [Python]
+prices = await node.get_prices() # [!code focus]
+```
+
+```typescript [TypeScript]
+const prices = await node.get.getAllPrices(); // [!code focus]
+```
+
+```rust [Rust]
+let prices = node.get_prices(None).await?; // [!code focus]
+```
+
+:::
+
+To fetch a specific market price, for example for `ETH-USD`, which has the ID `1`,
+
+:::code-group
+
+```python [Python]
+node_client = await NodeClient.connect(TESTNET.node)
+price = await node_client.get_price(1) # [!code focus]
+```
+
+```typescript [TypeScript]
+const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
+const marketPrice = await client.validatorClient.get.getPrice(1); // [!code focus]
+```
+
+```rust [Rust]
+let mut client = NodeClient::connect(config.node).await?;
+let prices = client.get_prices(None).await?; // [!code focus]
+```
+
+:::
+
 ## List Orders
 
 Retrieve orders for a specific subaccount, with various filtering options to narrow down the results based on order characteristics.

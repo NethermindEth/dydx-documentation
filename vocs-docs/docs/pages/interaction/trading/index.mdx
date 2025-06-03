@@ -1,57 +1,12 @@
 # Trading
 
-Enabling trading is the main goal for the dYdX API libraries.
-
-::::steps
-
-## Get market price
-
-Trading is done on a certain market (or ticker) type. The most important trading parameter is the current price. To fetch all available markets and associated prices,
-
-:::code-group
-
-```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-prices = await node_client.get_prices() # [!code focus]
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const prices = await client.get.getAllPrices(); // [!code focus]
-```
-
-```rust [Rust]
-let mut client = NodeClient::connect(config.node).await?;
-let prices = client.get_prices(None).await?; // [!code focus]
-```
-
-:::
-
-To fetch a specific market price, for example for `ETH-USD`, which has the ID `1`,
-
-:::code-group
-
-```python [Python]
-node_client = await NodeClient.connect(TESTNET.node)
-price = await node_client.get_price(1) # [!code focus]
-```
-
-```typescript [TypeScript]
-const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
-const marketPrice = await client.validatorClient.get.getPrice(1); // [!code focus]
-```
-
-```rust [Rust]
-let mut client = NodeClient::connect(config.node).await?;
-let market_price = client.get_price(1).await?; // [!code focus]
-```
-
-:::
+Interacting with the dYdX perptual markets and managing your positions is done by placing orders.
 
 ## Place an order
 
 To place an [order](../../concepts/trading/orders), you need wallet and order information. Please check the [Wallet setup](/interaction/wallet-setup) guide to check how to set up a wallet.
 
+::::steps
 ### Creating an order
 
 In dYdX, orders can be either short-term or long-term, see a comparison [here](/concepts/trading/orders).
@@ -70,9 +25,9 @@ A wide range of order types and parameters are provided to allow for different t
   - **Short-term**: Short term orders have a maximum validity of current block height + `ShortBlockWindow`. Currently, `ShortBlockWindow` is 20 blocks, or about 30 seconds;
   - **Long-term**: Stateful orders have a maximum validity of current block time + `StatefulOrderTimeWindow`. Currently, `StatefulOrderTimeWindow` this value is 95 days.
 
-### Order ID
+### Identifying an order
 
-Every order created has an unique identifier, referred to as the order ID. It can be calculated locally and is composed of,
+Every order created has an unique identifier, referred to as the __order ID__. It can be calculated locally and is composed of,
 - **Subaccount ID**: The account address plus the integer identifying the subaccount;
 - **Client ID**: A 32-bit integer chosen by the user to identify the order. Two orders can't have the same client ID;
 - **Order flags**: An integer identifying if the order is short-term (`0`), long-term (`64`), or conditional (`32`);
@@ -169,9 +124,11 @@ let tx_hash = placer.client.place_order(&mut account, order).await?;
 
 :::
 
+::::
+
 ## Cancel an order
 
-An unfilled order can be cancelled. The order ID is required to cancel an order.
+An unfilled order can be cancelled. The __order ID__ is required to cancel an order.
 
 :::code-group
 
@@ -206,4 +163,3 @@ let cancel_tx_hash = placer
 
 :::
 
-::::

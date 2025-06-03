@@ -79,20 +79,11 @@ Now we need to push the authenticator to the network.
 :::code-group
 
 ```python [Python]
-node = await NodeClient.connect(TESTNET.node)
-wallet = await Wallet.from_mnemonic(
-    node,
-    mnemonic=DYDX_TEST_MNEMONIC,
-    address=TEST_ADDRESS,
-)
 # Add the authenticator. [!code focus]
 response = await node.add_authenticator(wallet, auth) # [!code focus]
 ```
 
 ```typescript [TypeScript]
-const client = await CompositeClient.connect(network);
-const wallet = await LocalWallet.fromMnemonic(DYDX_TEST_MNEMONIC, BECH32_PREFIX);
-const subaccount = new SubaccountInfo(wallet, 0);
 try {
     // Add the authenticator. [!code focus]
     await client.addAuthenticator(subaccount, AuthenticatorType.ALL_OF, encodedData); // [!code focus]
@@ -102,9 +93,6 @@ try {
 ```
 
 ```rust [Rust]
-let mut client = NodeClient::connect(config.node).await?;
-let wallet = Wallet::from_mnemonic(TEST_MNEMONIC)?;
-let account = wallet.account(index, &mut client).await?;
 // Add the authenticator. [!code focus]
 client // [!code focus]
     .authenticators() // [!code focus]
