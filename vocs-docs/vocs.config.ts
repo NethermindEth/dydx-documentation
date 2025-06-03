@@ -44,8 +44,8 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Assets',
-                            link: '/interaction/data/assets',
+                            text: 'Accounts',
+                            link: '/interaction/data/accounts',
                         },
                         {
                             text: 'Market Data',
