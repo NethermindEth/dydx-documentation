@@ -16,8 +16,6 @@ To get realtime updates, we first need to establish a connection with the WebSoc
 # The message handler, triggered when a message is received.
 def handler(ws: IndexerSocket, message: dict):
     print(message)
-# Create a socket and establish the connection.
-socket = IndexerSocket(TESTNET.websocket_indexer, on_message=handler).connect()
 ```
 
 ```typescript [TypeScript]

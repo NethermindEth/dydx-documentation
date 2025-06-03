@@ -189,7 +189,7 @@ export default defineConfig({
                                     link: '/concepts/trading/funding',
                                 },
                                 {
-                                    text: 'Liquiditions',
+                                    text: 'Liquidations',
                                     link: '/concepts/trading/liquiditions'
                                 },
                                 {
