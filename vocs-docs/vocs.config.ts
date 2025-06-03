@@ -40,23 +40,23 @@ export default defineConfig({
                     link: '/interaction/trading',
                 },
                 {
-                    text: 'Asset Management',
-                    link: '/interaction/asset-management',
-                },
-                {
                     text: 'Trading Data',
                     collapsed: true,
                     items: [
                         {
-                            text: 'Market Data',
-                            link: '/interaction/data',
+                            text: 'Accounts',
+                            link: '/interaction/data/accounts',
                         },
                         {
-                            text: 'Feeds',
+                            text: 'Market Data',
+                            link: '/interaction/data/market',
+                        },
+                        {
+                            text: 'WebSockets',
                             link: '/interaction/data/feeds',
                         },
                         {
-                            text: 'Watch orderbook',
+                            text: 'Watch Orderbook',
                             link: '/interaction/data/watch-orderbook',
                         },
                     ],
@@ -77,7 +77,6 @@ export default defineConfig({
             items: [
                 {
                     text: 'Indexer API',
-                    link: '/indexer-client',
                     collapsed: true,
                     items: [
                         {
@@ -96,12 +95,12 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {
-                            text: 'Public API',
-                            link: '/node-client/public',
-                        },
-                        {
                             text: 'Private API',
                             link: '/node-client/private',
+                        },
+                        {
+                            text: 'Public API',
+                            link: '/node-client/public',
                         },
                     ],
                 },
@@ -190,7 +189,7 @@ export default defineConfig({
                                     link: '/concepts/trading/funding',
                                 },
                                 {
-                                    text: 'Liquiditions',
+                                    text: 'Liquidations',
                                     link: '/concepts/trading/liquiditions'
                                 },
                                 {
