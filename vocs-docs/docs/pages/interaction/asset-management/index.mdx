@@ -122,10 +122,10 @@ let opts = ListPositionsOpts { // [!code focus]
     status: PerpetualPositionStatus::Open.into(), // [!code focus]
     ..Default::default() // [!code focus]
 }; // [!code focus]
-let positions = indexer
-    .accounts()
+let positions = indexer  // [!code focus]
+    .accounts()  // [!code focus]
     .list_positions(&subaccount, Some(opts)) // [!code focus]
-    .await?;
+    .await?;  // [!code focus]
 ```
 
 :::
@@ -171,14 +171,14 @@ node_client = await NodeClient.connect(TESTNET.node)
 subaccounts = await node_client.get_subaccounts()
 ```
 
-```rust [Rust]
-let client = NodeClient::connect(config.node).await?;
-let subaccounts = client.get_subaccounts().await?;
-```
-
 ```typescript [TypeScript]
 const client = await ValidatorClient.connect(Network.testnet().validatorConfig);
 const subaccounts = await client.get.getSubaccounts();
+```
+
+```rust [Rust]
+let client = NodeClient::connect(config.node).await?;
+let subaccounts = client.get_subaccounts().await?;
 ```
 
 :::

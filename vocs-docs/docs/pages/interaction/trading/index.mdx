@@ -43,7 +43,7 @@ const marketPrice = await client.validatorClient.get.getPrice(1); // [!code focu
 
 ```rust [Rust]
 let mut client = NodeClient::connect(config.node).await?;
-let prices = client.get_prices(None).await?; // [!code focus]
+let market_price = client.get_price(1).await?; // [!code focus]
 ```
 
 :::
