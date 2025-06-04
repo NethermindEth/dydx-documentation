@@ -24,20 +24,6 @@ I.e. the effective IMF is the base IMF while `open_notinal < lower_cap`, and inc
 
 The [Open Notional Lower Cap](https://github.com/dydxprotocol/v4-chain/blob/b829b28b0d71e754ac553fbeec29ce5309bd79f7/proto/dydxprotocol/perpetuals/perpetual.proto#L133) and [Open Notional Upper Cap](https://github.com/dydxprotocol/v4-chain/blob/b829b28b0d71e754ac553fbeec29ce5309bd79f7/proto/dydxprotocol/perpetuals/perpetual.proto#L138) are parameters defined as part of the market's [Liquidity Tier](https://github.com/dydxprotocol/v4-chain/blob/b829b28b0d71e754ac553fbeec29ce5309bd79f7/proto/dydxprotocol/perpetuals/perpetual.proto#L100).
 
-## Risk Parameters and Related Fields
-
-| Risk                               | Description                                                                                                                  |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `initialMarginFraction`            | The margin fraction needed to open a position.                                                                               |
-| `maintenanceMarginFraction`        | The margin fraction required to prevent liquidation.                                                                         |
-| `incrementalInitialMarginFraction` | The increase of `initialMarginFraction` for each `incrementalPositionSize` above the `baselinePositionSize` the position is. |
-| `baselinePositionSize`             | The max position size (in base token) before increasing the initial-margin-fraction.                                         |
-| `incrementalPositionSize`          | The step size (in base token) for increasing the `initialMarginFraction` by (`incrementalInitialMarginFraction` per step).   |
-
-## Portfolio Margining
-
-There is no distinction between realized and unrealized PnL for the purposes of margin calculations. Gains from one position will offset losses from another position within the same account, regardless of whether the profitable position is closed.
-
 ## Margin Calculation
 
 The margin requirement for a single position is calculated as follows:

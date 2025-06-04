@@ -209,6 +209,17 @@ export default defineConfig({
                                 {
                                     text: 'Rewards, Fees and Parameters',
                                     link: '/concepts/trading/rewards',
+                                    collapsed: true,
+                                    items: [
+                                        {
+                                            text: 'Staking Rewards',
+                                            link: '/concepts/trading/rewards/staking-rewards',
+                                        },
+                                        {
+                                            text: 'Trading Rewards',
+                                            link: '/concepts/trading/rewards/trading-rewards',
+                                        }
+                                    ],
                                 },
                                 {
                                     text: 'Other Limits',
