@@ -1,8 +1,18 @@
 import { defineConfig } from 'vocs'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 export default defineConfig({
     title: 'dYdX Documentation',
     basePath: '/',
+    markdown: {
+        remarkPlugins: [
+            remarkMath,
+        ],
+        rehypePlugins: [
+            rehypeKatex,
+        ],
+    },
     sidebar: [
         {
             text: 'Guide',

@@ -9,8 +9,14 @@
     "preview": "vocs preview"
   },
   "dependencies": {
+    "katex": "^0.16.22",
     "react": "latest",
     "react-dom": "latest",
+    "rehype-katex": "^7.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "vocs": "latest"
   },
   "devDependencies": {
