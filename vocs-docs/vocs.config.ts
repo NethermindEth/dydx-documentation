@@ -190,7 +190,7 @@ export default defineConfig({
                                 },
                                 {
                                     text: 'Liquidations',
-                                    link: '/concepts/trading/liquiditions'
+                                    link: '/concepts/trading/liquidations'
                                 },
                                 {
                                     text: 'Accounts and Subaccounts',
