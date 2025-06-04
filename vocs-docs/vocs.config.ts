@@ -238,6 +238,10 @@ export default defineConfig({
                         },
                     ],
                 },
+                {
+                    text: 'Limit Orderbook and Matching',
+                    link: '/concepts/limit-orderbook',
+                },
             ],
         },
         {
