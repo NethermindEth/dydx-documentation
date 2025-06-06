@@ -190,7 +190,7 @@ export default defineConfig({
                                 },
                                 {
                                     text: 'Liquidations',
-                                    link: '/concepts/trading/liquiditions'
+                                    link: '/concepts/trading/liquidations'
                                 },
                                 {
                                     text: 'Accounts and Subaccounts',
@@ -209,6 +209,17 @@ export default defineConfig({
                                 {
                                     text: 'Rewards, Fees and Parameters',
                                     link: '/concepts/trading/rewards',
+                                    collapsed: true,
+                                    items: [
+                                        {
+                                            text: 'Staking Rewards',
+                                            link: '/concepts/trading/rewards/staking-rewards',
+                                        },
+                                        {
+                                            text: 'Trading Rewards',
+                                            link: '/concepts/trading/rewards/trading-rewards',
+                                        }
+                                    ],
                                 },
                                 {
                                     text: 'Other Limits',
@@ -223,20 +234,16 @@ export default defineConfig({
                                     link: '/concepts/trading/rate-limits'
                                 },
                                 {
-                                    text: 'Base URLs',
-                                    link: '/concepts/trading/base-urls'
-                                },
-                                {
                                     text: 'Testnet',
                                     link: '/concepts/trading/testnet'
                                 },
-                                {
-                                    text: 'Number Formats',
-                                    link: '/concepts/trading/number-formats'
-                                }
                             ],
                         },
                     ],
+                },
+                {
+                    text: 'Limit Orderbook and Matching',
+                    link: '/concepts/limit-orderbook',
                 },
             ],
         },
