@@ -168,12 +168,8 @@ export default defineConfig({
                                     link: '/concepts/trading/contract-loss-mechanism'
                                 },
                                 {
-                                    text: 'Index Prices',
-                                    link: '/concepts/trading/index-prices'
-                                },
-                                {
-                                    text: 'Price Data',
-                                    link: '/concepts/trading/oracle',
+                                    text: 'Oracle Prices',
+                                    link: '/concepts/trading/oracle'
                                 },
                             ],
                         },
