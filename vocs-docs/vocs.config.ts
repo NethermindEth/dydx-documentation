@@ -77,6 +77,7 @@ export default defineConfig({
             items: [
                 {
                     text: 'Indexer API',
+                    link: '/indexer-client',
                     collapsed: true,
                     items: [
                         {
