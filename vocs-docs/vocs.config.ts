@@ -240,11 +240,11 @@ export default defineConfig({
                                 },
                             ],
                         },
+                        {
+                            text: 'Limit Orderbook and Matching',
+                            link: '/concepts/trading/limit-orderbook',
+                        },
                     ],
-                },
-                {
-                    text: 'Limit Orderbook and Matching',
-                    link: '/concepts/limit-orderbook',
                 },
             ],
         },
