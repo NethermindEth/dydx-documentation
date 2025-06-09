@@ -234,10 +234,6 @@ export default defineConfig({
                                     text: 'Rate Limits',
                                     link: '/concepts/trading/rate-limits'
                                 },
-                                {
-                                    text: 'Testnet',
-                                    link: '/concepts/trading/testnet'
-                                },
                             ],
                         },
                         {
