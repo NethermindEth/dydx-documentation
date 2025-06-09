@@ -118,6 +118,10 @@ export default defineConfig({
                             link: '/faucet-client',
                         },
                     ]
+                },
+                {
+                    text: 'Repositories',
+                    link: '/repositories',
                 }
             ],
         },
