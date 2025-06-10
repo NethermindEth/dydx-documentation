@@ -77,6 +77,7 @@ export default defineConfig({
             items: [
                 {
                     text: 'Indexer API',
+                    link: '/indexer-client',
                     collapsed: true,
                     items: [
                         {
@@ -117,6 +118,10 @@ export default defineConfig({
                             link: '/faucet-client',
                         },
                     ]
+                },
+                {
+                    text: 'Repositories',
+                    link: '/repositories',
                 }
             ],
         },
@@ -163,12 +168,8 @@ export default defineConfig({
                                     link: '/concepts/trading/contract-loss-mechanism'
                                 },
                                 {
-                                    text: 'Index Prices',
-                                    link: '/concepts/trading/index-prices'
-                                },
-                                {
-                                    text: 'Price Data',
-                                    link: '/concepts/trading/oracle',
+                                    text: 'Oracle Prices',
+                                    link: '/concepts/trading/oracle'
                                 },
                             ],
                         },
@@ -233,17 +234,13 @@ export default defineConfig({
                                     text: 'Rate Limits',
                                     link: '/concepts/trading/rate-limits'
                                 },
-                                {
-                                    text: 'Testnet',
-                                    link: '/concepts/trading/testnet'
-                                },
                             ],
                         },
+                        {
+                            text: 'Limit Orderbook and Matching',
+                            link: '/concepts/trading/limit-orderbook',
+                        },
                     ],
-                },
-                {
-                    text: 'Limit Orderbook and Matching',
-                    link: '/concepts/limit-orderbook',
                 },
             ],
         },
