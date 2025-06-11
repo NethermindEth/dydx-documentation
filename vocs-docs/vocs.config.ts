@@ -170,6 +170,10 @@ export default defineConfig({
                                     text: 'Oracle Prices',
                                     link: '/concepts/trading/oracle'
                                 },
+                                {
+                                    text: 'Quantums and Subticks',
+                                    link: '/concepts/trading/quantums'
+                                },
                             ],
                         },
                         {
