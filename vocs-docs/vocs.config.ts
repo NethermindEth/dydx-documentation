@@ -10,7 +10,6 @@ export default defineConfig({
             items: [
                 {
                     text: 'Getting Started',
-                    link: '/interaction/client',
                     collapsed: true,
                     items: [
                         {
